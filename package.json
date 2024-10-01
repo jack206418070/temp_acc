@@ -13,7 +13,7 @@
     "nuxt": "^3.10.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
-    "@nuxtjs/vercel-builder": "^1.0.1"  // 添加这一行
+    "@nuxtjs/vercel-builder": "^0.24.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
