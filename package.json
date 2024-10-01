@@ -10,10 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/vercel-builder": "^0.25.0",
     "nuxt": "^3.10.0",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5",
-    "@nuxtjs/vercel-builder": "^0.24.0"
+    "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
