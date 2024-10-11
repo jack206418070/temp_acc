@@ -3,16 +3,16 @@
     <nuxt-layout name="layout-one">
       <!-- breadcrumb area start -->
       <breadcrumb-two
-        title="Questions & Answers"
-        subtitle="Find out the all the question & answers you have about us"
-        page="FAQ’s"
+        title="Our Talented Experts"
+        subtitle="Meet our experts, guiding through financial intricacies with precision"
+        page="Team"
         col="col-xl-7"
       />
       <!-- breadcrumb area end -->
 
-      <!-- faq area start -->
-      <faq-area-three></faq-area-three>
-      <!-- faq area end -->
+      <!-- team v2 area start -->
+      <team-area-five></team-area-five>
+      <!-- team v2 area end -->
 
       <!-- fancy banner area start -->
       <fancy-banner-three></fancy-banner-three>
@@ -23,5 +23,5 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: false });
-useSeoMeta({ title: "Pricing - Babun" });
+useSeoMeta({ title: "Team v2 - Babun" });
 </script>

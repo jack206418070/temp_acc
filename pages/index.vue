@@ -85,5 +85,5 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: false });
-useSeoMeta({ title: "Home Two - Babun" });
+useSeoMeta({ title: "首頁" });
 </script>

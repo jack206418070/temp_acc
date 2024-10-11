@@ -6,8 +6,8 @@
           <div class="container position-relative">
               <div class="row">
                   <div class="col-xl-8 col-lg-9 m-auto">
-                      <div class="tag">我想使用服務</div>
-                      <h1 class="hero-heading">我想使用服務</h1>
+                      <div class="tag">Consulting</div>
+                      <h1 class="hero-heading">合作與加入</h1>
                       <p class="text-lg">Offering solutions & services to address a spectrum of financial issues</p>
                   </div>
               </div>
@@ -18,11 +18,14 @@
           <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_04">
       </div>
       <!-- breadcrumb area end -->
-      <about-join-us />
+
       <!-- project details v2 area start -->
-      <project-v1-area />
+      <project-details-v2-area />
       <!-- project details v2 area end -->
 
+      <!-- fancy banner area start -->
+      <fancy-banner-three></fancy-banner-three>
+      <!-- fancy banner area end -->
   </nuxt-layout>
 </div>
 </template>

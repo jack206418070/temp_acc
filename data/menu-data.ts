@@ -14,34 +14,25 @@ const menu_data:IMenu[] = [
   },
   {
     id:3,
-    link:'/news',
-    title:'新聞與公告'
+    link:'/join-us',
+    title:'我想使用服務'
   },
   {
     id:4,
-    link:'/join-us',
-    title:'合作與加入'
+    link:'/join-us-unit',
+    title:'我想成為試辦單位'
   },
   {
     id:5,
-    link:'/resource',
-    title:'教育與資源'
+    link:'/news',
+    title:'最新消息'
   },
   {
     id:6,
-    link:'/story',
-    title:'使用者見證'
-  },
-  {
-    id:7,
     link:'/contact',
     title:'聯絡我們'
   },
-  {
-    id:8,
-    link:'/faq',
-    title:'常見問題'
-  }
+
 ]
 
 export default menu_data;

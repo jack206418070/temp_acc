@@ -2,18 +2,21 @@
   <div>
     <!-- breadcrumb area start -->
     <breadcrumb-one
-      title="Explore our News"
+      title="Our Talented Experts"
       subtitle="Meet our experts, guiding you through financial intricacies with precision"
-      page="Blog"
+      page="Team"
+      shape="/images/shape/shape_31.svg"
       bg_img="/images/media/img_32.jpg"
-      :style_2="true"
-      shape="/images/shape/shape_34.svg"
     />
     <!-- breadcrumb area end -->
 
-    <!-- blog area start -->
-    <blog-list-area />
-    <!-- blog area end -->
+    <!-- team v1 area start -->
+    <team-area-four />
+    <!-- team v1 area end -->
+
+    <!-- fancy banner area start -->
+    <fancy-banner-three />
+    <!-- fancy banner area end -->
 
     <!-- news letter area start -->
     <newsletter-one />
@@ -22,5 +25,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "Blog - Babun" });
+useSeoMeta({ title: "Team v1 - Babun" });
 </script>

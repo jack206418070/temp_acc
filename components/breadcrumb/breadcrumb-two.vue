@@ -4,7 +4,7 @@
           <div class="row">
               <div :class="`${col} m-auto`">
                   <ul class="style-none d-inline-flex justify-content-center pager">
-                      <li><nuxt-link href="/">Home</nuxt-link></li>
+                      <li><nuxt-link href="/">首頁</nuxt-link></li>
                       <li>/</li>
                       <li v-if="!style_2"><a href="#">Pages</a></li>
                       <li v-if="!style_2">/</li>
