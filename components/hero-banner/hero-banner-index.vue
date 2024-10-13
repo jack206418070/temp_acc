@@ -9,11 +9,11 @@
 			<div class="container position-relative">
 				<div class="row">
 					<div class="col-xl-6 col-lg-7 ms-auto">
-						<h1 class="hero-heading d-inline-block position-relative wow fadeInUp">Your business <br>Consultant & <br>Solution.</h1>
-						<p class="text-xl text-white pt-35 pb-25 wow fadeInUp" data-wow-delay="0.1s">Empowering businesses with innovative strategies and actionable recommendations</p>
+						<h1 class="hero-heading d-inline-block position-relative wow fadeInUp">多元陪伴照顧<br>服務<br>試辦計畫。</h1>
+						<p class="text-xl text-white pt-35 pb-25 wow fadeInUp" data-wow-delay="0.1s">致力於協助家庭</p>
 						<nuxt-link href="/contact" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-							<span>Let’s Talk</span>
-							<img src="/images/icon/icon_02.svg" alt="icon" class="lazy-img icon ms-2">
+							<span>歡迎與我們聯繫</span>
+							<img src="/images/icon/icon_02.svg" alt="圖標" class="lazy-img icon ms-2">
 						</nuxt-link>
 					</div>
 				</div>

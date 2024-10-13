@@ -4,11 +4,11 @@
 				<div class="row">
 					<div class="col-lg-5 wow fadeInLeft">
 						<div class="title-one mb-40 lg-mb-20">
-							<h2>Questions & Answers</h2>
+							<h2>常見問題</h2>
 						</div>
 						<!-- /.title-one -->
-						<p class="text-lg mb-40 lg-mb-20">Don’t find the answer? We can help</p>
-						<nuxt-link href="/contact" class="btn-four">Contact us</nuxt-link>
+						<p class="text-lg mb-40 lg-mb-20">常見問題查找</p>
+						<nuxt-link href="/contact" class="btn-four">聯絡我們</nuxt-link>
 					</div>
 
 					<div class="col-lg-7">

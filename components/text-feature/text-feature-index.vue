@@ -4,21 +4,20 @@
       <div class="row align-items-center">
         <div class="col-xl-5 col-lg-6 wow fadeInLeft">
           <div class="title-one">
-            <div class="upper-title">About us</div>
-            <h2>15k+ Client using Our Services.</h2>
+            <div class="upper-title">服務宗旨</div>
+            <h2>多元陪伴照顧服務試辦計畫</h2>
           </div>
           <!-- /.title-one -->
           <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">
-            Your success is our mission. As business advisors, we offer expert
-            guidance, unlocking your potential for growth and profitability
+            為減輕家庭照顧負擔，我們推出多元陪伴照顧服務試辦計畫，旨在為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力。
           </p>
           <div class="d-inline-flex flex-wrap align-items-center">
-            <nuxt-link href="/about-us" class="btn-four mt-15 me-4">More About us</nuxt-link>
+            <nuxt-link href="/about-us" class="btn-four mt-15 me-4">了解更多</nuxt-link>
             <nuxt-link href="/contact" class="btn-three icon-link mt-15">
-              <span>Request a Callback</span>
+              <span>聯繫我們</span>
               <img
                 src="/images/icon/icon_09.svg"
-                alt="icon"
+                alt="圖標"
                 class="lazy-img icon ms-1"
               />
             </nuxt-link>
@@ -39,3 +38,4 @@
 </template>
 
 <script setup lang="ts"></script>
+

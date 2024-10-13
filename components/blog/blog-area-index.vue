@@ -3,10 +3,10 @@
     <div class="container">
       <div class="position-relative">
         <div class="title-one mb-20 lg-mb-10">
-          <h2>Latest News.</h2>
+          <h2>最新消息</h2>
         </div>
         <!-- /.title-one -->
-        <p class="text-lg mb-40 lg-mb-10">Get the latest update, trips & tricks from our expert.</p>
+        <p class="text-lg mb-40 lg-mb-10">來看看最新消息</p>
 
         <div class="row gx-xxl-5">
           <div v-for="(item) in blog_items" :key="item.id" class="col-md-6">
@@ -31,7 +31,7 @@
 
         <div class="section-btn sm-mt-40">
           <nuxt-link href="/blog" class="btn-five icon-link">
-            <span class="text">See all blogs</span>
+            <span class="text">閱讀更多</span>
             <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
               <i class="bi bi-arrow-up-right"></i>
             </div>
