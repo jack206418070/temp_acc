@@ -3,13 +3,9 @@
     <div class="inner-content position-relative">
       <div class="top-header">
         <div class="d-flex align-items-center justify-content-between">
-          <div class="logo order-lg-0">
-            <nuxt-link to="/" class="d-flex align-items-center">
-              <img src="/images/logo/logo_01.svg" alt="" />
-            </nuxt-link>
-          </div>
+          
 
-          <!-- logo -->
+    
           <div class="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
             
           </div>
