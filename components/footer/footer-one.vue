@@ -21,10 +21,9 @@
             <div class="col-lg-2 col-sm-4 mb-20">
               <h5 class="footer-title">Links</h5>
               <ul class="footer-nav-link style-none">
-                <li><nuxt-link href="/">Home</nuxt-link></li>
-                <li><nuxt-link href="/pricing">Pricing Plan</nuxt-link></li>
-                <li><nuxt-link href="/about-us">About us</nuxt-link></li>
-                <li><nuxt-link href="/service-v1">Our services</nuxt-link></li>
+                <li><nuxt-link href="/">首頁</nuxt-link></li>
+                <li><nuxt-link href="/about-us">計劃介紹</nuxt-link></li>
+                <li><nuxt-link href="/service">服務介紹</nuxt-link></li>
                 <li><nuxt-link href="/project-v1">Portfolio</nuxt-link></li>
                 <li><nuxt-link href="/blog">Careers</nuxt-link></li>
                 <li><nuxt-link href="/service-v2">Features</nuxt-link></li>
