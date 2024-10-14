@@ -27,29 +27,29 @@ defineProps<{spacing?:string}>();
 const faq_data = [
   {
     id: "One",
-    title: "How does the free trial work?",
-    desc: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    title: "什麼是互助喘息?",
+    desc: "互助喘息是1名照顧服務員+1位照顧者志工共同照顧4~6位長輩照顧者只要每排1次班，我們就幫您照顧長輩2次(一日8小時)",
     isShow: true,
   },
   {
     id: "Two",
-    title: "How do you find different criteria in your process?",
-    desc: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    title: "互助喘息如何收費?",
+    desc: "基於使用者付費原則，本計畫依政府長照2.0「巷弄長照站臨托服務」自負額計價，每天次收費依形式-半日型為82元/次、全日型為218元/次，包含：臨托費、餐食費、活動材料費，請於使用喘息服務當日繳交。全日型若取消訂餐，恕不退費。",
   },
   {
     id: "Three",
-    title: "What do you look for in a founding team?",
-    desc: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    title: "互助喘息安全嗎?",
+    desc: "我們對於緊急事件的預防和處理有一套完整處理流程同時，每個據點的場地都有投保公共意外責任險我們希望每位參與的照顧者都能夠安心、放心地去喘息。",
   },
   {
     id: "Four",
-    title: "Do you recommend Pay as you go or Pre pay?",
-    desc: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    title: "來排班要做什麼?",
+    desc: "照顧者來到現場只需要協助安全看視、陪伴長輩其餘如：身體照顧、活動帶領等工作都會由現場照顧服務員進行，即使沒有照顧的經驗也完全沒問題!",
   },
   {
     id: "Five",
-    title: "What do I get for $0 with my plan?",
-    desc: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    title: "如何預約喘息?",
+    desc: "請參照服務流程，註冊帳號預約喘息或換工服務，若有任何問題，歡迎洽詢0800-50-7272電話詢問，謝謝。",
   },
 ]
 

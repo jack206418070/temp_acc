@@ -4,158 +4,66 @@ const blog_data:IBlog[] = [
   {
     id:1,
     img:'/images/blog/blog_img_03.jpg',
-    date:'09 FEB 2023',
-    title:'Wise Spending Habits, 13 Tips for Maximizing Your Money.',
-    author:'Mark doe',
-    post_info:'Mark doe . 6 min . Finance',
-    category:'design',
+    date:'2023年9月15日',
+    title:'老年人居家照護新趨勢：科技輔助提升生活品質',
+    author:'王美玲',
+    post_info:'王美玲 . 8分鐘閱讀 . 老年照護',
+    category:'elderly-care',
     page:'home'
   },
   {
     id:2,
     img:'/images/blog/blog_img_04.jpg',
-    date:'12 aug 2023',
-    title:'Business Success: Lessons from Visionary Leaders',
-    author:'John Smith',
-    post_info:'John Smith . 7 min read . Travelling',
-    category:'ui',
+    date:'2023年10月3日',
+    title:'兒童早期發展：多元學習環境對認知能力的影響',
+    author:'李家豪',
+    post_info:'李家豪 . 6分鐘閱讀 . 兒童發展',
+    category:'child-care',
     page:'home'
   },
   // home 5
   {
     id:3,
     img:'/images/logo/media_01.png',
-    date:'18 Jul 2023',
-    title:'Designer’s Checklist for Every UX/UI Project.',
-    author:'John Smith',
-    post_info:'Featured',
-    category:'DESIGN',
+    date:'2023年11月7日',
+    title:'心理健康新視角：整合性治療方法的突破',
+    author:'張雅琪',
+    post_info:'熱門話題',
+    category:'mental-health',
     page:'home-5'
   },
   {
     id:4,
     img:'/images/logo/media_03.png',
-    date:'20 Aug 2023',
-    title:'Speaking remotely at WordCamp US.',
-    author:'John Smith',
-    post_info:'Trending',
-    category:'Event',
+    date:'2023年12月1日',
+    title:'無障礙社會：創新科技助力身心障礙者融入社區',
+    author:'陳志明',
+    post_info:'趨勢報導',
+    category:'disability-support',
     page:'home-5'
   },
   // blog list
   {
     id:5,
     img:'/images/blog/blog_img_06.jpg',
-    date:'09 FEB 2023',
-    title:'Spending Habits, 13 Tips for grow Your Money.',
-    author:'John Smith',
-    post_info:'John Smith . 6 min . Finance',
-    category:'Design',
+    date:'2024年1月15日',
+    title:'安寧療護新方向：提升生命末期照護品質的跨領域合作',
+    author:'林慧珍',
+    post_info:'林慧珍 . 7分鐘閱讀 . 安寧療護',
+    category:'palliative-care',
     page:'blog-list'
   },
   {
     id:6,
     img:'/images/blog/blog_img_07.jpg',
-    date:'12 APR 2023',
-    title:'Our Travel Card Makes you Happy.',
-    author:'Orion Frostfall',
-    post_info:'Orion Frostfall . 5 min . Travel',
-    category:'Development',
+    date:'2024年2月8日',
+    title:'社區健康促進：多元文化背景下的整合式照護模式',
+    author:'黃建國',
+    post_info:'黃建國 . 5分鐘閱讀 . 社區健康',
+    category:'community-health',
     page:'blog-list'
   },
-  {
-    id:7,
-    img:'/images/blog/blog_img_07.jpg',
-    quote_blog:true,
-    date:'15 JAN 2023',
-    title:'Budget your desires, investing knowledge, & let compound interest build your future.',
-    author:'James Bond',
-    post_info:'James Bond . 5 min . Travel',
-    designation:'Founder Agro',
-    category:'Development',
-    page:'blog-list'
-  },
-  {
-    id:8,
-    img:'/images/blog/blog_img_08.jpg',
-    date:'20 JUN 2023',
-    title:'Manage your Online Banking & Get Rewarded',
-    author:'Asher Stormforge',
-    post_info:'Asher Stormforge . 7 min . Banking',
-    category:'Development',
-    page:'blog-list'
-  },
-  {
-    id:9,
-    img:'/images/blog/blog_img_09.jpg',
-    date:'22 MAY 2023',
-    title:'It’s easy to Buildup your Business with us',
-    author:'Octavian Wraithwood',
-    post_info:'Octavian Wraithwood . 3 min . Business',
-    category:'Development',
-    page:'blog-list'
-  },
-  // blog grid
-  {
-    id:10,
-    img:'/images/blog/blog_img_03.jpg',
-    date:'08 JUN 2023',
-    title:'Spending Habits, 13 Tips for grow Your Money.',
-    author:'Declan Thornheart',
-    post_info:'Declan Thornheart . 6 min . Finance',
-    category:'Development',
-    page:'blog-grid'
-  },
-  {
-    id:11,
-    img:'/images/blog/blog_img_04.jpg',
-    date:'13 APR 2023',
-    title:'Our Travel Card Makes you Happy.',
-    author:'Rylan Blackthorn',
-    post_info:'Rylan Blackthorn . 7 min read . Travelling',
-    category:'Development',
-    page:'blog-grid'
-  },
-  {
-    id:12,
-    img:'/images/blog/blog_img_12.jpg',
-    date:'15 FEB 2023',
-    title:'It’s easy to Buildup your Business with us',
-    author:'Caspian Thunderstrike',
-    post_info:'Caspian Thunderstrike . 6 min . Finance',
-    category:'Development',
-    page:'blog-grid'
-  },
-  {
-    id:14,
-    img:'/images/blog/blog_img_13.jpg',
-    date:'18 OCT 2023',
-    title:'Manage your Online Banking & Get Rewarded',
-    author:'Leander Frostblade',
-    post_info:'Leander Frostblade . 8 min read . Travelling',
-    category:'Development',
-    page:'blog-grid'
-  },
-  {
-    id:15,
-    img:'/images/blog/blog_img_14.jpg',
-    date:'20 AUG 2023',
-    title:'It’s easy to Buildup your Business with us',
-    author:'Gideon Starfire',
-    post_info:'Gideon Starfire . 6 min read . Blogging',
-    category:'Development',
-    page:'blog-grid'
-  },
-  {
-    id:16,
-    img:'/images/blog/blog_img_15.jpg',
-    date:'21 MAY 2023',
-    title:'Manage your Online Banking & Get Rewarded',
-    author:'Finnian Stormcaller',
-    post_info:'Finnian Stormcaller . 5 min read . Accounting',
-    category:'Development',
-    page:'blog-grid'
-  },
+
 ]
 
 export default blog_data;

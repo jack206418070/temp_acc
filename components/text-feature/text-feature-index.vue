@@ -26,9 +26,9 @@
         <div class="col-xl-7 col-lg-6 wow fadeInRight">
           <div class="media-list-item ms-auto pe-xxl-5 pe-4 ps-xxl-5 ps-4 pb-35 md-mt-60 d-flex align-items-end">
             <ul class="style-none">
-              <li>Mobile app easy management & access</li>
-              <li>Ton’s of features for handle the card easily</li>
-              <li>Strong security system.</li>
+              <li>提供靈活多樣的照護選擇</li>
+              <li>專業照護人員培訓與管理</li>
+              <li>全面的家庭支持系統</li>
             </ul>
           </div>
         </div>
