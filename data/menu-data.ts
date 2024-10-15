@@ -18,7 +18,7 @@ const menu_data:IMenu[] = [
   },
   {
     id:3,
-    link:'/service',
+    link:'/services',
     title:'服務介紹'
   },
   {

@@ -63,6 +63,26 @@ const blog_data:IBlog[] = [
     category:'community-health',
     page:'blog-list'
   },
+  {
+    id:7,
+    img:'/images/blog/blog_img_06.jpg',
+    date:'2024年1月15日',
+    title:'安寧療護新方向：提升生命末期照護品質的跨領域合作',
+    author:'林慧珍',
+    post_info:'林慧珍 . 7分鐘閱讀 . 安寧療護',
+    category:'palliative-care',
+    page:'blog-list'
+  },
+  {
+    id:8,
+    img:'/images/blog/blog_img_07.jpg',
+    date:'2024年2月8日',
+    title:'社區健康促進：多元文化背景下的整合式照護模式',
+    author:'黃建國',
+    post_info:'黃建國 . 5分鐘閱讀 . 社區健康',
+    category:'community-health',
+    page:'blog-list'
+  },
 
 ]
 

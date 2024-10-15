@@ -12,7 +12,7 @@
     <!-- breadcrumb area end -->
 
     <!-- blog area start -->
-    <blog-list-area />
+    <blog-list-news-area />
     <!-- blog area end -->
 
     <!-- news letter area start -->
