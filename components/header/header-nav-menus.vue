@@ -1,5 +1,5 @@
 <template>
-  <ul class="navbar-nav align-items-lg-center">
+  <ul class="navbar-nav align-items-lg-center ">
     <li class="d-block d-lg-none">
       <div class="logo">
         <nuxt-link href="/" class="d-block">
@@ -67,7 +67,7 @@
         </ul>
       </template>
       <template v-else>
-        <nuxt-link class="nav-link" :href="menu.link" role="button">
+        <nuxt-link class="nav-link mx-2" :href="menu.link" role="button">
           {{ menu.title }}
         </nuxt-link>
       </template>

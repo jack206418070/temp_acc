@@ -2,8 +2,12 @@
   <header :class="`theme-main-menu menu-overlay menu-style-one white-vr sticky-menu ${isSticky?'fixed':''}`">
     <div class="inner-content position-relative">
       <div class="top-header">
-        <div class="d-flex align-items-center justify-content-between">
-          
+        <div class="d-flex align-items-center justify-content-between	">
+          <div class="logo order-lg-0">
+							<nuxt-link href="/" class="d-flex align-items-center">
+								
+							</nuxt-link>
+						</div>
 
     
           <div class="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
