@@ -12,10 +12,8 @@
   />
   <!-- breadcrumb area end -->
 
-  <!-- about purpose area start -->
-  <about-purpose-area />
-  <!-- about purpose area end -->
-
+  <!-- 計畫簡介區塊 -->
+  <aboutus-purpose-area />
 
 
  </div>

@@ -8,13 +8,13 @@ const menu_data:IMenu[] = [
   },
   {
     id:1,
-    link:'/news',
-    title:'最新消息'
+    link:'/about-us',
+    title:'計劃簡介'
   },
   {
     id:2,
-    link:'/about-us',
-    title:'計劃簡介'
+    link:'/news',
+    title:'最新消息'
   },
   {
     id:3,
@@ -36,16 +36,7 @@ const menu_data:IMenu[] = [
     link:'/contact',
     title:'聯絡我們'
   },
-  {
-    id:7,
-    link:'/support',
-    title:'求援與申訴管道'
-  },
-  {
-    id:8,
-    link:'/faq',
-    title:'做一個聰明使用者'
-  },
+
 
   {
     id:9,

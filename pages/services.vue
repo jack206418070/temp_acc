@@ -14,10 +14,7 @@
 
     <!-- service area start -->
     <service-area />
-    <!-- service area end -->
-    <!-- team v1 area start -->
-    <team-area-four />
-    <!-- team v1 area end -->
+
     <service-details-area />
 
   </div>

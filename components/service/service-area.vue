@@ -1,13 +1,43 @@
 <template>
   <div>
 
+    <!-- 特色區塊開始 -->
+   <div class="block-feature-one position-relative light-bg-deep mt-100 lg-mt-60 pt-120 lg-pt-60 pb-130 lg-pb-60">
+			<div class="container">
+				<div class="position-relative">
+					<div class="title-one text-center mb-40 lg-mb-10">
+              <h2>服務內容</h2>
+              <p class="text-lg mt-20">我們致力於提供全面的多元陪伴服務，滿足您的各種需求</p>
+          </div>
+					<div class="row">
+						
+						<div v-for="(item,i) in service_data" :key="item.id" class="col-lg-4 col-md-6 d-flex wow fadeInUp" :data-wow-delay="`0.${i}s`">
+							<div class="card-style-two vstack tran3s w-100 mt-30">
+                <img :src="item.icon" alt="" class="lazy-img icon me-auto">
+								<h4 class="fw-bold mt-30 mb-25">{{item.title}}</h4>
+								<p class="mb-20">{{item.desc}}</p>
+								<nuxt-link href="/service-details" class="arrow-btn tran3s mt-auto stretched-link">
+                  <img src="/images/icon/icon_09.svg" alt="" class="lazy-img">
+                </nuxt-link>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						
+					</div>
+				</div>
+			</div>
+      <img src="/images/shape/shape_05.svg" alt="shape" class="lazy-img shapes shape_01">
+      <img src="/images/shape/shape_05.svg" alt="shape" class="lazy-img shapes shape_02">
+		</div>
+   <!-- 特色區塊結束 -->
+
     <!-- 文本區域一開始 -->
     <div class="text-feature-one mt-150 lg-mt-80">
       <div class="container">
         <div class="row">
             <div class="col-lg-5 wow fadeInLeft">
                 <div class="title-one">
-                    <h2>主辦單位</h2>
+                    <h2>試辦單位</h2>
                 </div>
                 <!-- /.title-one -->
                 <p class="text-lg mt-45 lg-mt-30 mb-60 lg-mb-30">您的成長是我們的使命。作為多元陪伴服務提供者，我們提供專業指導，釋放您的潛力，促進個人發展。</p>
@@ -38,35 +68,7 @@
     <!-- 文本區域一結束 -->
 
 
-   <!-- 特色區塊開始 -->
-   <div class="block-feature-one position-relative light-bg-deep mt-100 lg-mt-60 pt-120 lg-pt-60 pb-130 lg-pb-60">
-			<div class="container">
-				<div class="position-relative">
-					<div class="title-one text-center mb-40 lg-mb-10">
-              <h2>服務內容</h2>
-              <p class="text-lg mt-20">我們致力於提供全面的多元陪伴服務，滿足您的各種需求</p>
-          </div>
-					<div class="row">
-						
-						<div v-for="(item,i) in service_data" :key="item.id" class="col-lg-4 col-md-6 d-flex wow fadeInUp" :data-wow-delay="`0.${i}s`">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-                <img :src="item.icon" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">{{item.title}}</h4>
-								<p class="mb-20">{{item.desc}}</p>
-								<nuxt-link href="/service-details" class="arrow-btn tran3s mt-auto stretched-link">
-                  <img src="/images/icon/icon_09.svg" alt="" class="lazy-img">
-                </nuxt-link>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						
-					</div>
-				</div>
-			</div>
-      <img src="/images/shape/shape_05.svg" alt="shape" class="lazy-img shapes shape_01">
-      <img src="/images/shape/shape_05.svg" alt="shape" class="lazy-img shapes shape_02">
-		</div>
-   <!-- 特色區塊結束 -->
+   
   </div>
   
 </template>

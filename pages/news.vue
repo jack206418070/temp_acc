@@ -2,9 +2,9 @@
   <div>
     <!-- breadcrumb area start -->
     <breadcrumb-one
-      title="新聞與公告"
-      subtitle="Meet our experts, guiding you through financial intricacies with precision"
-      page="新聞與公告"
+      title="最新消息"
+      subtitle="計劃最新消息"
+      page="最新消息"
       bg_img="/images/media/img_32.jpg"
       :style_2="true"
       shape="/images/shape/shape_34.svg"
