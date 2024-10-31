@@ -1,6 +1,13 @@
 <template>
  <div>
-  <nuxt-layout name="layout-one">
+    <breadcrumb-one
+      title="我想成為試辦單位"
+      subtitle="我想成為試辦單位"
+      page="我想成為試辦單位"
+      bg_img="/images/media/img_32.jpg"
+      :style_2="true"
+      shape="/images/shape/shape_34.svg"
+    />
       <!-- breadcrumb area start -->
       <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
           <div class="container position-relative">
@@ -26,11 +33,9 @@
       <!-- fancy banner area start -->
       <fancy-banner-three></fancy-banner-three>
       <!-- fancy banner area end -->
-  </nuxt-layout>
 </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: false });
-useSeoMeta({ title: "Project Details v2 - Babun" });
+useSeoMeta({ title: "我要成為試辦單位 ｜ 多元陪伴照顧服務計劃" });
 </script>

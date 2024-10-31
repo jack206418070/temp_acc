@@ -37,5 +37,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "Project Details v2 - Babun" });
+useSeoMeta({ title: "我想使用服務 ｜ 多元陪伴照顧服務計劃" });
 </script>

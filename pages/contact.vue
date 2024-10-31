@@ -98,5 +98,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "Contact - Babun" });
+useSeoMeta({ title: "聯絡我們 ｜ 多元陪伴照顧服務計劃" });
 </script>

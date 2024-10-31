@@ -22,5 +22,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "Blog - Babun" });
+useSeoMeta({ title: "最新消遺 ｜ 多元陪伴照顧服務計劃" });
 </script>
