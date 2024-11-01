@@ -27,7 +27,7 @@
               <span></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <header-nav-menus logo="/images/logo/logo_01.svg" />
+              <header-nav-menus logo="/images/logo/logo_01.png" />
             </div>
           </nav>
         </div>
