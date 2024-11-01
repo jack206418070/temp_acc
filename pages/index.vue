@@ -5,20 +5,12 @@
 
     <hero-banner-index />
 
-    <div class="fancy-banner-one position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white">
+    <div class="position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white ">
 			<div class="row align-items-center">
-				<div class="col-md-6 text-center text-md-end">
-					<h2 class="pe-xl-5 pe-md-4 sm-pb-50">讓我們<span>協助您</span></h2>
+				<div class="col-md-6 text-center text-md-end m-auto">
+					<img src="/images/logo/logo_02.png" alt="">
 				</div>
-				<div class="col-md-6">
-					<div class="ps-xl-5 ps-md-4 pe-xxl-5 d-flex align-items-center justify-content-between">
-						<div>
-							<h3 class="fw-bold">1000+</h3>
-							<p class="text-md m0">戶家庭</p>
-						</div>
-						<img src="/images/assets/screen_01.png" alt="screen" class="lazy-img screen me-xxl-5">
-					</div>
-				</div>
+				
 			</div>
 		</div>
 

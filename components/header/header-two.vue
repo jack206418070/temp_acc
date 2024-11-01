@@ -4,8 +4,8 @@
       <div class="top-header">
         <div class="d-flex align-items-center justify-content-between	">
           <div class="logo order-lg-0">
-							<nuxt-link href="/" class="d-flex align-items-center">
-								
+							<nuxt-link href="/" class="d-flex align-items-center  w-50">
+								<img class="lazy-img icon me-2 " src="/images/logo/logo_01.png" alt="">
 							</nuxt-link>
 						</div>
 
