@@ -7,7 +7,7 @@
             <div class="col-xl-3 col-lg-4 footer-intro mb-30">
               <div class="logo mb-35 md-mb-20">
                 <nuxt-link href="/">
-                  <img src="/images/logo/logo_02.svg" alt="">
+                  <img src="/images/logo/logo_02.png" alt="">
                 </nuxt-link>
               </div> 
               <!-- logo -->
