@@ -106,6 +106,6 @@
 import menu_data from "@/data/menu-data";
 const route = useRoute();
 withDefaults(defineProps<{logo?:string}>(),{
-  logo: '/images/logo/logo_02.svg'
+  logo: '/images/logo/logo_02.png'
 })
 </script>
