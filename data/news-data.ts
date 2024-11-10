@@ -1,6 +1,6 @@
 import type { IBlog } from '@/types/blog-d-t';
 
-const blog_data:IBlog[] = [
+const news_data:IBlog[] = [
   {
     id:1,
     img:'/images/blog/blog_img_03.jpg',
@@ -46,44 +46,27 @@ const blog_data:IBlog[] = [
   {
     id:5,
     img:'/images/blog/blog_img_06.jpg',
-    date:'2024年1月15日',
-    title:'安寧療護新方向：提升生命末期照護品質的跨領域合作',
-    author:'林慧珍',
-    post_info:'林慧珍 . 7分鐘閱讀 . 安寧療護',
+    date:'2024年12月1日',
+    title:'【試辦單位核定名單】試辦單位核定名單已於12/13核定',
+    author:'試辦單位',
+    content:'核定清單資料',
+    post_info:'試辦單位 . 5分鐘閱讀 . 最新消息',
     category:'palliative-care',
-    page:'blog-list'
+    page:'news-list'
   },
   {
     id:6,
     img:'/images/blog/blog_img_07.jpg',
-    date:'2024年2月8日',
-    title:'社區健康促進：多元文化背景下的整合式照護模式',
-    author:'黃建國',
-    post_info:'黃建國 . 5分鐘閱讀 . 社區健康',
+    date:'2024年11月8日',
+    title:'【試辦單位申請說明會】11/12上午辦理試辦單位申請說明會',
+    author:'試辦單位',
+    content:'勞動部為提供協助身心障礙、重大傷病、符合聘僱家庭看護工資格或具長照資格有照顧需求家庭，由符合資格之試辦單位，提供短期、臨時或持續一定時間之照顧人力，以減輕家庭照顧負擔，特推動試辦多元陪伴照顧服務。為使有意願申請成為試辦單位的財團法人或非營利社團法人機構能更了解多元陪伴照顧服務試辦內容，預訂於113年11月12日（二）上午舉辦試辦單位申請說明會，歡迎報名參加，申請說明會報名表連結為https://forms.gle/hm9QYAfa21ne',
+    post_info:'試辦單位 . 3分鐘閱讀 . 最新消息',
     category:'community-health',
-    page:'blog-list'
+    page:'news-list'
   },
-  {
-    id:7,
-    img:'/images/blog/blog_img_06.jpg',
-    date:'2024年1月15日',
-    title:'安寧療護新方向：提升生命末期照護品質的跨領域合作',
-    author:'林慧珍',
-    post_info:'林慧珍 . 7分鐘閱讀 . 安寧療護',
-    category:'palliative-care',
-    page:'blog-list'
-  },
-  {
-    id:8,
-    img:'/images/blog/blog_img_07.jpg',
-    date:'2024年2月8日',
-    title:'社區健康促進：多元文化背景下的整合式照護模式',
-    author:'黃建國',
-    post_info:'黃建國 . 5分鐘閱讀 . 社區健康',
-    category:'community-health',
-    page:'blog-list'
-  },
+  
 
 ]
 
-export default blog_data;
+export default news_data;

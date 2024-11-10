@@ -8,6 +8,7 @@ export interface IBlog {
   post_info?: string;
   quote_blog?: boolean;
   designation?: string;
+  content?: string;
   author:string;
   category:string;
   page: string;

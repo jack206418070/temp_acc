@@ -12,7 +12,7 @@
     <!-- breadcrumb area end -->
 
     <!-- blog area start -->
-    <blog-list-news-area />
+    <news-list-area />
     <!-- blog area end -->
 
     <!-- news letter area start -->
@@ -22,5 +22,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "最新消遺 ｜ 多元陪伴照顧服務計劃" });
+useSeoMeta({ title: "最新消息 ｜ 多元陪伴照顧服務計劃" });
 </script>
