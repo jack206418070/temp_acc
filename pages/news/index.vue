@@ -15,9 +15,7 @@
     <news-list-area />
     <!-- blog area end -->
 
-    <!-- news letter area start -->
-    <newsletter-one />
-    <!-- news letter area end -->
+  
   </div>
 </template>
 
