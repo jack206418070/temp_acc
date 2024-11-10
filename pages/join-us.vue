@@ -1,8 +1,8 @@
 <template>
     <breadcrumb-one
-      title="我要使用服務"
-      subtitle="我要使用服務"
-      page="我要使用服務"
+      title="我想使用服務"
+      subtitle="我想使用服務"
+      page="我想使用服務"
       bg_img="/images/media/img_32.jpg"
       :style_2="true"
       shape="/images/shape/shape_34.svg"
@@ -15,7 +15,7 @@
                   <div class="col-xl-8 col-lg-9 m-auto">
                       <div class="tag">我想使用服務</div>
                       <h1 class="hero-heading">我想使用服務</h1>
-                      <p class="text-lg">Offering solutions & services to address a spectrum of financial issues</p>
+                      <p class="text-lg">目前試辦單位還在持續累積中，各試辦單位坐落在不同服務地區，所提供的服務項目、服務時數、收費、服務特色、注意事項或有不同，請進入試辦單位介紹區有更多完整的介紹，並可點選服務。</p>
                   </div>
               </div>
           </div>

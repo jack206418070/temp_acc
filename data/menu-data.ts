@@ -33,13 +33,17 @@ const menu_data:IMenu[] = [
   },
   {
     id:6,
+    link:'/faq',
+    title:'常見問題'
+  },
+  {
+    id:7,
     link:'/contact',
     title:'聯絡我們'
   },
 
-
   {
-    id:9,
+    id:8,
     link:'/links',
     title:'相關網站連結'
   },

@@ -6,18 +6,37 @@
         <div class="line-wrapper position-relative">
           <div class="row align-items-center">
             <div class="col-lg-12 wow fadeInLeft">
-              <div class="title-one">
-                <h2>計畫目的</h2>
-              </div>
-              <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
-                勞動部有鑑於民眾常有臨時性照顧、短期照顧、急性後期照護等服務人力需求，自113年至115年推動「多元陪伴照顧服務試辦計畫」，由具備照顧服務經驗並依法設立滿五年之財團法人或非營利社團法人，並通過公益性、專業度與合理收費等評選標準後成為試辦單位後，得聘僱及培訓本國籍及外國籍之多元陪伴照顧服務工作者至申請服務家庭，提供基本日常生活照顧、陪同外出、陪同就醫、安全陪伴或其他經勞動部核定之多元陪伴照顧服務。「陪伴照顧服務工作者」之給薪與休息時間，依勞動基準法規定辦理。
+              <h3 class="fw-bold mt-40 mb-20">申請資格</h3>
+              <p class="text-lg mb-20">
+                依法設立或登記滿五年之財團法人或非營利社團法人。
               </p>
-              <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
-                本項服務由民眾全額自費，各試辦單位得提供部分時數、半日、全日等不同服務方式，並自訂收費價格。
+
+              <h4 class="fw-bold mb-20">受委任之私立就業服務機構資格要求：</h4>
+              <ul class="text-lg mb-35 ps-4">
+                <li>
+                  於申請日前五年內，評鑑成績依規定均屬於A級及績優免評鑑者。
+                </li>
+                <li>
+                  於申請日前二年受雇主委任引進或聘僱之家庭幫傭及家庭看護工作外國人，佔該機構當年總引進或聘僱外國人人數二分之一以上。
+                </li>
+                <li>
+                  於申請日前二年，無違反就業服務法相關法規，並經裁處確定。
+                </li>
+              </ul>
+
+              <h3 class="fw-bold mt-40 mb-20">評選流程</h3>
+              <p class="text-lg mb-20">
+                有意願且符合資格的機構須自行提出申請計畫書，經勞動部召開專家審查會議評選通過後，始得成為合格之試辦單位。其評選標準包括：
               </p>
-              <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
-                但申請本項服務之民眾必須具備能提出以下任一文件之資格，包括：身心障礙證明、重大傷病證明、醫師診斷證明書、符合聘僱外國人之招募許可或聘僱許可、長期照顧需求評估通知書或使用收據，或其他經勞動部認定可佐證具照顧需求之文件。
-              </p>
+
+              <ul class="text-lg mb-35 ps-4">
+                <li>組織公益性及績優事蹟（20%）</li>
+                <li>服務內容及費用標準（15%）</li>
+                <li>組織專業性（15%）</li>
+                <li>服務品質確保機制（15%）</li>
+                <li>外國籍陪伴照顧服務工作者聘僱管理及訓練、後援規劃（15%）</li>
+                <li>創新作為（20%）</li>
+              </ul>
 
               <nuxt-link
                 href="#"
@@ -46,24 +65,36 @@
           <div class="row">
             <div class="col-md-6">
               <div class="title-one text-center text-md-start mb-30 sm-mb-10">
-                <h2>計畫架構</h2>
+                <h2>趕快成為試辦單位</h2>
               </div>
               <!-- /.title-one -->
             </div>
           </div>
           <div class="row justify-content-center">
             <div
-              v-for="(item, i) in service_data"
-              :key="item.id"
               class="col-lg-4 col-md-6 d-flex wow fadeInUp"
-              :data-wow-delay="`0.${i}s`"
+              data-wow-delay="`0.3s`"
             >
               <div class="card-style-two vstack tran3s w-100 mt-30">
-                <img :src="item.icon" alt="" class="lazy-img icon me-auto" />
-                <h4 class="fw-bold mt-30 mb-25">{{ item.title }}</h4>
-                <p class="mb-20">{{ item.desc }}</p>
+                <h4 class="fw-bold mt-30 mb-25">申請辦法(或試辦計畫)</h4>
+                <p class="mb-20">關於申請辦法</p>
                 <nuxt-link
-                  href="/service-details"
+                  href=""
+                  class="arrow-btn tran3s mt-auto stretched-link"
+                >
+                  <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
+                </nuxt-link>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6 d-flex wow fadeInUp"
+              data-wow-delay="`0.3s`"
+            >
+              <div class="card-style-two vstack tran3s w-100 mt-30">
+                <h4 class="fw-bold mt-30 mb-25">填寫申請表單</h4>
+                <p class="mb-20">僅開放申請期間</p>
+                <nuxt-link
+                  href=""
                   class="arrow-btn tran3s mt-auto stretched-link"
                 >
                   <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
@@ -72,20 +103,7 @@
             </div>
           </div>
 
-          <div class="section-subheading sm-mt-40">
-            <p class="text-lg">
-              本計畫依據「長期照顧服務法」及「多元照顧服務中心設立標準及人員配置標準」辦理。
-            </p>
-            <nuxt-link href="/service-v1" class="btn-three icon-link">
-              <span>了解更多服務</span>
-              <img
-                src="/images/icon/icon_09.svg"
-                alt=""
-                class="lazy-img icon ms-1"
-              />
-            </nuxt-link>
-          </div>
-          <!-- /.section-subheading -->
+          
         </div>
       </div>
     </div>

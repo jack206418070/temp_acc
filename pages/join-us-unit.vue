@@ -13,9 +13,8 @@
           <div class="container position-relative">
               <div class="row">
                   <div class="col-xl-8 col-lg-9 m-auto">
-                      <div class="tag">Consulting</div>
-                      <h1 class="hero-heading">合作與加入</h1>
-                      <p class="text-lg">Offering solutions & services to address a spectrum of financial issues</p>
+                      <h1 class="hero-heading">我想成為試辦單位</h1>
+                      <p class="text-lg">如何加入成為試辦單位？</p>
                   </div>
               </div>
           </div>
@@ -27,12 +26,10 @@
       <!-- breadcrumb area end -->
 
       <!-- project details v2 area start -->
-      <project-details-v2-area />
+      <joinusunit-intro />
       <!-- project details v2 area end -->
 
-      <!-- fancy banner area start -->
-      <fancy-banner-three></fancy-banner-three>
-      <!-- fancy banner area end -->
+     
 </div>
 </template>
 

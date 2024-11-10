@@ -1,5 +1,5 @@
 <template>
-  <header :class="`theme-main-menu menu-overlay menu-style-one white-vr sticky-menu ${isSticky?'fixed':''}`">
+  <header :class="`theme-main-menu menu-overlay menu-style-one bg-dark white-vr sticky-menu ${isSticky?'fixed':''}`">
     <div class="inner-content position-relative">
       <div class="top-header">
         <div class="d-flex align-items-center justify-content-between	">
