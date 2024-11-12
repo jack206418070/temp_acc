@@ -102,7 +102,7 @@
         .nav-item .nav-link {color: #fff;}
         .nav-item:hover .nav-link {color: $color-one;}
         &.fixed {
-            background: $color-three;
+            background: $heading;
             border: none;
         }
     }
@@ -386,7 +386,7 @@
 @media screen and (max-width: 991px) {
     .navbar {padding: 0;}
     .navbar-collapse .logo {margin-bottom: 10vh; padding-left: 12px;}
-    .white-vr .navbar-collapse {background-color: $color-three;}
+    .white-vr .navbar-collapse {background-color: $heading;}
     .navbar-collapse {
       position: fixed;
       top: 0;
