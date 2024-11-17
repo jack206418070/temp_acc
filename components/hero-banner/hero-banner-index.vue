@@ -29,9 +29,8 @@ import { Autoplay } from 'swiper/modules';
 const modules = [Autoplay];
 
 const slider_images = [
-  '/images/media/img_01.jpg',
-  '/images/media/img_02.jpg',
-  '/images/media/img_03.jpg'
+  '/images/bg_1.jpg',
+  '/images/bg_2.jpg'
 ]
 
 const slider_setting = {
