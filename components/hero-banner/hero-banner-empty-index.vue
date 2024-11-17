@@ -1,5 +1,5 @@
 <template>
-  	<div class="hero-banner-one pt-225 xl-pt-200 lg-pt-150 pb-150 lg-pb-100 position-relative">
+  	<div class="hero-banner-one mt-75 pt-225 xl-pt-220 lg-pt-160 pb-150 lg-pb-100 position-relative">
 		<swiper :modules="modules" v-bind="slider_setting" class="hero-slider-one m0">
 			<swiper-slide v-for="(src,i) in slider_images" :key="i" class="item m0">
 				<div class="hero-img" :style="`background-image: url(${src});`"></div>
@@ -33,25 +33,23 @@ const slider_setting = {
 </script>
 <style scoped>
 .hero-banner-one{
-	margin-top: 90px !important;
-	height: 100vh;
+	
+	height: 60vh;
 }
 .hero-banner-one::before {
     content: "";
     position: absolute;
-	
     width: 100%;
     height: 100%;
-    left: 0px;
-    top: 0px;
+
     background: unset !important;
 	}
 
 .hero-img {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100% !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 .hero-slider-one {

@@ -6,8 +6,8 @@
 
     <div class="position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white ">
 			<div class="row align-items-center">
-				<div class="col-md-6 text-center text-md-end m-auto">
-					<img src="/images/logo/logo_02.png" alt="">
+				<div class="col-md-6  m-auto ">
+					<img class="w-50 m-auto" src="/images/logo/logo_02.png" alt="">
 				</div>
 				
 			</div>
@@ -15,7 +15,7 @@
 
     <block-feature-index />
     <!-- 區塊特徵區域結束 -->
-
+	<service-targer />
     
     <!-- 部落格區域開始 -->
     <blog-area-index />
@@ -58,3 +58,9 @@
 <script setup lang="ts">
 useSeoMeta({ title: "多元陪伴照顧服務" });
 </script>
+
+
+<style scoped>
+.theme-main-menu{}
+
+</style>
