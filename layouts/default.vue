@@ -1,6 +1,6 @@
 <template>
    <div class="main-page-wrapper">
-    <header-two></header-two>
+    <header-one></header-one>
 
     <main>
       <slot />

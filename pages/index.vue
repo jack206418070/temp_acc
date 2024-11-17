@@ -1,9 +1,8 @@
 <template>
  <div>
-  <nuxt-layout name="default">
     
 
-    <hero-banner-index />
+    <hero-banner-empty-index />
 
     <div class="position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white ">
 			<div class="row align-items-center">
@@ -53,11 +52,9 @@
 		</div>
     <!-- 特色橫幅區域結束 -->
 
-  </nuxt-layout>
  </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: false });
 useSeoMeta({ title: "多元陪伴照顧服務" });
 </script>
