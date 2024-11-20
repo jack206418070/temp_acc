@@ -5,7 +5,7 @@
       subtitle="我想成為試辦單位"
       page="我想成為試辦單位"
       bg_img="/images/banner/banner_1.png"
-      :style_2="true"
+      
     />
       <!-- breadcrumb area start -->
       <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">

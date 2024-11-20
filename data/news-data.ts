@@ -93,7 +93,7 @@ const news_data:IBlog[] = [
     post_info:'試辦單位 . 3分鐘閱讀 . 最新消息',
     category:'community-health',
     page:'news-list',
-    catalog:'使用心得分享'
+    catalog:'公告'
   },
   
 

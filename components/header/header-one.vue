@@ -50,7 +50,7 @@
 	  
       <!--/.top-header-->
     </div>
-	<div class="d-flex  align-items-center justify-content-end">
+	<div class="d-flex  align-items-center justify-content-end blog-sidebar ">
           <form action="#" class="d-flex sidebar-search">
             <input type="text" placeholder="搜尋.." />
             <button class="tran3s"><i class="bi bi-search"></i></button>
@@ -66,3 +66,9 @@
 <script setup lang="ts">
 const { isSticky } = useSticky();
 </script>
+
+<style scoped>
+.blog-sidebar .sidebar-search {
+  height: 40px;
+}
+</style>
