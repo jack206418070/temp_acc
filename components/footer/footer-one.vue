@@ -23,7 +23,7 @@
               <ul class="footer-nav-link style-none">
                 <li><nuxt-link href="/">首頁</nuxt-link></li>
                 <li><nuxt-link href="/about-us">計劃介紹</nuxt-link></li>
-                <li><nuxt-link href="/service">服務介紹</nuxt-link></li>
+                <li><nuxt-link href="/services">服務介紹</nuxt-link></li>
                 <li><nuxt-link href="/project-v1">Portfolio</nuxt-link></li>
                 <li><nuxt-link href="/blog">Careers</nuxt-link></li>
                 <li><nuxt-link href="/service-v2">Features</nuxt-link></li>
