@@ -15,8 +15,6 @@
               </div>
           </div>
       </div>
-      <img src="/images/assets/ils_01.svg" alt="" class="lazy-img shapes shape_01">
-      <img src="/images/assets/ils_02.svg" alt="" class="lazy-img shapes shape_02">
       <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_03">
       <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_04">
   </div>

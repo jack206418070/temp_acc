@@ -12,4 +12,5 @@ export interface IBlog {
   author:string;
   category:string;
   page: string;
+  catalog: string;
 }

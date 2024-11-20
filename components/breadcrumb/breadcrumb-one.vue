@@ -7,39 +7,22 @@
       <div v-if="!style_2" class="row align-items-center">
         <div class="col-lg-7">
           <h1 class="hero-heading d-inline-block position-relative">
-            {{ title }}
-            <img :src="shape" alt="" />
+            <span class="bg-white rounded-4 p-3">{{title}}</span>
+            
           </h1>
         </div>
         <div class="col-xl-4 col-lg-5 ms-auto">
-          <p class="text-white text-lg mb-70 lg-mb-40">
-            {{ subtitle }}
-          </p>
-          <ul class="style-none d-inline-flex pager">
-            <li><nuxt-link href="/">首頁</nuxt-link></li>
-            <li>/</li>
-            <li>{{page}}</li>
-          </ul>
+          
+          
         </div>
       </div>
       <div v-if="style_2" class="row align-items-center">
-        <div class="col-lg-6">
+        <div class="col-lg-6 ">
           <h1 :class="`hero-heading d-inline-block position-relative ${cls}`">
-            {{title}} <img :src="shape" alt="" />
+             <span class="bg-white rounded-4 p-3">{{title}}</span>
           </h1>
         </div>
-        <div class="col-xl-4 col-lg-5 ms-auto">
-          <p class="text-white text-lg mb-70 lg-mb-40">
-            {{subtitle}}
-          </p>
-          <ul class="style-none d-inline-flex pager">
-            <li>
-              <nuxt-link href="/">首頁</nuxt-link>
-            </li>
-            <li>/</li>
-            <li>{{page}}</li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -67,3 +50,11 @@ withDefaults(
   }
 );
 </script>
+
+<style scoped>
+
+.inner-banner-one::after {
+ 
+    background: unset;
+  }
+</style>

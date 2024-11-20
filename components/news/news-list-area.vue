@@ -4,6 +4,8 @@
       <div class="row gx-xl-5">
         <div class="col-lg-8">
           <template v-for="blog in blog_items.slice(startIndex, endIndex)" :key="blog.id">
+            <span class="badge bg-secondary m-2 fs-5">{{ blog.catalog }}</span>
+
 
           <article v-if="!blog.quote_blog" class="blog-meta-two style-two mb-50 lg-mb-40">
             <figure

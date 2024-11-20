@@ -63,9 +63,9 @@
 <script setup lang="ts">
 
 const upper_data = [
-  {icon:'/images/icon/icon_03.svg',title:'合理費用',desc:'為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力'},
-  {icon:'/images/icon/icon_04.svg',title:'專業顧問',desc:'旨在為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力'},
-  {icon:'/images/icon/icon_05.svg',title:'有效支持',desc:'為減輕家庭照顧負擔，我們推出多元陪伴照顧服務試辦計畫'},
+  {icon:'/images/icon/icon_03.svg',title:'費用預估 ',desc:'為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力'},
+  {icon:'/images/icon/icon_04.svg',title:'專業服務',desc:'旨在為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力'},
+  {icon:'/images/icon/icon_05.svg',title:'有效支援',desc:'為減輕家庭照顧負擔，我們推出多元陪伴照顧服務試辦計畫'},
 ];
 
 

@@ -19,17 +19,7 @@
                 但申請本項服務之民眾必須具備能提出以下任一文件之資格，包括：身心障礙證明、重大傷病證明、醫師診斷證明書、符合聘僱外國人之招募許可或聘僱許可、長期照顧需求評估通知書或使用收據，或其他經勞動部認定可佐證具照顧需求之文件。
               </p>
 
-              <nuxt-link
-                href="#"
-                class="btn-three icon-link mt-15 mb-15 md-mb-40"
-              >
-                <span cl>閱讀更多</span>
-                <img
-                  src="/images/icon/icon_09.svg"
-                  alt=""
-                  class="lazy-img icon ms-1"
-                />
-              </nuxt-link>
+              
             </div>
           </div>
         </div>
@@ -63,11 +53,17 @@
                 <h4 class="fw-bold mt-30 mb-25">{{ item.title }}</h4>
                 <p class="mb-20">{{ item.desc }}</p>
                 <nuxt-link
-                  href="/service-details"
-                  class="arrow-btn tran3s mt-auto stretched-link"
-                >
-                  <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
-                </nuxt-link>
+                href="#"
+                class="btn-three icon-link mt-15 mb-15 md-mb-40"
+                @click.prevent="showModal = true"
+              >
+                <span cl>閱讀更多</span>
+                <img
+                  src="/images/icon/icon_09.svg"
+                  alt=""
+                  class="lazy-img icon ms-1"
+                />
+              </nuxt-link>
               </div>
             </div>
           </div>
@@ -90,28 +86,72 @@
       </div>
     </div>
     <!-- block feature area end -->
+    
+    <!-- 新增 Modal 組件 -->
+    <div v-if="showModal" class="modal-overlay" @click="showModal = false">
+      <div class="modal-content" @click.stop>
+        <h3>計畫目的詳細說明</h3>
+        <div class="modal-body">
+          <p>就業服務法 -> 下載連結</p>
+          <p>藍領審查標準 -> 下載連結</p>
+          <p>多元陪伴照顧服務試 -> 下載連結</p>
+          <p>外國人轉換準則 -> 下載連結</p>
+        </div>
+        <button class="btn btn-one " @click="showModal = false">關閉</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const showModal = ref(false)
+
 const service_data = [
   {
-    id: 1,
-    icon: "/images/icon/icon_06.svg",
-    title: "居家照顧服務",
-    desc: "提供專業的居家照顧,包括生活照顧、健康促進等,讓長者在熟悉的環境中獲得妥善照顧。",
+    id:1,
+    icon:'/images/icon/icon_06.svg',
+    title:'多元陪伴法規',
+    desc:'',
   },
   {
-    id: 2,
-    icon: "/images/icon/icon_07.svg",
-    title: "日間照顧中心",
-    desc: "提供日間照顧服務,包括生活照顧、健康促進、文康休閒活動等,減輕家庭照顧負擔。",
+    id:2,
+    icon:'/images/icon/icon_07.svg',
+    title:'計劃懶人包',
+    desc:'',
   },
   {
-    id: 3,
-    icon: "/images/icon/icon_08.svg",
-    title: "喘息服務",
-    desc: "提供短期照顧服務,讓家庭照顧者有休息的機會,維持身心健康和照顧品質。",
+    id:3,
+    icon:'/images/icon/icon_08.svg',
+    title:'計劃宣傳品',
+    desc:'',
   },
-];
+  ]
 </script>
+
+<style scoped>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 60%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+</style>

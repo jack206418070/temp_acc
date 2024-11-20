@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/icon": "^1.8.1",
     "@nuxtjs/vercel-builder": "^0.25.0",
     "nuxt": "^3.10.0",
     "vue": "^3.4.15",

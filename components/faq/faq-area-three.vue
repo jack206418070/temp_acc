@@ -36,6 +36,24 @@
           >
             想成為試辦單位
           </button>
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-service-unit"
+            type="button"
+            role="tab"
+          >
+            我是私立就業服務機構
+          </button>
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-worker"
+            type="button"
+            role="tab"
+          >
+            我是多元陪伴照顧服務工作者
+          </button>
         </div>
       </nav>
       <div class="tab-content mt-60 lg-mt-40">
@@ -199,7 +217,7 @@
 
       </div>
       <div class="text-center mt-60 lg-mt-50">
-        <h2 class="fs-1 mb-30">有得到解答嗎？</h2>
+        <h2 class="fs-1 mb-30">找不到資訊嗎？</h2>
         <nuxt-link href="/contact" class="btn-four">聯絡我們</nuxt-link>
       </div>
     </div>

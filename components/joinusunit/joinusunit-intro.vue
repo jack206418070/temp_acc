@@ -8,25 +8,33 @@
             <div class="col-lg-12 wow fadeInLeft">
               <h3 class="fw-bold mt-40 mb-20">申請資格</h3>
               <p class="text-lg mb-20">
-                依法設立或登記滿五年之財團法人或非營利社團法人。
+                若規劃委任私立就業服務機構，辦理外籍陪伴照顧工作者之招募、聘僱管理等事宜者，受委任之私立就業服務機構必須符合下列資格：
               </p>
+              <ol class="text-lg mb-35 ps-4">
+                <li>依法設立或登記滿五年之財團法人或非營利社團法人。</li>
+                <li>
+                  若規劃委任私立就業服務機構，辦理外籍陪伴照顧工作者之招募、聘僱管理等事宜者，受委任之私立就業服務機構必須符合下列資格：
+                </li>
+                <ol class="text-lg mb-35 ps-4">
+                  <li>
+                    於申請日前五年內，評鑑成績依規定均屬於A級及績優免評鑑者。
+                  </li>
+                  <li>
+                    於申請日前二年受雇主委任引進或聘僱之家庭幫傭及家庭看護工作外國人，佔該機構當年總引進或聘僱外國人人數二分之一以上。
+                  </li>
+                  <li>
+                    於申請日前二年，無違反就業服務法相關法規，並經裁處確定。
+                  </li>
+                </ol>
+              </ol>
 
-              <h4 class="fw-bold mb-20">受委任之私立就業服務機構資格要求：</h4>
-              <ul class="text-lg mb-35 ps-4">
-                <li>
-                  於申請日前五年內，評鑑成績依規定均屬於A級及績優免評鑑者。
-                </li>
-                <li>
-                  於申請日前二年受雇主委任引進或聘僱之家庭幫傭及家庭看護工作外國人，佔該機構當年總引進或聘僱外國人人數二分之一以上。
-                </li>
-                <li>
-                  於申請日前二年，無違反就業服務法相關法規，並經裁處確定。
-                </li>
-              </ul>
+              <p>
+                →如須瞭解符合以上資格之私立就業服務機構業者之資訊，可洽詢<em>本計畫專案辦公室</em>。
+              </p>
 
               <h3 class="fw-bold mt-40 mb-20">評選流程</h3>
               <p class="text-lg mb-20">
-                有意願且符合資格的機構須自行提出申請計畫書，經勞動部召開專家審查會議評選通過後，始得成為合格之試辦單位。其評選標準包括：
+                有意願且符合資格的單位須在勞動部公告受理期間內自行提出申請表、申請計畫書及檢附相關文件，經勞動部召開評選會議評選合格，再由勞動部視政策需要進行核定後，始得成為本計畫之試辦單位。
               </p>
 
               <ul class="text-lg mb-35 ps-4">
@@ -37,18 +45,15 @@
                 <li>外國籍陪伴照顧服務工作者聘僱管理及訓練、後援規劃（15%）</li>
                 <li>創新作為（20%）</li>
               </ul>
+              <ul>
+                <li>多元陪伴照顧服務試辦計畫</li>
+                <li>試辦單位評選程序</li>
+                <li>填寫試辦單位申請表(僅於公告受理期間開放)</li>
+              </ul>
 
-              <nuxt-link
-                href="#"
-                class="btn-three icon-link mt-15 mb-15 md-mb-40"
-              >
-                <span cl>閱讀更多</span>
-                <img
-                  src="/images/icon/icon_09.svg"
-                  alt=""
-                  class="lazy-img icon ms-1"
-                />
-              </nuxt-link>
+              <p>
+                →如須進一步瞭解如何成為試辦單位之資訊，可洽詢本計畫<em>專案辦公室</em>。
+              </p>
             </div>
           </div>
         </div>
@@ -78,12 +83,13 @@
               <div class="card-style-two vstack tran3s w-100 mt-30">
                 <h4 class="fw-bold mt-30 mb-25">申請辦法(或試辦計畫)</h4>
                 <p class="mb-20">關於申請辦法</p>
-                <nuxt-link
-                  href=""
+                <div
                   class="arrow-btn tran3s mt-auto stretched-link"
+                  data-bs-toggle="modal"
+                  data-bs-target="#planModal"
                 >
                   <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
-                </nuxt-link>
+                </div>
               </div>
             </div>
             <div
@@ -93,21 +99,86 @@
               <div class="card-style-two vstack tran3s w-100 mt-30">
                 <h4 class="fw-bold mt-30 mb-25">填寫申請表單</h4>
                 <p class="mb-20">僅開放申請期間</p>
-                <nuxt-link
-                  href=""
+                <div
                   class="arrow-btn tran3s mt-auto stretched-link"
+                  data-bs-toggle="modal"
+                  data-bs-target="#formModal"
                 >
                   <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
-                </nuxt-link>
+                </div>
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
     </div>
-    <!-- block feature area end -->
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="planModal"
+    tabindex="-1"
+    aria-labelledby="myModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">申請辦法</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>多元陪伴照顧服務試辦計畫 -> 下載連結</li>
+            <li>試辦單位評選程序 -> 下載連結</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-three" data-bs-dismiss="modal">
+            關閉
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="formModal"
+    tabindex="-1"
+    aria-labelledby="myModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">申請表單</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>填寫試辦單位申請表(僅於公告受理期間開放)
+              -> 下載連結</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-three" data-bs-dismiss="modal">
+            關閉
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -132,4 +203,6 @@ const service_data = [
     desc: "提供短期照顧服務,讓家庭照顧者有休息的機會,維持身心健康和照顧品質。",
   },
 ];
+
+const showModal = ref(false);
 </script>

@@ -19,36 +19,28 @@ const menu_data:IMenu[] = [
   {
     id:3,
     link:'/services',
-    title:'服務介紹'
+    title:'我想預約服務'
   },
   {
     id:4,
-    link:'/join-us',
-    title:'我想使用服務'
+    link:'/join-us-unit',
+    title:'趕快成為試辦單位'
   },
   {
     id:5,
-    link:'/join-us-unit',
-    title:'我想成為試辦單位'
-  },
-  {
-    id:6,
     link:'/faq',
     title:'常見問題'
   },
   {
-    id:7,
+    id:6,
     link:'/contact',
     title:'聯絡我們'
   },
-
   {
-    id:8,
+    id:7,
     link:'/links',
     title:'相關網站連結'
   },
-
-
 ]
 
 export default menu_data;

@@ -4,9 +4,8 @@
       title="我想成為試辦單位"
       subtitle="我想成為試辦單位"
       page="我想成為試辦單位"
-      bg_img="/images/media/img_32.jpg"
+      bg_img="/images/banner/banner_1.png"
       :style_2="true"
-      shape="/images/shape/shape_34.svg"
     />
       <!-- breadcrumb area start -->
       <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
@@ -18,8 +17,6 @@
                   </div>
               </div>
           </div>
-          <img src="/images/assets/ils_01.svg" alt="" class="lazy-img shapes shape_01">
-          <img src="/images/assets/ils_02.svg" alt="" class="lazy-img shapes shape_02">
           <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_03">
           <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_04">
       </div>

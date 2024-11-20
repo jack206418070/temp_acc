@@ -13,14 +13,7 @@
           </p>
           <div class="d-inline-flex flex-wrap align-items-center">
             <nuxt-link href="/about-us" class="btn-four mt-15 me-4">了解更多</nuxt-link>
-            <nuxt-link href="/contact" class="btn-three icon-link mt-15">
-              <span>聯繫我們</span>
-              <img
-                src="/images/icon/icon_09.svg"
-                alt="圖標"
-                class="lazy-img icon ms-1"
-              />
-            </nuxt-link>
+            
           </div>
         </div>
         <div class="col-xl-7 col-lg-6 wow fadeInRight">
@@ -28,7 +21,7 @@
             <ul class="style-none">
               <li>提供靈活多樣的照護選擇</li>
               <li>專業照護人員培訓與管理</li>
-              <li>全面的家庭支持系統</li>
+              <li>全面的家庭支援系統</li>
             </ul>
           </div>
         </div>
@@ -39,3 +32,11 @@
 
 <script setup lang="ts"></script>
 
+
+<style>
+
+.text-feature-one .media-list-item {
+  background-image: url('/images/banner/2-1.jpg');
+  background-size: cover;
+}
+</style>

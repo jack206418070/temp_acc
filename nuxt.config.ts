@@ -2,17 +2,15 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: [
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: [
-          'defineStore',
-          ['defineStore', 'definePiniaStore'],
-        ],
-      },
-    ],
-  ],
+  modules: [[
+    '@pinia/nuxt',
+    {
+      autoImports: [
+        'defineStore',
+        ['defineStore', 'definePiniaStore'],
+      ],
+    },
+  ], "@nuxt/icon"],
 
   app: {
     head: {

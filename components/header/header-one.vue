@@ -1,16 +1,19 @@
 <template>
- <header :class="`theme-main-menu menu-overlay menu-style-two sticky-menu ${isSticky?'fixed':''}`">
-	
-			<div class="inner-content gap-fix">
-				<div class="top-header position-relative">
-					<div class="d-flex align-items-center">
-						<div class="logo order-lg-0 w-25">
-							<nuxt-link href="/" class="d-flex align-items-center">
-								<img src="/images/logo/logo_02.png" alt="">
-							</nuxt-link>
-						</div>
-						<!-- logo -->
-						<!-- <div class="right-widget order-lg-3 ms-auto">
+  <header
+    :class="`theme-main-menu menu-overlay menu-style-two sticky-menu ${
+      isSticky ? 'fixed' : ''
+    }`"
+  >
+    <div class="inner-content gap-fix">
+      <div class="top-header position-relative">
+        <div class="d-flex align-items-center">
+          <div class="logo order-lg-0 w-25">
+            <nuxt-link href="/" class="d-flex align-items-center">
+              <img src="/images/logo/logo_02.png" alt="" />
+            </nuxt-link>
+          </div>
+          <!-- logo -->
+          <!-- <div class="right-widget order-lg-3 ms-auto">
 							<ul class="d-flex align-items-center style-none">
 								<li class="d-flex align-items-center login-btn-one me-3 me-md-0">
 											<img src="/images/icon/icon_16.svg" alt="" class="lazy-img icon me-2"> 
@@ -24,25 +27,40 @@
 							</li>
 							</ul>
 						</div> /.right-widget -->
-						<nav class="navbar navbar-expand-lg p0 ms-lg-5 order-lg-2">
-							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
-								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-								aria-label="Toggle navigation">
-								<span></span>
-							</button>
-							<div class="collapse navbar-collapse" id="navbarNav">
-								<header-nav-menus/>
-							</div>
-						</nav>
-					</div>
-				</div> <!--/.top-header-->
-			</div> <!-- /.inner-content -->
-
-		</header>
-			<!-- login modal -->
-			<popup-login/>
-			<!-- login modal -->
-
+          <nav class="navbar navbar-expand-lg p0 ms-lg-5 order-lg-2">
+            <button
+              class="navbar-toggler d-block d-lg-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <header-nav-menus />
+            </div>
+          </nav>
+        </div>
+		
+        
+      </div>
+	  
+      <!--/.top-header-->
+    </div>
+	<div class="d-flex  align-items-center justify-content-end">
+          <form action="#" class="d-flex sidebar-search">
+            <input type="text" placeholder="搜尋.." />
+            <button class="tran3s"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+    <!-- /.inner-content -->
+  </header>
+  <!-- login modal -->
+  <popup-login />
+  <!-- login modal -->
 </template>
 
 <script setup lang="ts">

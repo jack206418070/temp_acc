@@ -5,9 +5,8 @@
       title="最新消息"
       subtitle="計劃最新消息"
       page="最新消息"
-      bg_img="/images/media/img_32.jpg"
+      bg_img="/images/banner/banner_2.png"
       :style_2="true"
-      shape="/images/shape/shape_34.svg"
     />
     <!-- breadcrumb area end -->
 
