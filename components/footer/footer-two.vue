@@ -20,7 +20,7 @@
           <div class="col-xl-2 col-md-3 col-sm-4 mb-20">
             <ul class="footer-nav-link style-none">
               <li><nuxt-link href="/">首頁</nuxt-link></li>
-              <li><nuxt-link href="/about-us">計劃介紹</nuxt-link></li>
+              <li><nuxt-link href="/about-us">計畫介紹</nuxt-link></li>
               <li><nuxt-link href="/news">最新消息</nuxt-link></li>
             </ul>
           </div>
