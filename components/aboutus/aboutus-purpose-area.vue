@@ -92,10 +92,10 @@
       <div class="modal-content" @click.stop>
         <h3>計畫目的詳細說明</h3>
         <div class="modal-body">
-          <p>就業服務法 -> 點擊下載連結</p>
-          <p>藍領審查標準 -> 點擊下載連結</p>
-          <p>多元陪伴照顧服務試 -> 點擊下載連結</p>
-          <p>外國人轉換準則 -> 點擊下載連結</p>
+          <p>就業服務法 -> 下載連結</p>
+          <p>藍領審查標準 -> 下載連結</p>
+          <p>多元陪伴照顧服務試 -> 下載連結</p>
+          <p>外國人轉換準則 -> 下載連結</p>
         </div>
         <button class="btn btn-one " @click="showModal = false">關閉</button>
       </div>
@@ -118,13 +118,13 @@ const service_data = [
   {
     id:2,
     icon:'/images/icon/icon_07.svg',
-    title:'計劃懶人包',
+    title:'計畫懶人包',
     desc:'',
   },
   {
     id:3,
     icon:'/images/icon/icon_08.svg',
-    title:'計劃宣傳品',
+    title:'計畫宣傳品',
     desc:'',
   },
   ]
