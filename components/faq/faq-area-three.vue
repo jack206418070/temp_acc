@@ -67,65 +67,65 @@
             <faq-item
               id="nine"
               title="申請服務需要準備哪些文件？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="ten"
               title="申請流程需要多久時間？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m3"
               title="可以線上申請嗎？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m4"
               title="申請被拒絕後，多久可以再次申請？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m5"
               title="申請通過後，何時可以開始使用服務？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
             <faq-item
               id="seven"
               title="成為試辦單位需要具備哪些條件？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="eight"
               title="試辦計畫的期程多長？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot1"
               title="試辦期間會獲得哪些支援？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot2"
               title="如何申請成為試辦單位？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot3"
               title="試辦單位的評核標準是什麼？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
           </div>
@@ -141,35 +141,35 @@
             <faq-item
               id="nine"
               title="申請服務需要準備哪些文件？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="ten"
               title="申請流程需要多久時間？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m3"
               title="可以線上申請嗎？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m4"
               title="申請被拒絕後，多久可以再次申請？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m5"
               title="申請通過後，何時可以開始使用服務？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
           </div>
@@ -185,31 +185,31 @@
             <faq-item
               id="seven"
               title="成為試辦單位需要具備哪些條件？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="eight"
               title="試辦計畫的期程多長？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot1"
               title="試辦期間會獲得哪些支援？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot2"
               title="如何申請成為試辦單位？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot3"
               title="試辦單位的評核標準是什麼？"
-              desc="此為示意文字,實際文字待更新"
+              desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
           </div>
