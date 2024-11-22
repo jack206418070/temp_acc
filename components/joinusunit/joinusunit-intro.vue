@@ -7,9 +7,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12 wow fadeInLeft">
               <h3 class="fw-bold mt-40 mb-20">申請資格</h3>
-              <p class="text-lg mb-20">
-                若規畫委任私立就業服務機構，辦理外籍陪伴照顧工作者之招募、聘僱管理等事宜者，受委任之私立就業服務機構必須符合下列資格：
-              </p>
+              
               <ol class="text-lg mb-35 ps-4 ch-main-list">
                 <li>依法設立或登記滿五年之財團法人或非營利社團法人。</li>
                 <li>
