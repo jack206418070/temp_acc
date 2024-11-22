@@ -28,28 +28,28 @@ const faq_data = [
   {
     id: "One",
     title: "什麼是多元陪伴照顧服務?",
-    desc: "",
+    desc: "此為示意文字,實際文字待更新",
     isShow: true,
   },
   {
     id: "Two",
     title: "如何收費?",
-    desc: "",
+    desc: "此為示意文字,實際文字待更新",
   },
   {
     id: "Three",
     title: "服務安全嗎?",
-    desc: "",
+    desc: "此為示意文字,實際文字待更新",
   },
   {
     id: "Four",
     title: "試辦單位做什麼?",
-    desc: "",
+    desc: "此為示意文字,實際文字待更新",
   },
   {
     id: "Five",
     title: "如何預約喘息?",
-    desc: "",
+    desc: "此為示意文字,實際文字待更新",
   },
 ]
 
