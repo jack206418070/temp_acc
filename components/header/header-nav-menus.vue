@@ -14,7 +14,7 @@
     >
       <template v-if="menu.dropdown">
         <a
-          class="nav-link dropdown-toggle"
+          class="nav-link dropdown-toggle "
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -27,7 +27,7 @@
           <li v-for="(dm, i) in menu.dropdown_menus" :key="i">
             <nuxt-link
               :href="dm.link"
-              class="dropdown-item"
+              class="dropdown-item "
               :class="{ active: route.path === dm.link }"
             >
               <span>{{ dm.title }}</span>
@@ -67,7 +67,7 @@
         </ul>
       </template>
       <template v-else>
-        <nuxt-link class="nav-link mx-2" :href="menu.link" role="button">
+        <nuxt-link class="nav-link mx-2 " :href="menu.link" role="button">
           {{ menu.title }}
         </nuxt-link>
       </template>
@@ -109,3 +109,15 @@ withDefaults(defineProps<{logo?:string}>(),{
   logo: '/images/logo/logo_02.png'
 })
 </script>
+
+<style  scoped>
+.nav-link{
+  font: 1rem;
+}
+
+@media screen(max-width: 1280px;) {
+  .nav-link{
+    font: 0.75rem;
+  }
+}
+</style>

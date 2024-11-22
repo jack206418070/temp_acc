@@ -1,6 +1,6 @@
 <template>
   <header
-    :class="`theme-main-menu menu-overlay menu-style-two sticky-menu ${
+    :class="`theme-main-menu menu-style-two sticky-menu ${
       isSticky ? 'fixed' : ''
     }`"
   >

@@ -9,7 +9,7 @@ const menu_data:IMenu[] = [
   {
     id:1,
     link:'/about-us',
-    title:'計畫簡介'
+    title:'計畫'
   },
   {
     id:2,
