@@ -5,7 +5,7 @@
   >
     <div class="container position-relative">
       <div v-if="!style_2" class="row align-items-center">
-        <div class="col-lg-7">
+        <div class="col-lg-12">
           <h1 class="hero-heading d-inline-block position-relative">
             <span class="bg-white rounded-4 p-3 ">{{title}}</span>
             

@@ -29,14 +29,13 @@
         </div>
         
     </div>
-    
+    <service-unit-list-area />
     <!-- service area start -->
     <service-area />
 
     <service-targer />
 
     <service-unit-area />
-    <service-unit-list-area />
 
     <service-details-area />
 

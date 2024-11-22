@@ -31,5 +31,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "我要成為試辦單位 ｜ 多元陪伴照顧服務計劃" });
+useSeoMeta({ title: "我要成為試辦單位 ｜ 多元陪伴照顧服務計畫" });
 </script>

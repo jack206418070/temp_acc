@@ -6,10 +6,10 @@
   >
     <div class="inner-content gap-fix">
       <div class="top-header position-relative">
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center  ">
           <div class="logo order-lg-0 w-25">
             <nuxt-link href="/" class="d-flex align-items-center">
-              <img src="/images/logo/logo_02.png" alt="" />
+              <img src="/images/logo/logo_2.png" alt="" />
             </nuxt-link>
           </div>
           <!-- logo -->
@@ -27,7 +27,7 @@
 							</li>
 							</ul>
 						</div> /.right-widget -->
-          <nav class="navbar navbar-expand-lg p0 ms-lg-5 order-lg-2">
+          <nav class="navbar navbar-expand-lg p0 ms-lg-5 order-lg-2 flex-grow-1">
             <button
               class="navbar-toggler d-block d-lg-none"
               type="button"
@@ -39,12 +39,16 @@
             >
               <span></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
               <header-nav-menus />
             </div>
+            <button class="d-flex align-items-center btn-one tran3s me-3">
+              <a class="" href="https://accompany-service-user.vercel.app/login" target="">登入/註冊</a>
+            </button>
           </nav>
         </div>
-		
+        
         
       </div>
 	  

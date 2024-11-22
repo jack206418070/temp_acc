@@ -9,7 +9,7 @@ const menu_data:IMenu[] = [
   {
     id:1,
     link:'/about-us',
-    title:'計劃簡介'
+    title:'計畫簡介'
   },
   {
     id:2,
@@ -24,7 +24,7 @@ const menu_data:IMenu[] = [
   {
     id:4,
     link:'/join-us-unit',
-    title:'趕快成為試辦單位'
+    title:'我想成為試辦單位'
   },
   {
     id:5,

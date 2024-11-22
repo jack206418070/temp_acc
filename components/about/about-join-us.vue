@@ -71,7 +71,7 @@
 
 					<div class="section-subheading sm-mt-40">
 						<p class="text-lg">
-              本計畫依據「長期照顧服務法」及「多元照顧服務中心設立標準及人員配置標準」辦理。
+              本計畫依據「長期照顧服務法」及「多元照顧服務心設立標準及人員配置標準」辦理。
               收費方式依照政府規定的長照服務給付及支付基準執行。
             </p>
 						<nuxt-link href="/service-v1" class="btn-three icon-link">

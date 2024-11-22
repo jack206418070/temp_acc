@@ -7,7 +7,7 @@
 				<div class="position-relative">
 					<div class="title-one text-center mb-40 lg-mb-10">
               <h2>服務內容</h2>
-              <p class="text-lg mt-20">我們致力於提供全面的多元陪伴服務，滿足您的各種需求</p>
+              
           </div>
 					<div class="row">
 						
@@ -45,7 +45,7 @@ const service_data = [
   {
     id:1,
     icon:'/images/icon/icon_06.svg',
-    title:'長時間陪伴',
+    title:'多元陪伴',
     desc:'單次服務時數至少4小時以上',
   },
   {

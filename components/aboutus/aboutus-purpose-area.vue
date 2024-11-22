@@ -7,7 +7,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12 wow fadeInLeft">
               <div class="title-one">
-                <h2>計畫目的</h2>
+                <h2>計畫內容簡介</h2>
               </div>
               <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
                 勞動部有鑑於民眾常有臨時性照顧、短期照顧、急性後期照護等服務人力需求，自113年至115年推動「多元陪伴照顧服務試辦計畫」，由具備照顧服務經驗並依法設立滿五年之財團法人或非營利社團法人，並通過公益性、專業度與合理收費等評選標準後成為試辦單位後，得聘僱及培訓本國籍及外國籍之多元陪伴照顧服務工作者至申請服務家庭，提供基本日常生活照顧、陪同外出、陪同就醫、安全陪伴或其他經勞動部核定之多元陪伴照顧服務。「陪伴照顧服務工作者」之給薪與休息時間，依勞動基準法規定辦理。
@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="title-one text-center text-md-start mb-30 sm-mb-10">
-                <h2>計畫架構</h2>
+                <h2>了解更多</h2>
               </div>
               <!-- /.title-one -->
             </div>
@@ -68,19 +68,7 @@
             </div>
           </div>
 
-          <div class="section-subheading sm-mt-40">
-            <p class="text-lg">
-              本計畫依據「長期照顧服務法」及「多元照顧服務中心設立標準及人員配置標準」辦理。
-            </p>
-            <nuxt-link href="/service-v1" class="btn-three icon-link">
-              <span>了解更多服務</span>
-              <img
-                src="/images/icon/icon_09.svg"
-                alt=""
-                class="lazy-img icon ms-1"
-              />
-            </nuxt-link>
-          </div>
+        
           <!-- /.section-subheading -->
         </div>
       </div>
@@ -90,7 +78,7 @@
     <!-- 新增 Modal 組件 -->
     <div v-if="showModal" class="modal-overlay" @click="showModal = false">
       <div class="modal-content" @click.stop>
-        <h3>計畫目的詳細說明</h3>
+        <h3>計畫內容簡介詳細說明</h3>
         <div class="modal-body">
           <p>就業服務法 -> 下載連結</p>
           <p>藍領審查標準 -> 下載連結</p>
@@ -118,13 +106,13 @@ const service_data = [
   {
     id:2,
     icon:'/images/icon/icon_07.svg',
-    title:'計畫懶人包',
+    title:'懶人包',
     desc:'',
   },
   {
     id:3,
     icon:'/images/icon/icon_08.svg',
-    title:'計畫宣傳品',
+    title:'宣傳品',
     desc:'',
   },
   ]

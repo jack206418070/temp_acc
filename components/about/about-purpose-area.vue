@@ -7,7 +7,7 @@
           <div class="row align-items-center">
             <div class="col-lg-5 wow fadeInLeft">
               <div class="title-one">
-                <h2>計畫目的</h2>
+                <h2>計畫內容簡介</h2>
               </div>
               <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
                 多元陪伴照顧服務計畫旨在提供全面的照顧支援,滿足不同族群的需求。
@@ -49,7 +49,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="title-one text-center text-md-start mb-30 sm-mb-10">
-								<h2>計畫架構</h2>
+								<h2>了解更多</h2>
 							</div>
 							<!-- /.title-one -->
 						</div>
@@ -68,9 +68,7 @@
 					</div>
 
 					<div class="section-subheading sm-mt-40">
-						<p class="text-lg">
-              本計畫依據「長期照顧服務法」及「多元照顧服務中心設立標準及人員配置標準」辦理。
-            </p>
+						
 						<nuxt-link href="/service-v1" class="btn-three icon-link">
 							<span>了解更多服務</span>
 							<img src="/images/icon/icon_09.svg" alt="" class="lazy-img icon ms-1">

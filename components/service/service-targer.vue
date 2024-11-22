@@ -8,7 +8,7 @@
         <!-- 流程示意圖區塊 -->
         <div class="row process-diagram m-auto">
         
-          <div class="col-md-2" v-for="(item, index) in serviceSteps" :key="index">
+          <div class="col-md" v-for="(item, index) in serviceSteps" :key="index">
             <!-- 上方步驟區塊 -->
             <div class="step-item text-center mb-4">
               <div class="step-number">{{ index + 1 }}</div>
@@ -64,11 +64,7 @@ const serviceSteps: ServiceStep[] = [
     description: '經長期照顧管理中心評估屬長期照顧需要等級第二級至第八級，有使用本計畫服務之需求。',
     note: '長期照顧需求評估結果通知書或長照特約單位開立載有照顧組合名稱之收據。'
   },
-  {
-    title: '',
-    description: '其他經勞動部指定之服務對象。',
-    note: '經勞動部認定可佐證具照顧需求之文件。'
-  }
+  
 ];
 </script>
 
@@ -127,7 +123,7 @@ const serviceSteps: ServiceStep[] = [
 }
 
 /* 只顯示非最後一個元素的連接線 */
-.col-md-2:not(:last-child) .step-item::after {
+.col-md:not(:last-child) .step-item::after {
   display: block;
 }
 

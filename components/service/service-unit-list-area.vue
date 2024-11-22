@@ -55,6 +55,7 @@ const tabs = [
   { id: "north", name: "北區" },
   { id: "central", name: "中區" },
   { id: "south", name: "南區" },
+  { id: "east", name: "東區" },
 ];
 
 const currentTab = ref("north");
@@ -110,6 +111,16 @@ const vendorData = [
     address: "台中市北區學習路567號",
     description: "專為銀髮族設計的課程，持續學習、豐富人生。",
     rating: 3,
+  },
+  {
+    id: 6,
+    name: "大山樂活中心",
+    image: "/images/2021-12-23.jpg",
+    category: "教育學習",
+    area: "east",
+    address: "花蓮市美倫路87號",
+    description: "專為銀髮族設計的課程，持續學習、豐富人生。",
+    rating: 4,
   },
 ];
 

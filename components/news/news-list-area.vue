@@ -17,7 +17,6 @@
               </nuxt-link>
             </figure>
             <div class="post-data">
-              <div class="post-info">{{blog.post_info}}</div>
               <div class="d-flex justify-content-between align-items-center flex-wrap">
                 <nuxt-link :href="`/news/${blog.id}`" class="blog-title">
                   <h4>{{blog.title}}</h4>

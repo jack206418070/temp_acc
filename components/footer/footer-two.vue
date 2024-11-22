@@ -10,7 +10,7 @@
               </nuxt-link>
             </div> 
             <!-- logo -->
-            <p class="text-white lh-sm mb-35">本平台由勞動部勞動力發展署主辦，依政府採購法公開評選方式產生之承辦單位共同建置。參與本專案與是否參與本計畫研究並無關係，不影響使用服務的任何權益。</p>
+            <p class="text-white lh-sm mb-35">本平台由勞動部勞動力發展署主辦，依政府採購法公開評選方式產生之承辦單位共同建置。參與本計畫與是否參與本計畫研究並無關係，不影響使用服務的任何權益。</p>
             <ul class="style-none d-flex align-items-center social-icon">
               <li><a href="#"><i class="bi bi-facebook"></i></a></li>
               <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
@@ -27,7 +27,7 @@
           <div class="col-xl-2 col-md-3 col-sm-4 mb-20">
             <ul class="footer-nav-link style-none">
               <li><nuxt-link href="/services">我想預約服務</nuxt-link></li>
-              <li><nuxt-link href="/join-us-unit">趕快成為試辦單位</nuxt-link></li>
+              <li><nuxt-link href="/join-us-unit">我想成為試辦單位</nuxt-link></li>
              
             </ul>
           </div>

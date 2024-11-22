@@ -3,7 +3,7 @@
     <!-- breadcrumb area start -->
     <breadcrumb-one
       title="最新消息"
-      subtitle="計劃最新消息"
+      subtitle="計畫最新消息"
       page="最新消息"
       bg_img="/images/banner/banner_2.png"
       :style_2="true"
