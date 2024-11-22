@@ -35,7 +35,6 @@
 
     <service-targer />
 
-    <service-unit-area />
 
     <service-details-area />
 
