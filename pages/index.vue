@@ -5,7 +5,7 @@
     <div class="position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white">
       <div class="row align-items-center">
         <div class="col-md-6 m-auto">
-          <img class="w-50 m-auto" src="/images/logo/logo_02.png" alt="" />
+          <img class="w-50 m-auto" src="/images/logo/logo_2.png" alt="" />
         </div>
       </div>
     </div>
