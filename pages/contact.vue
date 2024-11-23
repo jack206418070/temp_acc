@@ -40,7 +40,7 @@
                     <div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
                       <img src="/images/icon/icon_91.svg" alt="" class="lazy-img"/>
                     </div>
-                    <h5 class="title"> 若您已是試辦單位或想成為試辦單位，請透過本計畫專案辦公室以下諮詢</h5>
+                    <h5 class="title"> 若您已是試辦單位或想成為試辦單位<br> 請透過本計畫專案辦公室以下諮詢</h5>
                     <p>
                     <div class="row">
                       <ol  class="col-2 text-center m-auto">
