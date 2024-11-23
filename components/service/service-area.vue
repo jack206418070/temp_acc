@@ -52,7 +52,7 @@ const service_data = [
     id:2,
     icon:'/images/icon/icon_07.svg',
     title:'基本日常生活照顧',
-    desc:'提供日常生活協助，保障使用者健康與生活品質。',
+    desc:'提供日常生活協助，保障被服務民眾健康與生活品質。',
   },
   {
     id:3,
