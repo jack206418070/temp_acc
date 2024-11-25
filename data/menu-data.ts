@@ -19,12 +19,12 @@ const menu_data:IMenu[] = [
   {
     id:3,
     link:'/services',
-    title:'我想預約服務'
+    title:'預約服務'
   },
   {
     id:4,
     link:'/join-us-unit',
-    title:'我想成為試辦單位'
+    title:'成為試辦單位'
   },
   {
     id:5,
