@@ -49,7 +49,7 @@
             
           </div>
           <div class="col-lg-7 order-lg-first mb-15">
-            
+            <div class="d-xl-flex align-items-center">
               <div class="copyright me-xl-4 lg-mt-10 order-lg-first">Copyright @{{new Date().getFullYear()}} 勞動力發展署版權所有，保留所有權利。</div>
             </div>
           </div>
