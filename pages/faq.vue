@@ -3,7 +3,6 @@
     <!-- breadcrumb area start -->
     <breadcrumb-two
         title="常見問題"
-        subtitle=""
         page="常見問題"
         col="col-xl-7"
       />
