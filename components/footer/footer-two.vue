@@ -10,7 +10,7 @@
               </nuxt-link>
             </div> 
             <!-- logo -->
-            <p class="text-white lh-sm mb-35">本平台由勞動部勞動力發展署主辦，依政府採購法公開評選方式產生之承辦單位共同建置。參與本計畫與是否參與本計畫研究並無關係，不影響使用服務的任何權益。</p>
+            <p class="text-white lh-sm mb-35">勞動部勞動力發展署<bn> 24219 新北市新莊區中平路439號南棟4樓 <bn> (02)8995-6000 <bn>服務時間：週一至週五 08:30~12:30，13:30~17:30 </p>
             <ul class="style-none d-flex align-items-center social-icon">
               <li><a href="#"><i class="bi bi-facebook"></i></a></li>
               <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
