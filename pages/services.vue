@@ -2,7 +2,7 @@
   <div>
     <!-- breadcrumb area start -->
     <breadcrumb-one
-      title="服務介紹"
+      title="預約指引"
       subtitle="提供全面的照顧解決方案,滿足不同族群的多元需求"
       page="服務介紹"
       bg_img="/images/banner/banner_1.png"
