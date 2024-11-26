@@ -65,7 +65,7 @@ const menu_data:IMenu[] = [
       },
       {
         link:'/services',
-        title:'試辦單位簡介(目前頁面)',
+        title:'試辦單位簡介',
       },
       {
         link:'/',
