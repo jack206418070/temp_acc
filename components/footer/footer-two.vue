@@ -12,11 +12,6 @@
             <!-- logo -->
             <p class="text-white lh-sm mb-35">勞動部勞動力發展署<br> 地址：24219新北市新莊區中平路439號南棟4樓 <br> 電話：(02)8995-6000 <br>服務時間：週一至週五上午8時30分至12時30分，下午1時30分至5時30分 </p>
             <p class="text-white lh-sm mb-35">多元陪伴照顧服務專案辦公室 <br>地址：114004臺北市內湖區內湖路一段427號2樓 <br> 電話：(02)7756-2580 <br>服務時間：週一至週五上午8時30分至12時30分，下午1時30分至5時30分</p>
-            <ul class="style-none d-flex align-items-center social-icon">
-              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-              <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-              <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-            </ul>
           </div>
           <div class="col-xl-2 col-md-3 col-sm-4 mb-20">
             <ul class="footer-nav-link style-none">

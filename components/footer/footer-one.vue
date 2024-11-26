@@ -12,11 +12,6 @@
               </div> 
               <!-- logo -->
               <p class="lh-sm mb-40 md-mb-20">2190 Urban Terrace, Mirpur,  link Licensed in 50 states.</p>
-              <ul class="style-none d-flex align-items-center social-icon">
-                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-                <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-              </ul>
             </div>
             <div class="col-lg-2 col-sm-4 mb-20">
               <h5 class="footer-title">Links</h5>
