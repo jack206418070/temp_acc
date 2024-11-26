@@ -4,27 +4,90 @@ const menu_data:IMenu[] = [
   {
     id:0,
     link:'/',
-    title:'首頁'
+    title:'首頁',
   },
   {
     id:1,
     link:'/about-us',
-    title:'計畫簡介'
+    title:'計畫簡介',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/',
+        title:'多元陪伴法規',
+        sub_menus:[
+          {link:'/',title:'就業服務法'},
+          {link:'/',title:'藍領審查標準'},
+          {link:'/',title:'多元陪伴照顧服務試辦計劃'},
+         
+        ],
+      },
+      {
+        link:'/',
+        title:'懶人包',
+      },
+      {
+        link:'/',
+        title:'宣傳品',
+      }
+    ],
+    
   },
   {
     id:2,
     link:'/news',
-    title:'最新消息'
+    title:'最新消息',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/',
+        title:'公告/新聞稿',
+      },
+      {
+        link:'/',
+        title:'新聞報導',
+      },
+      {
+        link:'/',
+        title:'使用心得分享',
+      },
+    ]
   },
   {
     id:3,
     link:'/services',
-    title:'預約服務'
+    title:'預約服務',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/',
+        title:'預約指引',
+      },
+      {
+        link:'/services',
+        title:'試辦單位簡介(目前頁面)',
+      },
+      {
+        link:'/',
+        title:'我要預約',
+      },
+    ]
   },
   {
     id:4,
     link:'/join-us-unit',
-    title:'成為試辦單位'
+    title:'成為試辦單位',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/join-us-unit',
+        title:'申請資格與評選方式',
+      },
+      {
+        link:'/',
+        title:'填寫申請表',
+      },
+    ]
   },
   {
     id:5,
@@ -41,6 +104,7 @@ const menu_data:IMenu[] = [
     link:'/links',
     title:'相關網站連結'
   },
+  
 ]
 
 export default menu_data;

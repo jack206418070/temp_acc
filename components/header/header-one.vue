@@ -40,7 +40,7 @@
               <span></span>
             </button>
             
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse " id="navbarNav">
               <header-nav-menus />
             </div>
             <button class="d-flex align-items-center btn-one tran3s me-3">

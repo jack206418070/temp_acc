@@ -15,4 +15,11 @@ export interface IMenu {
         title: string;
       }[]
   }[];
+  sub_menus?:{
+    id:number;
+    menus:{
+      link: string;
+      title: string;
+    }[]
+}[];
 }

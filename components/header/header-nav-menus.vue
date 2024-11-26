@@ -1,5 +1,5 @@
 <template>
-  <ul class="navbar-nav align-items-lg-center ">
+  <ul class="navbar-nav align-items-lg-center  justify-content-between w-100">
     <li class="d-block d-lg-none">
       <div class="logo">
         <nuxt-link href="/" class="d-block">
@@ -24,7 +24,7 @@
           {{ menu.title }}
         </a>
         <ul class="dropdown-menu">
-          <li v-for="(dm, i) in menu.dropdown_menus" :key="i">
+          <li class="dropdown" v-for="(dm, i) in menu.dropdown_menus" :key="i">
             <nuxt-link
               :href="dm.link"
               class="dropdown-item "
@@ -32,7 +32,17 @@
             >
               <span>{{ dm.title }}</span>
             </nuxt-link>
+            <ul class="dropdown-menu" v-if="dm.sub_menus && dm.sub_menus.length">
+              <li v-for="(sub, j) in dm.sub_menus" :key="j">
+                <nuxt-link :href="sub.link" class="dropdown-item">
+                  <span>{{ sub.title }}</span>
+                </nuxt-link>
+              </li>
+            </ul>
+            
           </li>
+          
+          
         </ul>
       </template>
       <template v-else-if="menu.mega_menu">
