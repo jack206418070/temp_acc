@@ -8,7 +8,7 @@ const menu_data:IMenu[] = [
   },
   {
     id:1,
-    link:'/about-us',
+    link:'https://accompany-web-site.vercel.app/about-us',
     title:'計畫簡介',
     dropdown:true,
     dropdown_menus:[
