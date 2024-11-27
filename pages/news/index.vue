@@ -67,7 +67,7 @@ body {
     }
 
     .title a {
-      color: #24a69f;
+      color: #121212;
       text-decoration: none;
     }
 
