@@ -33,7 +33,7 @@ body {
 
     h1 {
       text-align: left;
-      color: #198754;
+      color: #20c997;
       padding-left: 4rem;
     }
 
@@ -67,7 +67,7 @@ body {
     }
 
     .title a {
-      color: #e45d4a;
+      color: #24a69f;
       text-decoration: none;
     }
 
