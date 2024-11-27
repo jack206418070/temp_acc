@@ -50,7 +50,7 @@ body {
     }
 
     th {
-      background-color: #d1e7dd;
+      background-color: #8fa69a;
       color: white;
     }
 
@@ -59,11 +59,11 @@ body {
     }
 
     tr:nth-child(odd) {
-      background-color: #ffe4e1;
+      background-color: #b8d1c4;
     }
 
     tr:hover {
-      background-color: #fce0dd;
+      background-color: #b8d1c4;
     }
 
     .title a {
