@@ -5,7 +5,7 @@
       <p>          </p>
     </div>
  <div>
-  <h1>預約指引</h1>
+  <h2>預約指引</h2>
   <div class="grid-container">
         <div class="grid-item">內容待提供</div>
         <div class="grid-item">內容待提供</div>
