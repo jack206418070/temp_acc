@@ -69,6 +69,11 @@ const serviceSteps: ServiceStep[] = [
 </script>
 
 <style scoped>
+h2 {
+  text-align: left;
+  margin-left: 5rem;
+}
+
 .process-diagram {
   background: #fff;
   padding: 2rem;

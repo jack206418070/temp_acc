@@ -1,32 +1,8 @@
 <template>
  <div>
-    <breadcrumb-one
-      title="我想成為試辦單位"
-      subtitle="我想成為試辦單位"
-      page="我想成為試辦單位"
-      bg_img="/images/banner/banner_1.png"
-      
-    />
-      <!-- breadcrumb area start -->
-      <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
-          <div class="container position-relative">
-              <div class="row">
-                  <div class="col-xl-8 col-lg-9 m-auto">
-                      <h1 class="hero-heading">我想成為試辦單位</h1>
-                      <p class="text-lg">如何加入成為試辦單位？</p>
-                  </div>
-              </div>
-          </div>
-          <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_03">
-          <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_04">
-      </div>
-      <!-- breadcrumb area end -->
-
       <!-- project details v2 area start -->
       <joinusunit-intro />
       <!-- project details v2 area end -->
-
-     
 </div>
 </template>
 

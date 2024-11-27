@@ -19,13 +19,13 @@
                 <div class="col-md-6">
                   <div class="address-block-one text-center mb-40 wow fadeInUp">
                     <div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
-                      <img src="/images/icon/icon_90.svg" alt="" class="lazy-img"/>
+                      <img src="public/images/icon/icon_90.svg" alt="" class="lazy-img"/>
                     </div>
-                    <h5 class="title">若您是一般民眾，請透過以下諮詢管道 </h5>
+                    <h5 class="title">一般民眾 </h5>
                     <div class="row">
                         <ol  class="col-6 text-start m-auto">
-                          <li><a href="#contact-form" class="d-block mb-2">試辦單位電話/電子信箱</a></li>
-                          <li><a  href="tel:1955" class="d-block mb-2">請撥打 1955 </a></li>
+                          <li><a href="#contact-form" class="d-block mb-2">各區試辦單位(請點選進入預約服務試辦單位地區區段)</a></li>
+                          <li><a  href="tel:1955" class="d-block mb-2">請撥打1955諮詢專線 </a></li>
                           <li><a href="/trial-units" class="d-block">官網留言信箱</a></li>
                         </ol>
                       
@@ -38,14 +38,14 @@
                 <div class="col-md-6">
                   <div class="address-block-one text-center mb-40 wow fadeInUp">
                     <div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
-                      <img src="/images/icon/icon_91.svg" alt="" class="lazy-img"/>
+                      <img src="public/images/icon/icon_91.svg" alt="" class="lazy-img"/>
                     </div>
-                    <h5 class="title"> 若您已是試辦單位或想成為試辦單位<br> 請透過本計畫專案辦公室以下諮詢</h5>
+                    <h5 class="title"> 若您已是試辦單位或想成為試辦單位，<br> 請透過以下諮詢管道連絡本計畫專案辦公室</h5>
                     <p>
                     <div class="row">
                       <ol  class="col-2 text-center m-auto">
-                        <li><a  class="d-block mb-2">諮詢專線</a></li>
-                        <li><a  class="d-block mb-2">電子信箱 </a></li>
+                        <li><a  class="d-block mb-2">專線：02-7756-2580</a></li>
+                        <li><a  class="d-block mb-2">Email：das@slsc.org.tw </a></li>
                       </ol>
                     </div>
                     

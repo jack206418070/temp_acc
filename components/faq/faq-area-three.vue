@@ -226,3 +226,29 @@
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+.faq-section-three {
+  padding-top: 60px; /* 原本的 120px 改小一點 */
+  padding-bottom: 60px; /* 原本的 150px 改小一點 */
+}
+
+.nav-tabs {
+  margin-top: 20px; /* 減少上方間距 */
+}
+
+.nav-tabs .nav-link {
+  padding: 10px 15px; /* 如果需要，可以進一步減小按鈕的內部填充 */
+}
+
+.faq-section-three .nav-tabs .nav-link.active {
+  background-color: #626161 !important; /* 使用 !important 确保覆盖默认样式 */
+  color: #fff !important;
+  border-color: #626161 !important;
+}
+
+.container {
+  max-width: 1200px; /* 如果需要進一步縮小整體寬度，這裡可以調整 */
+}
+
+</style>

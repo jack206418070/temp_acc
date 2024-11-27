@@ -3,6 +3,7 @@
     <!-- text feature area start -->
     <div class="text-feature-one mt-150 lg-mt-80">
       <div class="container">
+        <h2>如何成為試辦單位</h2>
         <div class="line-wrapper position-relative">
           <div class="row align-items-center">
             <div class="col-lg-12 wow fadeInLeft">
@@ -27,7 +28,7 @@
               </ol>
 
               <p>
-                →如須瞭解符合以上資格之私立就業服務機構業者之資訊，可洽詢<em>本計畫專案辦公室</em>。
+                →如須瞭解符合以上資格之私立就業服務機構業者之資訊，可洽詢<em><a href="/contact">本計畫專案辦公室</a></em>。
               </p>
 
               <h3 class="fw-bold mt-40 mb-20">評選流程</h3>
@@ -52,7 +53,7 @@
               </ul>
 
               <p>
-                →如須進一步瞭解如何成為試辦單位之資訊，可洽詢本計畫<em>專案辦公室</em>。
+                →如須進一步瞭解如何成為試辦單位之資訊，可洽詢本計畫<em><a href="/contact">本計畫專案辦公室</a></em>。
               </p>
             </div>
           </div>
@@ -61,57 +62,7 @@
     </div>
     <!-- text feature area end -->
 
-    <!-- block feature area start -->
-    <div
-      class="block-feature-one position-relative light-bg-deep mt-50 lg-mt-80 pt-120 lg-pt-60 pb-130 lg-pb-60"
-    >
-      <div class="container">
-        <div class="position-relative">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="title-one text-center text-md-start mb-30 sm-mb-10">
-                <h2>我想成為試辦單位</h2>
-              </div>
-              <!-- /.title-one -->
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div
-              class="col-lg-4 col-md-6 d-flex wow fadeInUp"
-              data-wow-delay="`0.3s`"
-            >
-              <div class="card-style-two vstack tran3s w-100 mt-30">
-                <h4 class="fw-bold mt-30 mb-25">申請辦法(或試辦計畫)</h4>
-                <p class="mb-20">關於申請辦法</p>
-                <div
-                  class="arrow-btn tran3s mt-auto stretched-link"
-                  data-bs-toggle="modal"
-                  data-bs-target="#planModal"
-                >
-                  <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-md-6 d-flex wow fadeInUp"
-              data-wow-delay="`0.3s`"
-            >
-              <div class="card-style-two vstack tran3s w-100 mt-30">
-                <h4 class="fw-bold mt-30 mb-25">填寫申請表單</h4>
-                <p class="mb-20">僅開放申請期間</p>
-                <div
-                  class="arrow-btn tran3s mt-auto stretched-link"
-                  data-bs-toggle="modal"
-                  data-bs-target="#formModal"
-                >
-                  <img src="/images/icon/icon_09.svg" alt="" class="lazy-img" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
 
   <!-- Modal -->

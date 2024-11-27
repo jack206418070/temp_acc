@@ -2,18 +2,6 @@
   <div>
     <hero-banner-empty-index />
 
-    <div class="position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white">
-      <div class="row align-items-center">
-        <div class="col-md-6 m-auto">
-          <img class="w-50 m-auto" src="/images/logo/logo_2.png" alt="" />
-        </div>
-      </div>
-    </div>
-
-    <block-feature-index />
-    <!-- 區塊特徵區域結束 -->
-    <service-targer />
-
     <div
       class="container bg-white position-relative "
     >
@@ -34,11 +22,11 @@
     </div>
 
     <!-- 文字特徵區域開始 -->
-    <text-feature-index />
+    <!-- <text-feature-index /> -->
     <!-- 文字特徵區域結束 -->
 
     <!-- 常見問題區域開始 -->
-    <faq-area-index />
+    <!-- <faq-area-index /> -->
     <!-- 常見問題區域結束 -->
   </div>
 </template>

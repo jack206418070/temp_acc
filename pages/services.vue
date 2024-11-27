@@ -1,16 +1,6 @@
 <template>
   <div>
-    <!-- breadcrumb area start -->
-    <breadcrumb-one
-      title="預約服務"
-      subtitle="提供全面的照顧解決方案,滿足不同族群的多元需求"
-      page="服務介紹"
-      bg_img="/images/banner/banner_1.png"
-      :style_2="true"
-      cls="me-xxl-4 me-lg-5"
-    />
-    <!-- breadcrumb area end -->
-
+    <service-details-area />
      <!-- breadcrumb area start -->
      <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
         <div class="container position-relative">
@@ -30,12 +20,6 @@
     </div>
     <service-unit-list-area />
     <!-- service area start -->
-    <service-area />
-
-    <service-targer />
-
-
-    <service-details-area />
 
   </div>
 </template>

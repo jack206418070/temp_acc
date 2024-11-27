@@ -1,17 +1,15 @@
 <template>
  <div>
   <!-- breadcrumb area start -->
-  <breadcrumb-one
+  <!-- <breadcrumb-one
     title="關於多元陪伴照顧服務試辦計畫"
     subtitle="致力於提供高品質的多元陪伴照顧服務,打造友善的高齡社會"
     page="關於多元陪伴照顧服務試辦計畫"
-    bg_img="/images/banner/banner_2.png"
     cls="me-xxl-4 me-lg-5"
-  />
+  /> -->
   <!-- breadcrumb area end -->
 
   <!-- 計畫簡介區塊 -->
-  <aboutus-purpose-area />
 
   <service-targer />  
 

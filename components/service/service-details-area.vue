@@ -5,7 +5,7 @@
             <div class="">
 				<div class="details-meta ps-xxl-5 ps-xl-3">
 					<div class="reminder-block">
-						<h3 class="reminder-title mb-4">給聰明雇主的小叮嚀</h3>
+						<h3 class="reminder-title mb-4">給服務使用者的小叮嚀</h3>
 						<p class="reminder-intro mb-4">
 							面對「陪伴照顧服務工作者」，提醒您注意以下事項，相信有助於勞顧溝通與照顧品質：
 						</p>

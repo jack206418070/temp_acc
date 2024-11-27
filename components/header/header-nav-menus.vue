@@ -125,9 +125,9 @@ withDefaults(defineProps<{logo?:string}>(),{
   font: 1rem;
 }
 
-@media screen(max-width: 1280px;) {
-  .nav-link{
-    font: 0.75rem;
+@media screen and (max-width: 1280px) {
+  .nav-link {
+    font-size: 0.75rem;
   }
 }
 </style>
