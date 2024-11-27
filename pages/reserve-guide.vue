@@ -27,7 +27,7 @@ h1, h2 {
 }
 
 .grid-container {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
