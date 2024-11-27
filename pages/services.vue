@@ -1,6 +1,5 @@
 <template>
   <div>
-    <service-details-area />
      <!-- breadcrumb area start -->
      <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
         <div class="container position-relative">
@@ -19,9 +18,9 @@
         
     </div>
     <service-unit-list-area />
-    <!-- service area start -->
     <service-details-area />
-    
+    <!-- service area start -->
+        
   </div>
 </template>
 
