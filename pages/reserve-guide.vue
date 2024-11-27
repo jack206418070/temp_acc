@@ -1,4 +1,9 @@
 <template>
+  <!-- 空出的小區段 -->
+    <div class="spacer-section">
+      <!-- 可插入內容，或保持空白 -->
+      <p>          </p>
+    </div>
  <div>
   <h1>預約指引</h1>
   <div class="grid-container">
@@ -24,6 +29,8 @@ h1, h2 {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     max-width: 1200px;
     width: 100%;
