@@ -12,13 +12,8 @@
     <tbody>
       <tr>
         <td>2024/11/15</td>
-        <td><a href="/announcement">公告/新聞稿</a></td>
+        <td><a href="/announcement">最新消息</a></td>
         <td class="title"><a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3932da4d501932dd7e96609eb">勞動部今辦「多元陪伴照顧服務試辦計畫」試辦單位說明會 社福團體反應熱烈！</a></td>
-      </tr>
-      <tr>
-        <td>2024/11/18</td>
-        <td><a href="/announcement">公告/新聞稿</a></td>
-        <td class="title"><a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3933bb88301933e4e60030906">公告多元陪伴照顧服務試辦計畫第一階段試辦單位申請期間自即日起至11月28日截止。</a></td>
       </tr>
     </tbody>
   </table>
