@@ -33,7 +33,7 @@ body {
 
     h1 {
       text-align: left;
-      color: #20c997;
+      color: #8fa69a;
       padding-left: 4rem;
     }
 
