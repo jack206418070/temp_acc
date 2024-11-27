@@ -1,43 +1,82 @@
 <template>
+  <!-- 空出的小區段 -->
+    <div class="spacer-section">
+      <!-- 可插入內容，或保持空白 -->
+      <p>          </p>
+    </div>
   <div>
-    <h1>公告/新聞稿</h1>
-    <hr/><br/>
-    <p>📣活動訊息：公告多元陪伴照顧服務試辦計畫第一階段試辦單位申請期間自即日起至11月28日截止</p><br/>
-    <p>📢內容：</p><br/>
-    <p>依據：外國人從事就業服務法第四十六條第一項第八款至第十一款 工作資格及審查標準第56條之2規定及多元陪伴照顧服務試辦計畫。 </p><br/>
-    <p>📢公告事項：</p><br/>
-    <p>一、申請資格：依法設立或登記滿五年之財團法人或非營利社團 法人。 </p><br/>
-    <p>二、受理申請期間：自即日起至113年11月28日（星期四）止。</p><br/>
-    <p>三、申請文件：</p>
-    <p>(一)申請表。 </p>
-    <p>(二)多元陪伴照顧服務計畫書。 </p>
-    <p>(三)法人或團體組織章程、依法設立或登記之證書或許可影本 或目的事業主管機關立案證明文件，並檢具相關服務經驗 或實績之證明文件。 </p>
-    <p>(四)規劃擬委任私立就業服務機構者，須檢附擬委任之私立就業服務機構之下列文件：</p>
-    <p>１、許可證影本。 </p>
-    <p>２、申請日前五年內，評鑑成績依規定均屬於A級或績優免 評鑑證明。 </p>
-    <p>３、申請日前二年引進外國人人數及類別比率證明文件。 </p>
-    <p>(五)專業服務管理團隊成員所具備之醫護、照顧服務員管理、 外國人雙語翻譯與住宿管理、財務、經營管理及資訊能力 等專業之學、經歷證明文件。</p><br/>
-    <p> 四、申請方式與核定原則：</p>
-    <p> (一)由符合申請資格之單位於申請期限內，將前點所列之文 件，以掛號方式郵寄至本部以下指定之受理單位，並以原 寄郵局郵戳為憑，逾期不予受理。</p>
-    <p>(二)申請文件如有不齊待補正之情形者，須於本部通知之期限 內補正，如逾期未補正，且檢具之文件未符合本前點規定 者，不得參與本次之評選。</p>
-    <p>(三)本部將組成評選小組召開評選會議，按各申請案送達時間之順序，就申請單位所提報多元陪伴照顧服務計畫書及評選會議答詢內容綜合評分，予以優劣排序，總分達七十分 者為合格。</p>
-    <p>(四)由本部視政策需要，自合格之申請單位依序核定為試辦單 位，並以書面通知結果。 </p><br/>
-    <p>五、受理單位及地址：多元陪伴照顧服務試辦計畫辦公室（地址：114台北市內湖區內湖路一段427號2樓）。</p><br/>
-    <p>六、評選結果公布：預定於113年12月20日前公布於勞動部勞動力發展署外國人勞動權益網站。</p>
+    <h1>最新消息</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>發布日期</th>
+        <th>類別</th>
+        <th>標題</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2024/11/15</td>
+        <td><a href="/announcement">公告/新聞稿</a></td>
+        <td class="title"><a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3933bb88301933e4e60030906">活動訊息：公告多元陪伴照顧服務試辦計畫第一階段試辦單位申請期間自即日起至11月28日截止</a></td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "公告/新聞稿 ｜ 多元陪伴照顧服務計畫" });
+useSeoMeta({ title: "新聞報導 ｜ 多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>
-h3, p{
-  padding-left: 2rem;
-}
+body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #dee2e6;
+    }
 
-h1 {
-  text-align: left;
-  padding-left: 2rem;
-}
+    h1 {
+      text-align: left;
+      color: #8fa69a;
+      padding-left: 4rem;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #8fa69a;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #b8d1c4;
+    }
+
+    tr:hover {
+      background-color: #b8d1c4;
+    }
+
+    .title a {
+      color: #121212;
+      text-decoration: none;
+    }
+
+    .title a:hover {
+      text-decoration: underline;
+    }
 </style>
