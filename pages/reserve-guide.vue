@@ -1,35 +1,14 @@
 <template>
  <div>
   <h1>預約指引</h1>
-  <div class="tab-content mt-60 lg-mt-40 w-75 mx-auto">
-  <div class="content-grid">
-    <!-- 空白内容1 -->
-    <div class="content-card">
-      系統操作圖示說明示意,實際內容待更新
+  <div class="grid-container">
+        <div class="grid-item">內容待提供</div>
+        <div class="grid-item">內容待提供</div>
+        <div class="grid-item">內容待提供</div>
+        <div class="grid-item">內容待提供</div>
+        <div class="grid-item">內容待提供</div>
+        <div class="grid-item">內容待提供</div>
     </div>
-    <!-- 空白内容2 -->
-    <div class="content-card">
-      系統操作圖示說明示意,實際內容待更新
-    </div>
-    <!-- 空白内容3 -->
-    <div class="content-card">
-      系統操作圖示說明示意,實際內容待更新
-    </div>
-    <!-- 空白内容4 -->
-    <div class="content-card">
-      系統操作圖示說明示意,實際內容待更新
-    </div>
-    <!-- 空白内容5 -->
-    <div class="content-card">
-      系統操作圖示說明示意,實際內容待更新
-    </div>
-    <!-- 空白内容6 -->
-    <div class="content-card">
-      系統操作圖示說明示意,實際內容待更新
-    </div>
-  </div>
-</div>
-
  </div>
 </template>
 
@@ -41,4 +20,28 @@ useSeoMeta({ title: "預約指引｜ 多元陪伴照顧服務計畫" });
 h1, h2 {
   text-align: center;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 1.5;
+    color: #333333;
+    min-height: 150px;
+}
+
 </style>

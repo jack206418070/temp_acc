@@ -10,6 +10,7 @@
   <!-- breadcrumb area end -->
 
   <!-- 計畫簡介區塊 -->
+  <aboutus-purpose-area />
 
   <service-targer />  
 

@@ -20,7 +20,7 @@
       </nav>
       <div class="tab-content mt-60 lg-mt-40  w-75 mx-auto">
         <!-- 廠商卡片列表 -->
-        <div class="vendor-grid">
+        <div id="location-block" class="vendor-grid">
           <div
             v-for="vendor in filteredVendors"
             :key="vendor.id"
