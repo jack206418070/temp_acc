@@ -5,7 +5,7 @@
       <p>          </p>
     </div>
   <div>
-    <h1>最新消息</h1>
+    <h1>公告/新聞稿</h1>
   <table>
     <thead>
       <tr>
