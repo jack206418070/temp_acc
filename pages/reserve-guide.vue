@@ -5,14 +5,14 @@
       <p>          </p>
     </div>
  <div>
-  <h2>預約指引</h2>
+  <h1>預約指引</h1>
   <div class="grid-container">
-        <div class="grid-item">內容待提供</div>
-        <div class="grid-item">內容待提供</div>
-        <div class="grid-item">內容待提供</div>
-        <div class="grid-item">內容待提供</div>
-        <div class="grid-item">內容待提供</div>
-        <div class="grid-item">內容待提供</div>
+        <div class="grid-item">完整內容更新中</div>
+        <div class="grid-item">完整內容更新中</div>
+        <div class="grid-item">完整內容更新中</div>
+        <div class="grid-item">完整內容更新中</div>
+        <div class="grid-item">完整內容更新中</div>
+        <div class="grid-item">完整內容更新中</div>
     </div>
  </div>
 </template>
