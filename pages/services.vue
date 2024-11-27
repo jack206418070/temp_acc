@@ -1,13 +1,12 @@
 <template>
   <div>
-    <service-details-area />
      <!-- breadcrumb area start -->
      <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
         <div class="container position-relative">
             <div class="row">
                 <div class="col-xl-8 col-lg-9 m-auto">
                     <h1 class="hero-heading">試辦單位簡介</h1>
-                    <p class="text-lg">目前試辦單位還在持續累積中，各試辦單位坐落在不同服務地區，所提供的服務項目、服務時數、收費、服務特色、注意事項或有不同，請進入試辦單位介紹區有更多完整的介紹，並可點選服務。</p>
+                    <p class="text-lg">目前試辦單位還在持續累積中，各試辦單位坐落在不同服務地區，所提供的服務項目、服務時數、收費、服務特色、注意事項或有不同，請進入試辦單位介紹區有更多完整的介紹，並可點選預約服務。</p>
                 </div>
             </div>
         </div>
@@ -19,8 +18,9 @@
         
     </div>
     <service-unit-list-area />
+    <service-details-area />
     <!-- service area start -->
-
+        
   </div>
 </template>
 
