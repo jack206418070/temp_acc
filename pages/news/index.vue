@@ -1,4 +1,9 @@
 <template>
+  <!-- 空出的小區段 -->
+    <div class="spacer-section">
+      <!-- 可插入內容，或保持空白 -->
+      <p>這是一個空出的小區段，可以放置內容。</p>
+    </div>
   <div>
     <h1>最新消息</h1>
   <table>
