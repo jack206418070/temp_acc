@@ -15,11 +15,9 @@
       <template v-if="menu.dropdown">
         <a
           class="nav-link dropdown-toggle "
-          href="#"
+          :href="menu.link ? menu.link : '#'"
           role="button"
-          data-bs-toggle="dropdown"
-          data-bs-auto-close="outside"
-          aria-expanded="false"
+          
         >
           {{ menu.title }}
         </a>
@@ -77,7 +75,7 @@
         </ul>
       </template>
       <template v-else>
-        <nuxt-link class="nav-link mx-2 " :href="menu.link" role="button">
+        <nuxt-link class="nav-link mx-2 " :href="menu.link ? menu.link : '#'" role="button">
           {{ menu.title }}
         </nuxt-link>
       </template>
