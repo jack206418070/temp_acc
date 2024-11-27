@@ -68,7 +68,7 @@ const menu_data:IMenu[] = [
         title:'試辦單位簡介',
       },
       {
-        link:'/',
+        link:'/https://accompany-service-user.vercel.app',
         title:'我要預約',
       },
     ]
