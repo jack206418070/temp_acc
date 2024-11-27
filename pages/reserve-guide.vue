@@ -27,13 +27,14 @@ h1, h2 {
 }
 
 .grid-container {
-    display: flex;
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     justify-content: center;
     align-items: center;
     gap: 20px;
     max-width: 1200px;
     width: 100%;
+    margin: 0 auto; /* 水平置中 */
     padding: 20px;
     box-sizing: border-box;
 }
