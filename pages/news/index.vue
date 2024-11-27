@@ -28,12 +28,12 @@ useSeoMeta({ title: "新聞報導 ｜ 多元陪伴照顧服務計畫" });
 body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background-color: #fdf5f5;
+      background-color: #dee2e6;
     }
 
     h1 {
       text-align: left;
-      color: #e45d4a;
+      color: #198754;
       padding-left: 4rem;
     }
 
@@ -50,7 +50,7 @@ body {
     }
 
     th {
-      background-color: #f2a491;
+      background-color: #d1e7dd;
       color: white;
     }
 
