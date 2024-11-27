@@ -73,7 +73,6 @@
         </div>
       </div>
     </div>
-    <!-- block feature area end -->
     
     <!-- 新增 Modal 組件 -->
     <div v-if="showModal" class="modal-overlay" @click="showModal = false">
@@ -89,6 +88,8 @@
       </div>
     </div>
   </div>
+<!-- block feature area end -->
+  
 </template>
 
 <script setup lang="ts">
