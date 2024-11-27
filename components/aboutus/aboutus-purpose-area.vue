@@ -69,7 +69,24 @@
           </div>
 
         
-         
+          <!-- /.section-subheading -->
+        </div>
+      </div>
+    </div>
+    <!-- block feature area end -->
+    <!-- 新增 Modal 組件 -->
+    <div v-if="showModal" class="modal-overlay" @click="showModal = false">
+      <div class="modal-content" @click.stop>
+        <h3>計畫內容簡介詳細說明</h3>
+        <div class="modal-body">
+          <p>就業服務法 -> 下載連結</p>
+          <p>藍領審查標準 -> 下載連結</p>
+          <p>多元陪伴照顧服務試 -> 下載連結</p>
+          <p>外國人轉換準則 -> 下載連結</p>
+        </div>
+        <button class="btn btn-one " @click="showModal = false">關閉</button>
+      </div>
+    </div>
   </div>
 
   
