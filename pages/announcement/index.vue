@@ -32,9 +32,6 @@ useSeoMeta({ title: "公告/新聞稿 ｜ 多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>
-h1, h2 {
-  text-align: left;
-}
 h3, p{
   padding-left: 2rem;
 }
