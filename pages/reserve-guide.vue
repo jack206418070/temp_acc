@@ -5,7 +5,7 @@
       <p>          </p>
     </div>
  <div>
-  <h1>預約指引</h1>
+  <h3>預約指引</h3>
   <div class="grid-container">
         <div class="grid-item">完整內容更新中</div>
         <div class="grid-item">完整內容更新中</div>
