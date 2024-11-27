@@ -20,7 +20,8 @@
     </div>
     <service-unit-list-area />
     <!-- service area start -->
-
+    <service-details-area />
+    
   </div>
 </template>
 
