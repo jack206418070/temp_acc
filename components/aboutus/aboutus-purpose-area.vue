@@ -26,54 +26,6 @@
       </div>
     </div>
     <!-- text feature area end -->
-
-    <!-- block feature area start -->
-    <div
-      class="block-feature-one position-relative light-bg-deep mt-50 lg-mt-80 pt-120 lg-pt-60 pb-130 lg-pb-60"
-    >
-      <div class="container">
-        <div class="position-relative">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="title-one text-center text-md-start mb-30 sm-mb-10">
-                <h2>了解更多</h2>
-              </div>
-              <!-- /.title-one -->
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div
-              v-for="(item, i) in service_data"
-              :key="item.id"
-              class="col-lg-4 col-md-6 d-flex wow fadeInUp"
-              :data-wow-delay="`0.${i}s`"
-            >
-              <div class="card-style-two vstack tran3s w-100 mt-30">
-                <img :src="item.icon" alt="" class="lazy-img icon me-auto" />
-                <h4 class="fw-bold mt-30 mb-25">{{ item.title }}</h4>
-                <p class="mb-20">{{ item.desc }}</p>
-                <nuxt-link
-                href="#"
-                class="btn-three icon-link mt-15 mb-15 md-mb-40"
-                @click.prevent="showModal = true"
-              >
-                <span cl>閱讀更多</span>
-                <img
-                  src="/images/icon/icon_09.svg"
-                  alt=""
-                  class="lazy-img icon ms-1"
-                />
-              </nuxt-link>
-              </div>
-            </div>
-          </div>
-
-        
-          <!-- /.section-subheading -->
-        </div>
-      </div>
-    </div>
-    <!-- block feature area end -->
     <!-- 新增 Modal 組件 -->
     <div v-if="showModal" class="modal-overlay" @click="showModal = false">
       <div class="modal-content" @click.stop>
