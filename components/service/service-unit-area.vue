@@ -96,7 +96,7 @@ const service_data = [
     id: 4,
     icon: "/images/icon/icon_40.svg",
     title: "健康管理",
-    desc: "我們的健康顧問將幫助您制定個性化的健康計劃，並提供長期跟蹤服務。",
+    desc: "我們的健康顧問將幫助您制定個性化的健康計畫，並提供長期跟蹤服務。",
   },
   {
     id: 5,

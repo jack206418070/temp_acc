@@ -12,7 +12,7 @@
               <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
                 我們是一家致力於提供高品質照顧服務的機構。自2010年成立以來,
                 我們秉持「以人為本,關懷社區」的服務理念,為有需要的人提供全面的照顧支援。
-                我們的特色是提供個人化的照顧計劃,結合專業團隊和先進設備,
+                我們的特色是提供個人化的照顧計畫,結合專業團隊和先進設備,
                 確保每位服務對象都能獲得最適合的照顧。
               </p>
               <nuxt-link href="/contact" class="btn-three icon-link mt-15 md-mb-40">
@@ -71,7 +71,7 @@
 
 					<div class="section-subheading sm-mt-40">
 						<p class="text-lg">
-              本計畫依據「長期照顧服務法」及「多元照顧服務中心設立標準及人員配置標準」辦理。
+              本計畫依據「長期照顧服務法」及「多元照顧服務心設立標準及人員配置標準」辦理。
               收費方式依照政府規定的長照服務給付及支付基準執行。
             </p>
 						<nuxt-link href="/service-v1" class="btn-three icon-link">

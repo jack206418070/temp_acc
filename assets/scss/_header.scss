@@ -87,7 +87,7 @@
     .nav-item .nav-link {
         font-family: $main-font;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         line-height: initial;
         color: $text-dark;
         padding: 20px 0;
@@ -375,6 +375,7 @@
         visibility: visible;
         transform: translateY(0);
     }
+    
     .navbar .dropdown-toggle::after {
         display: none;
     }

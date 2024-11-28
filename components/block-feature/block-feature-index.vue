@@ -1,30 +1,6 @@
 <template>
   <div class="block-feature-one position-relative pt-75">
-    <div class="upper-wrapper mb-110 lg-mb-80">
-      <div class="container">
-        <div class="row">
-          <div
-            v-for="(item, i) in upper_data"
-            :key="i"
-            class="col-lg-4 wow fadeInUp"
-            :data-wow-delay="`0.${i}s`"
-          >
-            <div class="card-style-one d-flex w-100 mb-35">
-              <div
-                class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"
-              >
-                <img :src="item.icon" alt="icon" class="lazy-img" />
-              </div>
-              <div class="text ps-4">
-                <h4 class="fw-bold">{{ item.title }}</h4>
-                <p class="pe-xl-4">{{ item.desc }}</p>
-              </div>
-            </div>
-            <!-- /.card-style-one -->
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <!-- /.upper-wrapper -->
 
     <div class="container">
@@ -73,30 +49,14 @@
 </template>
 
 <script setup lang="ts">
-const upper_data = [
-  {
-    icon: "/images/icon/icon_03.svg",
-    title: "費用預估 ",
-    desc: "為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力",
-  },
-  {
-    icon: "/images/icon/icon_04.svg",
-    title: "專業服務",
-    desc: "旨在為有需求的家庭提供短期或臨時性的外籍家庭看護工照顧人力",
-  },
-  {
-    icon: "/images/icon/icon_05.svg",
-    title: "有效支援",
-    desc: "為減輕家庭照顧負擔，我們推出多元陪伴照顧服務試辦計畫",
-  },
-];
+
 
 const service_data = [
   {
     id: 1,
     icon: "/images/icon/icon_06.svg",
     title: "費用預估",
-    desc: "通過提供短期或臨時性的外籍家庭看護工照顧人力，最大限度地提供便利。",
+    desc: "提供短期臨時或持續一定時間之照顧人力，以減輕有家庭照顧負擔",
   },
   {
     id: 2,

@@ -7,7 +7,7 @@
       <div class="row align-items-center">
         <div class="col-lg-8 wow fadeInUp">
           <div class="title-one mb-50 lg-mb-20">
-            <h2>計畫目的</h2>
+            <h2>計畫內容簡介</h2>
           </div>
           <!-- /.title-one -->
         </div>

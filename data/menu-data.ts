@@ -4,27 +4,90 @@ const menu_data:IMenu[] = [
   {
     id:0,
     link:'/',
-    title:'首頁'
+    title:'首頁',
   },
   {
     id:1,
-    link:'/about-us',
-    title:'計劃簡介'
+    link:'https://accompany-web-site.vercel.app/about-us',
+    title:'計畫簡介',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/company-statute',
+        title:'多元陪伴法規',
+        sub_menus:[
+          {link:'/employment-services',title:'就業服務法'},
+          {link:'/censor-standard',title:'藍領審查標準'},
+          {link:'/conduct-plan',title:'多元陪伴照顧服務試辦計劃'},
+          {link:'/convert-principle',title:'外國人轉換原則'},
+        ],
+      },
+      {
+        link:'/lazy-bag',
+        title:'懶人包',
+      },
+      {
+        link:'/propaganda',
+        title:'宣傳品',
+      }
+    ],
+    
   },
   {
     id:2,
-    link:'/news',
-    title:'最新消息'
+    link:'/',
+    title:'最新消息',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/announcement',
+        title:'公告/新聞稿',
+      },
+      {
+        link:'/news',
+        title:'新聞報導',
+      },
+      {
+        link:'/experience-share',
+        title:'使用心得分享',
+      },
+    ]
   },
   {
     id:3,
     link:'/services',
-    title:'我想預約服務'
+    title:'預約服務',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/reserve-guide',
+        title:'預約指引',
+      },
+      {
+        link:'/services',
+        title:'試辦單位簡介',
+      },
+      {
+        link:'https://accompany-service-user.vercel.app',
+        title:'我要預約',
+      },
+    ]
   },
   {
     id:4,
     link:'/join-us-unit',
-    title:'趕快成為試辦單位'
+    title:'成為試辦單位',
+    dropdown:true,
+    dropdown_menus:[
+      {
+        link:'/join-us-unit',
+        title:'申請資格與評選方式',
+      },
+      {
+        link:'/application-form',
+        title:'填寫申請表',
+      },
+    ]
   },
   {
     id:5,
@@ -41,6 +104,7 @@ const menu_data:IMenu[] = [
     link:'/links',
     title:'相關網站連結'
   },
+  
 ]
 
 export default menu_data;

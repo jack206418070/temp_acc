@@ -3,39 +3,23 @@
 			<div class="container">
 				<div class="row">
             <div class="">
-						<div class="details-meta ps-xxl-5 ps-xl-3">
-						
-							<h3>多元陪伴照護服務</h3>
-							<p>多元陪伴照護不僅能提升生活品質,還能創造溫馨的照護環境。通過專業且富有同理心的陪伴,我們致力於為每位服務對象帶來身心靈的全面關懷。</p>
-							<div class="line-wrapper pb-30 mt-60 lg-mt-40 mb-70 lg-mb-40">
-								<div class="row">
-									
-									<div v-for="(item,i) in process_data" :key="item.id" class="col-md-4 wow fadeInUp" :data-wow-delay="`0.${i}s`">
-										<div class="card-style-sixteen text-center mt-40">
-											<div class="icon m-auto tran3s rounded-circle d-flex align-items-center justify-content-center">
-                        <img :src="item.icon" alt="" class="lazy-img">
-                      </div>
-											<h4 class="fw-bold mt-35 lg-mt-30 mb-15">{{item.title}}</h4>
-											<p class="m0">{{item.subtitle}}</p>
-										</div>
-										<!-- /.card-style-sixteen -->
-									</div>
-
-								</div>
-							</div>
-							
-							<h2>申請服務流程</h2>
-							<h3>申請服務流程</h3>
-							<p>多元陪伴照護指南 - 我們相信,優質的陪伴照護不僅能提升生活品質,還能為服務對象帶來情感支援和心靈慰藉。通過細心觀察、耐心傾聽和真誠互動,我們致力於為每位服務對象打造溫馨舒適的生活環境。</p>
-							<ul class="style-none list-item pb-20">
-								<li>建立信任關係</li>
-								<li>提供情感支援</li>
-								<li>協助日常生活</li>
-								<li>促進社交互動</li>
-								<li>鼓勵健康生活方式</li>
-							</ul>
-							<p>我們的專業陪伴照護團隊致力於提供個性化的服務,讓每位服務對象都能感受到被尊重、被理解和被關愛,共同創造美好的生活體驗。</p>
-						</div>
+				<div class="details-meta ps-xxl-5 ps-xl-3">
+					<div class="reminder-block">
+						<h3 class="reminder-title mb-4"><strong>給服務使用者的小叮嚀</strong></h3>
+						<p class="reminder-intro mb-4">
+							面對「陪伴照顧服務工作者」，提醒您注意以下事項，相信有助於溝通與照顧品質：
+						</p>
+						<ul class="reminder-list">
+							<li><strong>交接被照顧者的重要資訊或注意事項</strong>，例如用藥、飲食習慣、喜好等。 </li>
+							<li><strong>依據被照顧者生活作息，事前共同訂定</strong>用餐、如廁、復健、休息等照顧時間表。 </li>
+							<li><strong>尊重不同飲食文化與信仰</strong>。例如穆斯林因信仰關係不食用豬肉。</li>
+							<li><strong>提供必要休息時間與能安心休息的空間</strong>。 </li>
+						</ul>
+						<p class="reminder-note mt-4">
+							<span class="text-primary">★</span> 若有任何問題，可致電各試辦單位，他們將會即時提供協助。
+						</p>
+					</div>
+				</div>
             </div>
               
           </div>
@@ -50,7 +34,7 @@ const process_data = [
     id:1,
     icon:"/images/icon/icon_81.svg",
     title:'個性化評估',
-    subtitle:'我們深入了解每位服務對象的需求,制定專屬陪伴計劃'
+    subtitle:'我們深入了解每位服務對象的需求,制定專屬陪伴計畫'
   },
   {
     id:2,

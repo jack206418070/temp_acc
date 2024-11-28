@@ -7,22 +7,17 @@
             <div class="col-xl-3 col-lg-4 footer-intro mb-30">
               <div class="logo mb-35 md-mb-20">
                 <nuxt-link href="/">
-                  <img src="/images/logo/logo_02.png" alt="">
+                  <img src="/images/logo/logo_2.png" alt="">
                 </nuxt-link>
               </div> 
               <!-- logo -->
               <p class="lh-sm mb-40 md-mb-20">2190 Urban Terrace, Mirpur,  link Licensed in 50 states.</p>
-              <ul class="style-none d-flex align-items-center social-icon">
-                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-                <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-              </ul>
             </div>
             <div class="col-lg-2 col-sm-4 mb-20">
               <h5 class="footer-title">Links</h5>
               <ul class="footer-nav-link style-none">
                 <li><nuxt-link href="/">首頁</nuxt-link></li>
-                <li><nuxt-link href="/about-us">計劃介紹</nuxt-link></li>
+                <li><nuxt-link href="/about-us">計畫介紹</nuxt-link></li>
                 <li><nuxt-link href="/services">服務介紹</nuxt-link></li>
                 <li><nuxt-link href="/project-v1">Portfolio</nuxt-link></li>
                 <li><nuxt-link href="/blog">Careers</nuxt-link></li>

@@ -7,7 +7,7 @@
 				<div class="position-relative">
 					<div class="title-one text-center mb-40 lg-mb-10">
               <h2>服務內容</h2>
-              <p class="text-lg mt-20">我們致力於提供全面的多元陪伴服務，滿足您的各種需求</p>
+              
           </div>
 					<div class="row">
 						
@@ -45,38 +45,38 @@ const service_data = [
   {
     id:1,
     icon:'/images/icon/icon_06.svg',
-    title:'長時間陪伴',
+    title:'彈性服務時間',
     desc:'單次服務時數至少4小時以上',
   },
   {
     id:2,
     icon:'/images/icon/icon_07.svg',
-    title:'多元支援',
-    desc:'如為24小時者須內含10小時休息時數',
+    title:'基本日常生活照顧',
+    desc:'提供日常生活協助，保障被服務民眾健康與生活品質。',
   },
   {
     id:3,
     icon:'/images/icon/icon_08.svg',
-    title:'彈性時數',
-    desc:'應依勞動基準法規範按服務對象需求調整服務時數。',
+    title:'陪同外出',
+    desc:'提供專業人員陪同外出，安心又便利。',
   },
   {
     id:4,
     icon:'/images/icon/icon_08.svg',
-    title:'客製要求',
-    desc:'民眾可依個別化需求,彈性選擇所需服務方式與時間。',
+    title:'陪同就醫',
+    desc:'貼心陪同就醫，安心守護健康、安心看診。',
   },
   {
     id:5,
     icon:'/images/icon/icon_08.svg',
-    title:'快速回應',
-    desc:'線上系統快速回覆申請結果,系統服務全年無休。',
+    title:'安全陪伴',
+    desc:'安全陪伴服務，保障健康、專業支援，守護家人安心。',
   },
   {
     id:6,
     icon:'/images/icon/icon_08.svg',
     title:'定期督導',
-    desc:'試辦單位督導員定期家訪,協助解決問題,維護勞雇權益。',
+    desc:'此為示意文字,實際文字內容待更新。',
   },
   
 ];

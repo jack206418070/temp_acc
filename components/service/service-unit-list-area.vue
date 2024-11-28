@@ -20,7 +20,7 @@
       </nav>
       <div class="tab-content mt-60 lg-mt-40  w-75 mx-auto">
         <!-- 廠商卡片列表 -->
-        <div class="vendor-grid">
+        <div id="location-block" class="vendor-grid">
           <div
             v-for="vendor in filteredVendors"
             :key="vendor.id"
@@ -30,15 +30,14 @@
             <div class="vendor-info">
               <h3>{{ vendor.name }}</h3>
               <p class="vendor-category">{{ vendor.category }}</p>
-              <p class="vendor-area">{{ getAreaName(vendor.area) }}</p>
               <p class="vendor-address">{{ vendor.address }}</p>
+              <p class="vendor-contact">📞 {{ vendor.phone }}</p>
+              <p class="vendor-email">📧 {{ vendor.email }}</p>
               <div class="vendor-rating">
                 <span v-for="i in vendor.rating" :key="i" class="star">
                   <Icon name="noto:star" style="color: black" />
                 </span>
               </div>
-              
-
               <p class="vendor-description">{{ vendor.description }}</p>
             </div>
           </div>
@@ -49,12 +48,11 @@
 </template>
 
 <script setup lang="ts">
-// ... 原有的 feature_data 和 service_data ...
-
 const tabs = [
   { id: "north", name: "北區" },
   { id: "central", name: "中區" },
   { id: "south", name: "南區" },
+  { id: "east", name: "東區" },
 ];
 
 const currentTab = ref("north");
@@ -67,6 +65,8 @@ const vendorData = [
     category: "長照服務",
     area: "north",
     address: "台北市中山區健康路123號",
+    phone: "02-1234-5678",
+    email: "carecenter@example.com",
     description:
       "專業的照護團隊，提供全方位的長照服務，讓長者享受溫馨舒適的照顧。",
     rating: 4,
@@ -78,6 +78,8 @@ const vendorData = [
     category: "心理諮商",
     area: "central",
     address: "台中市西區和平路456號",
+    phone: "04-9876-5432",
+    email: "mindclinic@example.com",
     description: "提供專業心理諮商服務，協助您找回內心的平靜與快樂。",
     rating: 3,
   },
@@ -88,6 +90,8 @@ const vendorData = [
     category: "樂齡活動",
     area: "south",
     address: "高雄市前金區幸福路789號",
+    phone: "07-1234-5678",
+    email: "eldercenter@example.com",
     description: "豐富多元的樂齡活動，讓長者享受充實快樂的退休生活。",
     rating: 5,
   },
@@ -98,6 +102,8 @@ const vendorData = [
     category: "健康管理",
     area: "north",
     address: "新北市板橋區康樂路234號",
+    phone: "02-8765-4321",
+    email: "healthguard@example.com",
     description: "提供完整的健康檢查與管理服務，守護您的健康。",
     rating: 2,
   },
@@ -108,19 +114,28 @@ const vendorData = [
     category: "教育學習",
     area: "central",
     address: "台中市北區學習路567號",
+    phone: "04-5678-9876",
+    email: "elderlearning@example.com",
     description: "專為銀髮族設計的課程，持續學習、豐富人生。",
     rating: 3,
+  },
+  {
+    id: 6,
+    name: "大山樂活中心",
+    image: "/images/2021-12-23.jpg",
+    category: "教育學習",
+    area: "east",
+    address: "花蓮市美倫路87號",
+    phone: "03-7654-3210",
+    email: "mountaincenter@example.com",
+    description: "專為銀髮族設計的課程，持續學習、豐富人生。",
+    rating: 4,
   },
 ];
 
 const filteredVendors = computed(() => {
   return vendorData.filter((vendor) => vendor.area === currentTab.value);
 });
-
-const getAreaName = (area: string) => {
-  const tab = tabs.find((t) => t.id === area);
-  return tab ? tab.name : area;
-};
 </script>
 
 <style scoped>
