@@ -33,7 +33,7 @@
     </tbody>
   </table>
   </div>
-    </div>
+  </div>
 
     <!-- 文字特徵區域開始 -->
     <!-- <text-feature-index /> -->
