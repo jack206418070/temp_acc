@@ -66,7 +66,7 @@
           <div class="accordion accordion-style-one" id="accordionOne">
             <faq-item
               id="nine"
-              title="、為何推出多元陪伴照顧服務試辦計畫?"
+              title="為何推出多元陪伴照顧服務試辦計畫?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
