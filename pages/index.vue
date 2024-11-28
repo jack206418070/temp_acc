@@ -24,7 +24,8 @@
 
     <div class="container bg-white position-relative">
       <div class="d-flex justify-content-center">
-        
+        </div>
+      </div>
         <h2>最新消息</h2>
 
         <div class="section-btn sm-mt-40">
