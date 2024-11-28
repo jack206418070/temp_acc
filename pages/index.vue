@@ -19,6 +19,12 @@
       line-height: 3; /* 正常行距為 1，設為 3 則多出兩行 */
     }
   </style>
+    <!-- 空出一行 -->
+    <div style="margin-bottom: 1rem;"></div>
+
+    <div class="container bg-white position-relative">
+      <div class="d-flex justify-content-center">
+        
         <h2>最新消息</h2>
 
         <div class="section-btn sm-mt-40">
