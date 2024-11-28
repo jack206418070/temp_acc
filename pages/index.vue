@@ -2,10 +2,6 @@
   <div>
     <hero-banner-empty-index />
 
-   <div class="spacer-section">
-      <!-- 可插入內容，或保持空白 -->
-      <p>          </p>
-    </div>
         <h2>最新消息</h2>
 
         <div class="section-btn sm-mt-40">
