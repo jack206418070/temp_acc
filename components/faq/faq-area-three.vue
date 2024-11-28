@@ -66,65 +66,65 @@
           <div class="accordion accordion-style-one" id="accordionOne">
             <faq-item
               id="nine"
-              title="申請服務需要準備哪些文件？"
+              title="、為何推出多元陪伴照顧服務試辦計畫?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="ten"
-              title="申請流程需要多久時間？"
+              title="多元陪伴照顧服務計畫服務對象與資格?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m3"
-              title="可以線上申請嗎？"
+              title="多元陪伴照顧服務計畫提供那些服務?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m4"
-              title="申請被拒絕後，多久可以再次申請？"
+              title="多元陪伴照顧服務之服務時間?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
 
             <faq-item
               id="m5"
-              title="申請通過後，何時可以開始使用服務？"
+              title="多元陪伴照顧服務是否自費? 是否按不同試辦單位定價?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionTwo"
             />
             <faq-item
               id="seven"
-              title="成為試辦單位需要具備哪些條件？"
+              title="多元陪伴照顧服務試辦單位的資格為何?試辦單位如何核定? "
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="eight"
-              title="試辦計畫的期程多長？"
+              title="多元陪伴照顧服務試辦計畫第9點，申請單位應於檢附「專業服務管理團隊成員所具備之醫護、照顧服務員管理、外國人雙語翻譯與住宿管理、財務、經營管理及資訊能力等專業之學、經歷證明文件」，但財團法人或非營利社團法人大多無配置上述全部的專業團隊，該如何參與本計畫? "
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot1"
-              title="試辦期間會獲得哪些支援？"
+              title="申請成為試辦服務單位應檢附何項文件及份數?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot2"
-              title="如何申請成為試辦單位？"
+              title="多元陪伴照顧服務工作者(本國籍、外國籍)為何適用我國勞動基準法第84條之1?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
             <faq-item
               id="pilot3"
-              title="試辦單位的評核標準是什麼？"
+              title="申請全日服務時，要怎麼安排多元陪伴照顧服務者的休息時間，才能符合勞 動基準法第 84 條之 1，24 小時內需有 10 小時休息時間的規定?"
               desc="此為示意文字,實際文字內容待更新"
               parent="accordionThree"
             />
