@@ -6,7 +6,7 @@
       class="container bg-white position-relative "
     >
       <div class="d-flex justify-content-center" >
-        <title>      </title>
+        <title>&nbsp;</title>
   <style>
     /* 使用 margin 空出行距 */
     .text-with-margin {
