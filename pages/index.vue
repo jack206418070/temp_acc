@@ -2,30 +2,10 @@
   <div>
     <hero-banner-empty-index />
 
-    <div
-      class="container bg-white position-relative "
-    >
-      <div class="d-flex justify-content-center" >
-        <title>&nbsp;</title>
-        <p>&nbsp;</p>
-  <style>
-    /* 使用 margin 空出行距 */
-    .text-with-margin {
-      margin-bottom: 2em; /* 底部空出兩行的距離 */
-    }
-
-    /* 使用 line-height 空出行距 */
-    .text-with-line-height {
-      line-height: 3; /* 正常行距為 1，設為 3 則多出兩行 */
-    }
-  </style>
-    <!-- 空出一行 -->
-    <div style="margin-bottom: 1rem;"></div>
-
-    <div class="container bg-white position-relative">
-      <div class="d-flex justify-content-center">
-        </div>
-      </div>
+   <div class="spacer-section">
+      <!-- 可插入內容，或保持空白 -->
+      <p>          </p>
+    </div>
         <h2>最新消息</h2>
 
         <div class="section-btn sm-mt-40">
