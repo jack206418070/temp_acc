@@ -2,7 +2,7 @@
    <div class="main-page-wrapper">
     <header-one></header-one>
 
-    <main>
+    <main class="default-padding">
       <slot />
     </main>
     <footer-two></footer-two>
@@ -11,3 +11,14 @@
 </template>
 
 <script setup lang="ts"></script>
+
+<style>
+  .default-padding {
+    padding-top: 133px;
+  }
+  @media (max-width: 991px) {
+    .default-padding {
+      padding-top: 113px;
+    }
+  }
+</style>

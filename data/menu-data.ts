@@ -8,27 +8,27 @@ const menu_data:IMenu[] = [
   },
   {
     id:1,
-    link:'https://accompany-web-site.vercel.app/about-us',
+    link:'/about-us',
     title:'計畫簡介',
     dropdown:true,
     dropdown_menus:[
       {
+        link:'/about-us',
+        title:'計畫內容簡介',
+      },
+      {
         link:'/company-statute',
-        title:'多元陪伴法規',
+        title:'多元陪伴照顧服務法規',
         sub_menus:[
+          {link:'/conduct-plan',title:'多元陪伴照顧服務試辦計劃'},
           {link:'/employment-services',title:'就業服務法'},
           {link:'/censor-standard',title:'藍領審查標準'},
-          {link:'/conduct-plan',title:'多元陪伴照顧服務試辦計劃'},
           {link:'/convert-principle',title:'外國人轉換原則'},
         ],
       },
       {
-        link:'/lazy-bag',
-        title:'懶人包',
-      },
-      {
         link:'/propaganda',
-        title:'宣傳品',
+        title:'懶人包/宣傳品',
       }
     ],
     
@@ -36,7 +36,7 @@ const menu_data:IMenu[] = [
   {
     id:2,
     link:'/',
-    title:'最新消息-測試',
+    title:'最新消息',
     dropdown:true,
     dropdown_menus:[
       {

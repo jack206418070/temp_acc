@@ -18,6 +18,11 @@ body {
 .main-page-wrapper {
   overflow-x: hidden;
 }
+.main-container {
+  max-width: 1080px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 .h1,
 h1,
 .h2,
@@ -169,13 +174,15 @@ hr {opacity: 0.09; margin: 5px 0;}
 // Button Style
 .btn-one {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 48px;
+  line-height: 40px;
   padding: 0 30px;
   text-align: center;
   border-radius: 40px;
   color: $text-dark;
   background-color: $color-one;
+  color: rgb(251, 251, 243);
+  font-size: 14px;
+  font-weight: normal;
   @include transition(0.3s);
   &:hover {
     background-color: $color-two;

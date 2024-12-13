@@ -22,14 +22,15 @@
         box-shadow: 0 13px 35px -12px rgb(35 35 35 / 10%);
     }
     .navbar-toggler {
-        width: 48px;
-        height: 44px;
+        width: 40px;
+        height: 22px;
         padding: 0;
         box-shadow: none;
-        position: relative;
-        z-index: 99;
         border: none;
-        background: $color-one
+        position: fixed;
+        top: 20px;
+        left: 10px;
+        z-index: 100000;
     }
     &.menu-style-three .navbar-toggler {background: #000}
     &.menu-style-four .navbar-toggler {background: $color-four;}
@@ -40,8 +41,8 @@
         content: '';
         position: absolute;
         top: 50%;
-        left: 11px;
-        width: 26px;
+        left: 8px;
+        width: 22px;
         height: 2px;
         pointer-events: none;
         -webkit-transition: -webkit-transform 0.25s;
@@ -52,9 +53,9 @@
     }
     .navbar-toggler span {
         position: absolute;
-        left: 11px;
+        left: 8px;
         overflow: hidden;
-        width: 26px;
+        width: 22px;
         height: 2px;
         margin-top: -1px;
         text-indent: 200%;
@@ -86,18 +87,17 @@
     // Main Menu
     .nav-item .nav-link {
         font-family: $main-font;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 18px;
         line-height: initial;
         color: $text-dark;
-        padding: 20px 0;
-        margin: 0 20%;
+        padding: 10px 0;
         position: relative;
         @include transition(0.2s);
     }
-    .nav-item:hover .nav-link {
-        color: $color-three;
-    }
+      // .nav-item:hover .nav-link {
+      //     color: $color-three;
+      // }
     &.white-vr {
         .nav-item .nav-link {color: #fff;}
         .nav-item:hover .nav-link {color: $color-one;}
@@ -126,6 +126,9 @@
             padding-left: 40px;
             padding-right: 40px;
         }
+        .gap-mid {
+          gap: 20px;
+        }
         .greetings {
             font-size: 18px;
             color: $heading;
@@ -146,8 +149,8 @@
         .inner-content {
             padding-top: 8px;
             padding-bottom: 8px;
-            border-top: 1px solid #E0E0E0;
-            border-bottom: 1px solid #E0E0E0;
+            // border-top: 1px solid #E0E0E0;
+            // border-bottom: 1px solid #E0E0E0;
         }
         &.fixed .info-row {
             display: none;
@@ -176,9 +179,9 @@
 // Dropdown
 .navbar .dropdown-menu .dropdown-item {
     text-transform: capitalize;
-    line-height: 35px; 
-    color: $heading;
-    font-size: 18px;
+    line-height: 45px; 
+    color: $text-color;
+    font-size: 16px;
     background: transparent;
     position: relative;
     @include transition(0.2s);
@@ -191,7 +194,7 @@
             bottom: -2px;
             width: 100%;
             height: 1px;
-            background: $color-three;
+            background: $text-color;
             transform: scale(0 , 1);
             transform-origin: 0 0;
             @include transition(0.2s);
@@ -306,8 +309,8 @@
 }
 // Category Menu
 .category-menu {
-    border-top: 1px solid #E9E9E9;
-    border-bottom: 1px solid #E9E9E9;
+    // border-top: 1px solid #E9E9E9;
+    // border-bottom: 1px solid #E9E9E9;
     padding: 0 40px;
     li {
         position: relative;
@@ -328,8 +331,8 @@
         li {
             padding: 0;
             a {
-                padding: 8px 15px;
-                font-size: 14px;
+              padding: 8px 15px;
+              font-size: 14px;
             }
         }
     }
@@ -337,10 +340,10 @@
 /*----- For Desktop -------*/
 @media screen and (min-width: 992px) {
 .navbar .dropdown-menu {
-    font-size: 1em;
+  font-size: 1em;
 	z-index: 5;
-	background-color: #fff;
-	border-radius: 10px;
+	background-color: rgb(199, 226, 214);
+	border-radius: 0px;
 	display: block;
 	right: auto;
 	left: 0;
@@ -350,11 +353,12 @@
 	visibility: hidden;
 	transform: translateY(5px);
 	opacity: 0;
-	min-width: 200px;
-	box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.12);
+	// min-width: 200px;
+	box-shadow: 0 !important;
 	margin: 0;
 	transform-origin: 0 0;
 	transition: all 0.3s ease-out;
+  border-bottom: 2px solid #333;
     &:before {
         content: '';
         position: absolute;
@@ -366,8 +370,8 @@
         left: calc(100% + 5px);
         top: 0;
         right: auto;
-        min-width: 240px;
-        box-shadow: 0 20px 30px -10px rgb(0, 0, 0, 0.15);
+        // min-width: 240px;
+        // box-shadow: 0 20px 30px -10px rgb(0, 0, 0, 0.15);
         transform: translateY(0);
     }
     .navbar .dropdown:hover>.dropdown-menu {
@@ -391,23 +395,93 @@
     .navbar-collapse {
       position: fixed;
       top: 0;
-      background-color: $light-bg-two;
       left: 0;
       height: 100vh;
       max-height: 100vh;
       overflow-y: auto;
       clear: both;
-      width: 320px;
-      max-width: calc(100vw - 60px);
+      width: 100%;
+      background-color: $light-bg-two; 
       z-index: 9999;
-      transform: translateX(-100%);
+      transform: translateY(-100%);
       display: block !important;
       padding: 16px 0 20px;
-      transition: all 0.3s ease-in-out;
+      // transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
-    .navbar-collapse.show {transform: translateX(0); box-shadow: 15px 0 25px rgba(35,35,35,0.09);}
+    .navbar-collapse.show {transform: translateY(0); opacity: 1; padding-top: 8vh; animation: fadeInDown 0.2s ease-out;}
+
+    .navbar-collapse:not(.show) {
+      transform: translateY(-8vh); /* 確保有滑動效果 */
+      opacity: 0; /* 淡出 */
+      visibility: hidden; /* 淡出後不可見 */
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0; /* 初始透明 */
+      transform: translateY(-20px); /* 初始位置稍微向上 */
+      animation: fadeInUp 0.5s ease-out forwards; /* 自定義向下淡入動畫 */
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .navbar-collapse:not(.show) .nav-item {
+      opacity: 0; /* 隱藏 */
+      transform: translateY(-20px); /* 向上滑動淡出 */
+    }
+
+    .navbar-collapse {
+      &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $light-bg-two;
+        opacity: 0; /* 初始透明 */
+        transition: opacity 0.3s ease-out;
+        z-index: -1; /* 背景在選單後面 */
+      }
+      &.show::before {
+        opacity: 1; /* 背景完全可見 */
+      }
+    }
+
+    .navbar-collapse:not(.show)::before {
+      opacity: 0; /* 背景淡出 */
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-10vh);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     .theme-main-menu .navbar .mega-dropdown {position: relative;}
-    .navbar .navbar-nav .nav-link {margin: 0; padding: 15px 12px; border-top: 1px dashed rgba($color: #000, $alpha: 0.1);}
+    .navbar .navbar-nav .nav-link {margin: 0; padding: 15px 12px;}
     .white-vr .navbar .navbar-nav .nav-link {border-top: 1px dashed rgba($color: #fff, $alpha: 0.15);}
     .navbar .dropdown-menu .dropdown-item {padding: 0 10px; line-height: 46px;}
     .navbar .dropdown-menu {
@@ -419,11 +493,6 @@
     }
     .navbar [class*="mega-dropdown"] .dropdown-menu {padding: 0; min-width: 100%;}
     .navbar [class*="mega-dropdown"] .menu-column {padding: 0;}
-    .navbar .dropdown-toggle::after {
-        position: absolute;
-        right: 15px;
-        top:calc(50% - 2px);
-    }
     .dashboard-menu .nav-link::before {right: auto; left: 0; top:-2px;}
   }
   /*(max-width: 991px)*/

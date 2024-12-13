@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-  useSeoMeta({ title: "多元陪伴照顧服務" });
+  useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
 </script>
 
 <style scoped>

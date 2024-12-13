@@ -5,7 +5,7 @@
       <div class="container">
         <div class="line-wrapper position-relative">
           <div class="row align-items-center">
-            <div class="col-lg-12 wow fadeInLeft">
+            <div class="col-lg-12 wow fadeIn">
               <div class="title-one">
                 <h2>計畫內容簡介</h2>
               </div>

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "宣傳品｜ 多元陪伴照顧服務計畫" });
+useSeoMeta({ title: "懶人包/宣傳品｜ 多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>

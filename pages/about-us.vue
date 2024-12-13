@@ -17,5 +17,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "關於多元陪伴照顧服務試辦計畫 - 多元陪伴照顧服務計畫" });
+useSeoMeta({ title: "計畫內容簡介｜多元陪伴照顧服務計畫" });
 </script>
