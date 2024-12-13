@@ -409,7 +409,7 @@
       // transition: all 0.3s ease-in-out;
       transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
-    .navbar-collapse.show {transform: translateY(0); opacity: 1; padding-top: 8vh; animation: fadeInDown 0.2s ease-out;}
+    .navbar-collapse.show {transform: translateY(0px); opacity: 1; padding-top: 8vh;}
 
     .navbar-collapse:not(.show) {
       transform: translateY(-8vh); /* 確保有滑動效果 */
@@ -462,7 +462,7 @@
     @keyframes fadeInUp {
       0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(0); /* 縮小移動範圍 */
       }
       100% {
         opacity: 1;
@@ -479,6 +479,22 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+    .navbar-collapse::before {
+      z-index: -1; /* 使背景正確置於後面 */
+      position: absolute; /* 明確相對性 */
+    }
+    .navbar-collapse:not(.show) {
+      opacity: 0;
+      transform: translateY(-8vh);
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .navbar-collapse:not(.show) {
+      visibility: hidden; /* 可使用 JavaScript 動態控制 */
+    }
+    .navbar-collapse {
+      will-change: transform, opacity;
     }
     .theme-main-menu .navbar .mega-dropdown {position: relative;}
     .navbar .navbar-nav .nav-link {margin: 0; padding: 15px 12px;}
