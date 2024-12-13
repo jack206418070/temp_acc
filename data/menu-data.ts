@@ -36,7 +36,7 @@ const menu_data:IMenu[] = [
   {
     id:2,
     link:'/',
-    title:'最新消息',
+    title:'最新消息-測試',
     dropdown:true,
     dropdown_menus:[
       {
