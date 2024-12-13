@@ -505,7 +505,10 @@
         padding: 0;
         border-radius: 0;
         margin: 0;
-        background: #fff;
+        background: #EDF1EE;
+    }
+    .navbar .dropdown-menu.show {
+      display: block;
     }
     .navbar [class*="mega-dropdown"] .dropdown-menu {padding: 0; min-width: 100%;}
     .navbar [class*="mega-dropdown"] .menu-column {padding: 0;}

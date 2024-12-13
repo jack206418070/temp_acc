@@ -10,6 +10,8 @@ export interface IMenu {
       link: string;
       title: string;
     }[];
+    sub_id: number;
+    sub_dropdown?: boolean;
   }[];
   mega_menu?: boolean;
   mega_menus?: {

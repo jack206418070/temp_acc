@@ -11,27 +11,39 @@
             class="nav-link arrow-left"
             :href="menu.link ? menu.link : '#'"
             role="button"
-            
+            @click.prevent="handleClick(menu)"
           >
             {{ menu.title }}
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" :class="{show: isActive(menu)}">
             <li class="dropdown" v-for="(dm, i) in menu.dropdown_menus" :key="i">
-              <nuxt-link
-                :href="dm.link"
-                class="dropdown-item"
-                :class="{ active: route.path === dm.link }"
-              >
-                <span>{{ dm.title }}</span>
-              </nuxt-link>
-              <ul class="dropdown-menu" v-if="dm.sub_menus && dm.sub_menus.length">
+              <template v-if="dm.sub_dropdown && isTouchDevice">
+                <a
+                  class="nav-link arrow-left"
+                  :href="dm.link ? dm.link : '#'"
+                  role="button"
+                  @click.prevent="handleClick(dm)"
+                >
+                  {{ dm.title }}
+                </a>
+              </template>
+              <template v-else>
+                <!-- <p>out</p> -->
+                <nuxt-link
+                  :href="dm.link"
+                  class="dropdown-item"
+                  :class="{ active: route.path === dm.link}"
+                >
+                  <span>{{ dm.title }}</span>
+                </nuxt-link>
+              </template>
+              <ul class="dropdown-menu" :class="{show: isSubActive(dm)}">
                 <li v-for="(sub, j) in dm.sub_menus" :key="j">
-                  <nuxt-link :href="sub.link" class="dropdown-item">
+                  <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }">
                     <span>{{ sub.title }}</span>
                   </nuxt-link>
                 </li>
               </ul>
-              
             </li>
             
             
@@ -80,6 +92,35 @@
 
 <script setup lang="ts">
 import menu_data from "@/data/menu-data";
+import { ref } from "vue";
+
+const isTouchDevice = ref(false);
+const activeMenu = ref<number | null>(null);
+const activeSubMenu = ref<number | null>(null);
+
+// 檢測是否為觸控設備
+if (typeof window !== "undefined") {
+  isTouchDevice.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+}
+
+// 處理點擊事件（適用於手機版）
+const handleClick = (menu: any) => {
+  console.log(menu, isTouchDevice.value)
+  if (isTouchDevice.value && menu.dropdown) {
+    activeMenu.value = activeMenu.value === menu.id ? null : menu.id;
+    return;
+  }
+  if (isTouchDevice.value && menu.sub_dropdown) {
+    activeSubMenu.value = activeSubMenu.value === menu.sub_id ? null : menu.sub_id;
+    return;
+  }
+};
+
+// 檢查是否顯示 dropdown
+const isActive = (menu: any) => activeMenu.value === menu.id;
+const isSubActive = (menu: any) => activeSubMenu.value === menu.sub_id;
+
+
 const route = useRoute();
 withDefaults(defineProps<{logo?:string}>(),{
   logo: '/images/logo/logo_02.png'
@@ -89,6 +130,9 @@ withDefaults(defineProps<{logo?:string}>(),{
 <style  scoped>
 .nav-link{
   font: 1rem;
+}
+.active {
+  padding-left: 23px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -117,6 +161,12 @@ withDefaults(defineProps<{logo?:string}>(),{
   .moblie-no-dropdown {
     padding-left: 0 !important;
   }
+  .dropdown-item {
+    padding-left: 0 !important;
+  }
+  /* ul.dropdown-menu {
+    padding-left: 10px;
+  } */
 }
 
 </style>

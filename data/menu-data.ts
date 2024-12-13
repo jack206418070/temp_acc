@@ -15,6 +15,8 @@ const menu_data:IMenu[] = [
       {
         link:'/about-us',
         title:'計畫內容簡介',
+        sub_id: 0,
+        sub_dropdown: false
       },
       {
         link:'/company-statute',
@@ -25,10 +27,14 @@ const menu_data:IMenu[] = [
           {link:'/censor-standard',title:'藍領審查標準'},
           {link:'/convert-principle',title:'外國人轉換原則'},
         ],
+        sub_id: 1,
+        sub_dropdown: true
       },
       {
         link:'/propaganda',
         title:'懶人包/宣傳品',
+        sub_id: 0,
+        sub_dropdown: false
       }
     ],
     
@@ -42,14 +48,20 @@ const menu_data:IMenu[] = [
       {
         link:'/announcement',
         title:'公告/新聞稿',
+        sub_id: 0,
+        sub_dropdown: false
       },
       {
         link:'/news',
         title:'新聞報導',
+        sub_id: 0,
+        sub_dropdown: false
       },
       {
         link:'/experience-share',
         title:'使用心得分享',
+        sub_id: 0,
+        sub_dropdown: false
       },
     ]
   },
@@ -62,14 +74,20 @@ const menu_data:IMenu[] = [
       {
         link:'/reserve-guide',
         title:'預約指引',
+        sub_id: 0,
+        sub_dropdown: false
       },
       {
         link:'/services',
         title:'試辦單位簡介',
+        sub_id: 0,
+        sub_dropdown: false
       },
       {
         link:'https://accompany-service-user.vercel.app',
         title:'我要預約',
+        sub_id: 0,
+        sub_dropdown: false
       },
     ]
   },
@@ -82,10 +100,14 @@ const menu_data:IMenu[] = [
       {
         link:'/join-us-unit',
         title:'申請資格與評選方式',
+        sub_id: 0,
+        sub_dropdown: false
       },
       {
         link:'/application-form',
         title:'填寫申請表',
+        sub_id: 0,
+        sub_dropdown: false
       },
     ]
   },
