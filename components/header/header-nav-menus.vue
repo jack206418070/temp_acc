@@ -4,12 +4,11 @@
       v-for="menu in menu_data"
       :key="menu.id">
       <li
-        v-if="menu.title != '首頁'"
         :class="`nav-item ${menu.dropdown ? 'dropdown' :''} ${menu.mega_menu ? 'dropdown mega-dropdown-sm' : ''}`"
       >
         <template v-if="menu.dropdown">
           <a
-            class="nav-link dropdown-toggle "
+            class="nav-link arrow-left"
             :href="menu.link ? menu.link : '#'"
             role="button"
             
@@ -70,7 +69,7 @@
           </ul>
         </template>
         <template v-else>
-          <nuxt-link class="nav-link mx-2 " :href="menu.link ? menu.link : '#'" role="button">
+          <nuxt-link class="nav-link moblie-no-dropdown" :href="menu.link ? menu.link : '#'" role="button">
             {{ menu.title }}
           </nuxt-link>
         </template>
@@ -95,6 +94,28 @@ withDefaults(defineProps<{logo?:string}>(),{
 @media screen and (max-width: 1280px) {
   .nav-link {
     font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar .navbar-nav .nav-link {
+    padding-left: 40px;
+  }
+  .navbar-nav {
+    padding-left: 50px;
+  }
+  .arrow-left::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: solid #333;
+    border-width: 0 0 2px 2px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    left: 2%;
+    top: 45%;
+  }
+  .moblie-no-dropdown {
+    padding-left: 0 !important;
   }
 }
 
