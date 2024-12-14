@@ -3,15 +3,76 @@
     <h2 class="default-title">
       使用心得分享
     </h2>
+    <div class="announcement-list">
+      <div class="announcement-list-item first-list">
+        <div class="item-date">發佈日期</div>
+        <div class="item-category">類別</div>
+        <div class="item-title">標題</div>
+      </div>
+      <div class="announcement-list-item">
+        <div class="item-date">2024/11/15</div>
+        <div class="item-category">使用心得分享</div>
+        <div class="item-title">
+          <a href="javascript:;" target="_blank">王大姐的心聲，解我燃眉之急的感動</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "使用心得分享 ｜ 多元陪伴照顧服務計畫" });
+  useSeoMeta({ title: "使用心得分享 ｜ 多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>
-h2 {
+h1, h2 {
   text-align: center;
 }
+.announcement-list {
+  margin-bottom: 80px;
+}
+.announcement-list-item {
+  display: flex;
+  align-items: start;
+  padding: 20px 0;
+  font-size: 16px;
+  color: rgb(9, 55, 31);
+  border-bottom: 1px solid #333;
+  flex-wrap: wrap;
+}
+.announcement-list-item .item-date {
+  flex: 0 0 20%;
+  text-align: center;
+}
+.announcement-list-item .item-category {
+  flex: 0 0 40%;
+  text-align: center;
+}
+.announcement-list-item .item-title {
+  flex: 0 0 40%;
+}
+@media (max-width: 991px) {
+  .default-title {
+    margin-bottom: 40px;
+  }
+  .first-list {
+    display: none;
+  }
+  .announcement-list-item {
+    font-size: 18px;
+    border-top: 1px solid #333;
+  }
+  .announcement-list-item .item-date {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+  .announcement-list-item .item-category {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+  .announcement-list-item .item-title {
+    flex: 0 0 100%;
+  }
+}
+
 </style>

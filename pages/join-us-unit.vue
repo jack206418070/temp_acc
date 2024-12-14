@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="main-container">
       <!-- project details v2 area start -->
       <joinusunit-intro />
       <!-- project details v2 area end -->

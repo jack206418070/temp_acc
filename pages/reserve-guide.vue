@@ -1,20 +1,65 @@
 <template>
-  <!-- 空出的小區段 -->
-    <div class="spacer-section">
-      <!-- 可插入內容，或保持空白 -->
-      <p>          </p>
+  <div class="customer-container">
+    <h2 class="default-title">
+      預約指引
+    </h2>
+    <div class="book-step">
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>1</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>2</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>3</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>4</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>5</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
+      <div class="step-item"><h3>步驟</h3>
+        <div>
+          <span>6</span>
+          <p>完整內容建置中</p>
+        </div></div>
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>7</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <h3>步驟</h3>
+        <div>
+          <span>8</span>
+          <p>完整內容建置中</p>
+        </div>
+      </div>
     </div>
- <div>
-  <h1>預約指引</h1>
-  <div class="grid-container">
-        <div class="grid-item"><h3>完整內容更新中</h3></div>
-        <div class="grid-item"><h3>完整內容更新中</h3></div>
-        <div class="grid-item"><h3>完整內容更新中</h3></div>
-        <div class="grid-item"><h3>完整內容更新中</h3></div>
-        <div class="grid-item"><h3>完整內容更新中</h3></div>
-        <div class="grid-item"><h3>完整內容更新中</h3></div>
-    </div>
- </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -25,31 +70,65 @@ useSeoMeta({ title: "預約指引｜ 多元陪伴照顧服務計畫" });
 h1, h2 {
   text-align: center;
 }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+.customer-container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.book-step {
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+.book-step .step-item {
+  flex: 0 0 24%;
+  margin-bottom: 20px;
+}
+.step-item {
+  border-radius: 20px;
+  border: 1px solid rgb(9, 55, 31);
+  padding: 20px 15px;
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.6);
+}
+.step-item h3 {
+  font-weight: 400;
+  color: rgb(9, 55, 31);
+  font-size: 35px;
+}
+.step-item div {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.step-item div span {
+  font-size: 60px;
+  font-weight: bold;
+}
+.step-item div p {
+  font-size: 20px;
+  color: rgb(9, 55, 31);
+}
+@media (max-width: 991px) {
+  .book-step .step-item {
+    flex: 0 0 90%;
+    margin-bottom: 20px;
+  }
+  .book-step {
     justify-content: center;
-    align-items: center;
-    gap: 20px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto; /* 水平置中 */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.grid-item {
-    background-color: #ffffff;
-    border: 1px solid #E0E0E0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+  }
+  .step-item h3 {
     text-align: center;
-    font-size: 50px;
-    line-height: 1.5;
-    color: #333333;
-    min-height: 150px;
+  }
+  .step-item div span {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  .step-item div p {
+    flex: 0 0 100%;
+    text-align: center;
+  }
 }
-
 </style>

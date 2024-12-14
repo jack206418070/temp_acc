@@ -3,6 +3,20 @@
     <h2 class="default-title">
       公告/新聞稿
     </h2>
+    <div class="announcement-list">
+      <div class="announcement-list-item first-list">
+        <div class="item-date">發佈日期</div>
+        <div class="item-category">類別</div>
+        <div class="item-title">標題</div>
+      </div>
+      <div class="announcement-list-item">
+        <div class="item-date">2024/11/15</div>
+        <div class="item-category">公告</div>
+        <div class="item-title">
+          <a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3933bb88301933e4e60030906" target="_blank">公告多元陪伴照顧服務試辦計畫第一階段試辦單位申請期間自即日起至11月28日截止。</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,4 +28,51 @@
 h1, h2 {
   text-align: center;
 }
+.announcement-list {
+  margin-bottom: 80px;
+}
+.announcement-list-item {
+  display: flex;
+  align-items: start;
+  padding: 20px 0;
+  font-size: 16px;
+  color: rgb(9, 55, 31);
+  border-bottom: 1px solid #333;
+  flex-wrap: wrap;
+}
+.announcement-list-item .item-date {
+  flex: 0 0 20%;
+  text-align: center;
+}
+.announcement-list-item .item-category {
+  flex: 0 0 40%;
+  text-align: center;
+}
+.announcement-list-item .item-title {
+  flex: 0 0 40%;
+}
+@media (max-width: 991px) {
+  .default-title {
+    margin-bottom: 40px;
+  }
+  .first-list {
+    display: none;
+  }
+  .announcement-list-item {
+    font-size: 18px;
+    border-top: 1px solid #333;
+  }
+  .announcement-list-item .item-date {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+  .announcement-list-item .item-category {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+  .announcement-list-item .item-title {
+    flex: 0 0 100%;
+  }
+}
+
 </style>
