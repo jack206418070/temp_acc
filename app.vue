@@ -18,7 +18,7 @@ onMounted(async () => {
   transition: opacity 1.5s ease-in; /* 淡入效果較慢 */
 }
 .page-leave-active {
-  transition: opacity 0.3s ease-out; /* 淡出效果較快 */
+  transition: opacity 0.2s ease-out; /* 淡出效果較快 */
 }
 .page-enter {
   opacity: 0; /* 起始狀態為透明 */

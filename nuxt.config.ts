@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         },
       ],
     },
-    pageTransition: { name: 'page', mode: 'in-out' }
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   css: [
