@@ -22,7 +22,8 @@ export default defineNuxtConfig({
           src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js",
         },
       ],
-    }
+    },
+    pageTransition: { name: 'page', mode: 'in-out' }
   },
 
   css: [

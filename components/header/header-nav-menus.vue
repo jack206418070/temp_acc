@@ -9,6 +9,7 @@
         <template v-if="menu.dropdown">
           <a
             class="nav-link"
+            style="display: flex; gap: 20px"
             :class="{'arrow-left': isTouchDevice, 'rotated': isActive(menu)}"
             :href="menu.link ? menu.link : '#'"
             role="button"
@@ -35,6 +36,7 @@
                   <p class="d-none">in</p>
                   <a
                     class="nav-link"
+                    style="display: flex; gap: 30px"
                     href="javascript:;"
                     role="button"
                     @click.prevent="closeMenu('subMenu', dm.link)"
@@ -45,7 +47,7 @@
                     {{ dm.title }}
                   </a>
                 </div>
-                <ul class="dropdown-menu" :class="{show: isSubActive(dm) || !isTouchDevice}">
+                <ul style="padding-left: 20px;" class="dropdown-menu" :class="{show: isSubActive(dm) || !isTouchDevice}">
                   <li v-for="(sub, j) in dm.sub_menus" :key="j">
                     <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }" @click="closeMenu">
                       <span>{{ sub.title }}</span>
@@ -102,9 +104,16 @@
           </ul>
         </template>
         <template v-else>
-          <nuxt-link class="nav-link moblie-no-dropdown" :href="menu.link ? menu.link : '#'" role="button" @click="closeMenu">
-            {{ menu.title }}
-          </nuxt-link>
+          <template v-if="menu.title == '首頁'">
+            <nuxt-link class="nav-link moblie-no-dropdown" :href="menu.link ? menu.link : '#'" role="button" @click="closeMenu" v-if="!isTouchDevice">
+              {{ menu.title }}
+            </nuxt-link>
+          </template>
+          <template v-else>
+            <nuxt-link class="nav-link moblie-no-dropdown" :href="menu.link ? menu.link : '#'" role="button" @click="closeMenu">
+              {{ menu.title }}
+            </nuxt-link>
+          </template>
         </template>
       </li>
       </template>
