@@ -8,24 +8,48 @@
       >
         <template v-if="menu.dropdown">
           <a
-            class="nav-link arrow-left"
+            class="nav-link"
+            :class="{'arrow-left': isTouchDevice, 'rotated': isActive(menu)}"
             :href="menu.link ? menu.link : '#'"
             role="button"
             @click.prevent="handleClick(menu)"
           >
+            <span :class="{'rotated': isActive(menu)}"
+            ><i class="bi bi-chevron-down"></i></span>
             {{ menu.title }}
           </a>
           <ul class="dropdown-menu" :class="{show: isActive(menu)}">
             <li class="dropdown" v-for="(dm, i) in menu.dropdown_menus" :key="i">
-              <template v-if="dm.sub_dropdown && isTouchDevice">
-                <a
-                  class="nav-link arrow-left"
-                  :href="dm.link ? dm.link : '#'"
-                  role="button"
-                  @click.prevent="handleClick(dm)"
-                >
-                  {{ dm.title }}
-                </a>
+              <template v-if="dm.sub_dropdown">
+                <div v-if="!isTouchDevice">
+                  <nuxt-link
+                    :href="dm.link"
+                    class="dropdown-item"
+                    :class="{ active: route.path === dm.link}"
+                  >
+                    <span>{{ dm.title }}</span>
+                  </nuxt-link>
+                </div>
+                <div v-else>
+                  <p class="d-none">in</p>
+                  <a
+                    class="nav-link"
+                    :href="dm.link ? dm.link : '#'"
+                    role="button"
+                    @click.prevent="handleClick(dm)"
+                  >
+                  <span :class="{'rotated': isSubActive(dm)}"
+                  ><i class="bi bi-chevron-down"></i></span>
+                    {{ dm.title }}
+                  </a>
+                </div>
+                <ul class="dropdown-menu" :class="{show: isSubActive(dm) || !isTouchDevice}">
+                  <li v-for="(sub, j) in dm.sub_menus" :key="j">
+                    <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }">
+                      <span>{{ sub.title }}</span>
+                    </nuxt-link>
+                  </li>
+                </ul>
               </template>
               <template v-else>
                 <!-- <p>out</p> -->
@@ -37,13 +61,6 @@
                   <span>{{ dm.title }}</span>
                 </nuxt-link>
               </template>
-              <ul class="dropdown-menu" :class="{show: isSubActive(dm)}">
-                <li v-for="(sub, j) in dm.sub_menus" :key="j">
-                  <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }">
-                    <span>{{ sub.title }}</span>
-                  </nuxt-link>
-                </li>
-              </ul>
             </li>
             
             
@@ -92,16 +109,21 @@
 
 <script setup lang="ts">
 import menu_data from "@/data/menu-data";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const isTouchDevice = ref(false);
 const activeMenu = ref<number | null>(null);
 const activeSubMenu = ref<number | null>(null);
 
-// 檢測是否為觸控設備
-if (typeof window !== "undefined") {
-  isTouchDevice.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-}
+
+onMounted(() => {
+  // 檢測是否為觸控設備
+  if (typeof window !== "undefined") {
+    console.log('in');
+    isTouchDevice.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    console.log(isTouchDevice.value);
+  }
+})
 
 // 處理點擊事件（適用於手機版）
 const handleClick = (menu: any) => {
@@ -141,13 +163,28 @@ withDefaults(defineProps<{logo?:string}>(),{
   }
 }
 @media screen and (max-width: 991px) {
+  .dropdown-menu {
+    display: none;
+  }
   .navbar .navbar-nav .nav-link {
-    padding-left: 40px;
+    /* padding-left: 40px; */
+    padding-left: 0;
+  }
+  span {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    display: inline-block;
+  }
+  span.rotated {
+    transform: rotate(-180deg);
   }
   .navbar-nav {
     padding-left: 50px;
   }
-  .arrow-left::before {
+  .navbar .dropdown-menu .dropdown-item span:before {
+    width: 0;
+  }
+  /* .arrow-left::before {
     content: "";
     position: absolute;
     width: 10px;
@@ -157,7 +194,26 @@ withDefaults(defineProps<{logo?:string}>(),{
     transform: translate(-50%, -50%) rotate(-45deg);
     left: 2%;
     top: 45%;
-  }
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    transform-origin: center;
+  } */
+  /* .arrow-left::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: solid #333;
+    border-width: 0 0 2px 2px;
+    left: -30px;
+    top: 15px;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    transform-origin: 50% 50%;
+  } */
+  /* .arrow-left.rotated::before {
+    transform: rotate(-225deg);
+  } */
   .moblie-no-dropdown {
     padding-left: 0 !important;
   }
