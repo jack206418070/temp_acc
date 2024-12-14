@@ -1,29 +1,26 @@
 <template>
 
-    <div class="pt-100 my-20 mb-60">
+    <div class="plan-service">
       <div class="position-relative">
-        <div class="title-one text-center mb-40 lg-mb-10">
-            <h2>服務對象</h2>
-        </div>
+        <h2>服務對象</h2>
         <!-- 流程示意圖區塊 -->
-        <div class="row process-diagram m-auto">
+        <div class="row m-auto">
         
-          <div class="col-md" v-for="(item, index) in serviceSteps" :key="index">
+          <div class="col-md wow fadeInUp" v-for="(item, index) in serviceSteps" :key="index" :data-wow-delay="`${index * 0.2}s`">
             <!-- 上方步驟區塊 -->
-            <div class="step-item text-center mb-4">
+            <div class="step-item text-center mb-lg-4 mb-2">
               <div class="step-number">{{ index + 1 }}</div>
               <div class="step-title">{{ item.title }}</div>
             </div>
             
             <!-- 中間說明區塊 -->
             <div class="description-box p-20 mb-4">
-              <h4>{{ item.title }}</h4>
               <p>{{ item.description }}</p>
             </div>
 
             <!-- 下方備註區塊 -->
-            <div class="notes-box fs-6 p-20 ">
-              <p style="white-space: pre-line; font-style: italic;" >{{ item.note }}</p>
+            <div class="notes-box">
+              <p style="white-space: pre-line;" >{{ item.note }}</p>
             </div>
           </div>
         </div>  
@@ -57,7 +54,7 @@ const serviceSteps: ServiceStep[] = [
   {
     title: '',
     description: '符合聘僱外國人從事家庭看護工作或中階家庭看護工作之被看護者資格。',
-    note: '符合申請聘僱外國人資格之有效證明文件、有效期間內之招募許可或聘僱許可。\n可用系統勾稽。'
+    note: '符合申請聘僱外國人資格之有效證明文件、有效期間內之招募許可或聘僱許可。 可用系統勾稽。'
   },
   {
     title: '',
@@ -70,10 +67,12 @@ const serviceSteps: ServiceStep[] = [
 
 <style scoped>
 h2 {
-  text-align: left;
-  margin-left: 5rem;
+  color: #788A74;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
-
 .process-diagram {
   background: #fff;
   padding: 2rem;
@@ -82,22 +81,29 @@ h2 {
   width: 90%;
 
 }
+.plan-service {
+  margin-bottom: 40px;
+}
 
 .step-item {
   position: relative;
 }
 
+.notes-box p {
+  font-size: 12px;
+}
+
 .step-number {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: #586d5b;
-  color: white;
+  background: #788a74;
+  color: #FFFFFE;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .step-title {
@@ -106,9 +112,13 @@ h2 {
 }
 
 .description-box {
-  background: #f8f9fa;
+  background: rgb(243, 243, 243);
   border-radius: 8px;
   min-height: 150px;
+  padding: 8px;
+}
+.description-box p {
+  font-size: 12px;
 }
 
 .notes-box {
@@ -122,7 +132,7 @@ h2 {
   top: 20px;
   right: -25%;
   width: 50%;
-  height: 2px;
+  height: 1px;
   background: #586d5b;
   display: none; /* 先隱藏所有連接線 */
 }
@@ -134,5 +144,45 @@ h2 {
 
 .notes-box p {
   white-space: pre-line;
+}
+
+.wow {
+  visibility: hidden; /* 確保元素在動畫開始前不可見 */
+}
+
+
+@media (max-width: 996px) {
+  h2 {
+    font-size: 32px;
+  }
+  .description-box {
+    height: auto;
+    min-height: 0px;
+    padding: 10px 8px;
+    margin-bottom: 10px !important;
+  }
+  .description-box p {
+    margin-bottom: 0;
+  }
+  .notes-box p {
+    padding: 0 8px;
+  }
+  .step-number {
+    margin: 0;
+  }
+  .step-item:not(:last-child)::after {
+    right: -15%;
+    width: 100%;
+    background: #000;
+  }
+  .step-item::after {
+    display: block!important;
+  }
+  .notes-box {
+    margin-left: 45px;
+  }
+  .description-box {
+    margin-left: 45px;
+  }
 }
 </style>

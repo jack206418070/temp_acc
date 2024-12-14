@@ -1,47 +1,10 @@
 <template>
-  <div>
-    <!-- text feature area start -->
-    <div class="text-feature-one mt-150 lg-mt-80">
-      <div class="container">
-        <div class="line-wrapper position-relative">
-          <div class="row align-items-center">
-            <div class="col-lg-12 wow fadeIn">
-              <div class="title-one">
-                <h2>計畫內容簡介</h2>
-              </div>
-              <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
-                為回應民眾「臨短急」照顧需求，包括長輩「臨」時有狀況卻找不到照顧人力、外籍家庭看護空窗期的「短」期需要照顧人力、家人手術或病後需要「急」性後期照顧等，勞動部推動「多元陪伴照顧服務試辦計畫」，由具備照顧服務經驗並依法設立滿五年之財團法人或非營利社團法人，並通過公益性、專業度與合理收費等評選標準後成為試辦單位，聘僱及培訓本國籍及外國籍之多元陪伴照顧服務工作者至申請服務家庭，提供基本日常生活照顧、陪同外出、陪同就醫、安全陪伴等多元陪伴照顧服務 。
-              </p>
-              <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
-                「陪伴照顧服務工作者」之給薪與休息時間，依勞動基準法規定辦理。
-              </p>
-              <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">
-                本項服務由民眾全額自費，各試辦單位得提供單次至少四小時以上或全日等彈性服務，並依勞動部核定之服務價格收費。 申請本項服務之民眾必須具備能提出以下任一文件之資格，包括：身心障礙證明、重大傷病證明、醫師診斷證明書、符合聘僱外國人之招募許可或聘僱許可、長期照顧需求評估通知書或使用收據等文件。
-              </p>
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- text feature area end -->
-    <!-- 新增 Modal 組件 -->
-    <div v-if="showModal" class="modal-overlay" @click="showModal = false">
-      <div class="modal-content" @click.stop>
-        <h3>計畫內容簡介詳細說明</h3>
-        <div class="modal-body">
-          <p>就業服務法 -> 下載連結</p>
-          <p>藍領審查標準 -> 下載連結</p>
-          <p>多元陪伴照顧服務試 -> 下載連結</p>
-          <p>外國人轉換準則 -> 下載連結</p>
-        </div>
-        <button class="btn btn-one " @click="showModal = false">關閉</button>
-      </div>
-    </div>
+  <div class="plan-about">
+    <h2>計畫內容簡介</h2>
+    <p>為回應民眾「臨短急」照顧需求，包括長輩「臨」時有狀況卻找不到照顧人力、外籍家庭看護空窗期的「短」期需要照顧人力、家人手術或病後需要「急」性後期照顧等，勞動部推動「多元陪伴照顧服務試辦計畫」，由依法設立滿五年之財團法人或非營利社團法人，並通過公益性、專業度與合理收費等評選標準後成為試辦單位，聘僱及培訓本國籍及外國籍多元陪伴照顧服務工作者到申請服務家庭，提供基本日常生活照顧、陪同外出、陪同就醫、安全陪伴等多元陪伴照顧服務 。「陪伴照顧服務工作者」之給薪與休息時間，依勞動基準法規定辦理。</p>
+    <p>本項服務由民眾全額自費，各試辦單位得提供單次至少四小時以上或全日等彈性服務，並依勞動部核定之服務價格收費。</p>
+    <p>申請本項服務之民眾必須具備能提出以下任一文件之資格，包括：身心障礙證明、重大傷病證明、醫師診斷證明書、符合聘僱外國人之招募許可或聘僱許可、長期照顧需求評估通知書或使用收據等文件。</p>
   </div>
-
-  
 </template>
 
 <script setup lang="ts">
@@ -72,6 +35,22 @@ const service_data = [
 </script>
 
 <style scoped>
+h2 {
+  color: #788A74;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.plan-about {
+  margin-bottom: 60px;
+}
+.plan-about p {
+  text-align: justify; /* 設置文字兩端對齊 */
+  font-size: 18px;
+  letter-spacing: normal;
+  margin-bottom: 40px;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -92,6 +71,11 @@ const service_data = [
   max-width: 60%;
   max-height: 80vh;
   overflow-y: auto;
+}
+@media (max-width: 996px) {
+  h2 {
+    font-size: 32px;
+  }
 }
 
 

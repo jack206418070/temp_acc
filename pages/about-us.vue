@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="main-container">
   <!-- breadcrumb area start -->
   <!-- <breadcrumb-one
     title="關於多元陪伴照顧服務試辦計畫"
