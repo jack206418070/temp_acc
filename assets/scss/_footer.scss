@@ -1,11 +1,61 @@
 // Footer One
 .footer-one {
     background: $color-six;
-    padding-top: 95px;
+    padding-top: 50px;
+    @media (max-width: 991px) {
+      padding-top: 30px !important;
+    }
+    .footer-content {
+      display: flex;
+      padding: 0 15px;
+      @media (max-width: 991px) {
+        padding: 0;
+      }
+    }
     .bottom-footer {
-        border-top: 1px dashed rgba($color: #fff, $alpha: 0.25);
+        border-top: 1px solid rgba(251, 251, 243);
         margin-top: 32px;
-        padding: 40px 0 25px;
+    }
+    .footer-info {
+      flex: 0 0 55%;
+      color: rgba(251, 251, 243);
+      font-size: 16px;
+      font-weight: 300;
+      @media (max-width: 991px) {
+        font-size: 16px;
+      }
+      .footer-line {
+        height: 1px;
+        background: rgba(251, 251, 243);
+        margin: 50px 0;
+        @media (max-width: 991px) {
+          margin: 25px 0;
+        }
+      }
+      p {
+        margin-bottom: 0;
+      }
+      @media (max-width: 991px) {
+        flex: 0 0 100%;
+      }
+    }
+    .footer-link {
+      flex: 0 0 45%;
+      padding-left: 160px;
+      padding-top: 10px;
+      li {
+        color: rgba(251, 251, 243);
+        margin-bottom: 3px;
+        a {
+          color: inherit;
+          font-weight: 300;
+          font-size: 22px;
+          letter-spacing: 2px;
+        }
+      }
+      @media (max-width: 991px) {
+        display: none;
+      }
     }
     .social-icon a {
         color: #fff;
@@ -74,8 +124,14 @@
         }
     }
     .copyright {
-        font-size: 18px;
-        color: rgba($color: #fff, $alpha: 0.7);
+        font-size: 16px;
+        color: rgba(251, 251, 243);
+        font-weight: 300;
+        padding: 20px 0;
+        @media (max-width: 991px) {
+          font-size: 12px;
+          text-align: left;
+        }
     }
     .bottom-nav {
         margin: 0 -12px;
@@ -230,6 +286,9 @@
         .copyright {
             font-size: 16px;
             color: rgba($color: #000, $alpha: 0.7);
+            @media (max-width: 991px) {
+              font-size: 14px;
+            }
         }
         .bottom-nav {
             margin: 0 -12px;

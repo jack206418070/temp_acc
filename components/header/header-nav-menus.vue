@@ -115,13 +115,22 @@ const isTouchDevice = ref(false);
 const activeMenu = ref<number | null>(null);
 const activeSubMenu = ref<number | null>(null);
 
+const updateIsTouchDevice = () => {
+  isTouchDevice.value = window.matchMedia("(max-width: 991px)").matches;
+};
 
 onMounted(() => {
-  // 檢測是否為觸控設備
-  if (typeof window !== "undefined") {
-    isTouchDevice.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-  }
-})
+  // 初次檢測
+  updateIsTouchDevice();
+
+  // 監聽視窗大小變化
+  window.addEventListener("resize", updateIsTouchDevice);
+});
+
+onUnmounted(() => {
+  // 移除監聽器
+  window.removeEventListener("resize", updateIsTouchDevice);
+});
 
 // 處理點擊事件（適用於手機版）
 const handleClick = (menu: any) => {

@@ -1,6 +1,6 @@
 <template>
   <div :class="`footer-two ${bg?'':'no-bg'}`">
-    <div class="container">
+    <div class="main-container">
       <div class="bg-wrapper position-relative">
         <div class="container">
           <div class="row justify-content-between">
