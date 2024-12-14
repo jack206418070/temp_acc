@@ -14,7 +14,7 @@
 
 <style>
   .default-padding {
-    padding-top: 133px;
+    padding-top: 129px;
   }
   @media (max-width: 991px) {
     .default-padding {

@@ -90,6 +90,7 @@
                         :href="sm.link"
                         class="dropdown-item"
                         :class="{ active: route.path === sm.link }"
+                        @click="closeMenu"
                       >
                         <span>{{ sm.title }}</span>
                       </nuxt-link>
@@ -101,7 +102,7 @@
           </ul>
         </template>
         <template v-else>
-          <nuxt-link class="nav-link moblie-no-dropdown" :href="menu.link ? menu.link : '#'" role="button">
+          <nuxt-link class="nav-link moblie-no-dropdown" :href="menu.link ? menu.link : '#'" role="button" @click="closeMenu">
             {{ menu.title }}
           </nuxt-link>
         </template>
