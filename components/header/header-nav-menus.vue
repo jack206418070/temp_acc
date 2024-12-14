@@ -26,6 +26,7 @@
                     :href="dm.link"
                     class="dropdown-item"
                     :class="{ active: route.path === dm.link}"
+                    @click="closeMenu"
                   >
                     <span>{{ dm.title }}</span>
                   </nuxt-link>
@@ -34,18 +35,19 @@
                   <p class="d-none">in</p>
                   <a
                     class="nav-link"
-                    :href="dm.link ? dm.link : '#'"
+                    href="javascript:;"
                     role="button"
-                    @click.prevent="handleClick(dm)"
+                    @click.prevent="closeMenu('subMenu', dm.link)"
                   >
                   <span v-if="isTouchDevice" :class="{'rotated': isSubActive(dm)}"
+                    @click.stop="handleClick(dm)"
                   ><i class="bi bi-chevron-down"></i></span>
                     {{ dm.title }}
                   </a>
                 </div>
                 <ul class="dropdown-menu" :class="{show: isSubActive(dm) || !isTouchDevice}">
                   <li v-for="(sub, j) in dm.sub_menus" :key="j">
-                    <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }">
+                    <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }" @click="closeMenu">
                       <span>{{ sub.title }}</span>
                     </nuxt-link>
                   </li>
@@ -57,6 +59,7 @@
                   :href="dm.link"
                   class="dropdown-item"
                   :class="{ active: route.path === dm.link}"
+                  @click="closeMenu"
                 >
                   <span>{{ dm.title }}</span>
                 </nuxt-link>
@@ -109,12 +112,14 @@
 
 <script setup lang="ts">
 import menu_data from "@/data/menu-data";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, defineEmits } from "vue";
+import { useRouter } from 'vue-router';
 
+const router = useRouter(); // 獲取路由對象
 const isTouchDevice = ref(false);
 const activeMenu = ref<number | null>(null);
 const activeSubMenu = ref<number | null>(null);
-
+const emit = defineEmits(['update-overflow']);
 const updateIsTouchDevice = () => {
   isTouchDevice.value = window.matchMedia("(max-width: 991px)").matches;
 };
@@ -134,7 +139,6 @@ onUnmounted(() => {
 
 // 處理點擊事件（適用於手機版）
 const handleClick = (menu: any) => {
-  console.log(menu, isTouchDevice.value)
   if (isTouchDevice.value && menu.dropdown) {
     activeMenu.value = activeMenu.value === menu.id ? null : menu.id;
     return;
@@ -154,6 +158,17 @@ const route = useRoute();
 withDefaults(defineProps<{logo?:string}>(),{
   logo: '/images/logo/logo_02.png'
 })
+
+const closeMenu = (type = '', link=null) => {
+  emit('update-overflow', false);
+  const navbarCollapse = document.getElementById('navbarNav');
+  if (navbarCollapse) {
+    navbarCollapse.classList.remove('show'); // 移除 Bootstrap 的 .show 類別
+  }
+  if (type == 'subMenu' && link) {
+    router.push(link);
+  }
+};
 </script>
 
 <style  scoped>

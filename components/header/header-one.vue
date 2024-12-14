@@ -20,13 +20,14 @@
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
               aria-controls="navbarNav"
-              aria-expanded="false"
+              :aria-expanded="is_overflow ? 'true' : 'false'"
               aria-label="Toggle navigation"
+              @click="checkOverFlow"
             >
               <span></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <header-nav-menus />
+              <header-nav-menus @update-overflow="handleOverflowChange" />
             </div>
           </nav>
         
@@ -79,11 +80,34 @@ import { ref } from 'vue';
 
 // 綁定 input 的值
 const search_text = ref('');
+const is_overflow = ref(false);
 
 // 清空搜索文字
 const clearSearch = () => {
   search_text.value = '';
 };
+
+const checkOverFlow = () => {
+  is_overflow.value = !is_overflow.value; // 切換布林值
+
+  if (is_overflow.value) {
+    // 當 is_overflow 為 true，將 body 設置為無滾動
+    document.body.style.overflow = 'hidden';
+  } else {
+    // 當 is_overflow 為 false，恢復滾動
+    document.body.style.overflow = '';
+  }
+}
+
+const handleOverflowChange = (value) => {
+  is_overflow.value = value; // 更新主元件的 is_overflow
+  if (is_overflow.value) {
+    document.body.style.overflow = 'hidden'; // 禁止滾動
+  } else {
+    document.body.style.overflow = ''; // 恢復滾動
+  }
+};
+
 </script>
 
 <style scoped>
