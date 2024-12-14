@@ -14,7 +14,7 @@
             role="button"
             @click.prevent="handleClick(menu)"
           >
-            <span :class="{'rotated': isActive(menu)}"
+            <span v-if="isTouchDevice" :class="{'rotated': isActive(menu)}"
             ><i class="bi bi-chevron-down"></i></span>
             {{ menu.title }}
           </a>
@@ -38,7 +38,7 @@
                     role="button"
                     @click.prevent="handleClick(dm)"
                   >
-                  <span :class="{'rotated': isSubActive(dm)}"
+                  <span v-if="isTouchDevice" :class="{'rotated': isSubActive(dm)}"
                   ><i class="bi bi-chevron-down"></i></span>
                     {{ dm.title }}
                   </a>
@@ -119,9 +119,7 @@ const activeSubMenu = ref<number | null>(null);
 onMounted(() => {
   // 檢測是否為觸控設備
   if (typeof window !== "undefined") {
-    console.log('in');
     isTouchDevice.value = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    console.log(isTouchDevice.value);
   }
 })
 
@@ -184,45 +182,12 @@ withDefaults(defineProps<{logo?:string}>(),{
   .navbar .dropdown-menu .dropdown-item span:before {
     width: 0;
   }
-  /* .arrow-left::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border: solid #333;
-    border-width: 0 0 2px 2px;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    left: 2%;
-    top: 45%;
-    transition: transform 0.3s ease;
-    background-color: #fff;
-    transform-origin: center;
-  } */
-  /* .arrow-left::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border: solid #333;
-    border-width: 0 0 2px 2px;
-    left: -30px;
-    top: 15px;
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease;
-    transform-origin: 50% 50%;
-  } */
-  /* .arrow-left.rotated::before {
-    transform: rotate(-225deg);
-  } */
   .moblie-no-dropdown {
     padding-left: 0 !important;
   }
   .dropdown-item {
     padding-left: 0 !important;
   }
-  /* ul.dropdown-menu {
-    padding-left: 10px;
-  } */
 }
 
 </style>
