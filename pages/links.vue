@@ -149,6 +149,7 @@ useSeoMeta({ title: "相關網站連結 ｜ 多元陪伴照顧服務計畫" });
     }
     .link-list li img {
       height: 40px;
+      flex: 0 0 200px;
     }
     .link-list li p {
       flex: 0 0 85%;
