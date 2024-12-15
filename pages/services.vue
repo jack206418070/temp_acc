@@ -1,29 +1,140 @@
 <template>
   <div>
-     <!-- breadcrumb area start -->
-     <div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-xl-8 col-lg-9 m-auto">
-                    <h1 class="hero-heading">試辦單位簡介</h1>
-                    <p class="text-lg">目前試辦單位還在持續累積中，各試辦單位坐落在不同服務地區，所提供的服務項目、服務時數、收費、服務特色、注意事項或有不同，請進入試辦單位介紹區有更多完整的介紹，並可點選預約服務。</p>
-                </div>
-            </div>
-        </div>
-        <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_03">
-        <img src="/images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_04">
-        <div class="d-inline-flex flex-wrap justify-content-center">
-          <a class="btn-one mt-10 me-2 ht-btn" href="https://accompany-service-user.vercel.app/login" target="">我要預約</a>
-        </div>
-        
+    <div class="service-banner">
+      <div class="main-container">
+        <h2 class="default-title">
+          試辦單位簡介
+        </h2>
+        <p>目前試辦單位還在持續累積中， 各試辦單位坐落在不同服務地區，所提供的服務項目、服務時數、收費、服務特色、注意事項或有不同，請進入試辦單位介紹區有更多完整的介紹，並可點選預約服務。</p>
+        <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
+          <span>我要預約</span>
+          <span>
+            <svg data-bbox="12.816 12.816 174.368 174.368" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+              viewBox="0 0 200 200" data-type="shape">
+              <g>
+                <path
+                  d="M100 12.816c-48.073 0-87.184 39.111-87.184 87.184s39.11 87.184 87.184 87.184 87.184-39.111 87.184-87.184S148.073 12.816 100 12.816zm0 168.651c-44.921 0-81.467-36.546-81.467-81.467S55.079 18.533 100 18.533 181.467 55.079 181.467 100 144.921 181.467 100 181.467z">
+                </path>
+                <path
+                  d="M91.832 79.142L89.3 77.815l-2.653 5.065 2.532 1.326 25.196 13.199H72.403l.17 5.714h41.973l-24.364 14.679-2.449 1.475 2.951 4.897 2.448-1.475 33.711-20.31 4.352-2.622-4.501-2.358-34.862-18.263z">
+                </path>
+              </g>
+            </svg>
+          </span>
+        </Nuxt-link>
+      </div>
     </div>
-    <service-unit-list-area />
-    <service-details-area />
-    <!-- service area start -->
-        
+    <div class="main-container">
+      <service-unit-list-area />
+      <service-details-area />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "服務介紹 - 多元陪伴照顧服務計畫" });
+  import { gsap } from "gsap";
+  import { onMounted, onUnmounted } from 'vue';
+
+  onMounted(() => {
+    const jellyBox = document.getElementById("jelly-box");
+
+    if (jellyBox) {
+      // 定義動畫函數
+      const jellyEffect = () => {
+        gsap.timeline()
+          // 初始快速拉伸
+          .fromTo(
+            jellyBox,
+            { scaleX: 1, scaleY: 1 },
+            {
+              scaleX: 1.2, // 左右拉長
+              scaleY: 0.9, // 上下壓縮
+              duration: 0.3, // 每次動作持續時間
+              ease: "power2.inOut", // 緩動效果
+              yoyo: true, // 啟用回彈
+              repeat: 0, // 完成兩次（初始與回彈）
+            }
+          )
+          // 中間的3次快速拉長壓縮
+          .to(jellyBox, {
+            scaleX: 0.9, // 左右壓縮
+            scaleY: 1.2, // 上下拉長
+            duration: 0.1, // 每次動作持續時間
+            ease: "power2.inOut",
+            yoyo: true,
+            repeat: 2, // 快速來回三次
+          })
+          // 恢復原狀
+          .to(jellyBox, {
+            scaleX: 1,
+            scaleY: 1,
+            duration: 0.1,
+            ease: "power2.out",
+          });
+      };
+
+      // 設定每隔 3 秒觸發一次動畫
+      const interval = setInterval(jellyEffect, 3000);
+
+      // 確保組件卸載時清除計時器
+      onUnmounted(() => {
+        clearInterval(interval);
+      });
+    }
+  });
+
+
+  useSeoMeta({ title: "服務介紹 - 多元陪伴照顧服務計畫" });
 </script>
+
+<style scoped>
+  .service-banner {
+    padding: 30px 0 60px 0;
+    background-color: rgb(209, 231, 221);
+  }
+
+  .default-title {
+    text-align: center;
+    font-size: 52px;
+  }
+
+  .service-banner p {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .service-banner a {
+    background-color: #3F7652;
+    color: #FBFBF3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    width: 200px;
+    margin: 0 auto;
+    padding: 8px 10px;
+    border-radius: 40px;
+  }
+
+  .service-banner a span {
+    letter-spacing: 2px;
+  }
+
+  .service-banner a span svg {
+    width: 37px;
+    height: 37px;
+    fill: #FBFBF3;
+  }
+  @media (max-width: 991px) {
+    .default-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+    .service-banner p {
+      width: 90%;
+    }
+  }
+</style>

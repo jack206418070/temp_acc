@@ -124,7 +124,7 @@ const service_data = [
 const showModal = ref(false);
 </script>
 
-<style>
+<style scoped>
 .ch-main-list{
   list-style:cjk-ideographic;
 }
@@ -172,6 +172,14 @@ const showModal = ref(false);
   }
   .join-block .title-p {
     font-size: 18px;
+  }
+  .default-title {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  .ch-main-list {
+    padding-left: 40px;
+    padding-right: 0;
   }
 }
 
