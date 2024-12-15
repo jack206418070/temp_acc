@@ -17,7 +17,7 @@
         </a>
       </li>
       <li>
-        <a href="https://www.wda.gov.tw/" target="_blank">
+        <Nuxt-link href="/all-contact-info">
           <p>各縣市長期照顧管理中心聯繫窗口</p>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
@@ -26,7 +26,7 @@
               </g>
             </svg>
           </span>
-        </a>
+        </Nuxt-link>
       </li>
       <li>
         <a href="https://fw.wda.gov.tw/wda-employer/home" target="_blank">
@@ -65,7 +65,7 @@
         </a>
       </li>
       <li>
-        <a href="https://www.wda.gov.tw/News_Content.aspx?n=31&s=3512" target="_blank">
+        <a href="/foreign-famliy-link" target="_blank">
           <p>外籍家庭看護工學習資源網頁的相關連結</p>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">

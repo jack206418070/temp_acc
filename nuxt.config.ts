@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     head: {
       title: "Babun - Business & Finance Vue nuxt 3 Template",
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      viewport: 'content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"',
       script: [
         {
           src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js",
