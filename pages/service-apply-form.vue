@@ -10,7 +10,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+  useSeoMeta({ title: "多元陪伴照顧服務試辦單位申請表" });
+</script>
 
 <style scoped>
   .apply-title {

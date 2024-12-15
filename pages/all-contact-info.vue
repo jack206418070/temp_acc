@@ -160,7 +160,7 @@
   const filter_contact = computed(() => {
     return contact_list.value.filter(item => item.area == select_area.value);
   })
-
+  useSeoMeta({ title: "各縣市長期照顧管理中心｜多元陪伴照顧服務計畫" });
 
 
 </script>

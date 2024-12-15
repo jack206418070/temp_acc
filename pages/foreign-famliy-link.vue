@@ -51,6 +51,7 @@ const links = ref([
     "link": "https://fw.wda.gov.tw/wda-employer/home/textbook/2c9552e063b4c0260163b4fe0fde0046"
   }
 ]);
+useSeoMeta({ title: "外籍家庭看護工學習資源｜多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>
