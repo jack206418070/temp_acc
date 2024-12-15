@@ -65,7 +65,7 @@
         </a>
       </li>
       <li>
-        <a href="/foreign-famliy-link" target="_blank">
+        <Nuxt-link href="/foreign-famliy-link">
           <p>外籍家庭看護工學習資源網頁的相關連結</p>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
@@ -74,7 +74,7 @@
               </g>
             </svg>
           </span>
-        </a>
+        </Nuxt-link>
       </li>
     </ul>
   </div>
