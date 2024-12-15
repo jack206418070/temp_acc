@@ -19,7 +19,7 @@
       :data-bs-parent="`#${parent}`"
     >
       <div class="accordion-body">
-        <p>{{ desc }}</p>
+        <p v-html="desc"></p>
       </div>
     </div>
   </div>

@@ -994,12 +994,13 @@
 // FAQ Section Three
 .faq-section-three {
     .tab-content {
-        background: #fff;
+        background: transparent;
         border-radius: 30px;
-        padding: 0 60px;
-        .accordion-style-one .accordion-item:last-child {
-            border-bottom: none;
-        }
+        padding: 0;
+        padding-left: 25px;
+        // .accordion-style-one .accordion-item:last-child {
+        //     border-bottom: none;
+        // }
         .accordion-style-one .accordion-item:first-child {
             border-top: none;
         }

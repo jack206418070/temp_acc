@@ -180,6 +180,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6);
+    padding-bottom: 12px;
   }
 
   .vendor-image {

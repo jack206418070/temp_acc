@@ -2,13 +2,13 @@
 .accordion-style-one {
     .accordion-item {
         border: none;
-        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid rgb(61, 118, 138);
         border-radius: 0;
         .accordion-button {
-            font-weight: 500;
-            font-size: 25px;
+            font-weight: 400;
+            font-size: 18px;
             line-height: 1.55em;
-            color: $heading;
+            color: rgb(43, 39, 22);
             padding: 33px 0;
             background: transparent;
             border-radius: 0;
@@ -17,13 +17,13 @@
                 padding-bottom: 20px;
                 &:after {
                     content: '-';
-                    font-size: 40px;
+                    font-size: 36px;
                 }
             }
             &:after {
                 content: '+';
                 font-weight: 300;
-                font-size: 32px;
+                font-size: 28px;
                 background: none;
                 width: auto;
                 height: auto;
@@ -33,10 +33,12 @@
             padding: 0 35px 20px 0;
             p {
                 margin: 0;
+                font-size: 16px;
+                color: rgb(43, 39, 22);
             }
         }
         &:last-child {
-            border-bottom: 1px solid #E0E0E0;
+            border-bottom: 1px solid rgb(61, 118, 138);
         }
     }
 }
@@ -153,7 +155,7 @@
 .accordion-style-three {
     .accordion-item {
         border: none;
-        border-bottom: 1px solid #E0E0E0;
+        border-bottom: 1px solid rgb(61, 118, 138);
         border-radius: 0;
         .accordion-button {
             font-weight: 500;
