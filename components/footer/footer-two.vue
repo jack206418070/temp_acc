@@ -15,7 +15,7 @@
           <li><nuxt-link href="/join-us-unit">成為試辦單位</nuxt-link></li>
           <li><nuxt-link href="/faq">常見問題</nuxt-link></li>
           <li><nuxt-link href="/contact">聯絡我們</nuxt-link></li>
-          <li><nuxt-link href="/link">相關網站連結</nuxt-link></li>
+          <li><nuxt-link href="/links">相關網站連結</nuxt-link></li>
         </ul>
       </div>
     </div>
