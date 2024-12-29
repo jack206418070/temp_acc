@@ -8,5 +8,5 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({ title: "常見問題｜多元陪伴照顧" });
+useSeoMeta({ title: "服務諮詢方式與服務問題反應管道｜多元陪伴照顧" });
 </script>
