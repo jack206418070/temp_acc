@@ -26,7 +26,7 @@
                   <nuxt-link
                     :href="dm.link"
                     class="dropdown-item"
-                    :class="{ active: route.path === dm.link}"
+                    :class="{ active: route.path === dm.link, hightlight: dm.is_highlight }"
                     @click="closeMenu"
                   >
                     <span>{{ dm.title }}</span>
@@ -60,7 +60,7 @@
                 <nuxt-link
                   :href="dm.link"
                   class="dropdown-item"
-                  :class="{ active: route.path === dm.link}"
+                  :class="{ active: route.path === dm.link,  highlight: dm.is_highlight }"
                   @click="closeMenu"
                 >
                   <span>{{ dm.title }}</span>
@@ -187,6 +187,13 @@ const closeMenu = (type = '', link=null) => {
 }
 .active {
   padding-left: 23px;
+}
+
+.highlight {
+  background-color: rgb(120, 138, 116) !important;
+  color: #fff !important;
+  border-radius: 30px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1280px) {

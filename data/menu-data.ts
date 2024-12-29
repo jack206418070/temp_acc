@@ -16,7 +16,8 @@ const menu_data:IMenu[] = [
         link:'/about-us',
         title:'計畫內容簡介',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       },
       {
         link:'/company-statute',
@@ -28,13 +29,15 @@ const menu_data:IMenu[] = [
           {link:'/convert-principle',title:'外國人轉換原則'},
         ],
         sub_id: 1,
-        sub_dropdown: true
+        sub_dropdown: true,
+        is_highlight: false
       },
       {
         link:'/propaganda',
         title:'懶人包/宣傳品',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       }
     ],
     
@@ -49,19 +52,22 @@ const menu_data:IMenu[] = [
         link:'/announcement',
         title:'公告/新聞稿',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       },
       {
         link:'/news',
         title:'新聞報導',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       },
       {
         link:'/experience-share',
         title:'使用心得分享',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       },
     ]
   },
@@ -72,23 +78,26 @@ const menu_data:IMenu[] = [
     dropdown:true,
     dropdown_menus:[
       {
+        link:'https://accompany-service-user.vercel.app',
+        title:'我要預約',
+        sub_id: 0,
+        sub_dropdown: false,
+        is_highlight: true
+      },
+      {
         link:'/reserve-guide',
         title:'預約指引',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       },
       {
         link:'/services',
         title:'試辦單位簡介',
         sub_id: 0,
-        sub_dropdown: false
-      },
-      {
-        link:'https://accompany-service-user.vercel.app',
-        title:'我要預約',
-        sub_id: 0,
-        sub_dropdown: false
-      },
+        sub_dropdown: false,
+        is_highlight: false
+      }
     ]
   },
   {
@@ -101,7 +110,8 @@ const menu_data:IMenu[] = [
         link:'/join-us-unit',
         title:'申請資格與評選方式',
         sub_id: 0,
-        sub_dropdown: false
+        sub_dropdown: false,
+        is_highlight: false
       },
       {
         link:'/application-form',
@@ -110,7 +120,8 @@ const menu_data:IMenu[] = [
         sub_dropdown: true,
         sub_menus:[
           {link:'/service-apply-form',title:'多元陪伴照顧服務試辦單位申請表'},
-        ]
+        ],
+        is_highlight: false
       },
     ]
   },

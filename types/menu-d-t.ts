@@ -12,6 +12,7 @@ export interface IMenu {
     }[];
     sub_id: number;
     sub_dropdown?: boolean;
+    is_highlight: boolean;
   }[];
   mega_menu?: boolean;
   mega_menus?: {
