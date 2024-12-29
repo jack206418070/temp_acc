@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
-    <h2 class="default-title">
-      聯絡我們
+    <h2 class="default-title">      
+服務諮詢方式與服務問題反應管道
     </h2>
     <div class="contact-block">
       <div class="contact-item">
