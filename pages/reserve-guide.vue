@@ -121,7 +121,7 @@ h1, h2 {
   justify-content: space-between;
 }
 .book-step .step-item {
-  flex: 0 0 30%;
+  flex: 0 0 31%;
   margin-bottom: 40px;
 }
 .step-item {
@@ -145,7 +145,6 @@ h1, h2 {
   display: flex;
   align-items: end;
   flex-wrap: wrap;
-  gap: 10px;
   margin-bottom: 20px;
 }
 .step-item div span {
