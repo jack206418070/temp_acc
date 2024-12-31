@@ -118,7 +118,7 @@ h2 {
   padding: 8px;
 }
 .description-box p {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .notes-box {
