@@ -90,7 +90,7 @@ h2 {
 }
 
 .notes-box p {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .step-number {
