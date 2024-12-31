@@ -165,7 +165,7 @@ h2 {
     margin-bottom: 0;
   }
   .notes-box p {
-    padding: 0 16px;
+    padding: 0 8px;
   }
   .step-number {
     margin: 0;
