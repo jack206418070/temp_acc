@@ -36,7 +36,10 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'static'
+    preset: 'static',
+    output: {
+      publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
+    }
   },
   experimental: {
     payloadExtraction: false
