@@ -7,8 +7,8 @@
     <h2 class="default-title">
       {{ tab_data[tab_type].type }}
     </h2>
-    <div class="tab-data-list" :class="{'block2': tab_type != '懶人包'}">
-      <template v-if="tab_type == '懶人包'">
+    <div class="tab-data-list" :class="{'block2': tab_type != '1'}">
+      <template v-if="tab_type == '1'">
         <div class="tab-data-item" v-for="(data, index) in tab_data[tab_type].data" @click="openPopup(index)">
           <img :src="data.image" alt="">
         </div>

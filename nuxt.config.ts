@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   modules: [
     [
       '@pinia/nuxt',
@@ -12,8 +13,10 @@ export default defineNuxtConfig({
       },
     ],
   ],
+
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
+    // buildAssetsDir: '/aaa/',
     buildAssetsDir: '/assets/',
     head: {
       title: "多元陪伴照顧服務試辦計畫",
@@ -26,10 +29,12 @@ export default defineNuxtConfig({
       ],
     }
   },
+
   image: {
     provider: 'static',
    
   },
+
   nitro: {
     prerender: {
       failOnError: false,
@@ -41,16 +46,21 @@ export default defineNuxtConfig({
       publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
     }
   },
+
   experimental: {
     payloadExtraction: false
   },
+
   generate: {
     fallback: '404.html'
   },
+
   css: [
     "bootstrap/scss/bootstrap.scss",
     "swiper/css/bundle",
     "@/assets/scss/style.scss",
     "@/assets/css/responsive.css",
   ],
+
+  compatibilityDate: '2025-02-20',
 })
