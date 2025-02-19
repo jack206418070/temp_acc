@@ -11,7 +11,7 @@
 
     <!-- contact area start -->
     <div class="contact-us-section pt-150 lg-pt-80">
-      <div class="cont">
+      <div class="conteeee">
         <div class="position-relative">
           <div class="row">
             <div class="col-12 m-auto">
