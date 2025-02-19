@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     ],
   ],
   app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/dist/' : '/',
+    baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
     buildAssetsDir: '/assets/',
     head: {
       title: "多元陪伴照顧服務試辦計畫",
@@ -36,7 +36,10 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'static'
+    preset: 'static',
+    output: {
+      publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
+    }
   },
   experimental: {
     payloadExtraction: false
