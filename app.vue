@@ -4,11 +4,27 @@
   </NuxtLayout>
 </template>
 
-
 <script lang="ts" setup>
-onMounted(async () => {
-	const wow = await import('wow.js')
-	new wow.default().init()
+import { onMounted, onBeforeUnmount } from 'vue'
+
+let wowInstance: any = null
+
+onMounted(() => {
+  if (process.client) {
+    import('wow.js').then((wow) => {
+      wowInstance = new wow.default()
+      wowInstance.init()
+    }).catch(error => {
+      console.error('Failed to load wow.js:', error)
+    })
+  }
+})
+
+onBeforeUnmount(() => {
+  if (wowInstance) {
+    // 清理 wow.js 實例（如果有清理方法的話）
+    wowInstance = null
+  }
 })
 </script>
 
@@ -25,5 +41,15 @@ onMounted(async () => {
 }
 .page-leave-to {
   opacity: 0; /* 結束狀態為透明 */
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }
 </style>
