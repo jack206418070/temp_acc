@@ -15,7 +15,7 @@
     <div class="conduct-content">
       <ul>
         <li>
-          <a href="https://www.accompanytest.com/_files/ugd/73d1df_bed4090d122c498cba9bbaba31c3ad7a.pdf" target="_blank">多元陪伴照顧服務試辦計畫檔案下載</a>
+          <a href="https://www.accompanytest.com/_files/ugd/73d1df_bed4090d122c498cba9bbaba31c3ad7a.pdf" target="_blank">多元陪伴照顧服務試辦計畫檔案連結</a>
         </li>
       </ul>
     </div>
@@ -33,12 +33,12 @@ useSeoMeta({ title: "多元陪伴照顧服務試辦計畫｜ 多元陪伴照顧�
 }
 .conduct-content {
   padding-left: 60px;
-  color: #788A74;
+  color: #41BBBE;
   font-size: 24px;
   margin-bottom: 100px;
 }
 .conduct-content a {
-  color: #788A74;
+  color: #41BBBE;
 }
 .default-title {
   margin: 0;
@@ -57,7 +57,7 @@ useSeoMeta({ title: "多元陪伴照顧服務試辦計畫｜ 多元陪伴照顧�
 .pre-link svg {
   width: 31px;
   height: 19px;
-  fill: #788a74;
+  fill: #41BBBE;
 }
 @media (max-width: 991px) {
   .pre-link {

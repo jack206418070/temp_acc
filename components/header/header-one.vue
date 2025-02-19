@@ -6,9 +6,9 @@
       <div class="top-header position-relative">
         <div class="d-flex flex-wrap align-items-center justify-content-between">
           <!-- Logo (電腦版第一，手機版第二) -->
-          <div class="logo order-lg-0 order-2 w-25">
+          <div class="logo order-lg-0 order-2 w-40">
             <nuxt-link href="/" class="d-flex align-items-center">
-              <img src="/images/logo/logo_2.png" alt="" />
+              <img src="/images/assets/logo.avif" alt="" />
             </nuxt-link>
           </div>
 
@@ -111,13 +111,36 @@ const handleOverflowChange = (value) => {
 </script>
 
 <style scoped>
+.theme-main-menu .navbar-toggler {
+  margin-top: -8px;
+}
 .blog-sidebar .sidebar-search {
   height: 40px;
+  border-radius: 5px;
+}
+.btn-one {
+  background-color: #fff;
+  color: rgb(236, 103, 23);
+  border-radius: 5px;
+  border: 2px solid rgb(236, 103, 23);
+}
+.btn-one:hover {
+  border: 2px solid #fff;
+  background-color: rgb(80, 89, 233);
+  color: #fff;
 }
 .menu-block {
   width: 100%;
 }
-
+.theme-main-menu.menu-style-two {
+  background: #41BBBE;
+}
+.logo.w-40 {
+ width: 40%;
+}
+.theme-main-menu.fixed {
+  box-shadow: none !important;
+}
 
 @media (max-width: 991px) {
   .sidebar-search {

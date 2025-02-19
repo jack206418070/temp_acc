@@ -5,9 +5,9 @@
         <h2 class="default-title">
           試辦單位簡介
         </h2>
-        <p>目前試辦單位還在持續累積中， 各試辦單位坐落在不同服務地區，所提供的服務項目、服務時數、收費、服務特色、注意事項或有不同，請進入試辦單位介紹區有更多完整的介紹，並可點選預約服務。</p>
+        <p>經勞動部評選核定為多元陪伴照顧服務試辦計畫之試辦單位，聘僱本國籍及外國籍之多元陪伴照顧服務工作者，指派至多元陪伴照顧服務契約履行地，從事陪伴照顧等相關事務之體力工作。 <br> 點選以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
         <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
-          <span>我要預約</span>
+          <span>​前往申請及派案平台</span>
           <span>
             <svg data-bbox="12.816 12.816 174.368 174.368" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
               viewBox="0 0 200 200" data-type="shape">
@@ -90,7 +90,7 @@
 <style scoped>
   .service-banner {
     padding: 30px 0 60px 0;
-    background-color: rgb(209, 231, 221);
+    /* background-color: rgb(209, 231, 221); */
   }
 
   .default-title {
@@ -100,22 +100,28 @@
 
   .service-banner p {
     text-align: center;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
+    text-align: left;
+    line-height: 2;
     margin-bottom: 40px;
   }
 
   .service-banner a {
-    background-color: #3F7652;
+    background-color: #EC6717;
     color: #FBFBF3;
     display: flex;
     align-items: center;
     gap: 5px;
     justify-content: center;
-    width: 200px;
+    width: 300px;
     margin: 0 auto;
-    padding: 8px 10px;
-    border-radius: 40px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    transition: .3s;
+  }
+  .service-banner a:hover {
+    background-color: #3F7652;
   }
 
   .service-banner a span {

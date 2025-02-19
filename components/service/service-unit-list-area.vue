@@ -19,11 +19,13 @@
               <p class="vendor-contact">{{ vendor.phone }}</p>
               <p class="vendor-email">{{ vendor.email }}</p>
               <a :href="vendor.web">官網</a>
-              <p class="vendor-email">服務價格 {{ vendor.price }}</p>
+              <br>
+              <a :href="vendor.price" class="vendor-email" target="_blank">服務價格</a>
             </div>
           </div>
         </div>
       </div>
+      <p class="service-note">*離島地區於未來計畫擴充時建置</p>
     </div>
   </div>
 </template>
@@ -53,7 +55,7 @@
         "專業的照護團隊，提供全方位的長照服務，讓長者享受溫馨舒適的照顧。",
       rating: 4,
       web: "https://www.redheart.org.tw/",
-      price: ""
+      price: "https://www.redheart.org.tw/"
     },
     {
       id: 2,
@@ -149,7 +151,7 @@
     transition: all 0.3s;
   }
   .service-tab-btn:hover, .service-tab-btn.active {
-    background-color: #8FA69A;
+    background-color: #41BBBE;
   }
 
   .service-tab-btn span {
@@ -208,6 +210,12 @@
   .vendor-description {
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+
+  .service-note {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: right;
   }
 
   .vendor-rating {

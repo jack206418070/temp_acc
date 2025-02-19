@@ -2361,7 +2361,7 @@ iframe {
   font-weight: 500;
   font-size: 20px;
   line-height: initial;
-  color: #000;
+  color: #fff;
   padding: 20px 0;
   margin: 0 30px;
   position: relative;
@@ -2385,7 +2385,7 @@ iframe {
 }
 .theme-main-menu.menu-style-two {
   padding: 0;
-  background: #EDF1EE;
+  background: #41BBBE;
 }
 .theme-main-menu.menu-style-two .info-row {
   padding-top: 12px;

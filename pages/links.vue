@@ -6,7 +6,9 @@
     <ul class="link-list">
       <li>
         <a href="https://www.wda.gov.tw/" target="_blank">
-          <img src="https://static.wixstatic.com/media/7896c2_658dfdb931a94ac7b7c5ac3b6fdc3ad6~mv2.png/v1/fill/w_658,h_116,al_c,lg_1,q_85,enc_avif,quality_auto/7896c2_658dfdb931a94ac7b7c5ac3b6fdc3ad6~mv2.png" alt="">
+          <div class="img">
+            <img src="https://static.wixstatic.com/media/7896c2_658dfdb931a94ac7b7c5ac3b6fdc3ad6~mv2.png/v1/fill/w_658,h_116,al_c,lg_1,q_85,enc_avif,quality_auto/7896c2_658dfdb931a94ac7b7c5ac3b6fdc3ad6~mv2.png" alt="">
+          </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
               <g>
@@ -17,8 +19,10 @@
         </a>
       </li>
       <li>
-        <Nuxt-link href="/all-contact-info">
-          <p>各縣市長期照顧管理中心聯繫窗口</p>
+        <Nuxt-link href="https://fw.wda.gov.tw/wda-employer/home" target="_blank">
+          <div class="img">
+            <img src="/images/assets/link_2.avif" alt="">
+          </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
               <g>
@@ -29,8 +33,11 @@
         </Nuxt-link>
       </li>
       <li>
-        <a href="https://fw.wda.gov.tw/wda-employer/home" target="_blank">
-          <p>跨國勞動力權益維護網站</p>
+        <a href="https://www.wda.gov.tw/News_Content.aspx?n=31&s=3512" target="_blank">
+          <div style="display: flex;  flex: 0 0 88%; align-items: center;">
+            <img style="width: 45px; height: 58px;" src="/images/assets/gov-logo.avif" alt="">
+            <p style="padding-left: 10px;">擴大喘息服務措施的介紹網頁</p>
+          </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
               <g>
@@ -42,7 +49,10 @@
       </li>
       <li>
         <a href="https://www.wda.gov.tw/News_Content.aspx?n=31&s=4221" target="_blank">
-          <p>短期照顧服務計畫措施網頁介紹的連結</p>
+          <div style="display: flex;  flex: 0 0 88%; align-items: center;">
+            <img style="width: 45px; height: 58px;" src="/images/assets/gov-logo.avif" alt="">
+            <p style="padding-left: 10px;">短期照顧服務計畫措施網頁介紹的連結</p>
+          </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
               <g>
@@ -53,8 +63,11 @@
         </a>
       </li>
       <li>
-        <a href="https://www.wda.gov.tw/News_Content.aspx?n=31&s=3512" target="_blank">
-          <p>擴大喘息服務措施的介紹網頁</p>
+        <Nuxt-link href="/all-contact-info">
+          <div style="display: flex;  flex: 0 0 88%; align-items: center;">
+            <img style="width: 127px; height: 81px;" src="/images/assets/link_1966.avif" alt="">
+            <p style="padding-left: 10px;">各縣市長期照顧管理中心聯絡窗口</p>
+          </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
               <g>
@@ -62,11 +75,14 @@
               </g>
             </svg>
           </span>
-        </a>
+        </Nuxt-link>
       </li>
       <li>
         <Nuxt-link href="/foreign-famliy-link">
-          <p>外籍家庭看護工學習資源網頁的相關連結</p>
+          <div style="display: flex;  flex: 0 0 88%; align-items: center;">
+            <img style="width: 45px; height: 58px;" src="/images/assets/gov-logo.avif" alt="">
+            <p style="padding-left: 10px;">外籍家庭看護工學習資源網頁的相關連結</p>
+          </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
               <g>
@@ -101,7 +117,7 @@ useSeoMeta({ title: "相關網站連結 ｜ 多元陪伴照顧服務計畫" });
   }
   .link-list li {
     flex: 0 0 48%;
-    border: 3px solid rgb(120, 138, 116);
+    border: 3px solid #41BBBE;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -119,16 +135,19 @@ useSeoMeta({ title: "相關網站連結 ｜ 多元陪伴照顧服務計畫" });
     justify-content: space-between;
     padding: 20px 12px;
   }
-  .link-list li img {
+  .link-list li .img {
     display: block;
-    flex: 0 0 300px;
-    height: 50px;
+    flex: 0 0 350px;
+  }
+  .link-list li .img img {
+    width: 100%;
     object-fit: cover;
+    height: 50px;
   }
   .link-list li a span svg {
     width: 29px;
     height: 19px;
-    fill: #788A74;
+    fill: #41BBBE;
   }
   .link-list li a span {
     transform: rotate(90deg);
@@ -136,7 +155,7 @@ useSeoMeta({ title: "相關網站連結 ｜ 多元陪伴照顧服務計畫" });
   .link-list li p {
     margin-bottom: 0;
     font-size: 24px;
-    flex: 0 0 85%;
+    /* flex: 0 0 85%; */
     padding-left: 50px;
   }
   @media (max-width: 991px) {
@@ -147,12 +166,12 @@ useSeoMeta({ title: "相關網站連結 ｜ 多元陪伴照顧服務計畫" });
       flex: 0 0 100%;
       min-height: 130px;
     }
-    .link-list li img {
+    /* .link-list li img {
       height: 40px;
       flex: 0 0 200px;
-    }
+    } */
     .link-list li p {
-      flex: 0 0 85%;
+      /* flex: 0 0 85%; */
       margin-bottom: 0;
       font-size: 20px;
       padding-left: 20px;

@@ -790,7 +790,7 @@
 
   .faq-section-three .nav-tabs .nav-link.active {
     background-color: transparent;
-    color: rgb(143, 166, 154) !important;
+    color: #41BBBE !important;
     font-weight: bold;
     border-color: transparent !important;
   }

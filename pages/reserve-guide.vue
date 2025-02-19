@@ -3,6 +3,7 @@
     <h2 class="default-title">
       預約指引
     </h2>
+    <a href="tel:0912451213" class="note-display">如有操作相關疑問需諮詢,煩請撥打  <span>0912451213</span>  詢問，感謝您</a>
     <div class="book-step">
       <div class="step-item">
         <h3>步驟</h3>
@@ -104,6 +105,19 @@ useSeoMeta({ title: "預約指引｜ 多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>
+.note-display {
+  font-size: 24px;
+  color: rgb(43, 39, 22);
+  text-align: center;
+  display: block;
+  margin-bottom: 30px;
+}
+.note-display span {
+  text-decoration: underline;
+}
+.default-title {
+  margin-bottom: 30px;
+}
 h1, h2 {
   text-align: center;
 }

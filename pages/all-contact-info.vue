@@ -184,7 +184,7 @@
 
   .tab-item:hover, .tab-item.active {
     border-bottom: 3px solid #000;
-    background-color: #788A74;
+    background-color: #41BBBE;
   }
 
   .contact-list {

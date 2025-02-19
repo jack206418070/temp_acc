@@ -36,7 +36,7 @@ const service_data = [
 
 <style scoped>
 h2 {
-  color: #788A74;
+  color: #41BBBE;
   font-size: 40px;
   font-weight: 400;
   margin-top: 30px;

@@ -16,7 +16,7 @@
     <div class="conduct-content">
       <ul>
         <li>
-          <a href="https://www.accompanytest.com/_files/ugd/73d1df_259a4f8ec0924d838b82366c36177726.pdf" target="_blank">外國人轉換準則檔案下載</a>
+          <a href="https://www.accompanytest.com/_files/ugd/73d1df_259a4f8ec0924d838b82366c36177726.pdf" target="_blank">外國人轉換準則檔案連結</a>
         </li>
       </ul>
     </div>
@@ -34,12 +34,12 @@ useSeoMeta({ title: "外國人轉換原則｜ 多元陪伴照顧服務計畫" })
 }
 .conduct-content {
   padding-left: 60px;
-  color: #788A74;
+  color: #41BBBE;
   font-size: 24px;
   margin-bottom: 100px;
 }
 .conduct-content a {
-  color: #788A74;
+  color: #41BBBE;
 }
 .default-title {
   margin: 0;
@@ -58,7 +58,7 @@ useSeoMeta({ title: "外國人轉換原則｜ 多元陪伴照顧服務計畫" })
 .pre-link svg {
   width: 31px;
   height: 19px;
-  fill: #788a74;
+  fill: #41BBBE;
 }
 @media (max-width: 991px) {
   .pre-link {

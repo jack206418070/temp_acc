@@ -10,10 +10,10 @@
 </script>
 <style scoped>
 .home-banner {
-  background-color: rgb(120, 138, 116);
+  background-color: #41BBBE;
 }
 .home-bg {
-  background-image: url(/images/assets/banner.avif);
+  background-image: url(/images/assets/banner0109.avif);
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;

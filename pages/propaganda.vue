@@ -7,10 +7,17 @@
     <h2 class="default-title">
       {{ tab_data[tab_type].type }}
     </h2>
-    <div class="tab-data-list">
-      <div class="tab-data-item" v-for="(data, index) in tab_data[tab_type].data" @click="openPopup(index)">
-        <img :src="data.image" alt="">
-      </div>
+    <div class="tab-data-list" :class="{'block2': tab_type != '懶人包'}">
+      <template v-if="tab_type == '懶人包'">
+        <div class="tab-data-item" v-for="(data, index) in tab_data[tab_type].data" @click="openPopup(index)">
+          <img :src="data.image" alt="">
+        </div>
+      </template>
+      <template v-else>
+        <div class="tab-data-item-block2" v-for="(data, index) in tab_data[tab_type].data" @click="openPopup(index)">
+          <img :src="data.image" alt="">
+        </div>
+      </template>
     </div>
     <div v-if="showPopup" class="popup-overlay" @click.self="closePopup">
       <div class="popup-content">
@@ -38,12 +45,49 @@ const tab_data = ref({
       },
       {
         image: '/images/assets/lazybag03.webp'
+      },
+      {
+        image: '/images/assets/temp_12.avif'
+      },
+      {
+        image: '/images/assets/temp_13.avif'
+      },
+      {
+        image: '/images/assets/temp_14.avif'
+      },
+      {
+        image: '/images/assets/temp_4.avif'
+      },
+      {
+        image: '/images/assets/temp_5.avif'
+      },
+      {
+        image: '/images/assets/temp_6.avif'
+      },
+      {
+        image: '/images/assets/temp_7.avif'
+      },
+      {
+        image: '/images/assets/temp_8.avif'
+      },
+      {
+        image: '/images/assets/temp_9.avif'
+      },
+      {
+        image: '/images/assets/temp_10.avif'
+      },
+      {
+        image: '/images/assets/temp_11.avif'
       }
     ]
   },
   '2': {
     type: '宣導品',
-    data: []
+    data: [
+      {
+        image: '/images/assets/temp_15.avif'
+      }
+    ]
   }
 });
 const tab_type = ref('1');
@@ -94,9 +138,13 @@ h1, h2 {
   flex-wrap: wrap;
   margin-bottom: 100px;
 }
+.tab-data-list.block2 {
+  justify-content: center;
+}
 .tab-data-item {
   flex: 0 0 32%;
   border-radius: 30px;
+  margin-bottom: 30px;
   overflow: hidden;
   cursor: pointer;
   position: relative;
@@ -111,6 +159,14 @@ h1, h2 {
   background-color: hsla(41, 15%, 50%, 0); /* 初始為透明 */
   z-index: 100;
   transition: all .5s;
+}
+.tab-data-item-block2 {
+  flex: 0 0 50%;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
 }
 .tab-data-item:hover::after{
   background-color: hsla(41, 15%, 50%, 0.5);
@@ -128,7 +184,7 @@ h1, h2 {
 .tab-list .tab-item {
   padding: 5px 40px;
   color: #0C4426;
-  border: 2px solid #788A74;
+  border: 3px solid #EC6717;
   transition: all .5s;
   border-radius: 10px;
   font-size: 15px;
@@ -136,8 +192,8 @@ h1, h2 {
 }
 .tab-list .tab-item.activated, .tab-list .tab-item:hover {
   color: #fff;
-  border: 2px solid #788A74;
-  background-color: #788A74;
+  border: 3px solid #EC6717;
+  background-color: #41BBBE;
 }
 .popup-overlay {
   position: fixed;

@@ -34,7 +34,7 @@ const menu_data:IMenu[] = [
       },
       {
         link:'/propaganda',
-        title:'懶人包/宣傳品',
+        title:'懶人包/宣導品',
         sub_id: 0,
         sub_dropdown: false,
         is_highlight: false
@@ -103,7 +103,7 @@ const menu_data:IMenu[] = [
   {
     id:4,
     link:'/join-us-unit',
-    title:'成為試辦單位',
+    title:'試辦單位',
     dropdown:true,
     dropdown_menus:[
       {

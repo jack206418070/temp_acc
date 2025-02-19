@@ -44,12 +44,12 @@ useSeoMeta({ title: "多元陪伴法規｜ 多元陪伴照顧服務計畫" });
   .comapny-statute-list-item .item-number {
     font-size: 67px;
     font-weight: bold;
-    color: rgb(45, 84, 64);
+    color: #EC6717;
     flex: 0 0 80px;
   }
   .comapny-statute-list-item .item-desc {
     cursor: pointer;
-    color: rgb(45, 84, 64);
+    color: #41BBBE;
     letter-spacing: 1.3px;
     font-size: 22px;
   }

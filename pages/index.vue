@@ -1,12 +1,14 @@
 <template>
   <div>
     <hero-banner-empty-index />
+    <div>
+      <nuxt-link class="book-btn btn-one jelly-box" id="jelly-box" href="/services">
+        預約/申請
+      </nuxt-link>
+    </div>
     <div class="main-container home-content">
       <div class="home-top">
         <h2>最新消息</h2>
-        <nuxt-link class="book-btn btn-one" href="/services">
-          預約/申請
-        </nuxt-link>
       </div>
       <div class="home-new">
         <div class="new-item">
@@ -35,13 +37,9 @@
   
 </template>
 
-<script setup lang="ts">
-  useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
-</script>
-
 <style scoped>
   h2 {
-    color: #788A74;
+    color: #41BBBE;
     font-size: 32px;
     font-weight: bold;
     margin-top: 20px;
@@ -49,13 +47,32 @@
   .home-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
   }
   .home-content {
     margin-top: 30px;
+    background-color: rgb(251,250,247);
+    padding: 40px 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
   }
   .book-btn {
     align-self: flex-start;
+    margin-top: 30px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+    background-color: rgb(220,111,50);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: .5s;
+  }
+  .book-btn:hover {
+    background-color: rgb(80, 89, 233);
   }
   .new-title {
     display: flex;
@@ -63,28 +80,31 @@
     align-items: end;
     gap: 10px;
     color: #282626;
-    margin-bottom: 12px;
+    margin-bottom: 40px;
   }
   .item-line {
-    height: 1px;
-    background-color: #282626;
+    height: 10px;
+    border-bottom: 1px dashed #282626;
+    /* border-style: dotted; */
+    /* background-color: #282626; */
     width: 40%;
     margin: 20px 0;
+    margin-bottom: 60px;
   }
   .new-title .title-text {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
     flex: 0 0 100px;
   }
   .new-title .title-date {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
   }
   .new-link a {
     color: #282626;
     font-weight: 400;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: normal;
   }
   body {
@@ -154,3 +174,57 @@
     }
   }
 </style>
+
+<script setup lang="ts">
+  import { gsap } from "gsap";
+  import { onMounted, onUnmounted } from 'vue';
+
+  onMounted(() => {
+    const jellyBox = document.getElementById("jelly-box");
+
+    if (jellyBox) {
+      // 定義動畫函數
+      const jellyEffect = () => {
+        gsap.timeline()
+          // 初始快速拉伸
+          .fromTo(
+            jellyBox,
+            { scaleX: 1, scaleY: 1 },
+            {
+              scaleX: 1.3, // 左右拉長
+              scaleY: 1.5, // 上下壓縮
+              duration: 0.3, // 每次動作持續時間
+              ease: "power2.inOut", // 緩動效果
+              yoyo: true, // 啟用回彈
+              repeat: 2, // 完成兩次（初始與回彈）
+            }
+          )
+          // 中間的3次快速拉長壓縮
+          // .to(jellyBox, {
+          //   scaleX: 1.2, // 左右壓縮
+          //   scaleY: 2.3, // 上下拉長
+          //   duration: 0.1, // 每次動作持續時間
+          //   ease: "power2.inOut",
+          //   yoyo: true,
+          //   repeat: 4, // 快速來回三次
+          // })
+          // 恢復原狀
+          .to(jellyBox, {
+            scaleX: 1,
+            scaleY: 1,
+            duration: 0.1,
+            ease: "power2.out",
+          });
+      };
+
+      // 設定每隔 3 秒觸發一次動畫
+      const interval = setInterval(jellyEffect, 3000);
+
+      // 確保組件卸載時清除計時器
+      onUnmounted(() => {
+        clearInterval(interval);
+      });
+    }
+  });
+  useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
+</script>

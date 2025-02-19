@@ -67,7 +67,7 @@ const serviceSteps: ServiceStep[] = [
 
 <style scoped>
 h2 {
-  color: #788A74;
+  color: #41BBBE;
   font-size: 40px;
   font-weight: 400;
   margin-top: 30px;
@@ -97,7 +97,7 @@ h2 {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #788a74;
+  background: #41BBBE;
   color: #FFFFFE;
   display: flex;
   align-items: center;
