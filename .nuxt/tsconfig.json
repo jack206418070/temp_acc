@@ -105,7 +105,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/3de04ea9-ab0e-447e-a1ac-bdadf90559f4.json"
+        "./manifest/meta/220d6c5c-8b80-45a5-b85f-7a4d541d5228.json"
       ],
       "#components": [
         "./components"
@@ -151,6 +151,8 @@
     "../**/*",
     "../node_modules/@pinia/nuxt/runtime",
     "../node_modules/@pinia/nuxt/dist/runtime",
+    "../node_modules/nuxt-security/runtime",
+    "../node_modules/nuxt-security/dist/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/devtools/dist/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
@@ -162,14 +164,17 @@
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
+    "../node_modules/nuxt-security/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@pinia/nuxt/runtime/server",
     "../node_modules/@pinia/nuxt/dist/runtime/server",
+    "../node_modules/nuxt-security/runtime/server",
+    "../node_modules/nuxt-security/dist/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/devtools/dist/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../node_modules/@nuxt/telemetry/dist/runtime/server",
-    "../.output"
+    "../.vercel/output"
   ]
 }

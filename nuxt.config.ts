@@ -57,21 +57,22 @@ export default defineNuxtConfig({
     },
     // preset: 'node-server',
     preset: 'vercel',
-    publicAssets: [
-      {
-        dir: 'public',
-        maxAge: 31536000
-      }
-    ],
+    // publicAssets: [
+    //   {
+    //     dir: 'public',
+    //     baseURL: '/',  // 🚀 確保靜態資源可以從 `/` 讀取
+    //     maxAge: 31536000
+    //   }
+    // ],
     // prerender: {
     //   failOnError: false,
     //   crawlLinks: true,
     //   routes: ['/'],
     // },
     // preset: 'static',
-    output: {
-      publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
-    }
+    // output: {
+    //   publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
+    // }
   },
   serverHandlers: [
     {
