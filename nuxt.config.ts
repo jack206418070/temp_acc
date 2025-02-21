@@ -46,7 +46,7 @@ export default defineNuxtConfig({
 
   image: {
     provider: 'static',
-   
+    dir: 'public/images'
   },
 
   nitro: {
@@ -57,6 +57,12 @@ export default defineNuxtConfig({
     },
     // preset: 'node-server',
     preset: 'vercel',
+    publicAssets: [
+      {
+        dir: 'public',
+        maxAge: 31536000
+      }
+    ]
     // prerender: {
     //   failOnError: false,
     //   crawlLinks: true,
