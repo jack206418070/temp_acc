@@ -41,7 +41,8 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'node-server',
+    // preset: 'node-server',
+    preset: 'vercel',
     // prerender: {
     //   failOnError: false,
     //   crawlLinks: true,

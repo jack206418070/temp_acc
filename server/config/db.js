@@ -4,8 +4,8 @@ import sql from 'mssql';
 const config = {
   user: 'SA',
   password: 'yourStrong(!)Password',
-  server: 'localhost',  // Docker 內部使用 'localhost'
-  port: 1433,
+  server: '8.tcp.ngrok.io',  // Docker 內部使用 'localhost'
+  port: 19470,
   database: 'accompany',
   options: {
     encrypt: false,  // 若有 SSL 問題請設為 false
