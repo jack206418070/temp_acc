@@ -23,6 +23,9 @@ export default defineNuxtConfig({
       script: [
         {
           src: "/js/bootstrap.bundle.min.js",
+          attrs: {
+            nonce: "CDOy6cOibCWEdsR"
+          }
         },
       ],
     }
@@ -41,7 +44,7 @@ export default defineNuxtConfig({
         'script-src': [
           "'strict-dynamic'", // Modify with your custom CSP sources
           // The nonce-{{nonce}} placeholder is not required and will be ignored in SSG mode
-          "'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
+          "'nonce-CDOy6cOibCWEdsR'"
         ]
       }
     }
