@@ -29,9 +29,22 @@ export default defineNuxtConfig({
   },
   
   security: {
-    // options
+    headers: {
+      contentSecurityPolicy: <OPTIONS>,
+    },
   },
-  
+
+  // Per route
+  routeRules: {
+    '/custom-route': {
+      security: {
+        headers: {
+          contentSecurityPolicy: <OPTIONS>,
+        },
+      },
+    }
+  },
+
   image: {
     provider: 'static',
    
