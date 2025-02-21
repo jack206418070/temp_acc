@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    '@nuxtjs/helmet',
     [
       '@pinia/nuxt',
       {
@@ -22,6 +23,16 @@ export default defineNuxtConfig({
       title: "多元陪伴照顧服務試辦計畫",
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      meta: [
+        {
+          'http-equiv': 'Content-Security-Policy',
+          content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self';"
+        },
+        {
+          'http-equiv': 'Permissions-Policy',
+          content: "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+        }
+      ],
       script: [
         {
           src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js",
@@ -74,4 +85,17 @@ export default defineNuxtConfig({
   ],
 
   compatibilityDate: '2025-02-20',
+
+  helmet: {
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://cdnjs.cloudflare.com"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com"],
+        imgSrc: ["'self'", "data:", "https:"],
+        fontSrc: ["'self'", "https:"],
+        connectSrc: ["'self'"]
+      }
+    }
+  }
 })
