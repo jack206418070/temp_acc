@@ -27,6 +27,25 @@ export default defineNuxtConfig({
       ],
     }
   },
+
+  security: {
+    ssg: {
+      meta: true, // Enables CSP as a meta tag in SSG mode
+      hashScripts: true, // Enables CSP hash support for scripts in SSG mode
+      hashStyles: false, // Disables CSP hash support for styles in SSG mode (recommended)
+      exportToPresets: true // Export security headers to Nitro presets
+    },
+    sri: true,
+    headers: {
+      contentSecurityPolicy: {
+        'script-src': [
+          "'strict-dynamic'", // Modify with your custom CSP sources
+          // The nonce-{{nonce}} placeholder is not required and will be ignored in SSG mode
+          "'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=%'"
+        ]
+      }
+    }
+  },
   
 
   // Per route
@@ -37,7 +56,7 @@ export default defineNuxtConfig({
         sri: false,
         headers: {
           contentSecurityPolicy: {
-            'script-src': "self 'unsafe-inline' 'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=%'"
+            'script-src': "'self' 'unsafe-inline' 'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=%'"
           },
         },
       },
