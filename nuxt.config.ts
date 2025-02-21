@@ -41,12 +41,23 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'static',
+    preset: 'node-server',
+    // prerender: {
+    //   failOnError: false,
+    //   crawlLinks: true,
+    //   routes: ['/'],
+    // },
+    // preset: 'static',
     output: {
       publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
     }
   },
-
+  serverHandlers: [
+    {
+      route: '/api',
+      handler: '~/server/index.js',
+    },
+  ],
   experimental: {
     payloadExtraction: false
   },

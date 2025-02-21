@@ -1,0 +1,6 @@
+CREATE TABLE QA (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    question NVARCHAR(MAX) NOT NULL,
+    answer NVARCHAR(MAX) NOT NULL,
+    category INT CHECK (category BETWEEN 1 AND 4) NOT NULL
+); 
