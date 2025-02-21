@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       script: [
         {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js",
+          src: "/js/bootstrap.bundle.min.js",
         },
       ],
     }
