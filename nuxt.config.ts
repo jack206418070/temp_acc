@@ -2,17 +2,15 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: [
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: [
-          'defineStore',
-          ['defineStore', 'definePiniaStore'],
-        ],
-      },
-    ],
-  ],
+  modules: [[
+    '@pinia/nuxt',
+    {
+      autoImports: [
+        'defineStore',
+        ['defineStore', 'definePiniaStore'],
+      ],
+    },
+  ], 'nuxt-security'],
 
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
@@ -27,6 +25,22 @@ export default defineNuxtConfig({
           src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js",
         },
       ],
+    }
+  },
+  
+
+  // Per route
+  routeRules: {
+    '/custom-route': {
+      security: {
+        ssg: false,
+        sri: false,
+        headers: {
+          contentSecurityPolicy: {
+            'script-src': "self 'unsafe-inline'"
+          },
+        },
+      },
     }
   },
 
