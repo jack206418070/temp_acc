@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         sri: false,
         headers: {
           contentSecurityPolicy: {
-            'script-src': "self 'unsafe-inline'"
+            'script-src': "self 'unsafe-inline' 'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=%'"
           },
         },
       },
