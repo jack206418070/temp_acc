@@ -62,7 +62,7 @@ export default defineNuxtConfig({
         dir: 'public',
         maxAge: 31536000
       }
-    ]
+    ],
     // prerender: {
     //   failOnError: false,
     //   crawlLinks: true,
