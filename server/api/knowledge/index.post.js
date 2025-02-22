@@ -10,8 +10,6 @@ export default defineEventHandler(async (event) => {
     // 驗證
     await authenticate(event);
 
-    // 確保上傳目錄存在
-    await ensureUploadDir();
 
     // 解析 multipart form data
     const formData = await readMultipartFormData(event);
@@ -30,14 +28,6 @@ export default defineEventHandler(async (event) => {
     // 獲取圖片類型
     const imageType = imageFile.type || 'image/jpeg';
 
-    // 生成唯一的文件名
-    const fileName = `${Date.now()}-${imageFile.filename}`;
-    const uploadDir = join(process.cwd(), 'public', 'uploads');
-    const filePath = join(uploadDir, fileName);
-
-    // 保存文件
-    await writeFile(filePath, imageFile.data);
-    console.log('✅ File saved:', filePath);
 
     // 保存到數據庫
     const data = await createKnowledge({
