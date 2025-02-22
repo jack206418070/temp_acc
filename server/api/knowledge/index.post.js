@@ -1,9 +1,6 @@
 import { authenticate } from '~/server/utils/auth';
 import { createKnowledge } from '~/server/models/knowledgeModel';
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
 import { createError } from 'h3';
-import { ensureUploadDir } from '~/server/utils/ensureUploadDir';
 
 export default defineEventHandler(async (event) => {
   try {

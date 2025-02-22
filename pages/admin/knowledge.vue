@@ -1,15 +1,16 @@
 <template>
-  <div class="admin-layout">
+  <div>
     <nav class="admin-nav">
       <div class="nav-content">
-        <h1>知識庫管理</h1>
-        <div class="nav-right">
+        <div class="nav-wrapper">
           <NuxtLink to="/admin" class="btn btn-secondary">返回首頁</NuxtLink>
+          <h1 class="page-title">知識庫管理</h1>
+          <div class="placeholder"></div>
         </div>
       </div>
     </nav>
 
-    <div class="admin-container">
+    <div class="admin-container qa-container">
       <div class="action-bar">
         <button @click="openAddModal" class="btn btn-primary">
           <i class="fas fa-plus"></i> 新增知識
@@ -91,6 +92,8 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
 const knowledgeList = ref({ data: [] });
 const showModal = ref(false);
 const isEditing = ref(false);
@@ -101,6 +104,10 @@ const formData = ref({
 const imagePreview = ref('');
 const selectedFile = ref(null);
 const imageError = ref('');
+
+definePageMeta({
+  layout: 'admin'
+});
 
 // 獲取知識列表
 async function fetchKnowledgeList() {
@@ -121,7 +128,7 @@ async function fetchKnowledgeList() {
     alert(error?.data?.message || '獲取資料失敗');
     // 如果是未登入錯誤，導向登入頁
     if (error?.data?.statusCode === 401) {
-      navigateTo('/login');
+      navigateTo('/admin/login');
     }
   }
 }
@@ -261,7 +268,7 @@ async function handleSubmit() {
     console.error('保存失敗:', error);
     alert(error?.data?.message || '操作失敗');
     if (error?.data?.statusCode === 401) {
-      navigateTo('/login');
+      navigateTo('/admin/login');
     }
   }
 }
@@ -287,7 +294,7 @@ async function handleDelete(id) {
     console.error('刪除失敗:', error);
     alert(error?.data?.message || '刪除失敗');
     if (error?.data?.statusCode === 401) {
-      navigateTo('/login');
+      navigateTo('/admin/login');
     }
   }
 }
@@ -306,6 +313,57 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
+.qa-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem 1rem;
+  font-size: 14px;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: relative;
+
+  .btn {
+    font-size: 13px;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: #41BBBE;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.placeholder {
+  width: 84px;
+  visibility: hidden;
+}
+
+// 修改次要按鈕的顏色
+:deep(.btn-secondary) {
+  background-color: #41BBBE;
+  border-color: #41BBBE;
+  color: white;
+  
+  &:hover {
+    background-color: darken(#41BBBE, 5%);
+    border-color: darken(#41BBBE, 5%);
+  }
+
+  &:disabled {
+    background-color: lighten(#41BBBE, 20%);
+    border-color: lighten(#41BBBE, 20%);
+  }
+}
+
 .knowledge-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

@@ -40,7 +40,6 @@ declare global {
   const defuReplaceArray: typeof import('../../node_modules/nuxt-security/dist/utils/merge')['defuReplaceArray']
   const deleteCookie: typeof import('../../node_modules/h3')['deleteCookie']
   const dynamicEventHandler: typeof import('../../node_modules/h3')['dynamicEventHandler']
-  const ensureUploadDir: typeof import('../../server/utils/ensureUploadDir')['ensureUploadDir']
   const eventHandler: typeof import('../../node_modules/h3')['eventHandler']
   const fetchWithEvent: typeof import('../../node_modules/h3')['fetchWithEvent']
   const fromNodeMiddleware: typeof import('../../node_modules/h3')['fromNodeMiddleware']
@@ -144,4 +143,3 @@ export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsUR
 export { defineAppConfig } from '../../node_modules/nuxt/dist/core/runtime/nitro/config';
 export { defuReplaceArray } from '../../node_modules/nuxt-security/dist/utils/merge';
 export { authenticate } from '../../server/utils/auth';
-export { ensureUploadDir } from '../../server/utils/ensureUploadDir';

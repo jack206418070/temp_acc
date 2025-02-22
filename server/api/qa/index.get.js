@@ -1,4 +1,4 @@
-import { getAllQA } from '~/server/models/qaModel';
+import { getAllQA, createQA } from '~/server/models/qaModel';
 
 export default defineEventHandler(async (event) => {
   try {

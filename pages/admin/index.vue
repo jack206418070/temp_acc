@@ -28,13 +28,17 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: 'admin'
+});
+
 const username = ref('');
 const router = useRouter();
 
 async function handleLogout() {
   try {
     await $fetch('/api/auth/logout', { method: 'POST' });
-    router.push('/login');
+    router.push('/admin/login');
   } catch (error) {
     console.error('登出失敗', error);
   }
