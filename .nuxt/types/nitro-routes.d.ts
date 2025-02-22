@@ -14,6 +14,7 @@ declare module "nitropack/types" {
     }
     '/api/knowledge/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].get').default>>>>
       'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].put').default>>>>
     }
     '/api/knowledge': {

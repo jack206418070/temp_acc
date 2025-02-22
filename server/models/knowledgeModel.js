@@ -9,8 +9,7 @@ export async function getAllKnowledge() {
       SELECT 
         kid,
         know_category,
-        'data:' + image_type + ';base64,' + 
-        CAST('' as xml).value('xs:base64Binary(sql:column("image_data"))', 'varchar(max)') as image_url,
+        title,
         created_at,
         updated_at
       FROM knowledge 
@@ -33,40 +32,43 @@ export async function getKnowledgeById(id) {
         SELECT 
           kid,
           know_category,
-          'data:' + image_type + ';base64,' + 
-          CAST('' as xml).value('xs:base64Binary(sql:column("image_data"))', 'varchar(max)') as image_url,
+          title,
+          image_type,
+          CAST('' as xml).value('xs:base64Binary(sql:column("image_data"))', 'varchar(max)') as image_data,
           created_at,
           updated_at
-        FROM knowledge 
+        FROM knowledge
         WHERE kid = @kid
       `);
 
-    return result.recordset.length ? result.recordset[0] : null;
+    return result.recordset[0];
   } catch (error) {
-    console.error('❌ Query Error:', error);
+    console.error('獲取知識庫資料失敗:', error);
     throw error;
   }
 }
 
 // ✅ 新增知識
-export async function createKnowledge({ know_category, imageBuffer, imageType }) {
+export async function createKnowledge({ know_category, imageBuffer, imageType, title }) {
   try {
     const pool = await getConnection();
     const now = new Date();
-
+    console.log(title);
     const result = await pool.request()
       .input('know_category', sql.Int, know_category)
       .input('image_data', sql.VarBinary(sql.MAX), imageBuffer)
       .input('image_type', sql.NVarChar(50), imageType)
       .input('created_at', sql.DateTime, now)
       .input('updated_at', sql.DateTime, now)
+      .input('title', sql.NVarChar(50), title)
       .query(`
         INSERT INTO knowledge (
           know_category, 
           image_data, 
           image_type, 
           created_at, 
-          updated_at
+          updated_at,
+          title
         )
         OUTPUT 
           INSERTED.kid,
@@ -74,13 +76,15 @@ export async function createKnowledge({ know_category, imageBuffer, imageType })
           'data:' + INSERTED.image_type + ';base64,' + 
           CAST('' as xml).value('xs:base64Binary(sql:column("INSERTED.image_data"))', 'varchar(max)') as image_url,
           INSERTED.created_at,
-          INSERTED.updated_at
+          INSERTED.updated_at,
+          INSERTED.title
         VALUES (
           @know_category, 
           @image_data, 
           @image_type, 
           @created_at, 
-          @updated_at
+          @updated_at,
+          @title
         )
       `);
 
@@ -92,7 +96,7 @@ export async function createKnowledge({ know_category, imageBuffer, imageType })
 }
 
 // ✅ 更新知識
-export async function updateKnowledge(id, { know_category, imageBuffer, imageType }) {
+export async function updateKnowledge(id, { know_category, imageBuffer, imageType, title }) {
   try {
     const pool = await getConnection();
     const request = pool.request()
@@ -111,6 +115,10 @@ export async function updateKnowledge(id, { know_category, imageBuffer, imageTyp
         .input('image_data', sql.VarBinary(sql.MAX), imageBuffer)
         .input('image_type', sql.NVarChar(50), imageType);
       query += ', image_data = @image_data, image_type = @image_type';
+    }
+    if (title) {
+      request.input('title', sql.NVarChar(sql.MAX), title);
+      query += ', title = N@title';
     }
 
     query += `

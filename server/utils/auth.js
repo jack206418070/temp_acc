@@ -1,5 +1,6 @@
 import { createError } from 'h3';
 import jwt from 'jsonwebtoken';
+import { useRuntimeConfig } from '#imports';
 
 export async function authenticate(event) {
   console.log(event);
@@ -23,3 +24,25 @@ export async function authenticate(event) {
     });
   }
 } 
+
+export const verifyToken = async (token) => {
+  try {
+    const config = useRuntimeConfig();
+    const decoded = jwt.verify(token, config.jwtSecret);
+    return decoded;
+  } catch (error) {
+    console.error('Token 驗證失敗:', error);
+    return null;
+  }
+};
+
+// 生成 Token
+export const generateToken = (payload) => {
+  try {
+    const config = useRuntimeConfig();
+    return jwt.sign(payload, config.jwtSecret, { expiresIn: '7d' });
+  } catch (error) {
+    console.error('Token 生成失敗:', error);
+    return null;
+  }
+}; 

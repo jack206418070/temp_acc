@@ -14,7 +14,8 @@ export default defineEventHandler(async (event) => {
 
     const know_category = formData.find(f => f.name === 'know_category')?.data.toString();
     const imageFile = formData.find(f => f.name === 'image');
-
+    const title = formData.find(f => f.name === 'title')?.data.toString();
+    console.log(title);
     if (!know_category || !imageFile) {
       throw createError({
         statusCode: 400,
@@ -30,7 +31,8 @@ export default defineEventHandler(async (event) => {
     const data = await createKnowledge({
       know_category: parseInt(know_category),
       imageBuffer: imageFile.data,
-      imageType: imageType
+      imageType: imageType,
+      title: title
     });
 
     return { success: true, data };
