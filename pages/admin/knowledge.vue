@@ -401,23 +401,10 @@ async function handleDelete(id) {
         }
       });
       await fetchKnowledgeList();
-      
-      // 使用與新增/編輯相同的 Toast 通知
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      });
-
-      Toast.fire({
+      Swal.fire({
         icon: 'success',
-        title: '刪除成功'
+        title: '刪除成功',
+        timer: 1500
       });
     } catch (error) {
       Swal.fire({

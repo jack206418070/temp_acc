@@ -35,11 +35,11 @@
             >
               <option value="">所有類別</option>
               <option 
-                v-for="category in uniqueCategories" 
-                :key="category" 
-                :value="category"
+                v-for="option in categoryOptions" 
+                :key="option.value" 
+                :value="option.value"
               >
-                {{ category }}
+                {{ option.label }}
               </option>
             </select>
           </div>
@@ -70,7 +70,7 @@
                   {{ truncateText(qa.answer, 80) }}
                 </td>
                 <td>
-                  <span class="category-tag">{{ qa.category }}</span>
+                  <span class="category-tag">{{ getCategoryLabel(qa.category) }}</span>
                 </td>
                 <td>
                   <div class="action-buttons">
@@ -137,13 +137,21 @@
               </div>
               <div class="form-group">
                 <label>類別</label>
-                <input 
+                <select 
                   v-model="formData.category" 
-                  type="text" 
                   required
-                  placeholder="請輸入類別"
                   :disabled="isSaving"
+                  class="form-select"
                 >
+                  <option value="" disabled>請選擇類別</option>
+                  <option 
+                    v-for="option in categoryOptions" 
+                    :key="option.value" 
+                    :value="option.value"
+                  >
+                    {{ option.label }}
+                  </option>
+                </select>
               </div>
               <div class="button-group">
                 <button 
@@ -193,6 +201,22 @@ const itemsPerPage = 10;
 const searchQuery = ref('');
 const selectedCategory = ref('');
 const isSaving = ref(false);
+
+// 在 script setup 中添加類別映射
+const categoryMapping = {
+  '1': '想申請服務',
+  '2': '想成為試辦單位',
+  '3': '我是多元陪伴照顧服務工作者',
+  '4': '我是私立就業服務機構'
+};
+
+// 添加類別選項
+const categoryOptions = [
+  { value: '1', label: '想申請服務' },
+  { value: '2', label: '想成為試辦單位' },
+  { value: '3', label: '我是多元陪伴照顧服務工作者' },
+  { value: '4', label: '我是私立就業服務機構' }
+];
 
 // 獲取 QA 列表
 async function fetchQAList() {
@@ -322,11 +346,20 @@ async function handleDelete(id) {
   }
 }
 
-// 獲取所有唯一的類別
+// 修改 uniqueCategories computed
 const uniqueCategories = computed(() => {
   if (!qaList.value.data) return [];
-  return [...new Set(qaList.value.data.map(qa => qa.category))];
+  const categories = [...new Set(qaList.value.data.map(qa => qa.category))];
+  return categories.map(category => ({
+    value: category,
+    label: categoryMapping[category] || category
+  }));
 });
+
+// 修改表格中類別顯示的部分
+const getCategoryLabel = (category) => {
+  return categoryMapping[category] || category;
+};
 
 // 篩選後的資料
 const filteredQAList = computed(() => {
@@ -699,5 +732,28 @@ onMounted(() => {
 // 移除原本的 btn-primary 樣式覆蓋，因為現在使用 btn-secondary
 :deep(.btn-primary) {
   // 移除這個樣式區塊
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+  
+  &:focus {
+    outline: none;
+    border-color: #41BBBE;
+  }
+  
+  &:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }
 }
 </style> 

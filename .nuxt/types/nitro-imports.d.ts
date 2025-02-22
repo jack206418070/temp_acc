@@ -45,6 +45,7 @@ declare global {
   const fromNodeMiddleware: typeof import('../../node_modules/h3')['fromNodeMiddleware']
   const fromPlainHandler: typeof import('../../node_modules/h3')['fromPlainHandler']
   const fromWebHandler: typeof import('../../node_modules/h3')['fromWebHandler']
+  const generateToken: typeof import('../../server/utils/auth')['generateToken']
   const getCookie: typeof import('../../node_modules/h3')['getCookie']
   const getHeader: typeof import('../../node_modules/h3')['getHeader']
   const getHeaders: typeof import('../../node_modules/h3')['getHeaders']
@@ -125,6 +126,7 @@ declare global {
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config')['useRuntimeConfig']
   const useSession: typeof import('../../node_modules/h3')['useSession']
   const useStorage: typeof import('../../node_modules/nitropack/dist/runtime/internal/storage')['useStorage']
+  const verifyToken: typeof import('../../server/utils/auth')['verifyToken']
   const writeEarlyHints: typeof import('../../node_modules/h3')['writeEarlyHints']
 }
 export { useNitroApp } from 'nitropack/runtime/internal/app';
@@ -142,4 +144,4 @@ export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHead
 export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '../../node_modules/nuxt/dist/core/runtime/nitro/paths';
 export { defineAppConfig } from '../../node_modules/nuxt/dist/core/runtime/nitro/config';
 export { defuReplaceArray } from '../../node_modules/nuxt-security/dist/utils/merge';
-export { authenticate } from '../../server/utils/auth';
+export { authenticate, verifyToken, generateToken } from '../../server/utils/auth';
