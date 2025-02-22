@@ -135,6 +135,10 @@ declare module 'nuxt/schema' {
             "script-src": Array<string>,
 
             "upgrade-insecure-requests": boolean,
+
+            "default-src": Array<string>,
+
+            "connect-src": Array<string>,
          },
 
          originAgentCluster: string,

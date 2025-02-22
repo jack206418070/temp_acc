@@ -1,9 +1,6 @@
 import { authenticate } from '~/server/utils/auth';
 import { updateKnowledge, getKnowledgeById } from '~/server/models/knowledgeModel';
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
 import { createError } from 'h3';
-import { ensureUploadDir } from '~/server/utils/ensureUploadDir';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -11,9 +8,6 @@ export default defineEventHandler(async (event) => {
     await authenticate(event);
 
     const id = event.context.params.id;
-    
-    // 確保上傳目錄存在
-    await ensureUploadDir();
 
     // 解析 multipart form data
     const formData = await readMultipartFormData(event);
@@ -38,25 +32,19 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    let image_url = existingKnowledge.image_url;
+    // 準備更新數據
+    const updateData = {
+      know_category: parseInt(know_category)
+    };
 
-    // 如果有新圖片，則更新
+    // 如果有新圖片，則更新圖片數據
     if (imageFile) {
-      const fileName = `${Date.now()}-${imageFile.filename}`;
-      const uploadDir = join(process.cwd(), 'public', 'uploads');
-      const filePath = join(uploadDir, fileName);
-
-      await writeFile(filePath, imageFile.data);
-      console.log('✅ New file saved:', filePath);
-
-      image_url = `/uploads/${fileName}`;
+      updateData.imageBuffer = imageFile.data;
+      updateData.imageType = imageFile.type || 'image/jpeg';
     }
 
     // 更新數據庫
-    const data = await updateKnowledge(id, {
-      know_category: parseInt(know_category),
-      image_url
-    });
+    const data = await updateKnowledge(id, updateData);
 
     return { success: true, data };
   } catch (error) {

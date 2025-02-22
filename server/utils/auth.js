@@ -2,6 +2,7 @@ import { createError } from 'h3';
 import jwt from 'jsonwebtoken';
 
 export async function authenticate(event) {
+  console.log(event);
   const token = getHeader(event, 'Authorization')?.split(' ')[1];
   
   if (!token) {

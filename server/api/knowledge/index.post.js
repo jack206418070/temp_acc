@@ -27,6 +27,9 @@ export default defineEventHandler(async (event) => {
       });
     }
 
+    // 獲取圖片類型
+    const imageType = imageFile.type || 'image/jpeg';
+
     // 生成唯一的文件名
     const fileName = `${Date.now()}-${imageFile.filename}`;
     const uploadDir = join(process.cwd(), 'public', 'uploads');
@@ -37,10 +40,10 @@ export default defineEventHandler(async (event) => {
     console.log('✅ File saved:', filePath);
 
     // 保存到數據庫
-    const image_url = `/uploads/${fileName}`;
     const data = await createKnowledge({
       know_category: parseInt(know_category),
-      image_url
+      imageBuffer: imageFile.data,
+      imageType: imageType
     });
 
     return { success: true, data };

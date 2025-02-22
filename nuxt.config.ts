@@ -39,15 +39,24 @@ export default defineNuxtConfig({
     sri: true,
     headers: {
       contentSecurityPolicy: {
-        'script-src': [
-          "'strict-dynamic'", // Modify with your custom CSP sources
-          // The nonce-{{nonce}} placeholder is not required and will be ignored in SSG mode
-          "'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
-        ]
+        'script-src': process.env.NODE_ENV === 'production' 
+          ? [
+              "'self'",
+              "'strict-dynamic'",
+              "'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
+              // 其他必要的腳本來源...
+            ]
+          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'img-src': ["'self'", "data:", "blob:"],
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'default-src': ["'self'"],
+        'connect-src': ["'self'"],
+        'frame-ancestors': ["'none'"],
+        'object-src': ["'none'"],
+        'base-uri': ["'self'"]
       }
     }
   },
-  
 
   // Per route
   routeRules: {
