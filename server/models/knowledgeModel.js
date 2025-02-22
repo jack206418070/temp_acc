@@ -1,10 +1,10 @@
 import { getConnection } from '../config/db.js';
 
-// ✅ 取得所有 QA
-export async function getAllQA() {
+// ✅ 取得所有知識
+export async function getAllKnowledge() {
   try {
     const pool = await getConnection();
-    const result = await pool.request().query('SELECT * FROM QA'); // 修改成你的 Table
+    const result = await pool.request().query('SELECT * FROM knowledge ORDER BY kid DESC');
     return result.recordset;
   } catch (error) {
     console.error('❌ Query Error:', error);
@@ -12,13 +12,13 @@ export async function getAllQA() {
   }
 }
 
-// ✅ 依 ID 取得 QA
-export async function getQAById(id) {
+// ✅ 依 ID 取得知識
+export async function getKnowledgeById(id) {
   try {
     const pool = await getConnection();
     const result = await pool.request()
-      .input('id', id)
-      .query('SELECT * FROM QA WHERE id = @id');
+      .input('kid', id)
+      .query('SELECT * FROM knowledge WHERE kid = @kid');
 
     return result.recordset.length ? result.recordset[0] : null;
   } catch (error) {
@@ -27,18 +27,17 @@ export async function getQAById(id) {
   }
 }
 
-// ✅ 新增 QA
-export async function createQA(question, answer, category) {
+// ✅ 新增知識
+export async function createKnowledge({ know_category, image_url }) {
   try {
     const pool = await getConnection();
     const result = await pool.request()
-      .input('question', question)
-      .input('answer', answer)
-      .input('category', category)
+      .input('know_category', know_category)
+      .input('image_url', image_url)
       .query(`
-        INSERT INTO QA (question, answer, category)
+        INSERT INTO knowledge (know_category, image_url)
         OUTPUT INSERTED.*
-        VALUES (@question, @answer, @category)
+        VALUES (@know_category, @image_url)
       `);
 
     return result.recordset[0];
@@ -48,20 +47,19 @@ export async function createQA(question, answer, category) {
   }
 }
 
-// ✅ 更新 QA
-export async function updateQA(id, question, answer, category) {
+// ✅ 更新知識
+export async function updateKnowledge(id, { know_category, image_url }) {
   try {
     const pool = await getConnection();
     const result = await pool.request()
-      .input('id', id)
-      .input('question', question)
-      .input('answer', answer)
-      .input('category', category)
+      .input('kid', id)
+      .input('know_category', know_category)
+      .input('image_url', image_url)
       .query(`
-        UPDATE QA
-        SET question = @question, answer = @answer, category = @category
+        UPDATE knowledge
+        SET know_category = @know_category, image_url = @image_url
         OUTPUT INSERTED.*
-        WHERE id = @id
+        WHERE kid = @kid
       `);
 
     return result.recordset[0];
@@ -71,16 +69,16 @@ export async function updateQA(id, question, answer, category) {
   }
 }
 
-// ✅ 刪除 QA
-export async function deleteQA(id) {
+// ✅ 刪除知識
+export async function deleteKnowledge(id) {
   try {
     const pool = await getConnection();
     await pool.request()
-      .input('id', id)
-      .query('DELETE FROM QA WHERE id = @id');
+      .input('kid', id)
+      .query('DELETE FROM knowledge WHERE kid = @kid');
     return { message: '刪除成功' };
   } catch (error) {
     console.error('❌ Delete Error:', error);
     throw error;
   }
-}
+} 

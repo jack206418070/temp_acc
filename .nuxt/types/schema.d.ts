@@ -95,6 +95,8 @@ declare module 'nuxt/schema' {
       cdnURL: string,
    },
 
+   jwtSecret: string,
+
    nitro: {
       envPrefix: string,
    },

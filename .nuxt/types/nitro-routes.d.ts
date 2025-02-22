@@ -3,17 +3,34 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/auth/login': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/login.post').default>>>>
+    }
+    '/api/auth/logout': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/logout.post').default>>>>
+    }
+    '/api/auth/verify': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/verify.get').default>>>>
+    }
     '/api/hello': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/hello').default>>>>
     }
+    '/api/knowledge/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].delete').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].put').default>>>>
+    }
+    '/api/knowledge': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/index.post').default>>>>
+    }
     '/api/qa': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/index.post').default>>>>
     }
     '/api/qa/:id': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/[id]').default>>>>
-    }
-    '/api/qa/create': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/create').default>>>>
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/[id].delete').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/[id].put').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>

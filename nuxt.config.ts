@@ -77,22 +77,19 @@ export default defineNuxtConfig({
     },
     // preset: 'node-server',
     preset: 'vercel',
-    // publicAssets: [
-    //   {
-    //     dir: 'public',
-    //     baseURL: '/',  // 🚀 確保靜態資源可以從 `/` 讀取
-    //     maxAge: 31536000
-    //   }
-    // ],
-    // prerender: {
-    //   failOnError: false,
-    //   crawlLinks: true,
-    //   routes: ['/'],
-    // },
-    // preset: 'static',
-    // output: {
-    //   publicDir: 'dist' // 告訴 Nuxt 輸出到 `dist`
-    // }
+    storage: {
+      uploads: {
+        driver: 'fs',
+        base: './public/uploads'
+      }
+    },
+    publicAssets: [
+      {
+        dir: 'public',
+        baseURL: '/',
+        maxAge: 60 * 60 * 24 * 7 // 7 days
+      }
+    ]
   },
   serverHandlers: [
     {
@@ -113,7 +110,26 @@ export default defineNuxtConfig({
     "swiper/css/bundle",
     "@/assets/scss/style.scss",
     "@/assets/css/responsive.css",
+    "@/assets/scss/admin.scss"
   ],
 
   compatibilityDate: '2025-02-20',
+
+  runtimeConfig: {
+    // 將會從環境變數中獲取
+    jwtSecret: process.env.JWT_SECRET || 'your-secret-key',
+  },
+
+  // 添加 cookie 配置
+  cookieControl: {
+    cookies: {
+      necessary: [
+        {
+          name: 'auth_token',
+          description: '用於用戶身份驗證的令牌',
+          tokens: ['auth_token']
+        }
+      ]
+    }
+  },
 })
