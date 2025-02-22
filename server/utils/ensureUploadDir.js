@@ -2,7 +2,7 @@ import { mkdir } from 'fs/promises';
 import { join } from 'path';
 
 export async function ensureUploadDir() {
-  const uploadDir = join(process.cwd(), 'public', 'uploads');
+  const uploadDir = join(process.cwd(), 'static', 'uploads');
   try {
     await mkdir(uploadDir, { recursive: true });
     console.log('✅ Upload directory created or already exists:', uploadDir);
