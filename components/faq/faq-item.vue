@@ -1,25 +1,15 @@
 <template>
   <div class="accordion-item">
-    <div class="accordion-header" :id="`heading-${id}`">
-      <button
-        :class="`accordion-button ${cls?cls:''} ${isShow?'':'collapsed'}`"
-        type="button"
-        data-bs-toggle="collapse"
-        :data-bs-target="`#collapse-${id}`"
-        :aria-expanded="isShow ? 'true' : 'false'"
-        :aria-controls="`collapse-${id}`"
-      >
+    <div class="accordion-header" :id="'heading' + id">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        :data-bs-target="'#collapse' + id" :aria-expanded="false" :aria-controls="'collapse' + id">
         {{ title }}
       </button>
     </div>
-    <div
-      :id="`collapse-${id}`"
-      :class="`accordion-collapse collapse ${isShow ? 'show' : ''}`"
-      :aria-labelledby="`heading-${id}`"
-      :data-bs-parent="`#${parent}`"
-    >
+    <div :id="'collapse' + id" class="accordion-collapse collapse" :aria-labelledby="'heading' + id"
+      :data-bs-parent="'#' + parent">
       <div class="accordion-body">
-        <p v-html="desc"></p>
+        <p class="faq-answer">{{ desc }}</p>
       </div>
     </div>
   </div>
@@ -36,3 +26,17 @@ const props = defineProps<{
   cls?: string;
 }>();
 </script>
+
+<style scoped>
+.accordion-body {
+  padding: 1rem;
+  font-size: 14px;
+}
+
+.faq-answer {
+  white-space: pre-line;
+  word-break: break-word;
+  line-height: 1.6;
+  margin: 0;
+}
+</style>
