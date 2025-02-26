@@ -31,10 +31,10 @@ export default defineNuxtConfig({
 
   security: {
     ssg: {
-      meta: true, // Enables CSP as a meta tag in SSG mode
-      hashScripts: true, // Enables CSP hash support for scripts in SSG mode
-      hashStyles: false, // Disables CSP hash support for styles in SSG mode (recommended)
-      exportToPresets: true // Export security headers to Nitro presets
+      meta: true,
+      hashScripts: false,
+      hashStyles: false,
+      exportToPresets: true
     },
     sri: true,
     headers: {
@@ -43,8 +43,7 @@ export default defineNuxtConfig({
           ? [
               "'self'",
               "'strict-dynamic'",
-              "'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
-              // 其他必要的腳本來源...
+              "'nonce-${nonce}'",
             ]
           : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
         'img-src': ["'self'", "data:", "blob:"],
@@ -54,6 +53,12 @@ export default defineNuxtConfig({
         'frame-ancestors': ["'none'"],
         'object-src': ["'none'"],
         'base-uri': ["'self'"]
+      },
+      xContentTypeOptions: 'nosniff',
+      strictTransportSecurity: {
+        maxAge: 15552000,        // 180 天
+        includeSubdomains: true, // 包含所有子域名
+        preload: true           // 加入瀏覽器預載清單
       }
     }
   },
@@ -62,14 +67,18 @@ export default defineNuxtConfig({
   routeRules: {
     '/custom-route': {
       security: {
-        ssg: false,
-        sri: false,
         headers: {
           contentSecurityPolicy: {
-            'script-src': "'self' 'unsafe-inline' 'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
+            'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'"
           },
         },
       },
+    },
+    '/assets/**': {
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+        'Content-Type': 'application/json; charset=utf-8'
+      }
     }
   },
 
@@ -85,7 +94,12 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
     // preset: 'node-server',
-    preset: 'vercel',
+    // preset: 'vercel',
+    preset: 'static',
+    output: {
+      dir: './dist',
+      publicDir: './dist'
+    },
     storage: {
       uploads: {
         driver: 'fs',
@@ -98,7 +112,15 @@ export default defineNuxtConfig({
         baseURL: '/',
         maxAge: 60 * 60 * 24 * 7 // 7 days
       }
-    ]
+    ],
+    routeRules: {
+      '/assets/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'Content-Type': 'application/json; charset=utf-8'
+        }
+      }
+    }
   },
   serverHandlers: [
     {
@@ -141,4 +163,12 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ['sweetalert2']
+      }
+    }
+  }
 })
