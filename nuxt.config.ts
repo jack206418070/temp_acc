@@ -39,21 +39,21 @@ export default defineNuxtConfig({
     sri: true,
     headers: {
       contentSecurityPolicy: {
-        'script-src': process.env.NODE_ENV === 'production' 
-          ? [
-              "'self'",
-              "'strict-dynamic'",
-              "'nonce-${nonce}'",
-            ]
-          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        'img-src': ["'self'", "data:", "blob:"],
-        'style-src': ["'self'", "'unsafe-inline'"],
         'default-src': ["'self'"],
-        'connect-src': ["'self'"],
+        'base-uri': ["'self'"],
+        'form-action': ["'self'"],
         'frame-ancestors': ["'none'"],
         'object-src': ["'none'"],
-        'base-uri': ["'self'"]
+        'script-src': process.env.NODE_ENV === 'production' 
+          ? ["'self'", "'strict-dynamic'", "'nonce-${nonce}'"]
+          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'style-src': ["'self'", "'nonce-${nonce}'"],
+        'img-src': ["'self'", "data:", "blob:"],
+        'font-src': ["'self'", "https:", "data:"],
+        'connect-src': ["'self'", "api.example.com"],
+        'upgrade-insecure-requests': true
       },
+      xFrameOptions: 'DENY',
       xContentTypeOptions: 'nosniff',
       strictTransportSecurity: {
         maxAge: 15552000,        // 180 天
@@ -69,7 +69,10 @@ export default defineNuxtConfig({
       security: {
         headers: {
           contentSecurityPolicy: {
-            'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'"
+            'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'",
+            'frame-ancestors': ["'none'"],
+            'object-src': ["'none'"],
+            'base-uri': ["'self'"]
           },
         },
       },
@@ -77,7 +80,13 @@ export default defineNuxtConfig({
     '/assets/**': {
       headers: {
         'X-Content-Type-Options': 'nosniff',
-        'Content-Type': 'application/json; charset=utf-8'
+        'Content-Type': 'application/javascript; charset=utf-8'
+      }
+    },
+    '/': {
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+        'Content-Type': 'application/javascript; charset=utf-8'
       }
     }
   },
@@ -117,7 +126,7 @@ export default defineNuxtConfig({
       '/assets/**': {
         headers: {
           'X-Content-Type-Options': 'nosniff',
-          'Content-Type': 'application/json; charset=utf-8'
+          'Content-Type': 'application/javascript; charset=utf-8'
         }
       }
     }
@@ -139,9 +148,9 @@ export default defineNuxtConfig({
   css: [
     "bootstrap/scss/bootstrap.scss",
     "swiper/css/bundle",
-    "@/assets/scss/style.scss",
-    "@/assets/css/responsive.css",
-    "@/assets/scss/admin.scss"
+    // "~/assets/scss/style.scss",
+    // "~/assets/css/responsive.css",
+    // "~/assets/scss/admin.scss"
   ],
 
   compatibilityDate: '2025-02-20',
@@ -168,6 +177,15 @@ export default defineNuxtConfig({
     build: {
       rollupOptions: {
         external: ['sweetalert2']
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,  // 添加這個選項來抑制 Bootstrap 的警告
+          additionalData: '@use "sass:math";'
+
+        }
       }
     }
   }
