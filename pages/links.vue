@@ -195,4 +195,9 @@ useSeoMeta({ title: "相關網站連結 ｜ 多元陪伴照顧服務計畫" });
       gap: 10px;
     }
   }
+  @media (max-width: 540px) {
+    .link-list li .img {
+      flex: 0 0 280px;
+    }
+  }
 </style>
