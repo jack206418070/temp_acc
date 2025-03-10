@@ -223,7 +223,7 @@
   .vendor-category-tag {
     background-color: #41BBBE;
     color: #fff;
-    padding: 0px 15px;
+    padding: 0px 12px;
     font-size: 18px;
     border-radius: 15px;
     cursor: pointer;
