@@ -6,7 +6,7 @@
         border-radius: 0;
         .accordion-button {
             font-weight: 400;
-            font-size: 18px;
+            font-size: 20px;
             line-height: 1.55em;
             color: rgb(43, 39, 22);
             padding: 33px 0;
@@ -17,13 +17,13 @@
                 padding-bottom: 20px;
                 &:after {
                     content: '-';
-                    font-size: 36px;
+                    font-size: 38px;
                 }
             }
             &:after {
                 content: '+';
                 font-weight: 300;
-                font-size: 28px;
+                font-size: 30px;
                 background: none;
                 width: auto;
                 height: auto;
@@ -33,7 +33,7 @@
             padding: 0 35px 20px 0;
             p {
                 margin: 0;
-                font-size: 16px;
+                font-size: 18px;
                 color: rgb(43, 39, 22);
             }
         }
@@ -50,7 +50,7 @@
         border-radius: 0;
         .accordion-button {
             font-weight: 500;
-            font-size: 32px;
+            font-size: 34px;
             line-height: 1.55em;
             color: #AEA78F;
             padding: 28px 50px;
@@ -63,8 +63,7 @@
                 border-bottom-right-radius: 0 !important;
                 &:after {
                     content: '-';
-                    font-size: 1.5em;
-                    line-height: 36px;
+                    font-size: 34px;
                 }
             }
             &:after {
@@ -73,7 +72,7 @@
                 text-align: center;
                 color: #000;
                 line-height: 48px;
-                font-size: 32px;
+                font-size: 34px;
                 background: none;
                 width: 48px;
                 height: 48px;
@@ -84,7 +83,7 @@
         .accordion-body {
             padding: 20px 50px 55px;
             h6 {
-                font-size: 16px;
+                font-size: 18px;
                 text-transform: uppercase;
                 letter-spacing: 0.96px;
                 margin-bottom: 15px;
@@ -104,7 +103,7 @@
                     content: '\F633';
                     position: absolute;
                     font-family: $bootstrapFont;
-                    font-size: 18px;
+                    font-size: 20px;
                     top:6px;
                     left: 14px;
                     color: #212121;
@@ -159,7 +158,7 @@
         border-radius: 0;
         .accordion-button {
             font-weight: 500;
-            font-size: 24px;
+            font-size: 26px;
             line-height: 1.55em;
             color: $color-five;
             padding: 24px 0;
@@ -169,7 +168,7 @@
             &:after {
                 content: '\F286';
                 font-family: $bootstrapFont;
-                font-size: 20px;
+                font-size: 22px;
                 background: none;
                 width: auto;
                 height: auto;
@@ -193,18 +192,18 @@
         }
         .title {
             color: #000;
-            font-size: 30px;
+            font-size: 32px;
         }
         .logo-wrapper {
             font-weight: 700;
             color: #000;
-            font-size: 30px;
+            font-size: 32px;
             letter-spacing: -0.5px;
         }
         .logo-wrapper .br-name {
             margin: 0 10px;
             img {
-                width: 15px;
+                width: 17px;
             }
         }
     }
@@ -230,7 +229,7 @@
     border-radius: 20px !important;
     padding: 50px 15px 40px;
     h2 {
-        font-size: 42px;
+        font-size: 44px;
         font-weight: 500;
         margin-bottom: 10px;
     }
@@ -246,7 +245,7 @@
             input {
                 width: 100%;
                 height: 55px;
-                font-size: 16px;
+                font-size: 18px;
                 border:1px solid rgba($color: #254035, $alpha: 0.06);
                 border-radius: 8px;
                 padding: 0 52px 0 20px;
@@ -254,7 +253,7 @@
                 background: rgba($color: #000, $alpha: 0.04);
             }
             label {
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: normal;
                 color: rgba(0, 0, 0, 0.5);
                 display: block;
@@ -270,7 +269,7 @@
                 text-align: center;
                 z-index: 1;
                 color: rgba(0,0,0,0.45);
-                font-size: 17px;
+                font-size: 19px;
             }
             .placeholder_icon img {
                 position: relative;
@@ -302,7 +301,7 @@
     }
     .agreement-checkbox label {
         position: relative;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
         color: $heading;
         cursor: pointer;
@@ -321,7 +320,7 @@
         line-height: 11px;
         border-radius: 2px;
         border: 2px solid #B3B3B3;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
         position: absolute;
         left:0;
@@ -337,7 +336,7 @@
     }
     .agreement-checkbox a {
         position: relative;
-        font-size: 16px;
+        font-size: 18px;
         color: rgba($color: #000000, $alpha: 0.5);
     }
     .agreement-checkbox a:hover {
@@ -350,7 +349,7 @@
         background: rgba($color: #000000, $alpha: 0.2);
     }
     .social-use-btn {
-        font-size: 16px;
+        font-size: 18px;
         color: #000;
         height: 55px;
         border: 1px solid #E5E5E5;
@@ -359,7 +358,7 @@
             background: rgba($color: #000000, $alpha: 0.06);
         }
         img {
-            width: 20px;
+            width: 22px;
         }
     }
     .btn-close {
@@ -380,7 +379,7 @@
                 width: 100%;
                 border: 1px solid transparent;
                 border-radius: 40px;
-                font-size: 20px;
+                font-size: 22px;
                 color: #839B8F;
                 &.active {
                     color: $color-two;
@@ -392,13 +391,13 @@
 }
 // Counter One
 .counter-block-one .main-count {
-    font-size: 64px;
+    font-size: 66px;
     color: $heading;
 }
 // Counter Two
 .counter-block-two {
     .main-count {
-        font-size: 68px;
+        font-size: 70px;
         color: $heading;
         margin-bottom: -5px;
     }
@@ -406,7 +405,7 @@
 // Counter Three
 .counter-block-three {
     .main-count {
-        font-size: 70px;
+        font-size: 72px;
         color: $color-eight;
         margin-bottom: -5px;
     }
@@ -417,7 +416,7 @@
         margin: 0 -5;
         li {
             padding: 0 5px;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 500;
             color: $heading;
             &.disable{
@@ -445,17 +444,17 @@
     border-bottom: 1px dashed rgba($color: #000000, $alpha: 0.1);
     padding: 60px 0;
     .pr-dir {
-        font-size: 16px;
+        font-size: 18px;
         letter-spacing: 0.89px;
         color: #979797;
     }
     .pr-name {
-        font-size: 32px;
+        font-size: 34px;
         color: $heading;
         margin-top: 4px;
     }
     i {
-        font-size: 30px;
+        font-size: 32px;
         width: 75px;
         height: 75px;
         border: 1px solid #000;

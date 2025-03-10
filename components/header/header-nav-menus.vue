@@ -203,7 +203,7 @@ const closeMenu = (type = '', link=null) => {
 }
 @media screen and (max-width: 1280px) {
   .nav-link {
-    font-size: 0.75rem;
+    font-size: calc(0.75rem + 2px);
   }
 }
 @media screen and (max-width: 991px) {

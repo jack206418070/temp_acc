@@ -40,7 +40,7 @@
     }
     .more-btn {
         position: absolute;
-        font-size: 40px;
+        font-size: 42px;
         color: #fff;
         width: 105px;
         height: 105px;
@@ -59,7 +59,7 @@
 .hero-banner-two {
     z-index: 1;
     .hero-heading {
-        font-size: 100px;
+        font-size: 102px;
         line-height: 1em;
         span {
             z-index: 1;
@@ -78,7 +78,7 @@
         box-shadow: 0px 10px 20px rgba(8, 32, 26, 0.04);
         border-radius: 50px;
         input {
-            font-size: 18px;
+            font-size: 20px;
             width: 100%;
             height: 100%;
             border-radius: 50px;
@@ -124,14 +124,14 @@
 .hero-banner-three {
     z-index: 1;
     .hero-heading {
-        font-size: 100px;
+        font-size: 102px;
         letter-spacing: 1px;
         line-height: 1.3em;
         color: $text-dark;
     }
     .right-widget {
         .main-count {
-            font-size: 58px;
+            font-size: 60px;
             margin: -17px 0 -4px;
         }
     }
@@ -159,7 +159,7 @@
     z-index: 1;
     .hero-heading {
         font-family: $sub-font;
-        font-size: 130px;
+        font-size: 132px;
         font-weight: 600;
         line-height: 0.884em;
         span {
@@ -195,7 +195,7 @@
         z-index: 1;
     }
     .hero-heading {
-        font-size: 85px;
+        font-size: 87px;
         font-weight: normal;
         letter-spacing: 1px;
         line-height: 1.176em;
@@ -203,11 +203,11 @@
     }
     .rating {
         h3 {
-            font-size: 42px;
+            font-size: 44px;
             margin-bottom: 0px;
         }
         p {
-            font-size: 18px;
+            font-size: 20px;
             color: rgba($color: #000000, $alpha: 0.4);
         }
     }
@@ -327,7 +327,7 @@
     }
     .hero-heading {
         font-weight: 700;
-        font-size: 110px;
+        font-size: 112px;
         letter-spacing: -1px;
         line-height: 1em;
     }
@@ -336,10 +336,10 @@
         border-radius: 30px;
         padding: 35px 50px 50px;
         h3 {
-            font-size: 32px;
+            font-size: 34px;
         }
         label {
-            font-size: 17px;
+            font-size: 19px;
             color: rgba($color: #000000, $alpha: 0.3);
         }
         input {
@@ -351,7 +351,7 @@
         button {
             height: 60px;
             border-radius: 10px;
-            font-size: 17px;
+            font-size: 19px;
             background: $color-nine;
             &:hover {
                 background: $color-two;
@@ -377,7 +377,7 @@
         z-index: -1;
     }
     h2 {
-        font-size: 68px;
+        font-size: 70px;
         font-weight: normal;
         margin: 0;
         span {
@@ -387,7 +387,7 @@
         }
     }
     h3 {
-        font-size: 48px;
+        font-size: 50px;
         margin-bottom: -5px;
     }
     p {
@@ -413,7 +413,7 @@
 
     }
     .title-one h2 {
-        font-size: 58px;
+        font-size: 60px;
     }
     .quote-btn {
         width: 200px;
@@ -444,7 +444,7 @@
         background-size: cover;
     }
     ul li {
-        font-size: 28px;
+        font-size: 30px;
         color: #000;
         position: relative;
         padding-left: 42px;
@@ -474,7 +474,7 @@
         }
         .icon {margin-right: 14px;}
         span {
-            font-size: 12px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.6);
             display: block;
             line-height: initial;
@@ -526,7 +526,7 @@
 
     }
     h2 {
-        font-size: 100px;
+        font-size: 102px;
         line-height: 1.1em;
     }
     .video-icon {
@@ -545,7 +545,7 @@
     background-size: cover;
     z-index: 1;
     h2 {
-        font-size: 85px;
+        font-size: 87px;
         line-height: 1.117em;
     }
     .video-icon {
@@ -663,13 +663,13 @@
         }
     }
     h2 {
-        font-size: 50px;
+        font-size: 52px;
     }
     form {
         max-width: 510px;
         input {
             width: calc(100% - 75px);
-            font-size: 18px;
+            font-size: 20px;
             padding: 0 30px;
             height: 60px;
             background: #F6F6F6;
@@ -694,7 +694,7 @@
             }
         }
         p {
-            font-size: 18px;
+            font-size: 20px;
             a:hover {
                 text-decoration: underline;
             }
@@ -747,7 +747,7 @@
     }
     .hero-heading {
         font-weight: 700;
-        font-size: 85px;
+        font-size: 87px;
         line-height: 1.023em;
         z-index: 1;
         padding: 10px 10px 23px 22px;
@@ -780,7 +780,7 @@
         border: 1px solid #fff;
         border-radius: 30px;
         padding: 0 10px;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 1px;
         color: #fff;
@@ -809,7 +809,7 @@
     }
     .hero-heading {
         font-weight: 700;
-        font-size: 85px;
+        font-size: 87px;
         line-height: 1.023em;
         margin: 22px 0 40px;
     }
@@ -819,7 +819,7 @@
         border: 1px solid $heading;
         border-radius: 30px;
         padding: 0 10px;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 1px;
         color: $heading;

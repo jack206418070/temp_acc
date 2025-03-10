@@ -18,7 +18,7 @@
 body {
   font-family: "Satoshi";
   font-weight: normal;
-  font-size: 20px;
+  font-size: 22px;
   position: relative;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -44,17 +44,17 @@ h6 {
 }
 
 .h1, h1 {
-  font-size: 85px;
+  font-size: 87px;
   line-height: 1.023em;
 }
 
 .h2, h2 {
-  font-size: 64px;
+  font-size: 66px;
   line-height: 1.1em;
 }
 
 .h4, h4 {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 p {
@@ -62,17 +62,17 @@ p {
 }
 
 .text-xl {
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.5em;
 }
 
 .text-lg {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.583em;
 }
 
 .text-md {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 hr {
@@ -2359,7 +2359,7 @@ iframe {
 .theme-main-menu .nav-item .nav-link {
   font-family: "Satoshi";
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: initial;
   color: #fff;
   padding: 20px 0;
@@ -2896,18 +2896,18 @@ iframe {
   z-index: 1;
 }
 .hero-banner-five .hero-heading {
-  font-size: 85px;
+  font-size: 87px;
   font-weight: normal;
   letter-spacing: 1px;
   line-height: 1.176em;
   color: #000;
 }
 .hero-banner-five .rating h3 {
-  font-size: 42px;
+  font-size: 44px;
   margin-bottom: 0px;
 }
 .hero-banner-five .rating p {
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(0, 0, 0, 0.4);
 }
 .hero-banner-five .media-wrapper {
@@ -2935,7 +2935,7 @@ iframe {
 }
 
 .hero-banner-six .hero-heading {
-  font-size: 100px;
+  font-size: 102px;
   line-height: 1.05em;
   color: #044F3B;
 }
@@ -2993,7 +2993,7 @@ iframe {
   z-index: -1;
 }
 .fancy-banner-one h2 {
-  font-size: 68px;
+  font-size: 70px;
   font-weight: normal;
   margin: 0;
 }
@@ -3003,7 +3003,7 @@ iframe {
   text-decoration: underline;
 }
 .fancy-banner-one h3 {
-  font-size: 48px;
+  font-size: 50px;
   margin-bottom: -5px;
 }
 .fancy-banner-one p {
@@ -3028,7 +3028,7 @@ iframe {
   mix-blend-mode: darken;
 }
 .fancy-banner-three .title-one h2 {
-  font-size: 58px;
+  font-size: 60px;
 }
 .fancy-banner-three .quote-btn {
   width: 200px;
@@ -3059,7 +3059,7 @@ iframe {
   background-size: cover;
 }
 .fancy-banner-four ul li {
-  font-size: 28px;
+  font-size: 30px;
   color: #000;
   position: relative;
   padding-left: 42px;
@@ -3145,7 +3145,7 @@ iframe {
   mix-blend-mode: hard-light;
 }
 .fancy-banner-five h2 {
-  font-size: 100px;
+  font-size: 102px;
   line-height: 1.1em;
 }
 .fancy-banner-five .video-icon {
@@ -3164,7 +3164,7 @@ iframe {
   z-index: 1;
 }
 .fancy-banner-six h2 {
-  font-size: 85px;
+  font-size: 87px;
   line-height: 1.117em;
 }
 .fancy-banner-six .video-icon {
@@ -3187,14 +3187,14 @@ iframe {
   border-bottom: 1px solid #E2E2E2;
 }
 .newsletter-banner h2 {
-  font-size: 50px;
+  font-size: 52px;
 }
 .newsletter-banner form {
   max-width: 510px;
 }
 .newsletter-banner form input {
   width: calc(100% - 75px);
-  font-size: 18px;
+  font-size: 20px;
   padding: 0 30px;
   height: 60px;
   background: #F6F6F6;
@@ -3205,7 +3205,7 @@ iframe {
   width: 60px;
   height: 60px;
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
   color: #fff;
   background: #101010;
 }
@@ -3219,7 +3219,7 @@ iframe {
   background: #000;
 }
 .newsletter-banner form p {
-  font-size: 18px;
+  font-size: 20px;
 }
 .newsletter-banner form p a:hover {
   text-decoration: underline;
@@ -3269,7 +3269,7 @@ iframe {
 }
 .inner-banner-one .hero-heading {
   font-weight: 700;
-  font-size: 85px;
+  font-size: 87px;
   line-height: 1.023em;
   z-index: 1;
   padding: 10px 10px 23px 22px;
@@ -3334,7 +3334,7 @@ iframe {
 }
 .inner-banner-two .hero-heading {
   font-weight: 700;
-  font-size: 85px;
+  font-size: 87px;
   line-height: 1.023em;
   margin: 22px 0 40px;
 }
@@ -3418,7 +3418,7 @@ iframe {
 }
 .block-feature-two .numb {
   display: inline-block;
-  font-size: 90px;
+  font-size: 92px;
   letter-spacing: -1px;
   color: #19352D;
   position: relative;
@@ -3457,7 +3457,7 @@ iframe {
   top: 68px;
 }
 .block-feature-three .block-title a {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 500;
   line-height: 1.25em;
   color: #19352D;
@@ -3720,7 +3720,7 @@ iframe {
   z-index: -1;
 }
 .block-feature-nine .heading {
-  font-size: 85px;
+  font-size: 87px;
   line-height: 1.411em;
 }
 .block-feature-nine .heading span {
@@ -4464,7 +4464,7 @@ iframe {
   content: "\f633";
   position: absolute;
   font-family: "bootstrap-icons";
-  font-size: 18px;
+  font-size: 20px;
   top: 6px;
   left: 14px;
   color: #212121;
@@ -4515,7 +4515,7 @@ iframe {
 }
 .accordion-style-three .accordion-item .accordion-button {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.55em;
   color: #0E3E2F;
   padding: 24px 0;
@@ -4526,7 +4526,7 @@ iframe {
 .accordion-style-three .accordion-item .accordion-button:after {
   content: "\f286";
   font-family: "bootstrap-icons";
-  font-size: 20px;
+  font-size: 22px;
   background: none;
   width: auto;
   height: auto;
@@ -4549,19 +4549,19 @@ iframe {
 }
 .partner-logo-two .bg-wrapper .title {
   color: #000;
-  font-size: 30px;
+  font-size: 32px;
 }
 .partner-logo-two .bg-wrapper .logo-wrapper {
   font-weight: 700;
   color: #000;
-  font-size: 30px;
+  font-size: 32px;
   letter-spacing: -0.5px;
 }
 .partner-logo-two .bg-wrapper .logo-wrapper .br-name {
   margin: 0 10px;
 }
 .partner-logo-two .bg-wrapper .logo-wrapper .br-name img {
-  width: 15px;
+  width: 17px;
 }
 
 .partner-logo-one .logo {
@@ -4584,7 +4584,7 @@ iframe {
   padding: 50px 15px 40px;
 }
 .user-data-form h2 {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -4600,7 +4600,7 @@ iframe {
 .user-data-form .form-wrapper .input-group-meta input {
   width: 100%;
   height: 55px;
-  font-size: 16px;
+  font-size: 20px;
   border: 1px solid rgba(37, 64, 53, 0.06);
   border-radius: 8px;
   padding: 0 52px 0 20px;
@@ -4608,7 +4608,7 @@ iframe {
   background: rgba(0, 0, 0, 0.04);
 }
 .user-data-form .form-wrapper .input-group-meta label {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.5);
   display: block;
@@ -4624,7 +4624,7 @@ iframe {
   text-align: center;
   z-index: 1;
   color: rgba(0, 0, 0, 0.45);
-  font-size: 17px;
+  font-size: 21px;
 }
 .user-data-form .form-wrapper .input-group-meta .placeholder_icon img {
   position: relative;
@@ -4656,7 +4656,7 @@ iframe {
 }
 .user-data-form .agreement-checkbox label {
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   color: #19352D;
   cursor: pointer;
@@ -4693,7 +4693,7 @@ iframe {
 }
 .user-data-form .agreement-checkbox a {
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
   color: rgba(0, 0, 0, 0.5);
 }
 .user-data-form .agreement-checkbox a:hover {
@@ -4706,7 +4706,7 @@ iframe {
   background: rgba(0, 0, 0, 0.2);
 }
 .user-data-form .social-use-btn {
-  font-size: 16px;
+  font-size: 20px;
   color: #000;
   height: 55px;
   border: 1px solid #E5E5E5;
@@ -4716,7 +4716,7 @@ iframe {
   background: rgba(0, 0, 0, 0.06);
 }
 .user-data-form .social-use-btn img {
-  width: 20px;
+  width: 22px;
 }
 .user-data-form .btn-close {
   position: absolute;
@@ -4738,7 +4738,7 @@ iframe {
   width: 100%;
   border: 1px solid transparent;
   border-radius: 40px;
-  font-size: 20px;
+  font-size: 22px;
   color: #839B8F;
 }
 .user-data-form .nav .nav-item .nav-link.active {
@@ -4747,12 +4747,12 @@ iframe {
 }
 
 .counter-block-one .main-count {
-  font-size: 64px;
+  font-size: 66px;
   color: #19352D;
 }
 
 .counter-block-two .main-count {
-  font-size: 68px;
+  font-size: 70px;
   color: #19352D;
   margin-bottom: -5px;
 }
@@ -4762,7 +4762,7 @@ iframe {
 }
 .pagination-one ul li {
   padding: 0 5px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   color: #19352D;
 }
@@ -4785,17 +4785,17 @@ iframe {
   padding: 60px 0;
 }
 .pagination-two .pr-dir {
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 0.89px;
   color: #979797;
 }
 .pagination-two .pr-name {
-  font-size: 32px;
+  font-size: 34px;
   color: #19352D;
   margin-top: 4px;
 }
 .pagination-two i {
-  font-size: 30px;
+  font-size: 32px;
   width: 75px;
   height: 75px;
   border: 1px solid #000;
@@ -4945,7 +4945,7 @@ iframe {
   background: #FFE86B;
 }
 .card-style-seven p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.666em;
 }
 .card-style-seven .arrow-btn {
@@ -4987,7 +4987,7 @@ iframe {
   background: #FFE86B;
 }
 .card-style-nine h3 {
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .card-style-ten {
@@ -4997,7 +4997,7 @@ iframe {
   color: #0E3E2F;
 }
 .card-style-ten .main-count {
-  font-size: 80px;
+  font-size: 82px;
   color: #0E3E2F;
   z-index: 1;
   margin-bottom: -16px;
@@ -5078,13 +5078,13 @@ iframe {
   max-height: 100%;
 }
 .card-style-thirteen p {
-  font-size: 18px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.4);
 }
 .card-style-thirteen h3 {
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1.266em;
   color: #000;
 }
@@ -5160,7 +5160,7 @@ iframe {
   opacity: 1;
 }
 .card-style-fifteen h4 {
-  font-size: 22px;
+  font-size: 24px;
 }
 .card-style-fifteen p {
   color: #B6B6B6;
@@ -5245,14 +5245,14 @@ iframe {
   background: #CFFF45;
 }
 .card-style-eighteen blockquote {
-  font-size: 36px;
+  font-size: 38px;
   color: #fff;
   line-height: 1.555em;
   letter-spacing: -0.5px;
   margin: 30px 0 35px;
 }
 .card-style-eighteen h6 {
-  font-size: 20px;
+  font-size: 22px;
   color: #fff;
   margin: 0;
 }
@@ -6385,7 +6385,7 @@ iframe {
 }
 
 .blog-sidebar .sidebar-title {
-  font-size: 32px;
+  font-size: 34px;
   margin-bottom: 18px;
 }
 .blog-sidebar .sidebar-search {
@@ -6401,7 +6401,7 @@ iframe {
   border: 0;
   background: transparent;
   padding: 0 50px 0 20px;
-  font-size: 18px;
+  font-size: 20px;
 }
 .blog-sidebar .sidebar-search button {
   position: absolute;
@@ -6469,7 +6469,7 @@ iframe {
   background: #EFF6F3;
   border-radius: 30px;
   padding: 0 18px;
-  font-size: 16px;
+  font-size: 18px;
   color: #244034;
   transition: all 0.2s ease-in-out 0s;
 }
@@ -6483,7 +6483,7 @@ iframe {
   border-radius: 20px;
 }
 .blog-sidebar .contact-banner h3 {
-  font-size: 32px;
+  font-size: 34px;
   line-height: 1.25em;
   color: #000;
 }
@@ -6549,11 +6549,11 @@ iframe {
   margin-top: 15px;
 }
 .blog-details .post-details-meta h3 {
-  font-size: 32px;
+  font-size: 34px;
   margin-bottom: 20px;
 }
 .blog-details .post-details-meta .list-item li {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   color: #000;
   position: relative;
@@ -6574,7 +6574,7 @@ iframe {
 }
 .blog-details .bottom-widget .tags li:first-child {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(0, 0, 0, 0.4);
   margin-right: 7px;
 }
@@ -6584,7 +6584,7 @@ iframe {
   background: #fff;
   padding: 0 10px;
   color: #19352D;
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 5px;
 }
 .blog-details .bottom-widget .tags a:hover {
@@ -6593,12 +6593,12 @@ iframe {
 }
 .blog-details .bottom-widget .share-icon li:first-child {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(0, 0, 0, 0.4);
 }
 .blog-details .bottom-widget .share-icon a {
   color: #19352D;
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 17px;
 }
 .blog-details .grey-bg {
@@ -6607,7 +6607,7 @@ iframe {
   padding: 40px 35px;
 }
 .blog-details .blog-inner-title {
-  font-size: 42px;
+  font-size: 44px;
   margin-bottom: 10px;
 }
 .blog-details .blog-comment-area {
@@ -6634,20 +6634,20 @@ iframe {
   position: relative;
 }
 .blog-details .blog-comment-area .comment .comment-text .name {
-  font-size: 20px;
+  font-size: 22px;
   color: #19352D;
 }
 .blog-details .blog-comment-area .comment .comment-text .date {
-  font-size: 16px;
+  font-size: 18px;
   color: #ADADAD;
 }
 .blog-details .blog-comment-area .comment .comment-text p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 32px;
   margin: 7px 0 10px 0px;
 }
 .blog-details .blog-comment-area .comment .comment-text .reply-btn {
-  font-size: 13px;
+  font-size: 15px;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0px;
@@ -6665,7 +6665,7 @@ iframe {
   color: #19352D;
 }
 .blog-details .blog-comment-form form label {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.5);
   display: block;
@@ -6673,7 +6673,7 @@ iframe {
 }
 .blog-details .blog-comment-form form input {
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   width: 100%;
   height: 60px;
   border: none;
@@ -6683,7 +6683,7 @@ iframe {
 }
 .blog-details .blog-comment-form form textarea {
   display: block;
-  font-size: 17px;
+  font-size: 19px;
   width: 100%;
   max-width: 100%;
   height: 145px;
@@ -6704,7 +6704,7 @@ iframe {
 }
 .address-block-one .title {
   font-family: "Satoshi";
-  font-size: 24px;
+  font-size: 26px;
   padding: 20px 0 5px;
 }
 .address-block-one p {
@@ -6731,7 +6731,7 @@ iframe {
   position: relative;
 }
 .form-style-one .input-group-meta label {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(0, 0, 0, 0.5);
   margin-bottom: 5px;
 }
@@ -6741,7 +6741,7 @@ iframe {
   border: none;
   border-radius: 8px;
   background: #fff;
-  font-size: 18px;
+  font-size: 20px;
 }
 .form-style-one .input-group-meta input {
   height: 60px;
@@ -6754,7 +6754,7 @@ iframe {
 .form-style-one .btn-four {
   font-weight: 500;
   line-height: 60px;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 8px;

@@ -24,11 +24,11 @@
     .post-data  {
         padding: 30px 35px 25px;
         .post-info {
-            font-size: 18px;
+            font-size: 20px;
             color: #AAAAAA;
         }
         .blog-title {
-            font-size: 32px;
+            font-size: 34px;
             line-height: 1.281em;
             &:hover {
                 text-decoration: underline;
@@ -44,7 +44,7 @@
         background-repeat: no-repeat;
 
         .round-btn {
-            font-size: 25px;
+            font-size: 27px;
             width: 55px;
             height: 55px;
             background: #fff;
@@ -64,7 +64,7 @@
         }
         .blog-title {
             font-weight: 700;
-            font-size: 28px;
+            font-size: 30px;
             color: #000;
         }
     }
@@ -91,7 +91,7 @@
         .blog-title {
             width: 70%;
             h4 {
-                font-size: 32px;
+                font-size: 34px;
                 line-height: 1.281em;  
             }
             &:hover h4 {
@@ -99,7 +99,7 @@
             }
         }
         .round-btn {
-            font-size: 25px;
+            font-size: 27px;
             width: 60px;
             height: 60px;
             border: 1px solid $heading;
@@ -114,7 +114,7 @@
             border-top: 1px solid #D1D1D1;
             padding-top: 20px;
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 500;
             color: rgba($color: #000000, $alpha: 0.6);
         }
@@ -127,7 +127,7 @@
         background-repeat: no-repeat;
         .date {
             line-height: 38px;
-            font-size: 16px;
+            font-size: 18px;
             padding: 0 18px;
             text-transform: uppercase;
             background: #fff;
@@ -203,19 +203,19 @@
         line-height: 27px;
         border-radius: 20px;
         background: #000;
-        font-size: 14px;
+        font-size: 16px;
         padding: 0 16px;
         letter-spacing: 1px;
         color: #fff;
     }
     .blog-title {
-        font-size: 50px;
+        font-size: 52px;
         line-height: 1.16em;
         color: #000;
         margin: 37px 0 24px;
     }
     .round-btn {
-        font-size: 25px;
+        font-size: 27px;
         width: 50px;
         height: 50px;
         border: 1px solid #000;
@@ -246,7 +246,7 @@
             transform: translate(-50% , -50%);
         }
         .blog-title h4 {
-            font-size: 43px;
+            font-size: 45px;
             line-height: 1.302em;
             margin: 0;
             &:hover {
@@ -255,7 +255,7 @@
         }
     }
     .post-info {
-        font-size: 20px;
+        font-size: 22px;
         margin: 35px 0 0;
         span {
             color: rgba($color: #000000, $alpha: 0.5);
@@ -265,7 +265,7 @@
 // Blog Sidebar
 .blog-sidebar {
     .sidebar-title {
-        font-size: 32px;
+        font-size: 34px;
         margin-bottom: 18px;
     }
     .sidebar-search {
@@ -292,7 +292,7 @@
             height: 100%;
             border: 0;
             background: transparent;
-            font-size: 12px;
+            font-size: 14px;
             &::placeholder {
               color: #41BBBE;
             }
@@ -305,7 +305,7 @@
           display: block;
           width: 12px;
           height: 12px;
-          font-size: 14px;
+          font-size: 16px;
         }
         .close-block {
           width: 50px;
@@ -324,7 +324,7 @@
             width: 16px;
             border-radius: 50%;
             background-color: rgb(229, 232, 238);
-            font-size: 12px;
+            font-size: 14px;
             padding: 3px;
             display: flex;
             align-items: center;
@@ -386,12 +386,12 @@
                 margin-bottom: 15px;
             }
             .date {
-                font-size: 16px;
+                font-size: 18px;
                 color: #AAAAAA;
                 margin-bottom: 5px;
             }
             .blog-title h3 {
-                font-size: 24px;
+                font-size: 26px;
                 line-height: 1.291em;
                 max-width: 85%;
                 &:hover {
@@ -410,7 +410,7 @@
                     background: #EFF6F3;
                     border-radius: 30px;
                     padding: 0 18px;
-                    font-size: 16px;
+                    font-size: 18px;
                     color: #244034;
                     @include transition(0.2s);
                     &:hover {
@@ -426,7 +426,7 @@
         background: $color-one;
         border-radius: 20px;
         h3 {
-            font-size: 32px;
+            font-size: 34px;
             line-height: 1.25em;
             color: #000;
         }
@@ -474,13 +474,13 @@
                     transform: translate(-50% , -50%);
                 }
                 h3 {
-                    font-size: 36px;
+                    font-size: 38px;
                     line-height: 1.444em;
                     margin: 0;
                 }
             }
             h6 {
-                font-size: 20px;
+                font-size: 22px;
                 margin: 24px 0 0;
                 span {
                     color: rgba($color: #000000, $alpha: 0.5);
@@ -495,11 +495,11 @@
             }
         }
         h3 {
-            font-size: 32px;
+            font-size: 34px;
             margin-bottom: 20px;
         }
         .list-item li {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 500;
             color: #000;
             position: relative;
@@ -519,8 +519,8 @@
     .bottom-widget {
         padding: 10px 0 5px;
         .tags li:first-child {
+            font-size: 20px;
             font-weight: 500;
-            font-size: 18px;
             color: rgba($color: #000000, $alpha: 0.4);
             margin-right: 7px;
         }
@@ -530,7 +530,7 @@
             background: #fff;
             padding: 0 10px;
             color: $heading;
-            font-size: 16px;
+            font-size: 18px;
             margin-right: 5px;
             &:hover {
                 color: #000;
@@ -538,13 +538,13 @@
             }
         }
         .share-icon li:first-child {
+            font-size: 20px;
             font-weight: 500;
-            font-size: 18px;
             color: rgba($color: #000000, $alpha: 0.4);
         }
         .share-icon a {
             color: $heading;
-            font-size: 18px;
+            font-size: 20px;
             margin-left: 17px;
         }
     }
@@ -554,7 +554,7 @@
         padding: 40px 35px;
     }
     .blog-inner-title {
-        font-size: 42px;
+        font-size: 44px;
         margin-bottom: 10px;
     }
     .blog-comment-area {
@@ -578,20 +578,20 @@
                 padding-left: 25px;
                 position: relative;
                 .name {
-                    font-size: 20px;
+                    font-size: 22px;
                     color: $heading;
                 }
                 .date {
-                    font-size: 16px;
+                    font-size: 18px;
                     color: #ADADAD;
                 }
                 p {
-                    font-size: 18px;
+                    font-size: 20px;
                     line-height: 32px;
                     margin: 7px 0 10px 0px;
                 }
                 .reply-btn {
-                    font-size: 13px;
+                    font-size: 15px;
                     color: #fff;
                     text-transform: uppercase;
                     letter-spacing: 0px;
@@ -613,7 +613,7 @@
             color: $heading;
         }
         form label {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: normal;
             color: rgba(0, 0, 0, 0.5);
             display: block;
@@ -621,7 +621,7 @@
         }
         form input {
             display: block;
-            font-size: 18px;
+            font-size: 20px;
             width: 100%;
             height: 60px;
             border: none;
@@ -631,7 +631,7 @@
           }
           form textarea {
             display: block;
-            font-size: 17px;
+            font-size: 19px;
             width: 100%;
             max-width: 100%;
             height: 145px;

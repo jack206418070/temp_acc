@@ -198,11 +198,11 @@
   }
   .contact-list a {
     letter-spacing: 2px;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: normal;
   }
   .contact-list span {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: normal;
     padding-left: 30px;
   }
@@ -222,16 +222,16 @@
       margin-bottom: 20px;
     }
     .contact-list a {
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 10px;
     }
     .contact-list span {
-      font-size: 18px;
+      font-size: 20px;
       display: block;
       padding-left: 0;
     }
     .default-title {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 20px;
     }
   }

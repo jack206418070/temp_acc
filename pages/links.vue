@@ -7,7 +7,7 @@
       <li>
         <a href="https://www.wda.gov.tw/" target="_blank">
           <div class="img">
-            <img src="https://static.wixstatic.com/media/7896c2_658dfdb931a94ac7b7c5ac3b6fdc3ad6~mv2.png/v1/fill/w_658,h_116,al_c,lg_1,q_85,enc_avif,quality_auto/7896c2_658dfdb931a94ac7b7c5ac3b6fdc3ad6~mv2.png" alt="">
+            <img src="/images/assets/link-0.avif" alt="">
           </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
@@ -65,7 +65,7 @@
       <li>
         <Nuxt-link href="/all-contact-info">
           <div style="display: flex;  flex: 0 0 88%; align-items: center;">
-            <img style="width: 127px; height: 81px;" src="/images/assets/link_1966.avif" alt="">
+            <img style="width: 220px; height: 90px;" src="/images/assets/link_1966.avif" alt="">
             <p style="padding-left: 10px;">各縣市長期照顧管理中心聯絡窗口</p>
           </div>
           <span>
@@ -82,6 +82,21 @@
           <div style="display: flex;  flex: 0 0 88%; align-items: center;">
             <img style="width: 45px; height: 58px;" src="/images/assets/gov-logo.avif" alt="">
             <p style="padding-left: 10px;">外籍家庭看護工學習資源網頁的相關連結</p>
+          </div>
+          <span>
+            <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
+              <g>
+                  <path d="M26.097 143.956c8.129 8.058 21.432 8.058 29.561 0L100 100l44.342 43.957c8.129 8.058 21.432 8.058 29.561 0 8.129-8.058 8.129-21.246 0-29.304l-59.122-58.608c-8.129-8.058-21.432-8.058-29.561 0l-59.122 58.608c-8.13 8.058-8.13 21.244-.001 29.303z"></path>
+              </g>
+            </svg>
+          </span>
+        </Nuxt-link>
+      </li>
+      <li>
+        <Nuxt-link href="https://fw.wda.gov.tw/wda-employer/home/foreign-worker-affairs/searchByName?name=%E8%AB%AE%E8%A9%A2%E7%94%B3%E8%A8%B4">
+          <div style="display: flex;  flex: 0 0 88%; align-items: center;">
+            <img style="width: 200px; height: 81px;" src="/images/assets/link-7.avif" alt="">
+            <p style="padding-left: 10px;">1995<br>勞工諮詢申訴專線</p>
           </div>
           <span>
             <svg preserveAspectRatio="none" data-bbox="20 50.001 159.999 99.999" viewBox="20 50.001 159.999 99.999" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">

@@ -30,7 +30,7 @@ const props = defineProps<{
 <style scoped>
 .accordion-body {
   padding: 1rem;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .faq-answer {

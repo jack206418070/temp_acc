@@ -52,11 +52,11 @@
     margin-bottom: 30px;
   }
   .reminder-intro {
-    font-size: 21px;
+    font-size: 23px;
     letter-spacing: 1.3px;
   }
   .reminder-list {
-    font-size: 21px;
+    font-size: 23px;
   }
   .reminder-list li {
     letter-spacing: 2px;
@@ -68,13 +68,13 @@
       letter-spacing: 1.5px;
     }
     .default-title {
-      font-size: 28px;
+      font-size: 30px;
     }
     .reminder-intro {
-      font-size: 18px;
+      font-size: 20px;
     }
     .reminder-list {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 </style>

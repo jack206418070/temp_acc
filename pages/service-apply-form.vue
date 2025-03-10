@@ -27,13 +27,13 @@
   li {
     color: #333;
     letter-spacing: normal;
-    font-size: 24px;
+    font-size: 26px;
     /* text-align: center; */
   }
   a {
     color: inherit;
     letter-spacing: normal;
-    font-size: 24px;
+    font-size: 26px;
   }
   .apply-block {
     margin-bottom: 60px;
@@ -47,10 +47,10 @@
       margin: 0 auto;
     }
     a {
-      font-size: 22px;
+      font-size: 24px;
     }
     li {
-      font-size: 22px;
+      font-size: 24px;
     }
   }
 </style>

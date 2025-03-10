@@ -78,7 +78,7 @@
               <label>類別</label>
               <select v-model="formData.know_category" required>
                 <option value="1">懶人包</option>
-                <option value="2">宣導品</option>
+                <option value="2">宣傳圖卡</option>
               </select>
             </div>
             <div class="form-group">
@@ -228,7 +228,7 @@ function handleFileChange(event) {
 function getCategoryName(category) {
   const categories = {
     1: '懶人包',
-    2: '宣導品'
+    2: '宣傳圖卡'
   };
   return categories[category] || '未知類別';
 }
@@ -439,7 +439,7 @@ onBeforeUnmount(() => {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem 1rem;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .nav-wrapper {
@@ -450,13 +450,13 @@ onBeforeUnmount(() => {
   position: relative;
 
   .btn {
-    font-size: 13px;
+    font-size: 15px;
     padding: 0.4rem 0.8rem;
   }
 }
 
 .page-title {
-  font-size: 1.5rem;
+  font-size: calc(1.5rem + 2px);
   color: #41BBBE;
   margin: 0;
   position: absolute;
@@ -503,11 +503,11 @@ onBeforeUnmount(() => {
   th {
     background-color: #f8f9fa;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   td {
-    font-size: 14px;
+    font-size: 16px;
     vertical-align: middle;
   }
 }
@@ -559,7 +559,7 @@ select {
 
 .error-message {
   color: var(--danger-color, #dc3545);
-  font-size: 0.875rem;
+  font-size: calc(0.875rem + 2px);
   margin-top: 0.25rem;
 }
 
@@ -567,7 +567,7 @@ select {
   margin-bottom: 1rem;
   
   .btn-primary {
-    font-size: 13px;
+    font-size: 15px;
     padding: 0.4rem 0.8rem;
     
     i {
@@ -585,7 +585,7 @@ select {
   
   h2 {
     color: #41BBBE;
-    font-size: 1.2rem;
+    font-size: calc(1.2rem + 2px);
     margin-bottom: 1.5rem;
   }
   
@@ -596,12 +596,12 @@ select {
       label {
         display: block;
         margin-bottom: 0.5rem;
-        font-size: 14px;
+        font-size: 16px;
         color: #333;
       }
       
       input, select {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
     
@@ -612,7 +612,7 @@ select {
       margin-top: 1.5rem;
       
       .btn {
-        font-size: 13px;
+        font-size: 15px;
         padding: 0.4rem 0.8rem;
         min-width: 80px;
         
@@ -630,7 +630,7 @@ select {
   gap: 0.5rem;
   
   .btn {
-    font-size: 13px;
+    font-size: 15px;
     padding: 0.4rem 0.8rem;
     min-width: 76px;  // 添加最小寬度，避免 loading 時按鈕寬度改變
     

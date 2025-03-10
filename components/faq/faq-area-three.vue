@@ -19,7 +19,7 @@
           </svg>
         </span>
         <span @click="searchQuery = '', is_search = false" v-if="is_search"
-          style="position: absolute; top: 10px; right: 8px; height: 18px; width: 18px; z-index: 101; font-size: 14px; cursor: pointer;">
+          style="position: absolute; top: 10px; right: 8px; height: 18px; width: 18px; z-index: 101; font-size: 16px; cursor: pointer;">
           X
         </span>
         <input :class="{
@@ -30,10 +30,10 @@
       </div>
       <p class="search-result-tag" v-if="searchQuery != ''">
         <span v-if="filteredFaqs.length > 0"
-          style="font-size: 12px; font-weight: 300; letter-spacing: 2px; line-height: 1; margin-bottom: 0px; padding: 0px; padding-left: 20px">Showing
+          style="font-size: 14px; font-weight: 300; letter-spacing: 2px; line-height: 1; margin-bottom: 0px; padding: 0px; padding-left: 20px">Showing
           results for: <strong>{{ searchQuery }}</strong></span>
       <p v-else
-        style="font-size: 12px; font-weight: 300; letter-spacing: 2px; line-height: 1.5; margin-bottom: 0px; padding-top: 10px; padding-left: 20px">
+        style="font-size: 14px; font-weight: 300; letter-spacing: 2px; line-height: 1.5; margin-bottom: 0px; padding-top: 10px; padding-left: 20px">
         Sorry, we could not find any results to match your search criteria.<br> Please try again with some different
         keywords.
       </p>
@@ -836,7 +836,7 @@
     white-space: nowrap;
     z-index: -10;
     opacity: 0;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .search-container input.show {
@@ -851,7 +851,7 @@
   }
 
   .search-container input::placeholder {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .search-container input.border-only {
@@ -914,7 +914,7 @@
       margin-bottom: 0;
       color: #333;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 </style>

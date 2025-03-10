@@ -33,7 +33,7 @@
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, 0.7);
-        font-size: 35px;
+        font-size: 37px;
         opacity: 0;
       }
       i {
@@ -64,7 +64,7 @@
         margin: 0 -3px;
         li {
           margin: 0 3px;
-          font-size: 14px;
+          font-size: 16px;
           text-transform: uppercase;
           color: #B8B8B8;
           padding: 0 14px;
@@ -74,12 +74,12 @@
         }
       }
       .pj-title {
-        font-size: 32px;
+        font-size: 34px;
         color: #000;
         margin-top: 15px;
       }
       .arrow {
-        font-size: 26px;
+        font-size: 28px;
         color: #000;
         &:hover {
           color: $color-three;
@@ -113,7 +113,7 @@
             color: $color-eight;
             text-align: center;
             line-height: 57px;
-            font-size: 24px;
+            font-size: 26px;
             margin: 0 2px;
             @include transition(0.2s);
             &:hover {
@@ -133,13 +133,13 @@
     border-bottom: 1px solid #044F3B;
     span {
       display: block;
-      font-size: 14px;
+      font-size: 16px;
       letter-spacing: 3px;
       margin-bottom: 15px;
       color: rgba($color: #000000, $alpha: 0.3);
     }
     h3 a {
-      font-size: 40px;
+      font-size: 42px;
       letter-spacing: -1px;
       color: $color-eight;
       &:hover {
@@ -147,7 +147,7 @@
       }
     }
     .round-btn {
-      font-size: 30px;
+      font-size: 32px;
       width: 70px;
       height: 70px;
       border: 1px solid $color-eight;
@@ -178,7 +178,7 @@
       padding: 0 12px;
     }
     h3 {
-      font-size: 48px;
+      font-size: 50px;
       font-weight: normal;
       margin: 0;
       span {
@@ -198,7 +198,7 @@
         max-width: 40px;
       }
       .text1 {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -210,18 +210,18 @@
     }
   }
   .upper-title {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
     margin-bottom: 15px;
     text-transform: uppercase;
   }
   h2 {
-    font-size: 58px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 35px;
   }
   p {
-    font-size: 24px;
+    font-size: 26px;
     line-height: 1.83em;
     margin-bottom: 40px;
   }
@@ -232,11 +232,11 @@
   }
   .social-share {
     li {
+      font-size: 20px;
       font-weight: 500;
-      font-size: 18px;
       color: rgba($color: #000000, $alpha: 0.4);
       a {
-        font-size: 20px;
+        font-size: 22px;
         color: $heading;
         margin-left: 20px;
       }
@@ -280,7 +280,7 @@
   .info-wrapper {
     padding: 55px 50px 85px 70px;
     h3 {
-      font-size: 36px;
+      font-size: 38px;
     }
     .list-meta {
       li {
@@ -290,24 +290,24 @@
         width: 40px;
       }
       .text1 {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: #000;
       }
       span {
-        font-size: 18px;
+        font-size: 20px;
         color: rgba($color: #000000, $alpha: 0.5);
       }
     }
     .social-share {
       li {
+        font-size: 20px;
         font-weight: 500;
-        font-size: 18px;
         color: rgba($color: #000000, $alpha: 0.4);
         a {
-          font-size: 20px;
+          font-size: 22px;
           color: $heading;
           margin-left: 20px;
         }

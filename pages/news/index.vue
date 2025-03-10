@@ -35,7 +35,7 @@ h1, h2 {
   display: flex;
   align-items: start;
   padding: 20px 0;
-  font-size: 16px;
+  font-size: 20px;
   color: rgb(9, 55, 31);
   border-bottom: 1px solid #333;
   flex-wrap: wrap;
@@ -59,7 +59,7 @@ h1, h2 {
     display: none;
   }
   .announcement-list-item {
-    font-size: 18px;
+    font-size: 20px;
     border-top: 1px solid #333;
   }
   .announcement-list-item .item-date {

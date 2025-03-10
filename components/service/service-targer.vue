@@ -68,7 +68,7 @@ const serviceSteps: ServiceStep[] = [
 <style scoped>
 h2 {
   color: #41BBBE;
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 400;
   margin-top: 30px;
   margin-bottom: 60px;
@@ -90,7 +90,7 @@ h2 {
 }
 
 .notes-box p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .step-number {
@@ -108,7 +108,7 @@ h2 {
 
 .step-title {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .description-box {
@@ -118,7 +118,7 @@ h2 {
   padding: 8px;
 }
 .description-box p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .notes-box {
@@ -153,7 +153,7 @@ h2 {
 
 @media (max-width: 996px) {
   h2 {
-    font-size: 32px;
+    font-size: 34px;
   }
   .description-box {
     height: auto;

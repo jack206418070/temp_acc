@@ -21,7 +21,9 @@
     </div>
     <div class="main-container">
       <div class="bottom-footer">
-        <div class="copyright">Copyright @{{new Date().getFullYear()}} 勞動力發展署版權所有，保留所有權利。</div>
+        <p class="copyright" style="padding-bottom: 0px; margin-bottom: 0px;">為提供更為穩定的瀏覽品質與使用體驗，建議更新瀏覽器至以下版本：最新版本Edge、最新版本Chrome、最新版本Firefox<br>最佳解析度1024*768以上
+        </p>
+        <div class="copyright" style="padding-top: 10px;">Copyright @{{new Date().getFullYear()}} 勞動力發展署版權所有，保留所有權利。</div>
       </div>
       <!-- /.bottom-footer -->
     </div>

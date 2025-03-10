@@ -6,7 +6,7 @@
           試辦單位簡介
         </h2>
         <p>經勞動部評選核定為多元陪伴照顧服務試辦計畫之試辦單位，聘僱本國籍及外國籍之多元陪伴照顧服務工作者，指派至多元陪伴照顧服務契約履行地，從事陪伴照顧等相關事務之體力工作。 <br> 點選以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
-        <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
+        <!-- <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
           <span>​前往申請及派案平台</span>
           <span>
             <svg data-bbox="12.816 12.816 174.368 174.368" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
@@ -21,7 +21,7 @@
               </g>
             </svg>
           </span>
-        </Nuxt-link>
+        </Nuxt-link> -->
       </div>
     </div>
     <div class="main-container">
@@ -36,51 +36,51 @@
   import { onMounted, onUnmounted } from 'vue';
 
   onMounted(() => {
-    const jellyBox = document.getElementById("jelly-box");
+    // const jellyBox = document.getElementById("jelly-box");
 
-    if (jellyBox) {
-      // 定義動畫函數
-      const jellyEffect = () => {
-        gsap.timeline()
-          // 初始快速拉伸
-          .fromTo(
-            jellyBox,
-            { scaleX: 1, scaleY: 1 },
-            {
-              scaleX: 1.2, // 左右拉長
-              scaleY: 0.9, // 上下壓縮
-              duration: 0.3, // 每次動作持續時間
-              ease: "power2.inOut", // 緩動效果
-              yoyo: true, // 啟用回彈
-              repeat: 0, // 完成兩次（初始與回彈）
-            }
-          )
-          // 中間的3次快速拉長壓縮
-          .to(jellyBox, {
-            scaleX: 0.9, // 左右壓縮
-            scaleY: 1.2, // 上下拉長
-            duration: 0.1, // 每次動作持續時間
-            ease: "power2.inOut",
-            yoyo: true,
-            repeat: 2, // 快速來回三次
-          })
-          // 恢復原狀
-          .to(jellyBox, {
-            scaleX: 1,
-            scaleY: 1,
-            duration: 0.1,
-            ease: "power2.out",
-          });
-      };
+    // if (jellyBox) {
+    //   // 定義動畫函數
+    //   const jellyEffect = () => {
+    //     gsap.timeline()
+    //       // 初始快速拉伸
+    //       .fromTo(
+    //         jellyBox,
+    //         { scaleX: 1, scaleY: 1 },
+    //         {
+    //           scaleX: 1.2, // 左右拉長
+    //           scaleY: 0.9, // 上下壓縮
+    //           duration: 0.3, // 每次動作持續時間
+    //           ease: "power2.inOut", // 緩動效果
+    //           yoyo: true, // 啟用回彈
+    //           repeat: 0, // 完成兩次（初始與回彈）
+    //         }
+    //       )
+    //       // 中間的3次快速拉長壓縮
+    //       .to(jellyBox, {
+    //         scaleX: 0.9, // 左右壓縮
+    //         scaleY: 1.2, // 上下拉長
+    //         duration: 0.1, // 每次動作持續時間
+    //         ease: "power2.inOut",
+    //         yoyo: true,
+    //         repeat: 2, // 快速來回三次
+    //       })
+    //       // 恢復原狀
+    //       .to(jellyBox, {
+    //         scaleX: 1,
+    //         scaleY: 1,
+    //         duration: 0.1,
+    //         ease: "power2.out",
+    //       });
+    //   };
 
-      // 設定每隔 3 秒觸發一次動畫
-      const interval = setInterval(jellyEffect, 3000);
+    //   // 設定每隔 3 秒觸發一次動畫
+    //   const interval = setInterval(jellyEffect, 3000);
 
-      // 確保組件卸載時清除計時器
-      onUnmounted(() => {
-        clearInterval(interval);
-      });
-    }
+    //   // 確保組件卸載時清除計時器
+    //   onUnmounted(() => {
+    //     clearInterval(interval);
+    //   });
+    // }
   });
 
 

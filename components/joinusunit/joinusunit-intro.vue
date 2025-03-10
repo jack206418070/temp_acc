@@ -130,17 +130,17 @@ const showModal = ref(false);
 }
 .default-title {
   margin-top: 60px;
-  font-size: 48px;
+  font-size: 50px;
   margin-bottom: 0px;
 }
 .join-title {
-  font-size: 25px;
+  font-size: 27px;
   color: #000;
   font-weight: 400;
   padding: 40px 0 15px 0;
 }
 .join-method-list {
-  font-size: 16px;
+  font-size: 18px;
 }
 .join-method-list li {
   color: #000;
@@ -148,7 +148,7 @@ const showModal = ref(false);
   font-weight: 300;
 }
 .join-block .title-p{
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
   font-weight: 300;
 }
@@ -168,13 +168,13 @@ const showModal = ref(false);
 }
 @media (max-width: 991px) {
   .join-method-list {
-    font-size: 18px;
+    font-size: 20px;
   }
   .join-block .title-p {
-    font-size: 18px;
+    font-size: 20px;
   }
   .default-title {
-    font-size: 32px;
+    font-size: 34px;
     margin-top: 40px;
   }
   .ch-main-list {

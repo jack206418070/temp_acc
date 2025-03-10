@@ -2,7 +2,7 @@
   <div class="main-container">
     <div class="tab-list">
       <div class="tab-item" :class="{activated: tab_type === '1'}" @click="changeTab('1')">懶人包</div>
-      <div class="tab-item" :class="{activated: tab_type === '2'}" @click="changeTab('2')">宣導品</div>
+      <div class="tab-item" :class="{activated: tab_type === '2'}" @click="changeTab('2')">宣傳圖卡</div>
     </div>
     <h2 class="default-title">
       {{ tab_data[tab_type].type }}
@@ -82,7 +82,7 @@ const tab_data = ref({
     ]
   },
   '2': {
-    type: '宣導品',
+    type: '宣傳圖卡',
     data: [
       {
         image: '/images/assets/temp_15.avif'
@@ -187,7 +187,7 @@ h1, h2 {
   border: 3px solid #EC6717;
   transition: all .5s;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 17px;
   cursor: pointer;
 }
 .tab-list .tab-item.activated, .tab-list .tab-item:hover {

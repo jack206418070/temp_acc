@@ -78,7 +78,7 @@ onMounted(async () => {
     h1 {
       color: var(--primary-color);
       margin: 0;
-      font-size: 1.5rem;
+      font-size: calc(1.5rem + 2px);
     }
   }
   
@@ -115,7 +115,7 @@ onMounted(async () => {
   }
   
   .card-icon {
-    font-size: 2.5rem;
+    font-size: calc(2.5rem + 2px);
     margin-bottom: 1rem;
   }
   

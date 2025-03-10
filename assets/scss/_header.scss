@@ -88,7 +88,7 @@
     .nav-item .nav-link {
         font-family: $main-font;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 20px;
         line-height: initial;
         color: $text-dark;
         padding: 10px 0;
@@ -130,7 +130,7 @@
           gap: 20px;
         }
         .greetings {
-            font-size: 18px;
+            font-size: 20px;
             color: $heading;
         }
         .contact-info {
@@ -138,7 +138,7 @@
             li {
                 padding: 0 15px;
                 a {
-                    font-size: 18px;
+                    font-size: 20px;
                     color: $heading;
                     &:hover {
                         text-decoration: underline;
@@ -181,7 +181,7 @@
     text-transform: capitalize;
     line-height: 45px; 
     color: $text-color;
-    font-size: 16px;
+    font-size: 18px;
     background: transparent;
     position: relative;
     @include transition(0.2s);
@@ -222,7 +222,7 @@
     padding: 5px 0;
     .mega-menu-title {
         font-family: $main-font;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
         color: $color-four;
         display: inline-block;
@@ -266,7 +266,7 @@
             height: 49px;
             background: $color-two;
             color: #fff;
-            font-size: 22px;
+            font-size: 24px;
             margin-left: -12px;
             @include transition(0.2s);
         }
@@ -297,7 +297,7 @@
     .quote-one {
         line-height: 48px;
         color: #fff;
-        font-size: 18px;
+        font-size: 20px;
         padding: 0 26px;
         border: 1px solid #fff;
         border-radius: 40px;
@@ -316,7 +316,7 @@
         position: relative;
         padding: 0 15px;
         a {
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 500;
             color: #536159;
             padding: 13px 0;
@@ -332,7 +332,7 @@
             padding: 0;
             a {
               padding: 8px 15px;
-              font-size: 14px;
+              font-size: 16px;
             }
         }
     }

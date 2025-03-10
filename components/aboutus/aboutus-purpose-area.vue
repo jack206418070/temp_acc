@@ -37,7 +37,7 @@ const service_data = [
 <style scoped>
 h2 {
   color: #41BBBE;
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 400;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -47,7 +47,7 @@ h2 {
 }
 .plan-about p {
   text-align: justify; /* 設置文字兩端對齊 */
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: normal;
   margin-bottom: 40px;
 }
@@ -74,7 +74,7 @@ h2 {
 }
 @media (max-width: 996px) {
   h2 {
-    font-size: 32px;
+    font-size: 34px;
   }
 }
 

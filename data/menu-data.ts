@@ -107,19 +107,21 @@ const menu_data:IMenu[] = [
     dropdown:true,
     dropdown_menus:[
       {
-        link:'/join-us-unit',
-        title:'申請資格與評選方式',
+        link:'/service-now',
+        title:'現有試辦單位簡介',
         sub_id: 0,
         sub_dropdown: false,
         is_highlight: false
       },
       {
         link:'/application-form',
-        title:'填寫申請表',
+        title:'想成為試辦單位',
         sub_id: 2,
         sub_dropdown: true,
         sub_menus:[
-          {link:'/service-apply-form',title:'多元陪伴照顧服務試辦單位申請表'},
+          {link:'/join-us-unit',title:'申請資格與評選流程'},
+          {link:'/application-form',title:'填寫申請表'},
+          {link:'/service-apply-form',title:'多元陪伴照顧服務試辦單位申請表'}
         ],
         is_highlight: false
       },
