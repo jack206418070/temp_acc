@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
     // buildAssetsDir: '/aaa/',
-    // buildAssetsDir: '/assets/',
+    buildAssetsDir: '/assets/',
     head: {
       title: "多元陪伴照顧服務試辦計畫",
       charset: 'utf-8',
@@ -84,8 +84,8 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'node-server',
-    // preset: 'vercel',
+    // preset: 'node-server',
+    preset: 'vercel',
     storage: {
       uploads: {
         driver: 'fs',
