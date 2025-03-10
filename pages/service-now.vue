@@ -10,6 +10,7 @@
           現有試辦單位簡介
           <a class="service-login-btn-temp" href="https://accompany-service-unit.vercel.app/login">試辦單位登入</a>
         </h2>
+        <a class="service-login-btn-temp mobile" href="https://accompany-service-unit.vercel.app/login">試辦單位登入</a>
         <p>以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
         <!-- <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
           <span>​前往申請及派案平台</span>
@@ -154,14 +155,30 @@
   .service-login-btn-temp:hover {
     background-color: #41BBBE !important;
   }
+  .service-login-btn-temp.mobile {
+    display: none;
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
   @media (max-width: 991px) {
     .default-title {
       font-size: 36px;
       margin-bottom: 30px;
       margin-top: 30px;
     }
+    .service-banner {
+      padding-bottom: 10px !important;
+    }
     .service-banner p {
       width: 90%;
+      margin-bottom: 0;
+    }
+    .service-login-btn-temp {
+      display: none !important;
+    }
+    .service-login-btn-temp.mobile {
+      display: block !important;
     }
   }
 </style>

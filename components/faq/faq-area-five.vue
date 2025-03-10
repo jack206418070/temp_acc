@@ -36,7 +36,7 @@
         </div>
 
         <!-- 就業服務機構卡片 -->
-        <div class="service-card">
+        <div class="service-card mobile">
           <h3 class="card-title">我是私立<br>就業服務機構</h3>
           <a href="/qa?id=4" class="service-button">
             相關問題
@@ -127,5 +127,10 @@
   .service-card {
     min-height: 180px;
   }
+  .service-card.mobile {
+    margin-top: 60px;
+  }
+
 }
+
 </style>

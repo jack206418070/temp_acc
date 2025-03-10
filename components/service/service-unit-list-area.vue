@@ -294,5 +294,12 @@
     .service-unit-container {
       margin-bottom: 50px;
     }
+    .vendor-card {
+      flex: 0 0 100% !important;
+    }
+    .vendor-category-tag {
+      font-size: 16px;
+      padding: 0px 10px;
+    }
   }
 </style>
