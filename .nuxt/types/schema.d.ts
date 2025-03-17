@@ -149,6 +149,8 @@ declare module 'nuxt/schema' {
             maxAge: number,
 
             includeSubdomains: boolean,
+
+            preload: boolean,
          },
 
          xContentTypeOptions: string,

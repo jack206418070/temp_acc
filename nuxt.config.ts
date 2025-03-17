@@ -40,25 +40,27 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
-        'base-uri': ["'self'"],
-        'form-action': ["'self'"],
-        'frame-ancestors': ["'none'"],
-        'object-src': ["'none'"],
-        'script-src': process.env.NODE_ENV === 'production' 
-          ? ["'self'", "'strict-dynamic'", "'nonce-${nonce}'"]
-          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        // 'style-src': ["'self'", "'nonce-${nonce}'"],
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",  // 僅在你確實需要 inline script 時使用
+          // "'strict-dynamic'",
+          'https:' // 如果你有外部 script 如 bootstrap
+        ],
+        'style-src': ["'self'", "'unsafe-inline'", 'https:'],
         'img-src': ["'self'", "data:", "blob:"],
         'font-src': ["'self'", "https:", "data:"],
-        'connect-src': ["'self'", "api.example.com"],
-        'upgrade-insecure-requests': true
+        'connect-src': ["'self'", "https:"],
+        'object-src': ["'none'"],
+        'base-uri': ["'self'"],
+        'form-action': ["'self'"],
+        'frame-ancestors': ["'none'"]
       },
       xFrameOptions: 'DENY',
       xContentTypeOptions: 'nosniff',
       strictTransportSecurity: {
-        maxAge: 15552000,        // 180 天
-        includeSubdomains: true, // 包含所有子域名
-        preload: true           // 加入瀏覽器預載清單
+        maxAge: 15552000,
+        includeSubdomains: true,
+        preload: true
       }
     }
   },
@@ -122,14 +124,14 @@ export default defineNuxtConfig({
         maxAge: 60 * 60 * 24 * 7 // 7 days
       }
     ],
-    // routeRules: {
-    //   '/assets/**': {
-    //     headers: {
-    //       'X-Content-Type-Options': 'nosniff',
-    //       'Content-Type': 'application/javascript; charset=utf-8'
-    //     }
-    //   }
-    // }
+    routeRules: {
+      '/assets/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'Content-Type': 'application/javascript; charset=utf-8'
+        }
+      }
+    }
   },
   // serverHandlers: [
   //   {
@@ -148,9 +150,9 @@ export default defineNuxtConfig({
   css: [
     "bootstrap/scss/bootstrap.scss",
     "swiper/css/bundle",
-    // "~/assets/scss/style.scss",
-    // "~/assets/css/responsive.css",
-    // "~/assets/scss/admin.scss"
+    "~/assets/scss/style.scss",
+    "~/assets/css/responsive.css",
+    "~/assets/scss/admin.scss"
   ],
 
   compatibilityDate: '2025-02-20',

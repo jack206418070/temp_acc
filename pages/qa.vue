@@ -1436,9 +1436,12 @@ const parseHtmlToList = (html: string) => {
 
 onMounted(() => {
   const idParam = route.query.id as string;
+  console.log(idParam);
+  console.log(allQA)
   if (idParam) {
     const found = allQA.find(item => item.id === idParam);
     if (found) {
+      console.log(found);
       qa_data.value = found;
 
       useSeoMeta({
