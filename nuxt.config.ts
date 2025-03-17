@@ -85,7 +85,8 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
     // preset: 'node-server',
-    preset: 'vercel',
+    preset: 'static',
+    // preset: 'vercel',
     storage: {
       uploads: {
         driver: 'fs',
@@ -100,12 +101,12 @@ export default defineNuxtConfig({
       }
     ]
   },
-  serverHandlers: [
-    {
-      route: '/api',
-      handler: '~/server/index.js',
-    },
-  ],
+  // serverHandlers: [
+  //   {
+  //     route: '/api',
+  //     handler: '~/server/index.js',
+  //   },
+  // ],
   experimental: {
     payloadExtraction: false
   },

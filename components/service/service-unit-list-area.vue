@@ -22,7 +22,7 @@
               <a href="#" class="vendor-email">{{ vendor.email }}</a>
               <div class="vender-deatil-info">
                 <a :href="vendor.price">服務價格</a>
-                <a :href="vendor.web" target="_blank">相關官網</a>
+                <a :href="vendor.web" target="_blank">單位網站</a>
               </div>
               <a class="book-btn" href="https://accompany-service-user.vercel.app/login">我要預約</a>
             </div>
@@ -230,10 +230,6 @@
     transition: .3s;
     align-self: stretch;
   }
-  .vendor-category-tag:hover {
-    background-color: #0c4426;
-
-  }
 
   .vendor-area {
     color: #000;
@@ -279,6 +275,14 @@
     gap: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .vender-deatil-info a {
+    transition: .3s;
+    cursor: pointer;
+  }
+  .vender-deatil-info a:hover {
+    color: #0c4426;
+    font-weight: 500;
   }
   .book-btn {
     text-align: center;

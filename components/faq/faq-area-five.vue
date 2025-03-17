@@ -4,7 +4,7 @@
       <div class="service-grid">
         <!-- 申請服務卡片 -->
         <div class="service-card">
-          <h3 class="card-title">我想申請服務</h3>
+          <h3 class="card-title">民眾申請篇</h3>
           <a href="/qa?id=1" class="service-button">
             相關問題
             <span class="arrow">›</span>
@@ -13,7 +13,7 @@
 
         <!-- 試辦單位卡片 -->
         <div class="service-card">
-          <h3 class="card-title">我想成為<br>試辦單位</h3>
+          <h3 class="card-title">試辦單位篇</h3>
           <a href="/qa?id=2" class="service-button">
             相關問題
             <span class="arrow">›</span>
@@ -22,7 +22,7 @@
 
         <!-- 照顧服務工作者卡片 -->
         <div class="service-card">
-          <h3 class="card-title">我是多元陪伴<br>照顧服務工作者</h3>
+          <h3 class="card-title">外國籍陪伴照顧服務工作者篇</h3>
           <a href="/qa?id=3" class="service-button">
             相關問題
             <span class="arrow">›</span>
@@ -37,7 +37,7 @@
 
         <!-- 就業服務機構卡片 -->
         <div class="service-card mobile">
-          <h3 class="card-title">我是私立<br>就業服務機構</h3>
+          <h3 class="card-title">私立就業服務機構(仲介)篇</h3>
           <a href="/qa?id=4" class="service-button">
             相關問題
             <span class="arrow">›</span>

@@ -127,9 +127,6 @@
     border-radius: 10px;
     transition: .3s;
   }
-  .service-banner a:hover {
-    background-color: #3F7652;
-  }
 
   .service-banner a span {
     letter-spacing: 2px;

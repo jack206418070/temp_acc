@@ -34,7 +34,7 @@ const menu_data:IMenu[] = [
       },
       {
         link:'/propaganda',
-        title:'懶人包/宣導品',
+        title:'懶人包/宣導資料',
         sub_id: 0,
         sub_dropdown: false,
         is_highlight: false

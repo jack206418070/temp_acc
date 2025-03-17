@@ -78,7 +78,7 @@
               <label>類別</label>
               <select v-model="formData.know_category" required>
                 <option value="1">懶人包</option>
-                <option value="2">宣傳圖卡</option>
+                <option value="2">宣導資料</option>
               </select>
             </div>
             <div class="form-group">
@@ -228,7 +228,7 @@ function handleFileChange(event) {
 function getCategoryName(category) {
   const categories = {
     1: '懶人包',
-    2: '宣傳圖卡'
+    2: '宣導資料'
   };
   return categories[category] || '未知類別';
 }

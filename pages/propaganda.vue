@@ -2,7 +2,7 @@
   <div class="main-container">
     <div class="tab-list">
       <div class="tab-item" :class="{activated: tab_type === '1'}" @click="changeTab('1')">懶人包</div>
-      <div class="tab-item" :class="{activated: tab_type === '2'}" @click="changeTab('2')">宣傳圖卡</div>
+      <div class="tab-item" :class="{activated: tab_type === '2'}" @click="changeTab('2')">宣導資料</div>
     </div>
     <h2 class="default-title">
       {{ tab_data[tab_type].type }}
@@ -82,7 +82,7 @@ const tab_data = ref({
     ]
   },
   '2': {
-    type: '宣傳圖卡',
+    type: '宣導資料',
     data: [
       {
         image: '/images/assets/temp_15.avif'
@@ -124,7 +124,7 @@ const nextImage = () => {
     currentIndex.value++;
   }
 };
-useSeoMeta({ title: "懶人包/宣傳品｜ 多元陪伴照顧服務計畫" });
+useSeoMeta({ title: "懶人包/宣導資料｜ 多元陪伴照顧服務計畫" });
 </script>
 
 <style scoped>

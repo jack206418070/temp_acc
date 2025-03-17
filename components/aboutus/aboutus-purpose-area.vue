@@ -28,7 +28,7 @@ const service_data = [
   {
     id:3,
     icon:'/images/icon/icon_08.svg',
-    title:'宣傳品',
+    title:'宣導品',
     desc:'',
   },
   ]
