@@ -31,29 +31,34 @@ export default defineNuxtConfig({
 
   security: {
     ssg: {
-      meta: true, // Enables CSP as a meta tag in SSG mode
-      hashScripts: true, // Enables CSP hash support for scripts in SSG mode
-      hashStyles: false, // Disables CSP hash support for styles in SSG mode (recommended)
-      exportToPresets: true // Export security headers to Nitro presets
+      meta: true,
+      hashScripts: false,
+      hashStyles: false,
+      exportToPresets: true
     },
     sri: true,
     headers: {
       contentSecurityPolicy: {
-        'script-src': process.env.NODE_ENV === 'production' 
-          ? [
-              "'self'",
-              "'strict-dynamic'",
-              "'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
-              // 其他必要的腳本來源...
-            ]
-          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        'img-src': ["'self'", "data:", "blob:"],
-        'style-src': ["'self'", "'unsafe-inline'"],
         'default-src': ["'self'"],
-        'connect-src': ["'self'"],
+        'base-uri': ["'self'"],
+        'form-action': ["'self'"],
         'frame-ancestors': ["'none'"],
         'object-src': ["'none'"],
-        'base-uri': ["'self'"]
+        'script-src': process.env.NODE_ENV === 'production' 
+          ? ["'self'", "'strict-dynamic'", "'nonce-${nonce}'"]
+          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'style-src': ["'self'", "'nonce-${nonce}'"],
+        'img-src': ["'self'", "data:", "blob:"],
+        'font-src': ["'self'", "https:", "data:"],
+        'connect-src': ["'self'", "api.example.com"],
+        'upgrade-insecure-requests': true
+      },
+      xFrameOptions: 'DENY',
+      xContentTypeOptions: 'nosniff',
+      strictTransportSecurity: {
+        maxAge: 15552000,        // 180 天
+        includeSubdomains: true, // 包含所有子域名
+        preload: true           // 加入瀏覽器預載清單
       }
     }
   },
@@ -62,14 +67,27 @@ export default defineNuxtConfig({
   routeRules: {
     '/custom-route': {
       security: {
-        ssg: false,
-        sri: false,
         headers: {
           contentSecurityPolicy: {
-            'script-src': "'self' 'unsafe-inline' 'sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw='"
+            'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'",
+            'frame-ancestors': ["'none'"],
+            'object-src': ["'none'"],
+            'base-uri': ["'self'"]
           },
         },
       },
+    },
+    '/assets/**': {
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+        'Content-Type': 'application/javascript; charset=utf-8'
+      }
+    },
+    '/': {
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+        'Content-Type': 'application/javascript; charset=utf-8'
+      }
     }
   },
 
@@ -85,8 +103,12 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
     // preset: 'node-server',
-    preset: 'static',
     // preset: 'vercel',
+    preset: 'static',
+    output: {
+      dir: './dist',
+      publicDir: './dist'
+    },
     storage: {
       uploads: {
         driver: 'fs',
@@ -99,7 +121,15 @@ export default defineNuxtConfig({
         baseURL: '/',
         maxAge: 60 * 60 * 24 * 7 // 7 days
       }
-    ]
+    ],
+    routeRules: {
+      '/assets/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'Content-Type': 'application/javascript; charset=utf-8'
+        }
+      }
+    }
   },
   // serverHandlers: [
   //   {
@@ -118,9 +148,9 @@ export default defineNuxtConfig({
   css: [
     "bootstrap/scss/bootstrap.scss",
     "swiper/css/bundle",
-    "@/assets/scss/style.scss",
-    "@/assets/css/responsive.css",
-    "@/assets/scss/admin.scss"
+    // "~/assets/scss/style.scss",
+    // "~/assets/css/responsive.css",
+    // "~/assets/scss/admin.scss"
   ],
 
   compatibilityDate: '2025-02-20',
@@ -142,4 +172,21 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ['sweetalert2']
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,  // 添加這個選項來抑制 Bootstrap 的警告
+          additionalData: '@use "sass:math";'
+
+        }
+      }
+    }
+  }
 })
