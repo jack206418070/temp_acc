@@ -47,7 +47,7 @@ export default defineNuxtConfig({
         'script-src': process.env.NODE_ENV === 'production' 
           ? ["'self'", "'strict-dynamic'", "'nonce-${nonce}'"]
           : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        'style-src': ["'self'", "'nonce-${nonce}'"],
+        // 'style-src': ["'self'", "'nonce-${nonce}'"],
         'img-src': ["'self'", "data:", "blob:"],
         'font-src': ["'self'", "https:", "data:"],
         'connect-src': ["'self'", "api.example.com"],
@@ -64,32 +64,32 @@ export default defineNuxtConfig({
   },
 
   // Per route
-  routeRules: {
-    '/custom-route': {
-      security: {
-        headers: {
-          contentSecurityPolicy: {
-            'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'",
-            'frame-ancestors': ["'none'"],
-            'object-src': ["'none'"],
-            'base-uri': ["'self'"]
-          },
-        },
-      },
-    },
-    '/assets/**': {
-      headers: {
-        'X-Content-Type-Options': 'nosniff',
-        'Content-Type': 'application/javascript; charset=utf-8'
-      }
-    },
-    '/': {
-      headers: {
-        'X-Content-Type-Options': 'nosniff',
-        'Content-Type': 'application/javascript; charset=utf-8'
-      }
-    }
-  },
+  // routeRules: {
+  //   '/custom-route': {
+  //     security: {
+  //       headers: {
+  //         contentSecurityPolicy: {
+  //           'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'",
+  //           'frame-ancestors': ["'none'"],
+  //           'object-src': ["'none'"],
+  //           'base-uri': ["'self'"]
+  //         },
+  //       },
+  //     },
+  //   },
+  //   '/assets/**': {
+  //     headers: {
+  //       'X-Content-Type-Options': 'nosniff',
+  //       'Content-Type': 'application/javascript; charset=utf-8'
+  //     }
+  //   },
+  //   '/': {
+  //     headers: {
+  //       'X-Content-Type-Options': 'nosniff',
+  //       'Content-Type': 'application/javascript; charset=utf-8'
+  //     }
+  //   }
+  // },
 
   image: {
     provider: 'static',
@@ -122,14 +122,14 @@ export default defineNuxtConfig({
         maxAge: 60 * 60 * 24 * 7 // 7 days
       }
     ],
-    routeRules: {
-      '/assets/**': {
-        headers: {
-          'X-Content-Type-Options': 'nosniff',
-          'Content-Type': 'application/javascript; charset=utf-8'
-        }
-      }
-    }
+    // routeRules: {
+    //   '/assets/**': {
+    //     headers: {
+    //       'X-Content-Type-Options': 'nosniff',
+    //       'Content-Type': 'application/javascript; charset=utf-8'
+    //     }
+    //   }
+    // }
   },
   // serverHandlers: [
   //   {
