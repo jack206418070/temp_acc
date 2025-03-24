@@ -38,10 +38,10 @@ const tab_data = ref({
     type: '懶人包',
     data: [
       {
-        image: '/images/assets/lazybag01.webp'
+        image: '/images/assets/temp-1.jpg'
       },
       {
-        image: '/images/assets/lazybag02.webp'
+        image: '/images/assets/temp-2.jpg'
       },
       {
         image: '/images/assets/lazybag03.webp'
@@ -77,7 +77,7 @@ const tab_data = ref({
         image: '/images/assets/temp_10.avif'
       },
       {
-        image: '/images/assets/temp_11.avif'
+        image: '/images/assets/temp-14.jpg'
       }
     ]
   },
