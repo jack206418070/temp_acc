@@ -136,8 +136,6 @@ declare module 'nuxt/schema' {
 
             "upgrade-insecure-requests": boolean,
 
-            "default-src": Array<string>,
-
             "connect-src": Array<string>,
          },
 

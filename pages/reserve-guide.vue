@@ -3,7 +3,8 @@
     <h2 class="default-title">
       預約指引
     </h2>
-    <a href="tel:0912451213" class="note-display">如有操作相關疑問需諮詢,煩請撥打  <span>0912451213</span>  詢問，感謝您</a>
+    <a href="tel:0255995449" class="note-display">如有操作相關疑問需諮詢,煩請撥打  <span>02-55995449</span>  詢問，感謝您</a>
+    <iframe width="100%" height="450" src="https://www.youtube.com/embed/MhJgMhQ2PVA?si=lcp1d9-v6UPD6N0x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="book-step">
       <div class="step-item">
         <h3>步驟</h3>

@@ -2,7 +2,7 @@
   <div>
     <hero-banner-empty-index />
     <div>
-      <nuxt-link class="book-btn btn-one jelly-box" id="jelly-box" href="https://accompany-service-user.vercel.app/login">
+      <nuxt-link class="book-btn btn-one jelly-box" id="jelly-box" href="https://serve-mcs.wda.gov.tw">
         預約/申請
       </nuxt-link>
     </div>

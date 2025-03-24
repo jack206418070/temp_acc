@@ -3,7 +3,8 @@
     <h2 class="default-title">
       使用心得分享
     </h2>
-    <div class="announcement-list">
+    <p style="text-align: center;">建置中...</p>
+    <!-- <div class="announcement-list">
       <div class="announcement-list-item first-list">
         <div class="item-date">發佈日期</div>
         <div class="item-category">類別</div>
@@ -16,7 +17,7 @@
           <a href="javascript:;" target="_blank">王大姐的心聲，解我燃眉之急的感動</a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

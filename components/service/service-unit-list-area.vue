@@ -14,17 +14,17 @@
           <div v-for="vendor in filteredVendors" :key="vendor.id" class="vendor-card">
             <img :src="vendor.image" :alt="vendor.name" class="vendor-image" />
             <div class="vendor-info">
-              <p v-html="vendor.name" style="text-align: center; padding: 15px 0; font-size: 22px;"></p>
+              <p v-html="vendor.name" style="text-align: left; padding: 15px 0; font-size: 20px;"></p>
               <p class="vendor-category">
                 <span class="vendor-category-tag" v-for="item in vendor.service_area.split(',')">{{ item }}</span>
               </p>
               <a href="#" class="vendor-contact">{{ vendor.phone }}</a>
               <a href="#" class="vendor-email">{{ vendor.email }}</a>
               <div class="vender-deatil-info">
-                <a :href="vendor.price">服務價格</a>
-                <a :href="vendor.web" target="_blank">單位網站</a>
+                <a :href="vendor.price" class="vender-detail-price">服務價格</a>
+                <a :href="vendor.web" target="_blank" class="vender-detail-web">單位網站</a>
               </div>
-              <a class="book-btn" href="https://accompany-service-user.vercel.app/login">我要預約</a>
+              <a class="book-btn" href="https://serve-mcs.wda.gov.tw">我要預約</a>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
   const vendorData = [
     {
       id: 1,
-      name: "社團法人中華民國紅心字會",
+      name: "紅心字會秉持「愛心無限，服務社會」，加入多元服務，紓解照顧人力短缺，提供臨、短、急之專業溫暖服務。",
       image: "/images/assets/brand-1.avif",
       category: "心理諮商",
       area: "north",
@@ -63,7 +63,7 @@
     },
     {
       id: 2,
-      name: "財團法人台灣省<br>私立永信社會福利基金會",
+      name: "秉持服務「永續」的精神，讓受照顧者能夠享受「幸福」生活，達到你好、我好、大家好的目標。",
       image: "/images/assets/brand-2.avif",
       category: "心理諮商",
       area: "central",
@@ -78,7 +78,7 @@
     },
     {
       id: 3,
-      name: "財團法人臺中市私立<br>童庭社會福利慈善事業基金會",
+      name: "童庭基金會致力於了解您的需求，提供您專業且有溫度的臨、短、急多元陪伴照顧服務。",
       image: "/images/assets/brand-3.avif",
       category: "心理諮商",
       area: "central",
@@ -93,7 +93,7 @@
     },
     {
       id: 6,
-      name: "社團法人<br>南投縣新媳婦關懷協會",
+      name: "協會長期提供照護、職訓、心理與法律扶助，厚植地方資源創新服務，營造共融共好社會。",
       image: "/images/assets/brand-4.avif",
       category: "心理諮商",
       area: "central",
@@ -108,7 +108,7 @@
     },
     {
       id: 4,
-      name: "社團法人台灣萬人社福協會",
+      name: "萬人協會服務南部地區民眾，致力於支持弱勢族群與其照顧者，透過專業團隊，減輕家庭臨、短、急照顧需求，協助更多需要關懷的家庭。",
       image: "/images/assets/brand-5.avif",
       category: "心理諮商",
       area: "south",
@@ -123,7 +123,7 @@
     },
     {
       id: 5,
-      name: "社團法人花蓮縣家庭照顧者關懷協會",
+      name: "花蓮家協為宜花東有「臨、短、急」照顧需求的家庭，提供多元專業優質的家庭照顧服務。",
       image: "/images/assets/brand-6.avif",
       category: "心理諮商",
       area: "east",
@@ -229,6 +229,7 @@
     cursor: pointer;
     transition: .3s;
     align-self: stretch;
+    cursor: default;
   }
 
   .vendor-area {
@@ -293,6 +294,26 @@
     color: #fff;
     border-radius: 20px;
     padding: 3px 10px;
+  }
+  .vender-detail-price {
+    padding: 3px 10px;
+    border: 2px solid #0c4426;
+    border-radius: 20px;
+    transition: .3s;
+  }
+  .vender-detail-price:hover {
+    background-color: #0c4426;
+    color: #fff !important;
+  }
+  .vender-detail-web {
+    padding: 3px 8px;
+    border: 2px solid #0c4426;
+    border-radius: 20px;
+    transition: .3s;
+  }
+  .vender-detail-web:hover {
+    background-color: #0c4426;
+    color: #fff !important;
   }
   @media (max-width: 991px) {
     .service-unit-container {

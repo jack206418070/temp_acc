@@ -5,12 +5,13 @@
         <h2 class="default-title">
           試辦單位簡介
         </h2>
-        <p>經勞動部評選核定為多元陪伴照顧服務試辦計畫之試辦單位，聘僱本國籍及外國籍之多元陪伴照顧服務工作者，指派至多元陪伴照顧服務契約履行地，從事陪伴照顧等相關事務之體力工作。 <br> 點選以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
+        <p>經勞動部評選核定為多元陪伴照顧服務試辦計畫之試辦單位，聘僱本國籍及外國籍之多元陪伴照顧服務工作者，指派至多元陪伴照顧服務契約履行地，從事陪伴服務等相關事務之體力工作。<br>
+          點選以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
         <h2 class="default-title flex">
           現有試辦單位簡介
-          <a class="service-login-btn-temp" href="https://accompany-service-unit.vercel.app/login">試辦單位登入</a>
+          <a class="service-login-btn-temp" href="https://unit-mcs.wda.gov.tw">試辦單位登入</a>
         </h2>
-        <a class="service-login-btn-temp mobile" href="https://accompany-service-unit.vercel.app/login">試辦單位登入</a>
+        <a class="service-login-btn-temp mobile" href="https://unit-mcs.wda.gov.tw">試辦單位登入</a>
         <p>以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
         <!-- <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
           <span>​前往申請及派案平台</span>

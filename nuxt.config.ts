@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     sri: true,
     headers: {
       contentSecurityPolicy: {
-        'default-src': ["'self'"],
+        // 'default-src': ["'self'"],
         'script-src': [
           "'self'",
           "'unsafe-inline'",  // 僅在你確實需要 inline script 時使用
@@ -52,11 +52,10 @@ export default defineNuxtConfig({
         'connect-src': ["'self'", "https:"],
         'object-src': ["'none'"],
         'base-uri': ["'self'"],
-        'form-action': ["'self'"],
-        'frame-ancestors': ["'none'"]
+        'form-action': ["'self'"]
       },
-      xFrameOptions: 'DENY',
-      xContentTypeOptions: 'nosniff',
+      // xFrameOptions: 'DENY',
+      // xContentTypeOptions: 'nosniff',
       strictTransportSecurity: {
         maxAge: 15552000,
         includeSubdomains: true,
