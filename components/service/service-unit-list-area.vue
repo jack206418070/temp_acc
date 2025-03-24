@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <p class="service-note">*離島地區於未來計畫擴充時建置</p>
+      <p class="service-note">*離島地區於未來計畫擴充時建置 <br> <a class="template-btn" href="https://drive.google.com/drive/folders/1XQkk8vrucc-l2xYapD9JMFFjG3p6hpQ-?usp=sharing">合約範本</a></p>
     </div>
   </div>
 </template>
@@ -79,7 +79,7 @@
     {
       id: 3,
       name: "童庭基金會致力於了解您的需求，提供您專業且有溫度的臨、短、急多元陪伴照顧服務。",
-      image: "/images/assets/brand-3.avif",
+      image: "/images/assets/brand-4.avif",
       category: "心理諮商",
       area: "central",
       service_area: "臺中市",
@@ -94,7 +94,7 @@
     {
       id: 6,
       name: "協會長期提供照護、職訓、心理與法律扶助，厚植地方資源創新服務，營造共融共好社會。",
-      image: "/images/assets/brand-4.avif",
+      image: "/images/assets/brand-3.avif",
       category: "心理諮商",
       area: "central",
       service_area: "臺中市,南投縣,彰化縣",
@@ -314,6 +314,16 @@
   .vender-detail-web:hover {
     background-color: #0c4426;
     color: #fff !important;
+  }
+  .template-btn {
+    color: #fff;
+    font-size: 18px;
+    background-color: #41BBBE;
+    padding: 3px 10px;
+    transition: .3s;
+  }
+  .template-btn:hover {
+    background-color:#0c4426;
   }
   @media (max-width: 991px) {
     .service-unit-container {

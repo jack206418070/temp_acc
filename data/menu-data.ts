@@ -78,7 +78,7 @@ const menu_data:IMenu[] = [
     dropdown:true,
     dropdown_menus:[
       {
-        link:'https://accompany-service-user.vercel.app',
+        link:'https://serve-mcs.wda.gov.tw',
         title:'我要預約',
         sub_id: 0,
         sub_dropdown: false,
