@@ -38,46 +38,46 @@ const tab_data = ref({
     type: '懶人包',
     data: [
       {
-        image: '/images/assets/temp-1.jpg'
+        image: '/images/assets/懶人包-00.jpg'
       },
       {
-        image: '/images/assets/temp-2.jpg'
+        image: '/images/assets/懶人包-01.jpg'
       },
       {
-        image: '/images/assets/lazybag03.webp'
+        image: '/images/assets/懶人包-02.jpg'
       },
       {
-        image: '/images/assets/temp_12.avif'
+        image: '/images/assets/懶人包-03.jpg'
       },
       {
-        image: '/images/assets/temp_13.avif'
+        image: '/images/assets/懶人包-04.jpg'
       },
       {
-        image: '/images/assets/temp_14.avif'
+        image: '/images/assets/懶人包-05.jpg'
       },
       {
-        image: '/images/assets/temp_4.avif'
+        image: '/images/assets/懶人包-06.jpg'
       },
       {
-        image: '/images/assets/temp_5.avif'
+        image: '/images/assets/懶人包-07.jpg'
       },
       {
-        image: '/images/assets/temp_6.avif'
+        image: '/images/assets/懶人包-08.jpg'
       },
       {
-        image: '/images/assets/temp_7.avif'
+        image: '/images/assets/懶人包-09.jpg'
       },
       {
-        image: '/images/assets/temp_8.avif'
+        image: '/images/assets/懶人包-10.jpg'
       },
       {
-        image: '/images/assets/temp_9.avif'
+        image: '/images/assets/懶人包-11.jpg'
       },
       {
-        image: '/images/assets/temp_10.avif'
+        image: '/images/assets/懶人包-12.jpg'
       },
       {
-        image: '/images/assets/temp-14.jpg'
+        image: '/images/assets/懶人包-13.jpg'
       }
     ]
   },
