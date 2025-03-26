@@ -1,0 +1,1 @@
+import{d as a,u as s,c as n,a as t,o,_ as c}from"./DLh8m5Pq.js";const r={class:"main-container"},_=a({__name:"index",setup(i){return s({title:"使用心得分享 ｜ 多元陪伴照顧服務計畫"}),(d,e)=>(o(),n("div",r,e[0]||(e[0]=[t("h2",{class:"default-title"}," 使用心得分享 ",-1),t("p",{style:{"text-align":"center"}},"建置中...",-1)])))}}),p=c(_,[["__scopeId","data-v-5b4c305a"]]);export{p as default};

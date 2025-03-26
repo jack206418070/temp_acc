@@ -28,10 +28,18 @@
             <span class="arrow">›</span>
           </a>
           <div class="flag-container">
-            <img src="/images/assets/flag-1.avif" alt="Philippines flag" class="flag">
-            <img src="/images/assets/flag-2.avif" alt="Vietnam flag" class="flag">
-            <img src="/images/assets/flag-3.avif" alt="Indonesia flag" class="flag">
-            <img src="/images/assets/flag-4.avif" alt="Thailand flag" class="flag">
+            <a href="/qa?id=3&lang=en">
+              <img src="/images/assets/flag-1.avif" alt="Philippines flag" class="flag">
+            </a>
+            <a href="/qa?id=3&lang=vi">
+              <img src="/images/assets/flag-2.avif" alt="Vietnam flag" class="flag">
+            </a>
+            <a href="/qa?id=3&lang=id">
+              <img src="/images/assets/flag-3.avif" alt="Indonesia flag" class="flag">
+            </a>
+            <a href="/qa?id=3&lang=th">
+              <img src="/images/assets/flag-4.avif" alt="Thailand flag" class="flag">
+            </a>
           </div>
         </div>
 
@@ -117,6 +125,13 @@
   width: 60px;
   height: 40px;
   object-fit: cover;
+}
+.flag-container a img {
+  transition: .3s;
+}
+
+.flag-container a:hover img{
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

@@ -1199,6 +1199,763 @@
     <p>📞 1955專線：24 小時全年無休，免費服務</p>
 
     <p>🌐 相關資訊：<a href="https://www.mol.gov.tw">勞動部官方網站</a></p>`
+      },
+      qa_content_en: {
+        "Employment Regulations": `<p>1. A job as a companion care service worker, what qualifications do I need?</p>
+
+    <p>A: According to the provisions of Article 8 of the review standards, foreigners who are employed in multi-companion care services must be over 20 years old, and before entering the country to work, they must obtain a foreign health examination from a hospital recognized by the Ministry of Health and Welfare or their own national labor force. Those who have passed a qualification training program at a training unit designated by the department, or have been engaged in the same job within the territory of Taiwan for more than 6 months. The so-called "same job" refers to the work of domestic helpers, home caregivers, or institutional caregivers.</p>
+
+    <p>&nbsp;</p>
+
+    <p>2. Can companion care service workers switch from different professions?</p>
+
+    <ul>
+        <li>If migrant workers want to engage in companion care services, they must have the original certificate of training from a health examination hospital for foreigners recognized by the central health authority of the migrant’s home country, or a training unit designated by the labor department of their home country, as well as an original bilingual authentication certificate.</li>
+        <li>Migrant workers may change employers or jobs only if they have non-attributable reasons and have been approved by this department. Migrant workers who have been approved to change employers or jobs can only change employers or jobs across industries if no employer of the same job type is registered to take over the job within 14 consecutive days during the transfer period. In addition, if a migrant worker's employment is about to expire, and he/she agrees with his employer within 2 months to 4 months before the expiration, if the employer changes at the end of the period, his or her switching employer or job can be taken over by a new employer of the same job category or a different job category.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>3. Can accompanying care service workers be transferred to mid-level skilled migrant workers?</p>
+
+    <p>A: Companion care service workers have not yet been included in mid-level technical jobs, and currently only blue-collar migrant workers can apply.</p>
+
+    <p>&nbsp;</p>
+
+    <p>4. What are the duties and job description of companion care service workers?</p>
+
+    <p>A: Currently, the services provided by this plan include assisting with basic daily life care, accompanying to go outside, accompanying medical appointments, and care for safety companionship. The duties of companion care service workers are based on the agreement signed between their employer (pilot unit) and the service applicant to provide corresponding services.</p>
+
+    <p>&nbsp;</p>
+
+    <p>5. If I serve as a companion care service worker, do I need to undergo training before serving?</p>
+
+    <p>A: 20 hours of pre-employment training are required before providing services, and on-the-job training is required at least once every three months after joining the job. A total of 20 hours of on-the-job training, including work communication and companion care skills, must be completed every year.</p>
+
+    <p>&nbsp;</p>`,
+        "Employer’s Daily Care and Management": `<p>6. When an employer hires a companion care service worker, what is the period of responsibility of the employer under the Employment Service Act? Does the employer need to be responsible for the daily care of the companion care service worker?</p>
+
+    <p>A: The employer shall assume employer responsibilities in accordance with the discretionary basic provisions of the foreigner life care service plan from the date the companion care service worker enters the country or the date the employment permit takes effect to the date the companion care service worker’s employment relationship is terminated and leaves the country or is re-employed by a new employer.</p>
+
+    <p>&nbsp;</p>
+
+    <p>7. What is the scope of the employer’s care responsibilities for companion care service workers?</p>
+
+    <p>A: The employer shall bear the employer's responsibilities in accordance with the provisions of the Employment Service Act from the date when the companion care service worker enters the country or the date of renewal of employment upon expiration. In addition, Article 33, Item 1 of the Measures for the Licensing and Management of Employers’ Employment of Foreigners stipulates that when employers apply to hire companion care service workers, they must implement them in accordance with the foreigner’s life care service plan.</p>
+
+    <p>&nbsp;</p>
+
+    <p>8. Which foreigner life care service plan is applicable to employers hiring companion care service workers?</p>
+
+    <p>A: Companion care service workers are also subject to Schedule 1 of the Discretionary Standards of the Foreign Living Care Service Plan (as shown in the attachment) as are current manufacturing, construction, and nursing care institution care workers.</p>
+
+    <p>&nbsp;</p>
+
+    <p>9. Does the employer need to provide life care service personnel when hiring companion care service workers?</p>
+
+    <p>A: If an employer hires more than 10 foreigners to engage in jobs specified in Article 46, Paragraph 1, Paragraphs 9 to 10 of the Employment Service Act, thereafter shall set up living care service workers in accordance with regulations.</p>
+
+    <p>&nbsp;</p>
+
+    <p>10. If an employer provides a suite for companion care service workers to live in, how is the accommodation area calculated?</p>
+
+    <p>A: From the date of introducing companion care service workers to the country or hiring companion care service workers, the employer shall arrange accommodation for them and implement them in accordance with the foreigners' life care service plan. If the dormitory arranged by the employer for companion care service workers is a suite type, the bathroom and toilet (both for personal use) in the suite can be included in the living area, and a living area of more than 3.6 square meters should be provided.</p>
+
+    <p>&nbsp;</p>
+
+    <p>11. If the accommodation location of companion care service workers changes in Taiwan, does the employer need to report the change of accommodation location?</p>
+
+    <p>A: If the employer changes the accommodation location of the companion care service worker, he shall notify the local competent authority in writing of the foreigner's place of work and accommodation within 7 days after the change.</p>
+
+    <p>&nbsp;</p>
+
+    <p>12. Can companion care service workers live outside the home on their own?</p>
+
+    <p>A: According to Article 34, Paragraph 5 of the Regulations Governing the Employment of Foreigners by Employers, if a companion care service worker does not wish to live in the accommodation arranged by the employer and wishes to live outside on his own, the employer should respect his or her wishes and notify the local competent authority. After receiving the notification, the local competent authority will conduct an investigation into the true intentions of the companion care service workers.</p>
+
+    <p>&nbsp;</p>
+
+    <p>13. What kind of supporting documents does the employer need to provide when companion care service workers live outside the home?</p>
+
+    <p>A: If an employer changes the place of accommodation for a companion care service worker, the employer should submit documents such as a notification form for the change of accommodation place for foreigners, a life care service plan for foreigners, and a list of foreigners who have changed their place of accommodation to the local competent authority at the place where the service worker works or lives within 7 days after the change.</p>
+
+    <p>&nbsp;</p>
+
+    <p>14. What if the employer fails to properly provide companion care workers with meal services or fails to respect dietary taboos?</p>
+
+    <p>A: Employers should provide food services in accordance with the foreigner’s life care service plan and respect the dietary taboos of the companion care service workers’ religious beliefs. If there is a dispute, the companion care service worker can call the 1955 Labor Consultation Complaint Hotline (hereinafter referred to as the 1955 hotline) for assistance. The 1955 hotline will dispatch the case to the local competent authority where the work is located for coordination.</p>
+
+    <p>&nbsp;</p>
+
+    <p>15. If an agency is appointed to provide life care services, how many life care workers should it have?</p>
+
+    <p>A: When private employment service agencies accept the appointment of employers as mentioned in the preceding article to provide foreigner caregivers, they shall set up life care service workers in accordance with the following regulations, and life care service workers shall obtain an employment service professional certificate, have more than two years of experience in foreign life care services, or have graduated from college and universities with more than one year of work experience:</p>
+
+    <ul>
+        <li>If the number of foreigners is more than ten but less than fifty, at least one person must be appointed.</li>
+        <li>If the number of foreigners exceeds fifty but is less than one hundred, at least two persons shall be appointed.</li>
+        <li>If the number of foreigners reaches 100 or more, at least three persons shall be appointed; for every additional 100 persons, at least one person shall be appointed.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>16. If a migrant worker wants to terminate the contract in advance and return to his country, should he first go to the local government to verify the termination of the contract? How to do it?</p>
+
+    <p>A: When an employer and a foreigner agree to terminate the employment relationship, they must first notify the local competent authority. The notice must be signed or stamped by the employer and the foreigner to become effective. After the local competent authority receives the application, it will investigate the foreigner’s true intention to terminate the contract.</p>
+
+    <p>&nbsp;</p>
+
+    <p>17. Who can migrant workers call for help if they encounter personal injury or sexual harassment?</p>
+
+    <ul>
+        <li>When migrant workers encounter personal injury, sexual harassment, or sexual assault, they can contact the municipal and county (city) police agencies or call the 110 national reporting hotline, the headquarters 1955 labor consultation and complaint hotline, or the municipal and county (city) government labor authorities and affiliated migrant worker consultation service centers, the municipal and county (city) government sexual assault prevention and control centers, etc.</li>
+        <li>To protect the rights and interests of migrant workers, resettlement accommodation will be provided for migrant workers who have been victims of sexual harassment during the period when they change employers after the incident. They will be allowed to change employers across industries (i.e., regardless of work industry), receive financial subsidies, and be provided with psychological counseling based on social and political resources. They will also receive legal litigation fee subsidies and referrals to legal aid resources and other assistance.</li>
+    </ul>
+
+    <p>&nbsp;</p>`,
+        "Provisions of Article 84-1 of the Labor Standards Act": `<p>18. Why are Article 84-1 of Taiwan’s Labor Standards Act applicable to workers in multiple companion care services (domestic and foreign nationals)?</p>
+
+    <p>A: In view of the fact that an aging society has become a trend in Taiwan's population structure, and public demand for long-term care is increasing, taking into account that ordinary families also have short-term, temporary, or urgent needs, this department promotes the "Pilot Project for Multi-companion Care Services". The multi-companion care service workers of this project provide services to households. Their work pattern is highly intermittent, making it difficult to specify rest periods during working hours. Holidays and days off also need to be arranged flexibly, which is an obstacle to the application of the general working hour regulations of the Labor Standards Act. After discussion at the Ministry’s Labor Standards Consultation Committee, it was deemed that this plan can provide short-term, supplementary care needs, and considering the particularity of the worker’s working hours, holidays, and day-off arrangements, Article 84-1 of the Labor Standards Act shall apply, and the application was announced on November 16, 2023. Both the multi-companion care service worker and the pilot unit should still agree in writing on working hours, holidays, and days off, and submit them to the local competent authority for verification.</p>
+
+    <p>&nbsp;</p>
+
+    <p>19. When applying for full-day service, how should the rest time of multi-companion care service workers be arranged to comply with Article 84-1 of the Labor Standards Act, which requires 10 hours of rest time in 24 hours?</p>
+
+    <p>A: If the service user applies for full-time (24 hours), the normal working hours of the multi-companion caregiver are 12 hours per day; together with the 2-hour extension of working hours, the working time in one day shall not exceed 14 hours, and the multi-companion caregiver must be given a total of 10 hours of rest and sleep time.</p>
+
+    <p>&nbsp;</p>
+
+    <p>20. What are the precautions for multi-companion care workers’ shift arrangements?</p>
+
+    <ul>
+        <li>Article 84-1 of the Labor Standards Act may apply to "Multi-Companion Care Service Workers". Both parties should agree in writing on working hours, holidays, etc., and should report it to the local labor competent authority for verification; if not, they will return to the general working hours provisions of the Labor Standards Act.</li>
+        <li>Multi-companion care service workers are allowed to work 12 hours a day as normal. If working hours are extended, it can be up to 2 hours. Rest time will be allocated separately during working hours. The total number of working hours per month shall not exceed 288 hours. If all are employed on a full-time basis, they can work up to 20 days per month.</li>
+        <li>If multi-companion care service workers adopt a shift system or have continuity or emergency care needs, they can flexibly arrange their rest time during working hours. For those who adopt a shift system, if the shift is changed, there should be an 11-hour rest period between shifts.</li>
+        <li>Transportation time for transfer within the day must be included in working hours.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>21. How should the flexible working hours of multi-companion care service workers be adjusted? How often should they take days off?</p>
+
+    <ul>
+        <li>Full-time (24 hours): 12 hours of normal working hours per day, plus 2 hours of extended working hours, not more than 14 hours in a day, with rest and sleep arranged during the rest of the time. The total number of working hours worked per month shall not exceed 288 hours. If all are employed on a full-time basis, they can work up to 20 days per month.</li>
+        <li>Half-day system (12 hours): Normal working hours are 12 hours a day. If working hours are extended by up to 2 hours, rest time will be allocated separately during working hours. The total number of working hours per month shall not exceed 288 hours.</li>
+        <li>Menstrual holidays: There should be at least one day off in every 7 days as a menstrual holiday. However, upon negotiation and agreement by both parties, a two-day break can be arranged within two weeks as a regular holiday, but the employee is still not allowed to work for more than 12 consecutive days.</li>
+        <li>Leave: Holidays are required on anniversaries, holidays, Labor Day, and other holidays designated by the central competent authority (commonly known as national holidays) stipulated by the Ministry of the Interior, and wages must be paid by the employer. If the employer obtains the consent of the employee for working on holidays, the wages should be doubled; however, it is not appropriate to implement holiday attendance wages in addition to annual holidays. In addition, based on the operating characteristics of public institutions, national holidays can be moved to other working days through negotiation between employers and employees.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>22. If multiple companion care service workers do not work overtime, what is the minimum salary? If they work overtime, what is the minimum salary? How should overtime pay be calculated?</p>
+
+    <ul>
+        <li>"Multiple Companion Care Service Workers" are workers who have been approved by the Ministry of Labor on November 16, 2024, to apply for Article 84-1 of the Labor Standards Act. Their working hours can be agreed to be 12 hours of normal working hours per day, plus 2 hours of extended working hours. The total number of hours worked per month shall not exceed 288 hours.</li>
+        <li>If the "normal working hours" agreed and verified between the employer and the former employee exceed the "legal normal working hours", the monthly minimum wage should be increased based on the number of hours exceeded and shall not be limited to NT$28,590 per month (minimum wage as per year 2025) and shall not harm the health and welfare of the workers.</li>
+        <li>
+            The following is an example of normal monthly working hours:
+            <ul>
+                <li>240 hours: NT$36,453</li>
+                <li>264 hours: NT$39,312</li>
+                <li>288 hours: NT$42,171</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>23. Is there an upper limit on the total working hours of multi-companion care service workers?</p>
+
+    <p>A: Normal working hours are 12 hours a day, and together with extended working hours must not exceed 14 hours a day. The total number of working hours per month shall not exceed 288 hours. If all are employed on a full-time basis, they can work up to 20 days per month.</p>
+
+    <p>&nbsp;</p>
+
+    <p>24. For workers to whom Article 84-1 of the Labor Standards Act applies, is there any doubt whether the basic salary will be increased in proportion to the number of hours?</p>
+
+    <p>A: As stipulated in Article 84-1 of the Labor Standards Act (hereinafter referred to as this Act), for workers who have been approved and announced by the central competent authority, both parties can separately agree in writing on working hours, holidays, and days off, and report them. After approval by the local competent authority, it may not be subject to the restrictions of Articles 30, 32, 36, 37, and other provisions.</p>
+
+    <p>&nbsp;</p>
+
+    <p>For more information, visit the official Ministry website: <a href="https://www.mol.gov.tw/1607/28690/2282/2284/2290/7160">Ministry of Labor FAQ</a></p>`,
+        "Consultation Hotline / Window": `<p>25. What is the consultation hotline for issues related to hiring migrant workers?</p>
+
+    <p>A: For questions related to hiring migrant workers, you can contact the 1955 consultation complaint hotline (hereunder referred to as the 1955 hotline). You can also contact local governments for assistance.</p>
+
+    <ul>
+        <li>The headquarters has set up the 1955 Labor Consultation and Complaint Hotline (hereinafter referred to as the 1955 hotline), with bilingual staff in five languages: Chinese, English, Vietnamese, Indonesian, and Thai. It provides 24-hour, year-round, toll-free online three-party services including interpretation, consultation, and complaint services. After accepting the complaint, it will electronically dispatch the case to the local government for investigation, tracking, and management of the complaint case. Additionally, it has established a five-language "<a href='https://line.me/R/ti/p/@yourlineid'>LINE@ shift point communication</a>" in English, Vietnamese, Indonesian, Thai, and Chinese to connect to the 1955 hotline complaint service, smoothing the consultation and complaint channel for migrant workers and employers.</li>
+        <li>The Ministry subsidizes local governments to set up migrant worker consultation service centers, hires personnel who are proficient in the native languages of migrant workers to provide grievance consultation services on migrant worker laws, work adaptation, labor disputes, etc., and provides legal litigation fee subsidies and referrals to legal aid resources. Migrant workers and employers who have relevant questions can also contact the center for services.</li>
+    </ul>
+
+    <p>&nbsp;</p>`
+      },
+      qa_content_vi: {
+        "Quy định tuyển dụng": `<p>1. Việc làm nhân viên dịch vụ chăm sóc đồng hành, tôi cần có những chuyên môn gì?</p>
+
+    <p>Trả lời: Theo quy định tại Điều 8 của tiêu chuẩn xét duyệt, người nước ngoài làm việc dịch vụ chăm sóc đồng hành đa dạng phải trên 20 tuổi. Trước khi vào nước làm việc, phải có bệnh viện khám sức khỏe nước ngoài được Bộ Y tế công nhận và Phúc lợi hoặc lực lượng lao động quốc gia của họ đã vượt qua khóa đào tạo tại đơn vị đào tạo chỉ định. Hoặc đã làm công việc tương tự ở Đài Loan trong hơn 6 tháng. "Công việc tương tự" dùng để chỉ công việc của người giúp việc gia đình, người chăm sóc tại nhà hoặc người chăm sóc tại cơ quan.</p>
+
+    <p>&nbsp;</p>
+
+    <p>2. Nhân viên dịch vụ chăm sóc đồng hành có thể chuyển đổi từ các ngành nghề khác nhau không?</p>
+
+    <ul>
+        <li>Nếu người lao động nhập cư muốn tham gia các dịch vụ chăm sóc đồng hành, thì phải có bản gốc và chứng chỉ đào tạo song ngữ của bệnh viện khám sức khỏe dành cho người nước ngoài được cơ quan y tế trung ương của nước sở tại công nhận, hoặc của đơn vị đào tạo được chỉ định bởi bộ phận lao động của nước sở tại.</li>
+        <li>Người lao động nhập cư chỉ có thể thay đổi người sử dụng lao động hoặc công việc nếu họ có lý do ngoài tầm kiểm soát và đã được bộ này chấp thuận. Nếu không có người sử dụng lao động nào cùng loại công việc đăng ký tiếp quản trong vòng 14 ngày liên tiếp trong thời gian chuyển đổi, người sử dụng lao động hoặc công việc có thể được thay đổi giữa các ngành.</li>
+        <li>Ngoài ra, nếu người lao động nhập cư sắp hết thời hạn làm việc và đồng ý với người sử dụng lao động trong vòng 2 tháng đến 4 tháng trước khi hết hạn, nếu người sử dụng lao động thay đổi vào cuối thời hạn, thì người đó có thể chuyển đổi người sử dụng lao động hoặc công việc được tiếp quản bởi một người sử dụng lao động mới cùng loại công việc hoặc một loại công việc khác.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>3. Lao động nhập cư có thể được chuyển tay nghề trung cấp không?</p>
+
+    <p>Trả lời: Nhân viên dịch vụ chăm sóc đồng hành vẫn chưa được đưa vào các công việc kỹ thuật cấp trung, hiện chỉ có lao động nhập cư cổ cồn xanh mới có thể nộp đơn.</p>
+
+    <p>&nbsp;</p>
+
+    <p>4. Nội dung công việc và dự án công việc của nhân viên dịch vụ chăm sóc đồng hành là gì?</p>
+
+    <p>Trả lời: Hiện tại, các dịch vụ được cung cấp bởi chương trình này bao gồm chăm sóc cuộc sống cơ bản hàng ngày, cùng đi kèm ra ngoài, đồng hành về mặt y tế và an toàn. Nội dung công việc dựa trên thỏa thuận được ký kết giữa người sử dụng lao động (đơn vị thí điểm) và người nộp đơn dịch vụ để cung cấp dịch vụ tương ứng.</p>
+
+    <p>&nbsp;</p>
+
+    <p>5. Nếu tôi phục vụ với tư cách là nhân viên dịch vụ chăm sóc đồng hành, tôi có cần phải trải qua đào tạo trước khi phục vụ không?</p>
+
+    <p>Trả lời: Cần phải có 20 giờ đào tạo trước khi làm việc. Ngoài ra, cần được đào tạo tại chỗ ít nhất ba tháng một lần sau khi nhận việc. Phải hoàn thành 20 giờ đào tạo tại nơi làm việc mỗi năm, bao gồm giao tiếp công việc và các kỹ năng chăm sóc đồng hành.</p>
+
+    <p>&nbsp;</p>`,
+        "Chăm sóc và quản lý bởi người sử dụng lao động": `<p>6. Khi người sử dụng lao động thuê một nhân viên dịch vụ chăm sóc đồng hành, thời hạn trách nhiệm của người sử dụng lao động theo Đạo luật Dịch vụ Việc làm là gì? Người sử dụng lao động có cần chịu trách nhiệm chăm sóc hàng ngày cho nhân viên dịch vụ chăm sóc đồng hành không?</p>
+
+    <p>Trả lời: Người sử dụng lao động nên đưa ra quyết định dựa trên kế hoạch dịch vụ chăm sóc cuộc sống của người nước ngoài kể từ ngày nhân viên dịch vụ chăm sóc đồng hành nhập cảnh vào nước này hoặc ngày giấy phép lao động có hiệu lực, cho đến ngày mối quan hệ việc làm của nhân viên dịch vụ chăm sóc đồng hành chấm dứt và rời khỏi đất nước hoặc được gia hạn bởi người sử dụng lao động mới.</p>
+
+    <p>&nbsp;</p>
+
+    <p>7. Phạm vi trách nhiệm chăm sóc của người sử dụng lao động đối với nhân viên dịch vụ chăm sóc đồng hành là gì?</p>
+
+    <p>Trả lời: Người sử dụng lao động phải chịu trách nhiệm theo quy định của Đạo luật Dịch vụ Việc làm kể từ ngày nhân viên dịch vụ chăm sóc đồng hành nhập cảnh hoặc ngày gia hạn việc làm khi hết hạn. Ngoài ra, Điều 33, Mục 1 của Biện pháp cấp phép và quản lý việc làm của người sử dụng lao động đối với người nước ngoài quy định rằng, khi người sử dụng lao động nộp đơn xin thuê nhân viên dịch vụ chăm sóc đồng hành, họ phải thực hiện theo kế hoạch dịch vụ chăm sóc cuộc sống của người nước ngoài.</p>
+
+    <p>&nbsp;</p>
+
+    <p>8. Kế hoạch dịch vụ chăm sóc cuộc sống cho người nước ngoài nào được áp dụng cho người sử dụng lao động thuê nhân viên dịch vụ chăm sóc đồng hành?</p>
+
+    <p>Trả lời: Nhân viên dịch vụ chăm sóc đồng hành cũng phải tuân theo Phụ lục 1 của Tiêu chuẩn tùy ý của Kế hoạch dịch vụ chăm sóc người nước ngoài, tương tự như công việc chăm sóc cơ sở sản xuất, xây dựng và điều dưỡng.</p>
+
+    <p>&nbsp;</p>
+
+    <p>9. Người sử dụng lao động có cần cung cấp nhân viên dịch vụ chăm sóc cuộc sống khi thuê nhân viên dịch vụ chăm sóc đồng hành không?</p>
+
+    <p>Trả lời: Trường hợp người sử dụng lao động thuê trên 10 người nước ngoài làm công việc quy định tại Điều 46, Khoản 1, Khoản 9 đến Khoản 10 Luật Dịch vụ Việc làm thì phải bố trí nhân viên phục vụ đời sống theo quy định.</p>
+
+    <p>&nbsp;</p>
+
+    <p>10. Nếu người sử dụng lao động cung cấp một dãy phòng cho nhân viên dịch vụ chăm sóc đồng hành, diện tích chỗ ở được tính như thế nào?</p>
+
+    <p>Trả lời: Kể từ ngày giới thiệu nhân viên dịch vụ chăm sóc đồng hành hoặc thuê họ, người sử dụng lao động phải bố trí chỗ ở theo kế hoạch dịch vụ chăm sóc cuộc sống của người nước ngoài. Nếu ký túc xá là loại dãy phòng thì phòng tắm và nhà vệ sinh (dành cho mục đích sử dụng cá nhân) có thể được tính vào khu vực sinh hoạt, với diện tích tối thiểu là 3,6 mét vuông.</p>
+
+    <p>&nbsp;</p>
+
+    <p>11. Khi nhân viên dịch vụ chăm sóc đồng hành thay đổi nơi trú tại Đài Loan, người sử dụng lao động có cần khai báo việc thay đổi địa điểm lưu trú không?</p>
+
+    <p>Trả lời: Nếu người sử dụng lao động thay đổi địa điểm lưu trú của nhân viên dịch vụ chăm sóc đồng hành, họ phải thông báo bằng văn bản cho cơ quan có thẩm quyền địa phương trong vòng 7 ngày sau khi thay đổi.</p>
+
+    <p>&nbsp;</p>
+
+    <p>12. Nhân viên dịch vụ chăm sóc đồng hành có thể tự mình sống bên ngoài không?</p>
+
+    <p>Trả lời: Theo Điều 34, Đoạn 5 trong Quy định của Người sử dụng lao động về Giấy phép và Quản lý Việc làm của Người sử dụng lao động đối với Người nước ngoài, nếu nhân viên dịch vụ chăm sóc đồng hành không muốn sống trong chỗ ở do người sử dụng lao động sắp xếp và muốn sống bên ngoài một mình, người sử dụng lao động nên tôn trọng mong muốn của họ và thông báo cho cơ quan giám sát địa phương.</p>
+
+    <p>&nbsp;</p>
+
+    <p>13. Người sử dụng lao động cần cung cấp những loại tài liệu hỗ trợ nào khi nhân viên chăm sóc đồng hành sống bên ngoài?</p>
+
+    <p>Trả lời: Nếu người sử dụng lao động thay đổi nơi ở của nhân viên dịch vụ chăm sóc đồng hành, họ phải nộp các tài liệu như:</p>
+    <ul>
+        <li>Mẫu thông báo thay đổi nơi ở cho người nước ngoài</li>
+        <li>Kế hoạch dịch vụ chăm sóc cuộc sống cho người nước ngoài</li>
+        <li>Danh sách những người nước ngoài đã thay đổi nơi ở</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>14. Phương pháp xử lý người sử dụng lao động không cung cấp dịch vụ bữa ăn cho nhân viên chăm sóc đồng hành một cách phù hợp hoặc không tôn trọng những điều cấm kỵ về chế độ ăn uống?</p>
+
+    <p>Trả lời: Người sử dụng lao động nên cung cấp dịch vụ ăn uống phù hợp với kế hoạch dịch vụ chăm sóc cuộc sống của người nước ngoài và tôn trọng những điều cấm kỵ về chế độ ăn uống theo tín ngưỡng tôn giáo của nhân viên dịch vụ chăm sóc đồng hành. Nếu có tranh chấp, nhân viên có thể gọi đến Đường dây nóng Khiếu nại Tư vấn Lao động 1955 để được hỗ trợ.</p>
+
+    <p>&nbsp;</p>
+
+    <p>15. Khi một công ty trung gian được chỉ định cung cấp dịch vụ chăm sóc cuộc sống, công ty đó cần có bao nhiêu nhân viên chăm sóc cuộc sống?</p>
+
+    <ul>
+        <li>Nếu số lượng người nước ngoài từ 10 đến dưới 50 người, ít nhất phải có một nhân viên.</li>
+        <li>Nếu số lượng người nước ngoài từ 50 đến dưới 100 người, ít nhất phải có hai nhân viên.</li>
+        <li>Nếu số lượng người nước ngoài từ 100 người trở lên, ít nhất phải có ba nhân viên; cứ thêm 100 người phải bổ sung thêm một nhân viên.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>16. Nếu người lao động nhập cư muốn chấm dứt hợp đồng trước và về nước, trước tiên có nên đến chính quyền địa phương để xác minh việc chấm dứt hợp đồng không? Làm thế nào để làm điều đó?</p>
+
+    <p>Trả lời: Khi người sử dụng lao động và người lao động nhập cư đồng ý chấm dứt hợp đồng, họ phải thông báo cho cơ quan có thẩm quyền địa phương. Thông báo phải có chữ ký hoặc đóng dấu của cả hai bên mới có hiệu lực. Sau khi chấp nhận đơn, cơ quan chức năng sẽ xác minh ý định thực sự của người lao động.</p>
+
+    <p>&nbsp;</p>
+
+    <p>17. Người lao động nhập cư có thể kêu gọi giúp đỡ ai nếu họ gặp phải thương tích cá nhân hoặc bị quấy rối tình dục?</p>
+
+    <ul>
+        <li>Họ có thể liên hệ với cơ quan cảnh sát thành phố, gọi đường dây nóng báo án 110 hoặc liên hệ đường dây nóng tư vấn lao động 1955.</li>
+        <li>Họ cũng có thể tìm kiếm sự hỗ trợ từ cơ quan chính quyền địa phương, trung tâm tư vấn lao động nhập cư và trung tâm phòng ngừa tấn công tình dục.</li>
+        <li>Người lao động nhập cư là nạn nhân của quấy rối tình dục có thể được hỗ trợ về nơi cư trú tạm thời, chuyển đổi ngành nghề và trợ cấp tài chính, cũng như hỗ trợ pháp lý nếu cần.</li>
+    </ul>
+
+    <p>&nbsp;</p>`,
+        "Quy định tại Điều 84-1 của Luật Lao động": `<p>18. Tại sao Điều 84-1 của Đạo luật Tiêu chuẩn Lao động của nước ta lại áp dụng cho người lao động làm việc trong nhiều dịch vụ chăm sóc đồng hành (công dân trong nước và nước ngoài)?</p>
+
+    <p>Trả lời: Trước thực tế rằng xã hội già hóa đã trở thành xu hướng trong cơ cấu dân số của  nước ta và nhu cầu chăm sóc dài hạn của người dân ngày càng tăng. Xét thấy rằng các gia đình bình thường cũng có nhu cầu ngắn hạn, tạm thời hoặc cấp bách, bộ phận này thúc đẩy việc  . "Dự án thí điểm cho nhiều dịch vụ chăm sóc đồng hành". Nhiều nhân viên dịch vụ chăm sóc  đồng hành cung cấp dịch vụ cho các hộ gia đình. Mô hình công việc của họ rất không liên tục và khó xác định thời gian nghỉ ngơi trong giờ làm việc, tức là cũng cần phải sắp xếp linh hoạt. trở ngại cho việc áp dụng quy định chung về giờ làm việc của Luật Tiêu chuẩn lao động. Sau khi thảo luận tại Ủy ban Tư vấn về Tiêu chuẩn Lao động của Bộ, người ta cho rằng kế hoạch này có thể cung cấp các nhu cầu chăm sóc bổ sung, ngắn hạn và xem xét đặc thù về giờ làm việc, ngày nghỉ và sắp xếp kỳ nghỉ của người lao động, Điều 84-1 của Tiêu chuẩn Lao động Đạo luật sẽ được áp dụng và được công bố  . chỉ định áp dụng vào ngày 16 tháng 11 năm 2013 . Cả nhân viên chăm sóc  đồng hành đa dạng và đơn vị thử nghiệm vẫn phải thỏa thuận bằng văn bản về thời gian làm việc,  Ngày lễ và kỳ nghỉ, trình lên cơ quan có thẩm quyền tại địa phương xác minh.</p>
+
+    <p>&nbsp;</p>
+
+    <p>19. Khi đăng ký dịch vụ cả ngày, thời gian nghỉ ngơi của người chăm sóc đồng hành đa dạng nên được sắp xếp như thế nào để tuân thủ Điều 84-1 của Đạo luật Tiêu chuẩn Lao động, yêu cầu 10 giờ nghỉ ngơi trong 24 giờ?</p>
+
+    <p>Trả lời: Nếu người dùng đăng ký làm việc toàn thời gian (24 giờ), thời gian làm việc bình thường của người chăm sóc đồng hành đa dạng là 12 giờ mỗi ngày. Nếu có thêm 2 giờ làm thêm thì tổng số giờ làm việc trong ngày sẽ không vượt quá 14 giờ và người chăm sóc đồng hành đa dạng phải được nghỉ ngơi và ngủ tổng cộng 10 giờ.</p>
+
+    <p>&nbsp;</p>
+
+    <p>20. Các biện pháp phòng ngừa đối với việc sắp xếp ca làm việc của nhân viên chăm sóc đồng hành đa dạng là gì?</p>
+
+    <ul>
+        <li>Điều 84-1 của Đạo luật Tiêu chuẩn Lao động có thể áp dụng đối với "Nhân viên Dịch vụ Chăm sóc Đồng hành Đa dạng". Cả hai bên phải thỏa thuận bằng văn bản về giờ làm việc, ngày nghỉ, và phải báo cáo điều đó cho cơ quan có thẩm quyền lao động địa phương để xác minh.</li>
+        <li>Nhân viên dịch vụ chăm sóc đồng hành đa dạng được phép làm việc 12 giờ một ngày. Nếu thời gian làm việc kéo dài, họ có thể làm thêm tối đa 2 giờ.</li>
+        <li>Tổng số giờ làm việc trong tháng không quá 288 giờ. Nếu làm toàn thời gian, họ có thể làm tối đa 20 ngày mỗi tháng.</li>
+        <li>Nếu áp dụng hệ thống làm việc theo ca hoặc có nhu cầu chăm sóc liên tục hoặc cấp cứu, họ có thể sắp xếp linh hoạt thời gian nghỉ ngơi trong giờ làm việc.</li>
+        <li>Thời gian vận chuyển trong ngày phải được tính vào giờ làm việc.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>21. Nên điều chỉnh giờ làm việc linh hoạt của nhân viên dịch vụ chăm sóc đa dạng như thế nào? Họ nên nghỉ phép như thế nào?</p>
+
+    <ul>
+        <li>Toàn thời gian (24 giờ): Làm việc 12 giờ mỗi ngày, cộng thêm tối đa 2 giờ làm thêm, không quá 14 giờ trong một ngày, thời gian còn lại là thời gian nghỉ ngơi và ngủ.</li>
+        <li>Chế độ nửa ngày (12 giờ): Thời gian làm việc bình thường là 12 giờ một ngày. Nếu có thêm giờ làm thêm, sẽ tối đa 2 giờ/ngày.</li>
+        <li>Nghỉ phép: Cứ 7 ngày phải có ít nhất một ngày nghỉ. Hai bên có thể thỏa thuận để gộp 2 ngày nghỉ trong vòng 2 tuần, nhưng không được làm việc quá 12 ngày liên tục.</li>
+        <li>Ngày nghỉ lễ: Nhân viên được nghỉ vào các ngày lễ quốc gia, ngày kỷ niệm, và các ngày nghỉ theo quy định của Bộ Nội vụ. Nếu người sử dụng lao động yêu cầu làm việc vào ngày nghỉ lễ, tiền lương phải được tăng gấp đôi.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>22. Nếu nhân viên chăm sóc đồng hành đa dạng không làm thêm giờ, mức lương tối thiểu là bao nhiêu? Nếu làm thêm giờ, lương sẽ được tính như thế nào?</p>
+
+    <ul>
+        <li>Mức lương tối thiểu hàng tháng không dưới 28.590 Đài tệ (năm 2025).</li>
+        <li>Nếu số giờ làm việc vượt mức tiêu chuẩn, mức lương sẽ tăng tương ứng.</li>
+        <li>
+            Ví dụ về mức lương:
+            <ul>
+                <li>240 giờ làm việc/tháng: khoảng 36.453 Đài tệ</li>
+                <li>264 giờ làm việc/tháng: khoảng 39.312 Đài tệ</li>
+                <li>288 giờ làm việc/tháng: khoảng 42.171 Đài tệ</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>23. Có giới hạn trên về tổng số giờ làm việc của nhân viên dịch vụ chăm sóc đồng hành không?</p>
+
+    <p>Trả lời: Thời gian làm việc bình thường là 12 giờ/ngày. Thời gian làm việc kéo dài không được quá 14 giờ/ngày. Tổng số giờ làm việc trong tháng không được quá 288 giờ. Nếu làm toàn thời gian, họ có thể làm tối đa 20 ngày mỗi tháng.</p>
+
+    <p>&nbsp;</p>
+
+    <p>24. Đối với những người lao động áp dụng Điều 84-1 của Đạo luật Tiêu chuẩn Lao động, mức lương có được tăng lên theo số giờ làm việc không?</p>
+
+    <p>Trả lời: Theo quy định của Điều 84-1, mức lương tối thiểu phải được điều chỉnh nếu số giờ làm việc vượt quá giới hạn quy định. Mức lương tối thiểu từ ngày 1 tháng 1 năm 2025 là 28.590 Đài tệ/tháng và 190 Đài tệ/giờ. Chi tiết có thể tham khảo tại <a href="https://www.mol.gov.tw/1607/28690/2282/2284/2290/7160">trang thông tin của Bộ Lao động</a>.</p>
+
+    <p>&nbsp;</p>`,
+        "Cửa sổ tư vấn": `<p>25. Đường dây nóng tư vấn các vấn đề liên quan đến tuyển dụng lao động nhập cư là gì?</p>
+
+    <p>Trả lời: Đối với các câu hỏi liên quan đến việc thuê lao động nhập cư, bạn có thể liên hệ với đường dây nóng tư vấn 1955, phục vụ suốt cả năm. Bạn cũng có thể liên hệ với chính quyền địa phương để được cung cấp dịch vụ.</p>
+
+    <p>(1) Trụ sở chính đã thành lập Đường dây nóng tư vấn và khiếu nại lao động 1955 (sau đây gọi là Đường dây nóng 1955), với đội ngũ nhân viên song ngữ hỗ trợ 5 ngôn ngữ: tiếng Trung, tiếng Anh, tiếng Việt, tiếng Indonesia và tiếng Thái. Dịch vụ này hoạt động 24/24, cung cấp dịch vụ phiên dịch ba bên trực tuyến miễn phí, tư vấn và tiếp nhận khiếu nại. Sau khi tiếp nhận khiếu nại, hệ thống sẽ chuyển thông tin điện tử đến chính quyền địa phương để điều tra, theo dõi và quản lý vụ việc. Đồng thời, họ cũng đã thiết lập cơ chế hỗ trợ năm ngôn ngữ; <b>"Giao tiếp điểm chuyển đổi LINE@"</b> bằng tiếng Anh, tiếng Việt, tiếng Indonesia, tiếng Thái và tiếng Trung, liên kết với dịch vụ khiếu nại đường dây nóng 1955, giúp tạo kênh tư vấn và khiếu nại thông suốt cho người lao động nhập cư và người sử dụng lao động.</p>
+
+    <p>(2) Bộ Lao động hỗ trợ tài chính cho chính quyền địa phương để thành lập các trung tâm dịch vụ tư vấn dành cho lao động nhập cư. Các trung tâm này tuyển dụng nhân viên thông thạo tiếng mẹ đẻ của lao động nhập cư để cung cấp dịch vụ tư vấn về các vấn đề khiếu nại liên quan đến luật lao động nhập cư, thích ứng với công việc, tranh chấp lao động, v.v. Ngoài ra, các trung tâm còn cung cấp trợ cấp pháp lý và giới thiệu lao động nhập cư đến các tổ chức hỗ trợ pháp lý phù hợp. Người lao động nhập cư và người sử dụng lao động có thắc mắc liên quan cũng có thể liên hệ với trung tâm để nhận hỗ trợ.</p>
+
+    <p>&nbsp;</p>`
+      },
+      qa_content_id: {
+        "Ketentuan Perekrutan": `<p>1. Pekerjaan sebagai Layanan multiguna perawatan pendamping pekerja asing, kualifikasi apa yang saya perlukan？</p>
+
+    <p>A : Menurut ketentuan Pasal 8 Undang–undang standar peninjauan, orang asing yang dipekerjakan di beberapa layanan multiguna perawatan pendamping harus berusia di atas 20 tahun, dan sebelum memasuki ke negara tersebut untuk bekerja, mereka harus mendapatkan pemeriksaan kesehatan asing di rumah sakit yang diakui oleh Kementerian Kesehatan dan Kesejahteraan atau Depnaker setempat yang telah lulus pelatihan di unit pelatihan yang ditunjuk oleh departemen, atau telah melakukan pekerjaan yang sama di Taiwan lebih dari 6 bulan lamanya. Atau pekerjaan pada sektor yang sama, yang mengacu pada pekerjaan perawat Tata Laksana Rumah Tangga, perawat Orang Sakit, atau perawat Panti Jompo.</p>
+
+    <p>&nbsp;</p>
+
+    <p>2. Apakah pekerja layanan multiguna perawatan pendamping dapat beralih ke profesi yang berbeda?</p>
+
+    <ul>
+        <li>Jika pekerja migran ingin mengikuti layanan multiguna perawatan pendamping, dari negara asal, harus melampirkan sertifikat pemeriksaan kesehatan asli dari Departemen Kesehatan yang ditunjuk dari negara asal pekerja migran, atau sertifikat pelatihan asli di unit pelatihan yang ditunjuk oleh depnaker dan sudah dilegalisir dalam 2 bahasa.</li>
+        <li>Pekerja migran hanya boleh berganti majikan atau pekerjaan jika mempunyai alasan yang tidak dapat diatribusikan dan telah disetujui oleh departemen ini. Pekerja migran yang telah disetujui untuk berganti majikan atau pekerjaan hanya dapat berganti majikan atau pekerjaan lintas industri jika tidak ada pemberi kerja dengan jenis pekerjaan yang sama yang terdaftar untuk mengambil alih pekerjaan tersebut dalam waktu 14 hari berturut-turut selama masa perpindahan majikan.</li>
+        <li>Jika masa kerja pekerja migran akan segera berakhir, dan ia setuju dengan majikannya dalam waktu 2 bulan hingga 4 bulan sebelum berakhirnya masa kerja, jika majikan berganti pada akhir periode tersebut, ia dapat berpindah majikan atau pekerjaan yang diambil alih oleh pemberi kerja baru pada kategori pekerjaan yang sama atau kategori pekerjaan yang berbeda.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>3. Apakah Pekerja migran Pekerja Teknis Tingkat Menengah boleh mengikuti layanan perawatan pendamping?</p>
+
+    <p>A：Pekerja layanan perawatan pendamping belum dimasukkan dalam pekerjaan teknis tingkat menengah, dan saat ini hanya pekerja migran kerah biru yang dapat mengajukan permohonan kerja.</p>
+
+    <p>&nbsp;</p>
+
+    <p>4. Apa materi dan jenis pekerjaan pekerja layanan multiguna perawatan pendamping?</p>
+
+    <p>A : Saat ini, layanan yang diberikan dalam rencana ini meliputi perawatan dasar kehidupan sehari-hari, pendampingan keluar jalan-jalan, pendampingan perawatan medis, dan pendampingan hal keselamatan pasien. Materi pekerjaan pekerja layanan multiguna perawatan pendamping didasarkan pada kesepakatan yang ditandatangani antara majikan (badan pengelola) dan pemohon layanan multiguna perawatan pendamping, yang menyediakan layanan-layanan yang sesuai dengan isi kontrak kerja.</p>
+
+    <p>&nbsp;</p>
+
+    <p>5. Jika saya bertugas sebagai pekerja layanan multiguna perawatan pendamping, apakah saya perlu menjalani pelatihan sebelum bertugas?</p>
+
+    <p>A : Pelatihan pra-kerja diperlukan selama 20 jam sebelum memberikan layanan, dan pelatihan di tempat kerja diperlukan setidaknya setiap tiga bulan sekali setelah bergabung dengan pekerjaan. Total 20 jam pelatihan di tempat kerja termasuk komunikasi kerja dan keterampilan multiguna perawatan pendamping harus diselesaikan setiap tahun.</p>
+
+    <p>&nbsp;</p>`,
+        "Perawatan dan Pengelolaan oleh Majikan": `<p>6. Ketika majikan mempekerjakan pekerja layanan multiguna perawatan pendamping, berapakah jangka waktu tanggung jawab majikan berdasarkan Undang-Undang Layanan Ketenagakerjaan? Apakah majikan harus bertanggung jawab atas perawatan kehidupan sehari-hari pekerja layanan multiguna perawatan pendamping?</p>
+
+    <p>A: Majikan sendiri yang harus memasukkan pekerja layanan perawatan pendamping sejak tanggal pekerja layanan multiguna perawatan pendamping memasuki negara tersebut atau tanggal efektif izin kerja hingga tanggal hubungan kerja pekerja layanan multiguna perawatan pendamping diputus dan meninggalkan negara tersebut atau diperbarui oleh majikan baru.</p>
+
+    <p>&nbsp;</p>
+
+    <p>7. Apa cakupan tanggung jawab majikan terhadap pekerja layanan multiguna perawatan pendamping?</p>
+
+    <p>A: Majikan harus memikul tanggung jawab terhadap pekerja layanan multiguna perawatan pendamping sesuai dengan ketentuan Undang-Undang Layanan Ketenagakerjaan sejak tanggal pekerja layanan multiguna perawatan pendamping memasuki negara tersebut atau tanggal perpanjangan kerja setelah habis masa berlakunya. Selain itu, Pasal 33, ayat 1 dari Undang–undang Layanan Ketenagakerjaan tentang majikan yang merekrut dan pengaturan pekerjaan pekerja layanan multiguna perawatan pendamping, majikan harus melaksanakannya sesuai dengan perencanaan layanan multiguna perawatan pendamping terhadap biaya kehidupan orang asing tersebut.</p>
+
+    <p>&nbsp;</p>
+
+    <p>8. Paket perencanaan layanan perawatan kehidupan orang asing manakah yang berlaku bagi majikan yang mempekerjakan pekerja layanan multiguna perawatan pendamping?</p>
+
+    <p>A: Pemohon pekerja layanan multiguna perawatan pendamping, sama halnya dengan pemohon pekerjaan dari pekerja manufaktur, konstruksi, dan perawat panti jompo, saat ini juga sesuai dengan lampiran 1 Undang-Undang Standarisasi Perencanaan Layanan Multiguna Perawatan Pendamping atas kehidupannya sehari-hari.</p>
+
+    <p>&nbsp;</p>
+
+    <p>9. Apakah majikan yang mempekerjakan pekerja layanan multiguna perawatan pendamping perlu menyediakan personel layanan multiguna perawatan pendamping?</p>
+
+    <p>A: Jika majikan mempekerjakan lebih dari 10 orang asing untuk melakukan pekerjaan sebagaimana dimaksud dalam Pasal 46, Ayat 1, Ayat 9 hingga 10 Undang-Undang Pelayanan Ketenagakerjaan, maka majikan tersebut harus menyiapkan personel layanan perawatan hidup sesuai dengan peraturan.</p>
+
+    <p>&nbsp;</p>
+
+    <p>10. Jika majikan menyediakan kamar suite untuk tempat tinggal pekerja layanan multiguna perawatan pendamping, bagaimana cara menghitung luas akomodasinya?</p>
+
+    <p>A: Sejak tanggal pekerja layanan multiguna perawatan pendamping memasuki negara tersebut atau dipekerjakan sebagai pekerja layanan multiguna perawatan pendamping, majikan harus mengatur akomodasi bagi mereka dan menerapkannya sesuai dengan perencanaan layanan perawatan kehidupan orang asing. Jika asrama yang diatur oleh majikan untuk pekerja layanan multiguna perawatan pendamping adalah tipe suite, maka kamar mandi dan toilet (keduanya untuk keperluan pribadi) dapat dihitung sebagai bagian dari luas tempat tinggal, dan luas ruang tamu harus minimal 3,6 meter persegi.</p>
+
+    <p>&nbsp;</p>
+
+    <p>11. Pekerja layanan multiguna perawatan pendamping bila ada perubahan lokasi asrama di Taiwan, apakah majikan perlu melaporkan perubahan lokasi akomodasi tersebut?</p>
+
+    <p>A: Jika majikan mengubah lokasi akomodasi pekerja layanan multiguna perawatan pendamping, ia harus memberitahu otoritas kompeten setempat secara tertulis tentang tempat kerja dan akomodasi orang asing tersebut dalam waktu 7 hari setelah perubahan tersebut.</p>
+
+    <p>&nbsp;</p>
+
+    <p>12. Bisakah pekerja layanan multiguna perawatan pendamping tinggal di luar asrama yang disediakan?</p>
+
+    <p>A: Menurut Pasal 34 Ayat 5 tentang Peraturan Perizinan dan Pengelolaan oleh Majikan yang mempekerjakan orang asing, jika pekerja layanan multiguna perawatan pendamping tidak ingin tinggal di lokasi akomodasi yang diatur oleh majikan dan ingin tinggal sendiri di luar, majikan harus menghormati keinginannya dan memberitahu pihak pengelola setempat. Setelah menerima pemberitahuan tersebut, pihak pengelola setempat yang berwenang akan melakukan penyelidikan terhadap niat sebenarnya dari pekerja layanan multiguna perawatan pendamping tersebut.</p>
+
+    <p>&nbsp;</p>
+
+    <p>13. Dokumen pendukung apa saja yang perlu disediakan oleh majikan ketika pekerja layanan multiguna perawatan pendamping tinggal di luar rumah?</p>
+
+    <p>A: Jika majikan mengubah tempat akomodasi pekerja layanan multiguna perawatan pendamping, ia harus menyerahkan dokumen seperti:</p>
+
+    <ul>
+        <li>Formulir pemberitahuan perubahan tempat akomodasi bagi orang asing</li>
+        <li>Rencana layanan perawatan hidup untuk orang asing</li>
+        <li>Daftar orang asing yang mengalami perubahan tempat akomodasi</li>
+    </ul>
+
+    <p>Dokumen ini harus diserahkan ke penyedia layanan multiguna perawatan pendamping dalam waktu 7 hari setelah perubahan tersebut. Otoritas kompeten setempat di tempat kerja atau tempat tinggal pekerja akan menangani pemberitahuan tersebut.</p>
+
+    <p>&nbsp;</p>
+
+    <p>14. Bagaimana penanganan bagi majikan yang tidak memberikan layanan kebutuhan makanan kepada pekerja layanan multiguna perawatan pendamping atau tidak menghormati pantangan terhadap makanan yang disediakan?</p>
+
+    <p>A: Majikan harus menyediakan layanan kebutuhan makanan sesuai dengan perencanaan layanan perawatan hidup orang asing dan menghormati pantangan makanan berdasarkan keyakinan agama pekerja layanan multiguna perawatan pendamping. Jika ada perselisihan, pekerja layanan multiguna perawatan pendamping dapat menghubungi Hotline Pengaduan Konsultasi Ketenagakerjaan 1955 untuk bantuan. Hotline 1955 akan mengirimkan kasus ke instansi berwenang setempat untuk ditindaklanjuti.</p>
+
+    <p>&nbsp;</p>
+
+    <p>15. Jika sebuah perusahaan perantara agensi ditunjuk untuk memberikan layanan perawatan kehidupan, berapa banyak personel multiguna perawatan pendamping yang harus dimiliki?</p>
+
+    <p>A: Agensi layanan ketenagakerjaan swasta yang menerima penunjukan majikan harus menyiapkan personel layanan perawatan pendamping sesuai dengan peraturan berikut:</p>
+
+    <ul>
+        <li>Jika jumlah orang asing yang dipekerjakan lebih dari 10 orang tetapi kurang dari 50 orang, harus ditunjuk sekurang-kurangnya 1 orang.</li>
+        <li>Jika jumlah orang asing lebih dari 50 orang, tetapi kurang dari 100 orang, harus ditunjuk sekurang-kurangnya 2 orang.</li>
+        <li>Jika jumlah orang asing mencapai 100 orang atau lebih, harus ditunjuk sekurang-kurangnya 3 orang; untuk setiap tambahan 100 orang, ditunjuk sekurang-kurangnya 1 orang tambahan.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>16. Jika seorang pekerja migran ingin memutuskan kontrak lebih awal dan kembali ke negaranya, apakah ia harus menemui pemerintah setempat terlebih dahulu untuk memverifikasi pemutusan kontraknya? Bagaimana cara melakukannya?</p>
+
+    <p>A: Jika majikan dan pekerja migran sepakat untuk mengakhiri hubungan kerja, mereka harus terlebih dahulu memberitahukan otoritas berwenang setempat. Pemberitahuan tersebut harus ditandatangani atau distempel oleh majikan dan pekerja migran agar berlaku secara efektif. Otoritas berwenang akan melakukan verifikasi terhadap niat sebenarnya dari pekerja migran untuk mengakhiri kontrak.</p>
+
+    <p>&nbsp;</p>`,
+        "Ketentuan Pasal 84-1 Undang-Undang Ketenagakerjaan": `<p>18. Mengapa pekerja layanan multiguna perawatan pendamping diberlakukan Undang-Undang Standar Ketenagakerjaan Pasal 84-1?</p>
+
+    <p>A: Mengingat fakta bahwa masyarakat yang menua telah menjadi kecenderungan dalam struktur populasi di Taiwan, serta meningkatnya permintaan masyarakat akan perawatan jangka panjang, pemerintah mempromosikan “Perencanaan Layanan Multiguna Perawatan Pendamping”. Karena beberapa pekerja layanan multiguna perawatan pendamping memberikan layanan di rumah tangga, pola kerja mereka terputus-putus dan sulit menentukan waktu istirahat serta hari libur yang fleksibel. Hal ini menyebabkan hambatan dalam penerapan peraturan jam kerja umum dalam Undang-Undang Standar Ketenagakerjaan.</p>
+
+    <p>Setelah berdiskusi di Komite Konsultasi Standar Ketenagakerjaan Kementerian Ketenagakerjaan, program ini dianggap dapat memenuhi kebutuhan perawatan tambahan jangka pendek dan mempertimbangkan kekhususan jam kerja, hari libur, serta pengaturan cuti pekerja. Oleh karena itu, Pasal 84-1 Undang-Undang Standar Ketenagakerjaan diberlakukan dan diumumkan pada 16 November 2024. Baik pekerja layanan multiguna perawatan pendamping maupun badan pengelola yang ditunjuk harus menyepakati jam kerja, hari libur, dan waktu istirahat secara tertulis serta menyerahkannya kepada otoritas berwenang setempat untuk diverifikasi.</p>
+
+    <p>&nbsp;</p>
+
+    <p>19. Saat melamar layanan sehari penuh, bagaimana seharusnya waktu istirahat pekerja layanan multiguna perawatan pendamping diatur agar sesuai dengan Pasal 84-1 Undang-Undang Standar Ketenagakerjaan, yang mengharuskan 10 jam waktu istirahat dalam 24 jam?</p>
+
+    <p>A: Jika pengguna melamar layanan penuh waktu (24 jam), jam kerja normal pekerja layanan multiguna perawatan pendamping adalah 12 jam per hari, dengan tambahan 2 jam kerja lembur. Total jam kerja dalam satu hari tidak boleh melebihi 14 jam, sehingga pekerja harus diberikan waktu istirahat dan tidur minimal 10 jam.</p>
+
+    <p>&nbsp;</p>
+
+    <p>20. Bagaimana pengaturan shift pekerja layanan multiguna perawatan pendamping?</p>
+
+    <ul>
+        <li>Pekerja layanan multiguna perawatan pendamping dapat diberlakukan Pasal 84-1 Undang-Undang Standar Ketenagakerjaan. Kedua belah pihak (majikan dan pekerja) harus menyepakati jam kerja, hari libur, dan ketentuan lainnya secara tertulis, serta melaporkannya kepada otoritas ketenagakerjaan setempat untuk diverifikasi. Jika tidak diverifikasi, maka akan kembali ke peraturan umum jam kerja dalam Undang-Undang Standar Ketenagakerjaan.</li>
+        <li>Pekerja layanan multiguna perawatan pendamping diizinkan untuk bekerja selama 12 jam sehari secara normal. Jika terdapat jam kerja tambahan, batas maksimalnya adalah 2 jam. Waktu istirahat dapat dialokasikan secara fleksibel selama jam kerja. Total jam kerja per bulan tidak boleh melebihi 288 jam. Jika semuanya bekerja penuh waktu, mereka hanya dapat bekerja maksimal 20 hari dalam sebulan.</li>
+        <li>Jika pekerja layanan multiguna perawatan pendamping menggunakan sistem shift atau memiliki kebutuhan perawatan lanjutan atau mendesak, mereka dapat mengatur waktu istirahatnya secara fleksibel selama jam kerja. Bagi pekerja yang bekerja dengan sistem shift, perubahan shift harus memiliki jeda istirahat minimal 11 jam.</li>
+        <li>Waktu transportasi yang digunakan dalam perpindahan tempat kerja pada hari yang sama harus dihitung dalam jam kerja.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>21. Bagaimana seharusnya menyesuaikan jam kerja fleksibel pekerja layanan multiguna perawatan pendamping?</p>
+
+    <ul>
+        <li>Penuh waktu (24 jam): Jam kerja normal 12 jam per hari, ditambah 2 jam kerja tambahan, dengan batas maksimal 14 jam per hari. Waktu istirahat dan tidur diatur dalam sisa waktu tersebut. Total jam kerja per bulan tidak boleh melebihi 288 jam. Jika semua pekerja bekerja penuh waktu, mereka hanya dapat bekerja maksimal 20 hari dalam sebulan.</li>
+        <li>Sistem paruh waktu (12 jam): Jam kerja normal adalah 12 jam sehari. Jika terdapat tambahan jam kerja maksimal 2 jam, waktu istirahat harus diatur secara fleksibel dalam jam kerja. Total jam kerja per bulan tetap tidak boleh melebihi 288 jam.</li>
+        <li>Libur umum: Setidaknya harus ada satu hari libur dalam setiap 7 hari sebagai hari libur umum. Namun, melalui kesepakatan bersama, libur dapat diatur dalam dua minggu dengan dua hari istirahat, tetapi pekerja tidak boleh bekerja lebih dari 12 hari berturut-turut.</li>
+        <li>Cuti: Liburan yang ditetapkan pada hari peringatan, hari libur, Hari Buruh, serta hari libur nasional lainnya harus diikuti, dan upah tetap harus dibayarkan oleh majikan. Jika pekerja setuju untuk bekerja pada hari libur, maka upah harus dibayarkan dua kali lipat.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>22. Jika pekerja layanan multiguna perawatan pendamping tidak bekerja lembur, berapa gaji minimumnya? Jika mereka bekerja lembur, bagaimana cara menghitung upah lembur?</p>
+
+    <p>A: Gaji minimum per bulan untuk pekerja layanan multiguna perawatan pendamping pada tahun 2025 adalah NT$28.590. Jika jam kerja mereka disepakati lebih dari batas normal, gaji minimum harus disesuaikan dengan jumlah jam kerja yang bertambah.</p>
+
+    <ul>
+        <li>Jika jam kerja normal per bulan adalah 240 jam, upah minimum dihitung sebesar NT$ 28.590 + [(NT$ 28.590 / 240) * (240 - 174)], yaitu sekitar NT$ 36.453.</li>
+        <li>Jika jam kerja normal per bulan adalah 264 jam, upah minimum dihitung sebesar NT$ 28.590 + [(NT$ 28.590 / 240) * (264 - 174)], yaitu sekitar NT$ 39.312.</li>
+        <li>Jika jam kerja normal per bulan adalah 288 jam, upah minimum dihitung sebesar NT$ 28.590 + [(NT$ 28.590 / 240) * (288 - 174)], yaitu sekitar NT$ 42.171.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>23. Apakah ada batasan atas total jam kerja pekerja layanan multiguna perawatan pendamping?</p>
+
+    <p>A: Jam kerja normal adalah 12 jam sehari, dengan tambahan jam kerja hingga maksimal 14 jam sehari. Total jam kerja per bulan tidak boleh melebihi 288 jam. Jika semua pekerja bekerja penuh waktu, maka maksimal hanya dapat bekerja selama 20 hari dalam sebulan.</p>
+
+    <p>&nbsp;</p>
+
+    <p>24. Apakah pekerja yang diberlakukan Pasal 84-1 Undang-Undang Standar Ketenagakerjaan akan mendapatkan kenaikan gaji sesuai dengan jumlah jam kerja?</p>
+
+    <p>A: Menurut Pasal 84-1 Undang-Undang Standar Ketenagakerjaan, pekerja yang telah disetujui oleh otoritas pusat dapat menyepakati jam kerja, hari libur, dan cuti secara tertulis. Setelah mendapat persetujuan dari otoritas berwenang, peraturan mengenai batasan jam kerja dan hari libur dalam pasal lainnya tidak berlaku.</p>
+
+    <p>Mulai 1 Januari 2025, upah minimum akan berubah menjadi NT$28.590 per bulan dan NT$190 per jam. Informasi lebih lanjut mengenai perhitungan upah bagi pekerja yang diberlakukan Pasal 84-1 Undang-Undang Standar Ketenagakerjaan dapat ditemukan di <a href="https://www.mol.gov.tw/1607/28690/2282/2284/2290/7160">situs informasi resmi</a>.</p>
+
+    <p>&nbsp;</p>`,
+        "Pusat Konsultasi": `<p>25. Apa hotline konsultasi untuk isu-isu terkait perekrutan pekerja migran?</p>
+
+    <p>A: Untuk pertanyaan terkait perekrutan pekerja migran, Anda dapat menghubungi hotline konsultasi 1955, yang tersedia sepanjang tahun. Anda juga dapat menghubungi pemerintah daerah untuk mendapatkan layanan.</p>
+
+    <ul>
+        <li>Kementerian Ketenagakerjaan telah membentuk Hotline Konsultasi dan Pengaduan Ketenagakerjaan 1955 (selanjutnya disebut hotline 1955), yang dilengkapi dengan staf dwibahasa dalam lima bahasa: Mandarin, Inggris, Vietnam, Indonesia, dan Thailand. Layanan ini tersedia 24 jam sehari sepanjang tahun dan menyediakan layanan penerjemah tiga pihak secara online dan bebas pulsa, konsultasi, serta pengaduan. Setelah menerima pengaduan, kasus akan dikirim secara elektronik ke pemerintah daerah untuk penyelidikan, pelacakan, dan pengelolaan kasus pengaduan. Selain itu, telah dibuat sistem "LINE@ shift point communications" dalam bahasa Inggris, Vietnam, Indonesia, Thailand, dan Mandarin, yang terhubung dengan layanan hotline pengaduan 1955 untuk memperlancar saluran konsultasi dan pengaduan bagi pekerja migran dan majikan.</li>
+        <li>Kementerian Ketenagakerjaan juga memberikan subsidi kepada pemerintah daerah untuk mendirikan pusat layanan konsultasi pekerja migran. Pusat ini mempekerjakan staf yang mahir dalam bahasa asal pekerja migran untuk memberikan layanan konsultasi mengenai undang-undang pekerja migran, adaptasi kerja, perselisihan perburuhan, serta pengaduan. Selain itu, mereka juga menyediakan subsidi biaya litigasi hukum serta rujukan ke sumber bantuan hukum. Pekerja migran dan majikan yang memiliki pertanyaan terkait dapat menghubungi pusat layanan tersebut.</li>
+    </ul>
+
+    <p>&nbsp;</p>`
+      },
+      qa_content_th: {
+        "ข้อกำหนดการจ้างงาน": `<p>1. หากต้องการสมัครเป็นผู้ดูแลต้องมีคุณสมบัติอะไรบ้าง</p>
+
+    <p>ตอบ: ตามหลักเกณฑ์การพิจารณาบทบัญญัติมาตรา 8 ชาวต่างชาติผู้ที่ถูกจ้างงานบริการดูแลและให้ความช่วยเหลือแบบหลากหลายจะต้องมีอายุมากกว่า 20 ปี และก่อนเข้ามาทำงานในประเทศ ควรผ่านการตรวจสุขภาพจากโรงพยาบาลในต่างประเทศที่ได้รับการรับรองจากกระทรวงสาธารณสุขและสวัสดิการ หรือผ่านการฝึกอบรมจากหน่วยงานที่กระทรวงแรงงานของประเทศต้นทางกำหนด หรือเคยทำงานเดียวกันในประเทศไต้หวันมานานกว่า 6 เดือน และ "งานเดียวกัน" ในที่นี้หมายถึงงาน แม่บ้าน ผู้ดูแลที่บ้าน หรือผู้ดูแลในสถาพยาบาล</p>
+
+    <p>&nbsp;</p>
+
+    <p>2. อาชีพอื่นสามารถเปลี่ยนมาเป็นผู้ดูแลได้หรือไม่</p>
+
+    <p>ตอบ:</p>
+    <ul>
+        <li>หากแรงงานข้ามชาติต้องการทำงานเป็นผู้ดูแล จะต้องมีใบรับรองฉบับจริงจากโรงพยาบาลตรวจสุขภาพสำหรับชาวต่างชาติที่ได้รับการรับรองจากหน่วยงานสาธารณสุขกลางของประเทศต้นทางของแรงงานข้ามชาติ หรือใบรับรองฉบับจริงที่ผ่านการฝึกอบรมจากหน่วยงานกระทรวงแรงงานของประเทศต้นทาง และเอกสารใบรับรองสองภาษาฉบับจริง</li>
+        <li>หากแรงงานข้ามชาติมีเหตุสุดวิสัยที่ไม่ใช่ความผิดของตนเอง และได้รับการอนุมัติจากกระทรวง แรงงานสามารถเปลี่ยนนายจ้างและเปลี่ยนงานได้ แรงงานข้ามชาติสามารถเปลี่ยนนายจ้างหรืองานต่างประเภทได้ก็ต่อเมื่อไม่มีนายจ้างซึ่งเป็นงานประเภทเดียวกันจดทะเบียนรับช่วงต่อภายใน 14 วันติดต่อกันหลังได้รับการอนุมัติเปลี่ยนนายจ้างและงานได้ นอกจากนี้ แรงงานข้ามชาติที่จะเปลี่ยนงานสามารถทำการตกลงกับนายจ้างก่อนหมดสัญญาการจ้างภายใน 2 เดือนถึง 4 เดือน ซึ่งนายจ้างหรืองานที่จะเปลี่ยนสามารถให้นายจ้างใหม่ที่เป็นงานประเภทเดียวกันหรือต่างกันมารับช่วงต่อได้</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>3. ผู้ดูแลสามารถเปลี่ยนตำแหน่งเป็นแรงงานข้ามชาติฝีมือระดับกลางได้หรือไม่</p>
+
+    <p>ตอบ: ผู้ดูแลยังไม่ถูกรวมอยู่ในงานฝีมือระดับกลาง และปัจจุบันสามารถสมัครได้เฉพาะแรงงานข้ามชาติระดับแรงงานทั่วไป</p>
+
+    <p>&nbsp;</p>
+
+    <p>4. เนื้อหางานและขอบเขตงานของผู้ดูแลมีอะไรบ้าง</p>
+
+    <p>ตอบ: ขณะนี้โครงการนี้ให้บริการครอบคลุมงานดูแลชีวิตประจำวันขั้นพื้นฐาน การพาออกไปข้างนอก การพาไปพบแพทย์ และการดูแลความปลอดภัยต่างๆ เนื้อหางานของผู้ดูแลเป็นไปตามสัญญาการให้บริการที่ลงนามระหว่างนายจ้าง (หน่วยงานทดลอง) และผู้ขอรับบริการ โดยให้บริการตามข้อตกลง</p>
+
+    <p>&nbsp;</p>
+
+    <p>5. หากจะเป็นผู้ดูแล มีความจำเป็นต้องได้รับการฝึกอบรมก่อนให้บริการหรือไม่</p>
+
+    <p>ตอบ: ต้องมีการฝึกอบรมก่อนปฏิบัติงาน 20 ชั่วโมงก่อนให้บริการ นอกจากนั้นต้องมีการฝึกอบรมขณะปฏิบัติงานอย่างน้อยหนึ่งครั้งต่อทุกๆ 3 เดือนหลังจากเริ่มงาน และทุกปีต้องผ่านการฝึกอบรมขณะปฏิบัติงานเป็นเวลา 12 ชั่วโมง ซึ่งรวมถึงทักษะการสื่อสารในการทำงานและการดูแลช่วยเหลือ</p>
+
+    <p>&nbsp;</p>`,
+        "การดูแลและการจัดการโดยนายจ้าง": `<p>6. ระยะเวลาที่นายจ้างต้องรับผิดชอบตามพระราชบัญญัติการบริการจัดหางานหลังได้จ้างผู้ดูแลคือเวลาใด มีความจำเป็นต้องดูแลการใช้ชีวิตของผู้ดูแลหรือไม่</p>
+
+    <p>ตอบ: นายจ้างควรรับผิดชอบตามโครงการให้บริการดูแลความเป็นอยู่ของชาวต่างชาติ ตั้งแต่วันที่ผู้ดูแลเดินทางเข้าประเทศหรือวันที่ใบอนุญาตการจ้างงานมีผลใช้บังคับ จนถึงวันที่ความสัมพันธ์ในการจ้างงานระหว่างผู้ดูแลและนายจ้างสิ้นสุดลงและเดินทางออกนอกประเทศ หรือได้รับการต่ออายุโดยนายจ้างใหม่</p>
+
+    <p>&nbsp;</p>
+
+    <p>7. ขอบเขตความรับผิดชอบสำหรับนายจ้างที่มีต่อผู้ดูแลมีอะไรบ้าง</p>
+
+    <p>ตอบ: นายจ้างจะต้องรับผิดชอบตามข้อกำหนดของพระราชบัญญัติการบริการจัดหางาน นับตั้งแต่วันที่ผู้ดูแลเดินทางเข้าประเทศหรือวันที่ต่ออายุสัญญาการจ้างงานเมื่อหมดอายุ นอกจากนี้ ตามมาตรา 33 ข้อ 1 ของข้อบังคับเกี่ยวกับการอนุญาตและการควบคุมดูแลการจ้างงานชาวต่างชาติของนายจ้าง กำหนดให้นายจ้างต้องดำเนินการให้เป็นไปตามโครงการให้บริการดูแลความเป็นอยู่ของชาวต่างชาติอย่างเคร่งครัด</p>
+
+    <p>&nbsp;</p>
+
+    <p>8. โครงการให้บริการดูแลความเป็นอยู่ของชาวต่างชาติใดที่เหมาะใช้สำหรับนายจ้างที่จ้างผู้ดูแล</p>
+
+    <p>ตอบ: งานผู้ดูแลใช้บังคับเช่นเดียวกับอุตสาหกรรมการผลิต อุตสาหกรรมก่อสร้าง และงานดูแลผู้ป่วยในสถานพยาบาล ตามตารางที่ 1 ของโครงการให้บริการดูแลความเป็นอยู่ของชาวต่างชาติ (ตามเอกสารแนบ)</p>
+
+    <p>&nbsp;</p>
+
+    <p>9. นายจ้างมีความจำเป็นต้องจัดหาเจ้าหน้าที่ดูแลความเป็นอยู่เมื่อได้จ้างผู้ดูแลหรือไม่</p>
+
+    <p>ตอบ: นายจ้างที่จ้างแรงงานต่างชาติตามมาตรา 46 วรรคหนึ่ง (9) ถึง (10) ของพระราชบัญญัติการบริการจัดหางาน จำนวน 10 คนขึ้นไป ต้องจัดให้มีเจ้าหน้าที่ดูแลความเป็นอยู่ตามข้อกำหนด</p>
+
+    <p>&nbsp;</p>
+
+    <p>10. กรณีนายจ้างจัดหาห้องชุดให้แก่ผู้ดูแลพักอาศัย พื้นที่พักอาศัยคำนวณอย่างไร</p>
+
+    <p>ตอบ: นับแต่วันที่ผู้ดูแลเข้าประเทศหรือวันที่เริ่มจ้างผู้ดูแล นายจ้างต้องจัดหาที่พักอาศัยและดำเนินการตามโครงการให้บริการดูแลความเป็นอยู่ของชาวต่างชาติ หากหอพักสำหรับผู้ดูแลที่นายจ้างจัดหาเป็นห้องชุด พื้นที่ของห้องอาบน้ำและห้องน้ำภายในห้องชุด (ใช้ส่วนตัว) สามารถนับรวมเป็นพื้นที่พักอาศัยได้ และต้องมีพื้นที่พักอาศัยไม่น้อยกว่า 3.6 ตารางเมตร</p>
+
+    <p>&nbsp;</p>
+
+    <p>11. หากที่อยู่ที่พักอาศัยของผู้ดูแลได้มีการเปลี่ยนแปลง นายจ้างจำเป็นต้องดำเนินการแจ้งเปลี่ยนแปลงสถานที่พักอาศัยหรือไม่</p>
+
+    <p>ตอบ: เมื่อที่อยู่ของผู้ดูแลได้มีการเปลี่ยนแปลง นายจ้างควรแจ้งสถานที่ทำงานและที่พักอาศัยเป็นลายลักษณ์อักษรต่อหน่วยงานที่กำกับดูแลในพื้นที่ภายใน 7 วันหลังเปลี่ยนที่อยู่</p>
+
+    <p>&nbsp;</p>
+
+    <p>12. ผู้ดูแลสามารถพักอาศัยอยู่ข้างนอกด้วยตัวเองได้หรือไม่</p>
+
+    <p>ตอบ: ตามข้อกำหนดในระเบียบว่าด้วยการอนุญาตและการบริหารจัดการการจ้างงานคนต่างชาติของนายจ้าง มาตรา 34 วรรค 5 หากผู้ดูแลไม่ยอมอาศัยอยู่ในที่พักที่นายจ้างจัดไว้และต้องการอาศัยอยู่ข้างนอกด้วยตัวเอง นายจ้างควรเคารพความปรารถนาของเขาและแจ้งให้หน่วยงานที่กำกับดูแลในพื้นที่ทราบ หลังหน่วยงานที่กำกับดูแลในพื้นที่ได้รับการแจ้ง หน่วยงานจะดำเนินการตรวจสอบเจตนาที่แท้จริงของผู้ดูแลในเวลาต่อมา</p>
+
+    <p>&nbsp;</p>
+
+    <p>13. นายจ้างต้องจัดเตรียมเอกสารประกอบอะไรบ้างเมื่อผู้ดูแลอาศัยอยู่ข้างนอก</p>
+
+    <p>ตอบ: หากนายจ้างต้องการเปลี่ยนสถานที่พักอาศัยสำหรับผู้ดูแล ควรยื่นเอกสารแบบแจ้งเปลี่ยนที่พักอาศัยของชาวต่างชาติ โครงการดูแลความเป็นอยู่ของชาวต่างชาติ และทะเบียนรายชื่อชาวต่างชาติที่เปลี่ยนแปลงสถานที่พักอาศัยให้หน่วยงานท้องถิ่นที่ผู้แลทำงานหรืออาศัยอยู่ภายใน 7 วันหลังจากการเปลี่ยนแปลง</p>
+
+    <p>&nbsp;</p>
+
+    <p>14. วิธีการจัดการกรณีนายจ้างไม่ได้จัดให้มีบริการอาหารอย่างเหมาะสมหรือไม่เคารพข้อห้ามทางอาหารคืออะไร</p>
+
+    <p>ตอบ: นายจ้างต้องจัดให้มีบริการอาหารตามโครงการดูแลความเป็นอยู่ของชาวต่างชาติ และต้องเคารพข้อห้ามทางอาหารตามศาสนาของผู้ดูแล หากมีข้อขัดแย้ง ผู้ดูแลสามารถโทรติดต่อสายด่วนที่ปรึกษาด้านแรงงาน 1955 (หรือที่เรียกว่า 1955 สายด่วน) เพื่อขอคำปรึกษา หากมีความจำเป็น สายด่วนจะส่งเรื่องไปยังหน่วยงานที่กำกับดูแลในพื้นที่เพื่อประสานงาน</p>
+
+    <p>&nbsp;</p>
+
+    <p>15. บริษัทจัดหางานที่ได้รับมอบหมายให้จัดการบริการดูแลความเป็นอยู่ ควรจัดให้มีจำนวนเจ้าหน้าที่ดูแลความเป็นอยู่กี่คน</p>
+
+    <ul>
+        <li>จำนวนคนต่างชาติเกินสิบคนแต่น้อยกว่าห้าสิบคน จะต้องแต่งตั้งอย่างน้อยหนึ่งคน</li>
+        <li>จำนวนคนต่างชาติเกินห้าสิบคนแต่ไม่ถึงหนึ่งร้อยคน จะต้องแต่งตั้งอย่างน้อยสองคน</li>
+        <li>จำนวนคนต่างชาติเกิน 100 คน จะต้องแต่งตั้งอย่างน้อยสามคน เมื่อเพิ่มทุก 100 คน ให้แต่งตั้งเพิ่มอย่างน้อยหนึ่งคน</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>16. หากแรงงานข้ามชาติต้องยกเลิกสัญญาล่วงหน้าและเดินทางกลับประเทศ จำเป็นต้องไปทำการตรวจสอบการยกเลิกสัญญาที่รัฐบาลท้องถิ่นก่อนหรือไม่ ทำอย่างไร</p>
+
+    <p>ตอบ: เมื่อนายจ้างและคนต่างชาติตกลงยุติความสัมพันธ์ในการจ้างงาน จะต้องแจ้งให้หน่วยงานที่มีอำนาจในท้องถิ่นทราบก่อน โดยนายจ้างและคนต่างชาติจะลงนามในหนังสือแจ้งดังกล่าวจึงจะมีผลใช้บังคับ และหน่วยงานที่มีอำนาจในท้องถิ่นทำการตรวจสอบเจตนาแท้จริงของชาวต่างชาติในการยกเลิกสัญญา</p>
+
+    <p>&nbsp;</p>
+
+    <p>17. กรณีแรงงานข้ามชาติเจอปัญหาได้รับบาดเจ็บหรือถูกคุกคามทางเพศสามารถขอความช่วยเหลือจากใครได้บ้าง</p>
+
+    <ul>
+        <li>หากแรงงานข้ามชาติประสบปัญหาการทำร้ายร่างกาย การล่วงละเมิดทางเพศ หรือการถูกข่มขืน สามารถติดต่อหน่วยงานตำรวจในแต่ละเขตเทศบาลและเมือง โทรสายด่วนแจ้งเหตุ 110 สายด่วนให้คำปรึกษาและรับเรื่องร้องเรียนแรงงาน 1955</li>
+        <li>เพื่อปกป้องสิทธิและผลประโยชน์ของแรงงานข้ามชาติ มีการจัดที่พักให้กับแรงงานข้ามชาติหลังจากที่ประสบปัญหาถูกล่วงละเมิดทางเพศในช่วงเวลาที่รอเปลี่ยนนายจ้างใหม่</li>
+    </ul>
+
+    <p>&nbsp;</p>`,
+        "ข้อกำหนดตามมาตรา 84-1 ของกฎหมายแรงงาน": `<p>18. เหตุใดผู้ดูแลแบบหลากหลาย (สัญชาติไต้หวันและสัญชาติอื่น) เหมาะใช้สำหรับมาตรา 84-1 แห่งพระราชบัญญัติมาตรฐานแรงงานของประเทศไต้หวัน</p>
+
+    <p>ตอบ:เนื่องจากสังคมผู้สูงอายุกลายเป็นกระแสในโครงสร้างประชากรของไต้หวันแล้ว และความต้องการของการดูแลระยะยาวของคนไต้หวันก็ได้เพิ่มขึ้น เมื่อพิจารณาว่าครอบครัวธรรมดาก็มีความต้องการในระยะสั้น ชั่วคราว หรือเร่งด่วนเช่นกัน กระทรวงเราจึงส่งเสริม "โครงการทดลองบริการดูแลและช่วยเหลือแบบหลากหลาย" ให้ผู้ดูแลในโครงการนื้ไปให้บริการแก่ครอบครัวต่างๆ ลักษณะงานมีความไม่ต่อเนื่องสูงและยากต่อการกำหนดเวลาพักในช่วงเวลาทำงาน โดยต้องมีการจัดการวันหยุดและพักผ่อนแบบยืดหยุ่น ซึ่งทำให้ไม่สามารถใช้กฎระเบียบเกี่ยวกับเวลาทำงานตามพระราชบัญญัติมาตรฐานแรงงานได้อย่างสะดวก หลังจากการพิจารณาของคณะกรรมการข้อมูลมาตรฐานแรงงานของกระทรวงแรงงาน พบว่าโครงการนี้สามารถตอบสนองความต้องการการดูแลในระยะสั้นและเสริมเติม โดยพิจารณาให้ความสำคัญกับลักษณะเฉพาะของการจัดเวลาทำงาน วันหยุด และการพักผ่อนของผู้ให้บริการดูแล ซึ่งเหมาะใช้สำหรับมาตรา 84-1 แห่งพระราชบัญญัติมาตรฐานแรงงาน ได้มีการประกาศและมีผลบังคับใช้ในวัน ที่ 16 พฤศจิกายน พ.ศ. 2556 ทั้งผู้ดูแลแบบหลากหลายและหน่วยทดลองควรตกลงเป็นลายลักษณ์อักษรเกี่ยวกับเวลาทำงาน วันหยุด และวันพักผ่อน และส่งให้หน่วยงานที่มีอำนาจในพื้นที่เพื่อตรวจสอบ</p>
+
+    <p>&nbsp;</p>
+
+    <p>19. ในการสมัครบริการแบบเต็มวัน ควรจัดเวลาพักของผู้ดูแลแบบหลากหลายอย่างไรให้เป็นไปตามมาตรา 84-1 แห่งพระราชบัญญัติมาตรฐานแรงงาน ซึ่งกำหนดให้มีเวลาพัก 10 ชั่วโมงภายใน 24 ชั่วโมง</p>
+
+    <p>ตอบ: หากผู้ใช้สมัครเต็มเวลา (24 ชั่วโมง) ชั่วโมงทำงานปกติของผู้ดูแลคือ 12 ชั่วโมงต่อวัน เมื่อรวมกับการขยายเวลาทำงานอีก 2 ชั่วโมง เวลาทำงานในหนึ่งวันจะต้องไม่เกิน 14 ชั่วโมง และควรให้ผู้ดูแลได้รับเวลาการพักผ่อนและนอนหลับรวมเป็นเวลา 10 ชั่วโมง</p>
+
+    <p>&nbsp;</p>
+
+    <p>20. ข้อควรระวังสำหรับการจัดตารางงานของผู้ดูแลหลากหลายมีอะไรบ้าง</p>
+
+    <ul>
+        <li>ผู้ดูแลแบบหลากหลายเหมาะใช้กับมาตรา 84-1 แห่งพระราชบัญญัติมาตรฐานแรงงาน ทั้งฝ่ายนายจ้างและลูกจ้างควรตกลงเป็นลายลักษณ์อักษรเกี่ยวกับเวลาทำงาน วันหยุดประจำเดือน ฯลฯ และควรรายงานต่อหน่วยงานที่มีอำนาจด้านแรงงานในท้องถิ่น</li>
+        <li>ผู้ดูแลแบบหลากหลายได้รับอนุญาตให้ทำงาน 12 ชั่วโมงต่อวันตามปกติ หากมีการขยายเวลาทำงาน สูงสุดเป็น 2 ชั่วโมง ส่วนเวลาพักสามารถจัดในเวลาทำงานได้</li>
+        <li>จำนวนชั่วโมงทำงานต่อเดือนต้องไม่เกิน 288 ชั่วโมง หากเป็นรูปแบบเต็มเวลา เวลาทำงานสูงสุดไม่เกิน 20 วันต่อเดือน</li>
+        <li>หากใช้ระบบกะหรือมีกรณีฉุกเฉิน สามารถจัดเวลาพักผ่อนในช่วงเวลาทำงานได้อย่างยืดหยุ่น</li>
+        <li>เวลาการเดินทางเพื่อเปลี่ยนสถานที่ในวันเดียวกันควรรวมไว้ในชั่วโมงทำงาน</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>21. ชั่วโมงทำงานที่ยืดหยุ่นของผู้ดูแลควรปรับเปลี่ยนยังไง และควรมีวันหยุดเมื่อไหร่</p>
+
+    <ul>
+        <li>รูปแบบเต็มเวลา (24 ชั่วโมง): ชั่วโมงทำงานปกติ 12 ชั่วโมงต่อวัน เวลาขยายได้ 2 ชั่วโมง ซึ่งต้องไม่เกิน 14 ชั่วโมงต่อวัน โดยจัดให้มีการพักผ่อนและนอนหลับในช่วงเวลาที่เหลือ</li>
+        <li>รูปแบบครึ่งวัน (12 ชั่วโมง): เวลาทำงานปกติคือ 12 ชั่วโมงต่อวัน หากมีการขยายเวลาทำงานสูงสุด 2 ชั่วโมง เวลาพักจะถูกจัดสรรแยกต่างหาก</li>
+        <li>วันหยุดประจำเดือน: ควรมีวันหยุดอย่างน้อยหนึ่งวันในทุก ๆ 7 วัน</li>
+        <li>การลา: กำหนดให้มีวันหยุดในวันหยุดประจำชาติที่กำหนดโดยกระทรวงมหาดไทย และนายจ้างจะต้องจ่ายค่าจ้าง</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>22. เงินเดือนขั้นต่ำของผู้ดูแลที่ไม่ได้ทำงานล่วงเวลาคือเท่าใด และควรคิดค่าล่วงเวลาอย่างไร</p>
+
+    <ul>
+        <li>เงินเดือนขั้นต่ำต้องไม่น้อยกว่า NT$ 28,590 ต่อเดือน (ค่าจ้างขั้นต่ำในปี 2025)</li>
+        <li>หากชั่วโมงทำงานเกินจากมาตรฐาน ควรเพิ่มเงินเดือนตามสัดส่วนชั่วโมงที่เพิ่มขึ้น</li>
+        <li>
+            ตัวอย่างการคำนวณค่าจ้าง:
+            <ul>
+                <li>หากชั่วโมงทำงานปกติ 240 ชั่วโมง ค่าจ้างขั้นต่ำประมาณ NT$ 36,453</li>
+                <li>หากชั่วโมงทำงานปกติ 264 ชั่วโมง ค่าจ้างขั้นต่ำประมาณ NT$ 39,312</li>
+                <li>หากชั่วโมงทำงานปกติ 288 ชั่วโมง ค่าจ้างขั้นต่ำประมาณ NT$ 42,171</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <p>23. มีการจำกัดชั่วโมงทำงานโดยรวมของผู้ดูแลหรือไม่</p>
+
+    <p>ตอบ: ชั่วโมงทำงานปกติคือ 12 ชั่วโมงต่อวัน รวมชั่วโมงทำงานขยายต้องไม่เกิน 14 ชั่วโมงต่อวัน จำนวนชั่วโมงทำงานต่อเดือนต้องไม่เกิน 288 ชั่วโมง หากเป็นรูปแบบเต็มเวลา สามารถทำงานได้สูงสุด 20 วันต่อเดือน</p>
+
+    <p>&nbsp;</p>
+
+    <p>24. เงินเดือนพื้นฐานเพิ่มขึ้นตามจำนวนชั่วโมงตามมาตรา 84-1 ของพระราชบัญญัติมาตรฐานแรงงานหรือไม่</p>
+
+    <p>ตอบ: ตามมาตรา 84-1 ของพระราชบัญญัติมาตรฐานแรงงาน หากมีการทำงานเกินกว่าชั่วโมงปกติที่กำหนด ค่าจ้างต้องได้รับการปรับเพิ่มขึ้น ไม่จำกัดเพียง NT$ 28,590 ต่อเดือน</p>
+
+    <p>สำหรับรายละเอียดเพิ่มเติม สามารถดูได้ที่ <a href="https://www.mol.gov.tw/1607/28690/2282/2284/2290/7160">เว็บไซต์กระทรวงแรงงาน</a></p>
+
+    <p>&nbsp;</p>`,
+        "ช่องทางให้คำปรึกษา": `<p>25. สายด่วนให้คำปรึกษาสำหรับปัญหาการจ้างแรงงานข้ามชาติคืออะไร</p>
+
+    <p>ตอบ: สำหรับคำถามที่เกี่ยวข้องกับการจ้างแรงงานข้ามชาติ คุณสามารถติดต่อสายด่วนให้คำปรึกษา 1955 (ต่อไปนี้จะเรียกว่า สายด่วน 1955) ซึ่งเปิดตลอดทั้งปี นอกจากนี้ คุณยังสามารถติดต่อรัฐบาลท้องถิ่นเพื่อขอบริการต่างๆ ได้อีกด้วย</p>
+
+    <ul>
+        <li>กระทรวงเรามีสายด่วน 1955 ให้คำปรึกษาและร้องเรียนแรงงาน โดยมีเจ้าหน้าที่ 5 ภาษา: จีน อังกฤษ เวียดนาม อินโดนีเซีย และไทย ให้บริการตลอด 24 ชั่วโมงตลอดทั้งปี</li>
+        <li>ให้บริการการให้คำปรึกษาและการร้องเรียนทางออนไลน์แบบโทรฟรี และหลังจากรับข้อร้องเรียนแล้ว จะส่งเรื่องทางอิเล็กทรอนิกส์ไปยังรัฐบาลท้องถิ่นเพื่อตรวจสอบและติดตาม</li>
+        <li>มี "LINE@อี๋เตี่ยนทอง" ในภาษาอังกฤษ เวียดนาม อินโดนีเซีย ไทย และจีน ซึ่งเชื่อมโยงกับบริการร้องเรียนสายด่วน 1955 ทำให้ช่องทางการให้คำปรึกษาและร้องเรียนสำหรับแรงงานข้ามชาติและนายจ้างราบรื่นขึ้น</li>
+    </ul>
+
+    <p>กระทรวงเราให้เงินสนับสนุนรัฐบาลท้องถิ่นในการจัดตั้งศูนย์บริการให้คำปรึกษาแรงงานข้ามชาติ ได้จ้างบุคลากรที่มีความเชี่ยวชาญในภาษาแม่ของแรงงานข้ามชาติ เพื่อให้บริการให้คำปรึกษาเรื่องการร้องทุกข์เกี่ยวกับกฎหมายแรงงานข้ามชาติ การปรับตัวในการทำงาน ข้อพิพาทด้านแรงงาน ฯลฯ และจัดให้มีเงินสนับสนุนค่าธรรมเนียมการดำเนินคดีทางกฎหมายและการส่งต่อแหล่งช่วยเหลือทางกฎหมาย</p>
+
+    <p>หากแรงงานข้ามชาติและนายจ้างมีคำถามที่เกี่ยวข้อง สามารถติดต่อศูนย์บริการได้เช่นกัน</p>
+
+    <p>&nbsp;</p>`
       }
     },
     {
@@ -1509,19 +2266,54 @@ const parseHtmlToList = (html: string) => {
 
 onMounted(() => {
   const idParam = route.query.id as string;
+  const lang = route.query.lang as string || "";
   console.log(idParam);
-  console.log(allQA)
+  console.log(lang);
+  console.log(allQA);
   if (idParam) {
     const found = allQA.find(item => item.id === idParam);
     if (found) {
       console.log(found);
-      qa_data.value = found;
 
       useSeoMeta({
         title: `QA ${found.meta_data.name}｜多元陪伴照顧服務計畫`
       });
 
-      const firstCategory = Object.keys(found.qa_content)[0];
+      let qaContent: Record<string, any> = {};
+
+      if (idParam === "3") {
+        console.log('in')
+        switch (lang) {
+          case "en":
+            qaContent = found.qa_content_en || {};
+            break;
+          case "vi":
+            qaContent = found.qa_content_vi || {};
+            break;
+          case "id":
+            qaContent = found.qa_content_id || {};
+            break;
+          case "th":
+            qaContent = found.qa_content_th || {};
+            break;
+          default:
+            qaContent = found.qa_content || {};
+        }
+
+        qa_data.value = {
+          id: '3',
+          meta_data: found.meta_data,
+          qa_content: qaContent
+        }
+        console.log(qa_data.value);
+      } else {
+        qaContent = found.qa_content || {};
+        qa_data.value = found;
+      }
+      console.log(qaContent)
+
+      const firstCategory = Object.keys(qaContent)[0];
+      console.log(firstCategory);
       if (firstCategory) {
         setActiveCategory(firstCategory);
       }
