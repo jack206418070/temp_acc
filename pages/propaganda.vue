@@ -85,7 +85,7 @@ const tab_data = ref({
     type: '宣導資料',
     data: [
       {
-        image: '/images/assets/temp_15.avif'
+        image: '/images/assets/EDM_A4_0325.jpg'
       }
     ]
   }
