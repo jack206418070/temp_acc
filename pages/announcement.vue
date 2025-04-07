@@ -15,9 +15,6 @@
         <div class="item-title">
           <a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3933bb88301933e4e60030906" target="_blank">公告多元陪伴照顧服務試辦計畫第一階段試辦單位申請期間自即日起至11月28日截止。</a>
         </div>
-        <div class="item-title">
-          <a href="https://drive.google.com/file/d/1S2iIM8AmLh38-7CtjnT40csQdHy8vwXr/view?usp=sharing" target="_blank">多元陪伴正式上路新聞稿。</a>
-        </div>
       </div>
     </div>
   </div>
