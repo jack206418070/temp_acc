@@ -10,6 +10,20 @@
         <div class="item-title">標題</div>
       </div>
       <div class="announcement-list-item">
+        <div class="item-date">2025/04/08</div>
+        <div class="item-category">公告/新聞稿</div>
+        <div class="item-title">
+          <a href="/news/2">保障「多元陪伴照顧服務試辦計畫」照顧人力的合理酬勞，維持服務的永續性與品質</a>
+        </div>
+      </div>
+      <div class="announcement-list-item">
+        <div class="item-date">2025/04/07</div>
+        <div class="item-category">公告/新聞稿</div>
+        <div class="item-title">
+          <a href="/news/1">多元陪伴正式上路新聞稿</a>
+        </div>
+      </div>
+      <div class="announcement-list-item">
         <div class="item-date">2024/11/15</div>
         <div class="item-category">公告</div>
         <div class="item-title">

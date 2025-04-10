@@ -25,6 +25,19 @@ export default defineNuxtConfig({
           src: "/js/bootstrap.bundle.min.js",
           integrity: "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw="
         },
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-5EVH3D8JX4',
+          async: true,
+        },
+        {
+          children: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EVH3D8JX4');
+          `,
+          type: 'text/javascript'
+        }
       ],
     }
   },

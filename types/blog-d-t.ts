@@ -13,4 +13,6 @@ export interface IBlog {
   category:string;
   page: string;
   catalog: string;
+  links?: Array<{ name: string; url: string }>;
+  images?: Array<{ name: string; url: string }>;
 }
