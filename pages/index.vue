@@ -10,52 +10,121 @@
       <div class="home-top">
         <h2>最新消息</h2>
       </div>
-      <div class="home-new">
-        <div class="new-item">
+      <div v-if="loading" class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>載入中...</p>
+      </div>
+      <div v-else-if="error" class="error-container">
+        <p>{{ error }}</p>
+      </div>
+      <div v-else class="home-new">
+        <div v-for="announcement in announcements" :key="announcement.id" class="new-item">
           <div class="new-title">
-            <div class="title-text">公告/新聞稿</div>
-            <div class="title-date">2025/04/08</div>
+            <div class="title-text">{{ announcement.category }}</div>
+            <div class="title-date">{{ formatDate(announcement.publish_date) }}</div>
           </div>
           <div class="new-link">
-            <a href="/news/2">保障「多元陪伴照顧服務試辦計畫」照顧人力的合理酬勞，維持服務的永續性與品質</a>
-          </div>
-          <div class="item-line"></div>
-        </div>
-        <div class="new-item">
-          <div class="new-title">
-            <div class="title-text">公告/新聞稿</div>
-            <div class="title-date">2025/04/07</div>
-          </div>
-          <div class="new-link">
-            <a href="/news/1">多元陪伴正式上路新聞稿</a>
-          </div>
-          <div class="item-line"></div>
-        </div>
-        <div class="new-item">
-          <div class="new-title">
-            <div class="title-text">公告/新聞稿</div>
-            <div class="title-date">2024/11/15</div>
-          </div>
-          <div class="new-link">
-            <a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3932da4d501932dd7e96609eb" target="_blank">勞動部今辦「多元陪伴照顧服務試辦計畫」試辦單位說明會 社福團體反應熱烈！</a>
-          </div>
-          <div class="item-line"></div>
-        </div>
-        <div class="new-item">
-          <div class="new-title">
-            <div class="title-text">新聞報導</div>
-            <div class="title-date">2024/11/15</div>
-          </div>
-          <div class="new-link">
-            <a href="https://fw.wda.gov.tw/wda-employer/home/activity/2c95efb3932da4d501932dd7e96609eb" target="_blank">活動訊息：勞動部今辦「多元陪伴照顧服務試辦計畫」試辦單位說明會 社福團體反應熱烈！</a>
+            <a :href="'/news/' + announcement.id">
+              {{ announcement.title }}
+            </a>
           </div>
           <div class="item-line"></div>
         </div>
       </div>
     </div>
   </div>
-  
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
+import { gsap } from "gsap";
+
+const announcements = ref([]);
+const loading = ref(true);
+const error = ref(null);
+
+// 格式化日期
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
+};
+
+// 獲取公告列表
+const fetchAnnouncements = async () => {
+  try {
+    loading.value = true;
+    error.value = null;
+
+    const response = await fetch('/api/announcements');
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || '獲取公告列表失敗');
+    }
+
+    // 只顯示最新的4筆公告
+    announcements.value = result.data.slice(0, 4);
+  } catch (err) {
+    console.error('獲取公告列表失敗:', err);
+    error.value = err.message || '獲取公告列表失敗';
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(() => {
+  fetchAnnouncements();
+
+  const jellyBox = document.getElementById("jelly-box");
+
+  if (jellyBox) {
+    // 定義動畫函數
+    const jellyEffect = () => {
+      gsap.timeline()
+        // 初始快速拉伸
+        .fromTo(
+          jellyBox,
+          { scaleX: 1, scaleY: 1 },
+          {
+            scaleX: 1.3, // 左右拉長
+            scaleY: 1.5, // 上下壓縮
+            duration: 0.3, // 每次動作持續時間
+            ease: "power2.inOut", // 緩動效果
+            yoyo: true, // 啟用回彈
+            repeat: 2, // 完成兩次（初始與回彈）
+          }
+        )
+        // 中間的3次快速拉長壓縮
+        // .to(jellyBox, {
+        //   scaleX: 1.2, // 左右壓縮
+        //   scaleY: 2.3, // 上下拉長
+        //   duration: 0.1, // 每次動作持續時間
+        //   ease: "power2.inOut",
+        //   yoyo: true,
+        //   repeat: 4, // 快速來回三次
+        // })
+        // 恢復原狀
+        .to(jellyBox, {
+          scaleX: 1,
+          scaleY: 1,
+          duration: 0.1,
+          ease: "power2.out",
+        });
+    };
+
+    // 設定每隔 3 秒觸發一次動畫
+    const interval = setInterval(jellyEffect, 3000);
+
+    // 確保組件卸載時清除計時器
+    onUnmounted(() => {
+      clearInterval(interval);
+    });
+  }
+});
+
+useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
+</script>
 
 <style scoped>
   h2 {
@@ -193,58 +262,33 @@
       flex: 0 0 100%;
     }
   }
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #41BBBE;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+
+  .error-container {
+    text-align: center;
+    padding: 40px 0;
+    color: #dc3545;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 </style>
-
-<script setup lang="ts">
-  import { gsap } from "gsap";
-  import { onMounted, onUnmounted } from 'vue';
-
-  onMounted(() => {
-    const jellyBox = document.getElementById("jelly-box");
-
-    if (jellyBox) {
-      // 定義動畫函數
-      const jellyEffect = () => {
-        gsap.timeline()
-          // 初始快速拉伸
-          .fromTo(
-            jellyBox,
-            { scaleX: 1, scaleY: 1 },
-            {
-              scaleX: 1.3, // 左右拉長
-              scaleY: 1.5, // 上下壓縮
-              duration: 0.3, // 每次動作持續時間
-              ease: "power2.inOut", // 緩動效果
-              yoyo: true, // 啟用回彈
-              repeat: 2, // 完成兩次（初始與回彈）
-            }
-          )
-          // 中間的3次快速拉長壓縮
-          // .to(jellyBox, {
-          //   scaleX: 1.2, // 左右壓縮
-          //   scaleY: 2.3, // 上下拉長
-          //   duration: 0.1, // 每次動作持續時間
-          //   ease: "power2.inOut",
-          //   yoyo: true,
-          //   repeat: 4, // 快速來回三次
-          // })
-          // 恢復原狀
-          .to(jellyBox, {
-            scaleX: 1,
-            scaleY: 1,
-            duration: 0.1,
-            ease: "power2.out",
-          });
-      };
-
-      // 設定每隔 3 秒觸發一次動畫
-      const interval = setInterval(jellyEffect, 3000);
-
-      // 確保組件卸載時清除計時器
-      onUnmounted(() => {
-        clearInterval(interval);
-      });
-    }
-  });
-  useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
-</script>

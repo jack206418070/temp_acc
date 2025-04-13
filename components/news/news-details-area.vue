@@ -4,51 +4,50 @@
       <div class="row gx-xl-5">
         <div class="col-lg-12">
           <article class="blog-meta-two style-two">
-            <div class="post-data">
-              <div class="post-head" v-if="blog.id == 1">活動快報</div>
-              <div class="post-head" v-if="blog.id == 2">新聞快報</div>
-              <div class="post-startDate">起始活動日：{{ blog.date }}</div>
+            <div v-if="loading" class="loading-container">
+              <div class="loading-spinner"></div>
+              <p>載入中...</p>
+            </div>
+            <div v-else-if="error" class="error-container">
+              <p>{{ error }}</p>
+            </div>
+            <div v-else class="post-data">
+              <div class="post-head">{{ blog.category }}</div>
               <div>
-                <div class="post-startDate">發佈日期：{{ blog.date }}</div>
+                <div class="post-startDate">發佈日期：{{ formatDate(blog.publish_date) }}</div>
+                <div v-if="blog.activity_start_date" class="post-startDate">活動開始日期：{{ formatDate(blog.activity_start_date) }}</div>
                 <div class="post-category">類別：{{ blog.category }}</div>
               </div>
-              <div class="post-info" v-if="blog.post_info">活動訊息：{{blog.post_info}}</div>
-              <!-- <div class="blog-title">
-                <h4>{{blog.title}}</h4>
-              </div> -->
               <div class="post-details-meta">
                 內容：<br>
-                <div class="post-content" v-html="blog.content"></div>
+                <div class="post-content" v-html="decode(blog.content)"></div>
               </div>
-              <div class="post-links" v-if="blog.links">
+              <div class="post-links" v-if="blog.link">
                 連結：<br>
                 <div class="post-link-item">
-                  <a :href="item.url" v-for="item in blog.links" target="_blank">{{ item.name }}</a>
+                  <a :href="blog.link" target="_blank">{{ blog.linkTitle || blog.link }}</a>
                 </div>
               </div>
-              <div class="post-images" v-if="blog.images">
+              <div class="post-images" v-if="blog.images && blog.images.length > 0">
                 圖片：<br>
                 <div class="post-images-item">
-                  <template  v-for="(item, index) in blog.images">
+                  <template v-for="(image, index) in blog.images" :key="image.id">
                     <div class="tab-data-item" @click="openPopup(index)">
-                      <img :src="item.url" alt="">
-                      <p>{{ item.name }}</p>
+                      <img :src="getImageUrl(image)" alt="">
                     </div>
                   </template>
                 </div>
               </div>
             </div>
-            <!-- /.post-data -->
           </article>
         </div>
-
       </div>
     </div>
   </div>
-  <div v-if="showPopup" class="popup-overlay" @click.self="closePopup">
+  <div v-if="showPopup && blog.images" class="popup-overlay" @click.self="closePopup">
     <div class="popup-content">
       <button class="arrow left" v-if="currentIndex > 0" @click="prevImage">‹</button>
-      <img :src="blog.images[currentIndex].url" alt="Popup Image" />
+      <img :src="getImageUrl(blog.images[currentIndex])" alt="Popup Image" />
       <button class="arrow right" v-if="currentIndex < blog.images.length - 1" @click="nextImage">›</button>
       <button class="close-btn" @click="closePopup">×</button>
     </div>
@@ -56,12 +55,58 @@
 </template>
 
 <script setup lang="ts">
-import { type IBlog } from "@/types/blog-d-t";
-import { ref, onMounted } from "vue";
-const props = defineProps<{blog:IBlog}>();
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
+const blog = ref({});
+const loading = ref(true);
+const error = ref(null);
 const showPopup = ref(false);
 const currentIndex = ref(0);
+
+// 格式化日期
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
+};
+
+// 將二進制數據轉換為 Blob URL
+const getImageUrl = (image) => {
+  if (!image || !image.image_content || !image.image_content.data) return '';
+  
+  const uint8Array = new Uint8Array(image.image_content.data);
+  const blob = new Blob([uint8Array], { type: 'image/jpeg' });
+  return URL.createObjectURL(blob);
+};
+
+// 獲取公告詳細資訊
+const fetchAnnouncementDetails = async () => {
+  try {
+    loading.value = true;
+    error.value = null;
+    
+    const id = route.params.id;
+    if (!id) {
+      throw new Error('找不到公告ID');
+    }
+
+    const response = await fetch(`/api/announcements/${id}`);
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || '獲取公告資訊失敗');
+    }
+
+    blog.value = result.data;
+  } catch (err) {
+    console.error('獲取公告詳細資訊失敗:', err);
+    error.value = err.message || '獲取公告資訊失敗';
+  } finally {
+    loading.value = false;
+  }
+};
 
 const closePopup = () => {
   showPopup.value = false;
@@ -73,17 +118,42 @@ const prevImage = () => {
     currentIndex.value--;
   }
 };
-const openPopup = (index: number) => {
+
+const openPopup = (index) => {
   currentIndex.value = index;
   showPopup.value = true;
   document.body.style.overflow = 'hidden';
 };
 
 const nextImage = () => {
-  if (currentIndex.value < props.blog.images.length - 1) {
+  if (blog.value.images && currentIndex.value < blog.value.images.length - 1) {
     currentIndex.value++;
   }
 };
+
+const decode = (str) => {
+  const txt = document.createElement('textarea')
+  txt.innerHTML = str
+  return txt.value
+}
+
+// 清理資源
+const cleanup = () => {
+  if (blog.value.images) {
+    blog.value.images.forEach(image => {
+      const url = getImageUrl(image);
+      if (url) URL.revokeObjectURL(url);
+    });
+  }
+};
+
+onMounted(() => {
+  fetchAnnouncementDetails();
+});
+
+onBeforeUnmount(() => {
+  cleanup();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -108,6 +178,10 @@ const nextImage = () => {
 }
 .post-images-item .tab-data-item {
   flex: 0 0 25%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .post-images-item .tab-data-item img{
@@ -129,7 +203,7 @@ const nextImage = () => {
   padding-left: 15px;
 }
 
-  .tab-data-item {
+.tab-data-item {
   border-radius: 30px;
   margin-bottom: 30px;
   /* overflow: hidden; */
@@ -312,5 +386,41 @@ const nextImage = () => {
     width: 30px;
     height: 30px;
   }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+.error-container {
+  text-align: center;
+  padding: 40px 0;
+  color: #dc3545;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner.small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
 }
 </style>

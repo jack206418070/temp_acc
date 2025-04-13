@@ -7,22 +7,32 @@
     <h2 class="default-title">
       {{ tab_data[tab_type].type }}
     </h2>
-    <div class="tab-data-list" :class="{'block2': tab_type != '1'}">
+    
+    <!-- 載入中提示 -->
+    <div v-if="isLoading" class="loading-container">
+      <div class="loading-spinner"></div>
+      <p>載入中...</p>
+    </div>
+    
+    <!-- 資料列表 -->
+    <div v-else class="tab-data-list" :class="{'block2': tab_type != '1'}">
       <template v-if="tab_type == '1'">
-        <div class="tab-data-item" v-for="(data, index) in tab_data[tab_type].data" @click="openPopup(index)">
-          <img :src="data.image" alt="">
+        <div class="tab-data-item" v-for="(data, index) in tab_data[tab_type].data" :key="data.kid" @click="openPopup(index)">
+          <img :src="data.image" :alt="data.title">
         </div>
       </template>
       <template v-else>
-        <div class="tab-data-item-block2" v-for="(data, index) in tab_data[tab_type].data" @click="openPopup(index)">
-          <img :src="data.image" alt="">
+        <div class="tab-data-item-block2" v-for="(data, index) in tab_data[tab_type].data" :key="data.kid" @click="openPopup(index)">
+          <img :src="data.image" :alt="data.title">
         </div>
       </template>
     </div>
+    
+    <!-- 彈出視窗 -->
     <div v-if="showPopup" class="popup-overlay" @click.self="closePopup">
       <div class="popup-content">
         <button class="arrow left" v-if="currentIndex > 0" @click="prevImage">‹</button>
-        <img :src="tab_data[tab_type].data[currentIndex].image" alt="Popup Image" />
+        <img :src="tab_data[tab_type].data[currentIndex]?.image" :alt="tab_data[tab_type].data[currentIndex]?.title" />
         <button class="arrow right" v-if="currentIndex < tab_data[tab_type].data.length - 1" @click="nextImage">›</button>
         <button class="close-btn" @click="closePopup">×</button>
       </div>
@@ -31,78 +41,102 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const tab_data = ref({
   '1': {
     type: '懶人包',
-    data: [
-      {
-        image: '/images/assets/懶人包-00.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-01.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-02.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-03.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-04.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-05.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-06.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-07.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-08.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-09.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-10.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-11.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-12.jpg'
-      },
-      {
-        image: '/images/assets/懶人包-13.jpg'
-      }
-    ]
+    data: []
   },
   '2': {
     type: '宣導資料',
-    data: [
-      {
-        image: '/images/assets/EDM_A4_0325.jpg'
-      }
-    ]
+    data: []
   }
 });
 const tab_type = ref('1');
 const showPopup = ref(false);
 const currentIndex = ref(0);
+const isLoading = ref(false);
+const blobUrls = ref([]); // 儲存所有創建的 Blob URLs
 
-const changeTab = (type: string) => {
-  tab_type.value = type;
+// 清理 Blob URLs
+const cleanupBlobUrls = () => {
+  blobUrls.value.forEach(url => URL.revokeObjectURL(url));
+  blobUrls.value = [];
 };
 
-// onMounted(() => {
-//   tab_data.value['1'].data = ['懶人包內容1', '懶人包內容2'];
-//   tab_data.value['2'].data = ['宣導品內容1', '宣導品內容2'];
-// });
-const openPopup = (index: number) => {
+// 將二進制數據轉換為 Blob URL
+const createBlobUrl = (imageData) => {
+  const blob = new Blob([imageData], { type: 'image/jpeg' });
+  const url = URL.createObjectURL(blob);
+  blobUrls.value.push(url);
+  return url;
+};
+
+// 獲取知識列表
+const fetchKnowledgeList = async (category) => {
+  try {
+    isLoading.value = true;
+    cleanupBlobUrls(); // 清理舊的 Blob URLs
+    
+    const response = await $fetch(`/api/knowledge?category=${category}&includeImage=true`, {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    // 將 API 回傳的資料轉換成需要的格式
+    const formattedData = response.data.map(item => {
+      // 將 base64 字符串轉換為二進制數據
+      const binaryString = atob(item.image_base64);
+      const bytes = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      
+      // 創建 Blob URL
+      const blob = new Blob([bytes], { type: item.image_type || 'image/jpeg' });
+      const imageUrl = URL.createObjectURL(blob);
+      blobUrls.value.push(imageUrl);
+      
+      return {
+        kid: item.kid,
+        title: item.title,
+        image: imageUrl,
+        display_order: item.display_order
+      };
+    });
+    
+    // 根據 display_order 排序
+    formattedData.sort((a, b) => a.display_order - b.display_order);
+    
+    // 更新對應類別的資料
+    tab_data.value[category].data = formattedData;
+  } catch (error) {
+    console.error('獲取資料失敗:', error);
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+// 切換分類
+const changeTab = async (type) => {
+  tab_type.value = type;
+  await fetchKnowledgeList(type);
+};
+
+// 初始化時獲取第一個分類的資料
+onMounted(async () => {
+  console.log('onMounted')
+  await fetchKnowledgeList('1');
+});
+
+// 組件銷毀前清理 Blob URLs
+onBeforeUnmount(() => {
+  cleanupBlobUrls();
+});
+
+const openPopup = (index) => {
   currentIndex.value = index;
   showPopup.value = true;
   document.body.style.overflow = 'hidden';
@@ -305,4 +339,26 @@ h1, h2 {
   }
 }
 
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #41BBBE;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>

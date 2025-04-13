@@ -3,6 +3,22 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/announcement-images/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcement-images/[id].delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcement-images/[id].get').default>>>>
+    }
+    '/api/announcement-images': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcement-images/index.post').default>>>>
+    }
+    '/api/announcements/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcements/[id].delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcements/[id].get').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcements/[id].put').default>>>>
+    }
+    '/api/announcements': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcements/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/announcements/index.post').default>>>>
+    }
     '/api/auth/login': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/login.post').default>>>>
     }
@@ -17,9 +33,15 @@ declare module "nitropack/types" {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].get').default>>>>
       'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].put').default>>>>
     }
+    '/api/knowledge/:id/image': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id]/image.get').default>>>>
+    }
     '/api/knowledge': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/index.get').default>>>>
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/index.post').default>>>>
+    }
+    '/api/knowledge/order': {
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/order.put').default>>>>
     }
     '/api/qa': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa').default>>>>
@@ -29,6 +51,25 @@ declare module "nitropack/types" {
     '/api/qa/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/[id].delete').default>>>>
       'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/[id].put').default>>>>
+    }
+    '/api/service-unit/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/[id].delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/[id].get').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/[id].put').default>>>>
+    }
+    '/api/service-unit/:id/price-image': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/[id]/price-image.get').default>>>>
+    }
+    '/api/service-unit/:id/unit-image': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/[id]/unit-image.get').default>>>>
+    }
+    '/api/service-unit': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/service-unit/index.post').default>>>>
+    }
+    '/api/user-reminder': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-reminder/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-reminder/index.post').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>

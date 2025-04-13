@@ -22,6 +22,16 @@
           <h3>知識庫管理</h3>
           <p>管理知識庫圖片</p>
         </NuxtLink>
+        <NuxtLink to="/admin/service-unit" class="dashboard-card">
+          <div class="card-icon">🏢</div>
+          <h3>服務單位管理</h3>
+          <p>管理服務單位資訊</p>
+        </NuxtLink>
+        <NuxtLink to="/admin/announcements" class="dashboard-card">
+          <div class="card-icon">📢</div>
+          <h3>公告管理</h3>
+          <p>管理網站公告內容</p>
+        </NuxtLink>
       </div>
     </div>
   </div>

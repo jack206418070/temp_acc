@@ -3,7 +3,7 @@
     <nav class="admin-nav">
       <div class="nav-content">
         <div class="nav-wrapper">
-          <NuxtLink to="/admin" class="btn btn-secondary">返回首頁</NuxtLink>
+          <NuxtLink to="/admin/dashboard" class="btn btn-secondary">返回首頁</NuxtLink>
           <h1 class="page-title">知識庫管理</h1>
           <div class="placeholder"></div>
         </div>
@@ -12,6 +12,13 @@
 
     <div class="admin-container qa-container">
       <div class="action-bar">
+        <div class="filter-section">
+          <select v-model="selectedCategory" @change="handleCategoryChange" class="filter-select">
+            <option value="">全部類別</option>
+            <option value="1">懶人包</option>
+            <option value="2">宣導資料</option>
+          </select>
+        </div>
         <button @click="openAddModal" class="btn btn-primary" :disabled="isButtonLoading">
           <i class="fas" :class="isButtonLoading ? 'fa-spinner fa-spin' : 'fa-plus'"></i>
           {{ isButtonLoading ? '處理中...' : '新增知識' }}
@@ -36,12 +43,28 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in knowledgeList.data.data" :key="item.kid">
+            <tr v-for="item in filteredKnowledgeList" 
+                :key="item.kid"
+                draggable="true"
+                @dragstart="handleDragStart($event, item)"
+                @dragover.prevent
+                @dragenter.prevent
+                @drop="handleDrop($event, item)"
+                :class="{ 'opacity-50': isDragging && draggedItem?.kid === item.kid }">
               <td>{{ item.kid }}</td>
               <td>
                 <span class="category-tag">{{ getCategoryName(item.know_category) }}</span>
               </td>
-              <td>{{ item.title }}</td>
+              <td>
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 h-10 w-10 cursor-move mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                    </svg>
+                  </div>
+                  <div class="text-sm font-medium text-gray-900">{{ item.title }}</div>
+                </div>
+              </td>
               <td>
                 <div class="action-buttons">
                   <button 
@@ -129,7 +152,7 @@ definePageMeta({
   layout: 'admin'
 });
 
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 const Swal = ref(null);
 
 const knowledgeList = ref({ data: [] });
@@ -144,9 +167,151 @@ const imagePreview = ref('');
 const selectedFile = ref(null);
 const imageError = ref('');
 const isButtonLoading = ref(false);
+const selectedCategory = ref('');
+const isLoading = ref(false);
+
+// 拖拽相關的狀態
+const isDragging = ref(false);
+const draggedItem = ref(null);
+
+// 篩選後的知識列表
+const filteredKnowledgeList = computed(() => {
+  if (!selectedCategory.value) {
+    return knowledgeList.value.data.data || [];
+  }
+  return (knowledgeList.value.data.data || []).filter(
+    item => item.know_category.toString() === selectedCategory.value
+  );
+});
+
+// 處理類別變更
+async function handleCategoryChange() {
+  isLoading.value = true;
+  try {
+    const token = useCookie('auth_token').value;
+    if (!token) {
+      throw new Error('未登入');
+    }
+
+    // 構建 URL，如果選擇了類別則添加查詢參數
+    let url = '/api/knowledge';
+    if (selectedCategory.value) {
+      url += `?category=${selectedCategory.value}`;
+    }
+
+    const response = await $fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    
+    // 更新知識列表
+    knowledgeList.value = { 
+      data: {
+        ...response,
+        data: response.data.map(item => ({
+          ...item,
+          isLoading: false
+        }))
+      }
+    };
+  } catch (error) {
+    Swal.value.fire({
+      icon: 'error',
+      title: '錯誤',
+      text: error?.data?.message || '獲取資料失敗'
+    });
+    if (error?.data?.statusCode === 401) {
+      navigateTo('/admin/login');
+    }
+  } finally {
+    isLoading.value = false;
+  }
+}
+
+// 處理拖拽開始
+const handleDragStart = (event, item) => {
+  isDragging.value = true;
+  draggedItem.value = item;
+  event.dataTransfer.effectAllowed = 'move';
+  event.dataTransfer.setData('text/plain', JSON.stringify({
+    kid: item.kid,
+    category: item.know_category,
+    order: item.display_order
+  }));
+};
+
+// 處理拖拽放置
+const handleDrop = async (event, targetItem) => {
+  event.preventDefault();
+  isDragging.value = false;
+  
+  try {
+    const draggedData = JSON.parse(event.dataTransfer.getData('text/plain'));
+    const sourceItem = draggedItem.value;
+    
+    // 如果拖拽到同一個位置，不做任何處理
+    if (sourceItem.kid === targetItem.kid) {
+      return;
+    }
+    
+    // 計算新的順序
+    let newOrder;
+    if (sourceItem.know_category === targetItem.know_category) {
+      // 同一類別內移動
+      newOrder = targetItem.display_order;
+    } else {
+      // 不同類別間移動，獲取目標類別的最大順序
+      const maxOrder = Math.max(...knowledgeList.value
+        .filter(item => item.know_category === targetItem.know_category)
+        .map(item => item.display_order), 0);
+      newOrder = maxOrder + 1;
+    }
+    
+    // 更新順序
+    const token = useCookie('auth_token').value;
+    if (!token) {
+      throw new Error('未登入');
+    }
+    
+    await $fetch('/api/knowledge/order', {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: sourceItem.kid,
+        newOrder,
+        category: targetItem.know_category
+      })
+    });
+    
+    // 重新獲取資料
+    await fetchKnowledgeList();
+    
+    // 顯示成功訊息
+    Swal.fire({
+      icon: 'success',
+      title: '更新成功',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  } catch (error) {
+    console.error('更新順序失敗:', error);
+    Swal.fire({
+      icon: 'error',
+      title: '更新失敗',
+      text: error.message || '請稍後再試'
+    });
+  } finally {
+    draggedItem.value = null;
+  }
+};
 
 //獲取知識列表
 async function fetchKnowledgeList() {
+  isLoading.value = true;
   isButtonLoading.value = true;
   try {
     console.log('fetchKnowledgeList');
@@ -181,6 +346,7 @@ async function fetchKnowledgeList() {
       navigateTo('/admin/login');
     }
   } finally {
+    isLoading.value = false;
     isButtonLoading.value = false;
   }
 }
@@ -423,7 +589,6 @@ async function handleDelete(id) {
 }
 
 // 頁面載入時獲取數據
-
 onMounted(async () => {
   console.log('in mounted');
   Swal.value = (await import('sweetalert2')).default;
@@ -473,6 +638,27 @@ onBeforeUnmount(() => {
     visibility: hidden;
   }
   
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+    .filter-section {
+      display: flex;
+      align-items: center;
+    }
+    
+    .filter-select {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+      min-width: 150px;
+      margin-right: 1rem;
+    }
+  }
+  
   // 修改次要按鈕的顏色
   :deep(.btn-secondary) {
     background-color: #41BBBE;
@@ -502,6 +688,7 @@ onBeforeUnmount(() => {
       padding: 0.8rem;
       text-align: left;
       border-bottom: 1px solid #eee;
+      vertical-align: middle;
     }
     
     th {
@@ -512,7 +699,69 @@ onBeforeUnmount(() => {
     
     td {
       font-size: 16px;
-      vertical-align: middle;
+      
+      .flex {
+        display: flex;
+        align-items: center;
+      }
+      
+      .cursor-move {
+        cursor: move;
+      }
+      
+      .text-gray-400 {
+        color: #9ca3af;
+      }
+      
+      .text-gray-900 {
+        color: #111827;
+      }
+    }
+    
+    tr {
+      &:hover {
+        background-color: #f8f9fa;
+      }
+      
+      &.dragging {
+        opacity: 0.5;
+        background-color: #f8f9fa;
+      }
+      
+      &.drag-over {
+        border-top: 2px solid #41BBBE;
+      }
+    }
+  }
+  
+  .category-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background-color: #e5e7eb;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    
+    .btn {
+      font-size: 15px;
+      padding: 0.4rem 0.8rem;
+      min-width: 76px;
+      
+      i {
+        margin-right: 0.3rem;
+      }
+      
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
     }
   }
   
@@ -567,19 +816,6 @@ onBeforeUnmount(() => {
     margin-top: 0.25rem;
   }
   
-  .action-bar {
-    margin-bottom: 1rem;
-    
-    .btn-primary {
-      font-size: 15px;
-      padding: 0.4rem 0.8rem;
-      
-      i {
-        margin-right: 0.3rem;
-      }
-    }
-  }
-  
   .modal-content {
     background: white;
     padding: 1.5rem;
@@ -629,23 +865,280 @@ onBeforeUnmount(() => {
     }
   }
   
-  .action-buttons {
+  .opacity-50 {
+    opacity: 0.5;
+  }
+
+  .admin-nav {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+
+  .nav-wrapper {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .page-title {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .placeholder {
+      width: 100px;
+    }
+  }
+}
+
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  
+  .filter-section {
+    .filter-select {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 150px;
+    }
+  }
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  th {
+    background: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  tr:hover {
+    background: #f8f9fa;
+  }
+}
+
+.region-tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.875rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  
+  button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+}
+
+.admin-form {
+  .form-group {
+    margin-bottom: 1.5rem;
     
-    .btn {
-      font-size: 15px;
-      padding: 0.4rem 0.8rem;
-      min-width: 76px;  // 添加最小寬度，避免 loading 時按鈕寬度改變
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
       
-      i {
-        margin-right: 0.3rem;
-      }
-      
-      &:disabled {
-        cursor: not-allowed;
-        opacity: 0.7;
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
       }
     }
   }
-  </style>
+  
+  .error-message {
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  
+  .image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 1rem;
+    border-radius: 4px;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  
+  .loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  p {
+    margin-top: 1rem;
+    color: #666;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.tab-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  position: relative;
+  
+  &:hover {
+    color: var(--primary-color);
+  }
+  
+  &.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+.tab-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.reminder-container {
+  .editor-wrapper {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .editor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+
+      h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: var(--primary-color);
+      }
+    }
+
+    .editor-content {
+      padding: 1rem;
+
+      :deep(.ck-editor__editable) {
+        min-height: 400px;
+        max-height: 600px;
+      }
+
+      :deep(.ck.ck-editor__main > .ck-editor__editable) {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      :deep(.ck.ck-toolbar) {
+        border: 1px solid #ddd;
+        border-bottom: none;
+      }
+    }
+  }
+}
+</style>

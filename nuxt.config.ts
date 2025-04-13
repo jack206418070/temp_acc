@@ -149,6 +149,9 @@ export default defineNuxtConfig({
           'Content-Type': 'application/javascript; charset=utf-8'
         }
       }
+    },
+    externals: {
+      inline: ['sharp']
     }
   },
   serverHandlers: [

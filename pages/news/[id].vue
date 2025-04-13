@@ -12,20 +12,12 @@
     <!-- breadcrumb area end -->
 
     <!-- blog details area start -->
-    <news-details-area v-if="blog" :blog="blog" />
+    <news-details-area />
     <!-- blog details area end -->
 
   </div>
 </template>
 
 <script setup lang="ts">
-import blog_data from "@/data/news-data";
-
-useSeoMeta({ title: "Blog Details - Babun" });
-const route = useRoute();
-const router = useRouter();
-const blog = blog_data.find((b) => b.id === Number(route.params.id));
-if (!blog) {
-  router.push("/error");
-}
+useSeoMeta({ title: "公告詳細資訊 ｜ 多元陪伴照顧服務計畫" });
 </script>
