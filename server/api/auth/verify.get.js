@@ -3,6 +3,7 @@ import { createError } from 'h3';
 
 export default defineEventHandler(async (event) => {
   try {
+    console.log('verify.get');
     const token = getHeader(event, 'Authorization')?.split(' ')[1];
     
     if (!token) {

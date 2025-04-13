@@ -1,7 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  build: {
+    transpile: ['sweetalert2']  // 添加這行
+  },
   modules: [[
     '@pinia/nuxt',
     {
@@ -15,7 +17,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
     // buildAssetsDir: '/aaa/',
-    buildAssetsDir: '/assets/',
+    // buildAssetsDir: '/assets/',
     head: {
       title: "多元陪伴照顧服務試辦計畫",
       charset: 'utf-8',
@@ -116,12 +118,16 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    // preset: 'node-server',
+    preset: 'node-server',
     // preset: 'vercel',
-    preset: 'static',
+    // preset: 'static',
+    // output: {
+    //   dir: './dist',
+    //   publicDir: './dist'
+    // },
     output: {
-      dir: './dist',
-      publicDir: './dist'
+      dir: './.output',
+      publicDir: './.output/public'
     },
     storage: {
       uploads: {
@@ -145,12 +151,12 @@ export default defineNuxtConfig({
       }
     }
   },
-  // serverHandlers: [
-  //   {
-  //     route: '/api',
-  //     handler: '~/server/index.js',
-  //   },
-  // ],
+  serverHandlers: [
+    {
+      route: '/api',
+      handler: '~/server/index.js',
+    },
+  ],
   experimental: {
     payloadExtraction: false
   },
@@ -188,11 +194,6 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    build: {
-      rollupOptions: {
-        external: ['sweetalert2']
-      }
-    },
     css: {
       preprocessorOptions: {
         scss: {

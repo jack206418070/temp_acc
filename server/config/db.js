@@ -2,9 +2,9 @@ import sql from 'mssql';
 
 // SQL Server 連線設定
 const config = {
-  user: 'SA',
-  password: 'yourStrong(!)Password',
-  server: 'localhost',  // Docker 內部使用 'localhost'
+  user: 'sa',
+  password: 'MyS3cretPassw0rd',
+  server: '43.207.146.80',  // Docker 內部使用 'localhost'
   port: 1433,
   database: 'accompany',
   options: {

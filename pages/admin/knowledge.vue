@@ -125,8 +125,12 @@
 </template>
 
 <script setup>
+definePageMeta({  
+  layout: 'admin'
+});
+
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import Swal from 'sweetalert2';
+const Swal = ref(null);
 
 const knowledgeList = ref({ data: [] });
 const showModal = ref(false);
@@ -141,14 +145,11 @@ const selectedFile = ref(null);
 const imageError = ref('');
 const isButtonLoading = ref(false);
 
-definePageMeta({
-  layout: 'admin'
-});
-
-// 獲取知識列表
+//獲取知識列表
 async function fetchKnowledgeList() {
   isButtonLoading.value = true;
   try {
+    console.log('fetchKnowledgeList');
     const token = useCookie('auth_token').value;
     if (!token) {
       throw new Error('未登入');
@@ -171,7 +172,7 @@ async function fetchKnowledgeList() {
       }
     };
   } catch (error) {
-    Swal.fire({
+    Swal.value.fire({
       icon: 'error',
       title: '錯誤',
       text: error?.data?.message || '獲取資料失敗'
@@ -275,7 +276,7 @@ async function openEditModal(item) {
     }
   } catch (error) {
     console.error('獲取圖片失敗:', error);
-    Swal.fire({
+    Swal.value.fire({
       icon: 'error',
       title: '錯誤',
       text: error?.data?.message || '獲取圖片失敗'
@@ -340,15 +341,15 @@ async function handleSubmit() {
     if (response.success) {
       await fetchKnowledgeList();
       closeModal();
-      const Toast = Swal.mixin({
+      const Toast = Swal.value.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
+          toast.addEventListener('mouseenter', Swal.value.stopTimer)
+          toast.addEventListener('mouseleave', Swal.value.resumeTimer)
         }
       });
 
@@ -360,7 +361,7 @@ async function handleSubmit() {
       throw new Error(response.message || '操作失敗');
     }
   } catch (error) {
-    Swal.fire({
+    Swal.value.fire({
       icon: 'error',
       title: '錯誤',
       text: error?.data?.message || '操作失敗'
@@ -375,7 +376,7 @@ async function handleSubmit() {
 
 // 處理刪除
 async function handleDelete(id) {
-  const result = await Swal.fire({
+  const result = await Swal.value.fire({
     title: '確定要刪除嗎？',
     text: '此操作無法復原',
     icon: 'warning',
@@ -401,13 +402,13 @@ async function handleDelete(id) {
         }
       });
       await fetchKnowledgeList();
-      Swal.fire({
+      Swal.value.fire({
         icon: 'success',
         title: '刪除成功',
         timer: 1500
       });
     } catch (error) {
-      Swal.fire({
+      Swal.value.fire({
         icon: 'error',
         title: '錯誤',
         text: error?.data?.message || '刪除失敗'
@@ -422,7 +423,10 @@ async function handleDelete(id) {
 }
 
 // 頁面載入時獲取數據
-onMounted(() => {
+
+onMounted(async () => {
+  console.log('in mounted');
+  Swal.value = (await import('sweetalert2')).default;
   fetchKnowledgeList();
 });
 
@@ -435,213 +439,213 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
-.qa-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1rem 1rem;
-  font-size: 16px;
-}
-
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  position: relative;
-
-  .btn {
-    font-size: 15px;
-    padding: 0.4rem 0.8rem;
-  }
-}
-
-.page-title {
-  font-size: calc(1.5rem + 2px);
-  color: #41BBBE;
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.placeholder {
-  width: 84px;
-  visibility: hidden;
-}
-
-// 修改次要按鈕的顏色
-:deep(.btn-secondary) {
-  background-color: #41BBBE;
-  border-color: #41BBBE;
-  color: white;
-  
-  &:hover {
-    background-color: darken(#41BBBE, 5%);
-    border-color: darken(#41BBBE, 5%);
-  }
-
-  &:disabled {
-    background-color: lighten(#41BBBE, 20%);
-    border-color: lighten(#41BBBE, 20%);
-  }
-}
-
-.admin-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  
-  th, td {
-    padding: 0.8rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
-  
-  th {
-    background-color: #f8f9fa;
-    font-weight: 500;
+  .qa-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem 1rem;
     font-size: 16px;
   }
   
-  td {
-    font-size: 16px;
-    vertical-align: middle;
-  }
-}
-
-.image-preview {
-  max-width: 100%;
-  max-height: 200px;
-  margin-top: 1rem;
-  border-radius: 4px;
-  object-fit: contain;
-  background-color: #f8f9fa;
-  padding: 0.5rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// 文件上傳按鈕樣式
-input[type="file"] {
-  display: block;
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px dashed var(--border-color);
-  border-radius: 4px;
-  cursor: pointer;
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative;
   
-  &:hover {
-    border-color: var(--primary-color);
-  }
-
-  &:invalid {
-    border-color: var(--danger-color, #dc3545);
-  }
-}
-
-select {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background-color: white;
-  cursor: pointer;
-  
-  &:focus {
-    outline: none;
-    border-color: var(--primary-color);
-  }
-}
-
-.error-message {
-  color: var(--danger-color, #dc3545);
-  font-size: calc(0.875rem + 2px);
-  margin-top: 0.25rem;
-}
-
-.action-bar {
-  margin-bottom: 1rem;
-  
-  .btn-primary {
-    font-size: 15px;
-    padding: 0.4rem 0.8rem;
-    
-    i {
-      margin-right: 0.3rem;
+    .btn {
+      font-size: 15px;
+      padding: 0.4rem 0.8rem;
     }
   }
-}
-
-.modal-content {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
   
-  h2 {
+  .page-title {
+    font-size: calc(1.5rem + 2px);
     color: #41BBBE;
-    font-size: calc(1.2rem + 2px);
-    margin-bottom: 1.5rem;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
-  .admin-form {
-    .form-group {
-      margin-bottom: 1rem;
-      
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-size: 16px;
-        color: #333;
-      }
-      
-      input, select {
-        font-size: 16px;
-      }
+  .placeholder {
+    width: 84px;
+    visibility: hidden;
+  }
+  
+  // 修改次要按鈕的顏色
+  :deep(.btn-secondary) {
+    background-color: #41BBBE;
+    border-color: #41BBBE;
+    color: white;
+    
+    &:hover {
+      background-color: darken(#41BBBE, 5%);
+      border-color: darken(#41BBBE, 5%);
+    }
+  
+    &:disabled {
+      background-color: lighten(#41BBBE, 20%);
+      border-color: lighten(#41BBBE, 20%);
+    }
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    th, td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
     }
     
-    .button-group {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: flex-end;
-      margin-top: 1.5rem;
+    th {
+      background-color: #f8f9fa;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    
+    td {
+      font-size: 16px;
+      vertical-align: middle;
+    }
+  }
+  
+  .image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 1rem;
+    border-radius: 4px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  // 文件上傳按鈕樣式
+  input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px dashed var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &:hover {
+      border-color: var(--primary-color);
+    }
+  
+    &:invalid {
+      border-color: var(--danger-color, #dc3545);
+    }
+  }
+  
+  select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  }
+  
+  .error-message {
+    color: var(--danger-color, #dc3545);
+    font-size: calc(0.875rem + 2px);
+    margin-top: 0.25rem;
+  }
+  
+  .action-bar {
+    margin-bottom: 1rem;
+    
+    .btn-primary {
+      font-size: 15px;
+      padding: 0.4rem 0.8rem;
       
-      .btn {
-        font-size: 15px;
-        padding: 0.4rem 0.8rem;
-        min-width: 80px;
+      i {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    
+    h2 {
+      color: #41BBBE;
+      font-size: calc(1.2rem + 2px);
+      margin-bottom: 1.5rem;
+    }
+    
+    .admin-form {
+      .form-group {
+        margin-bottom: 1rem;
         
-        &:disabled {
-          cursor: not-allowed;
-          opacity: 0.7;
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 16px;
+          color: #333;
+        }
+        
+        input, select {
+          font-size: 16px;
+        }
+      }
+      
+      .button-group {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-end;
+        margin-top: 1.5rem;
+        
+        .btn {
+          font-size: 15px;
+          padding: 0.4rem 0.8rem;
+          min-width: 80px;
+          
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+          }
         }
       }
     }
   }
-}
-
-.action-buttons {
-  display: flex;
-  gap: 0.5rem;
   
-  .btn {
-    font-size: 15px;
-    padding: 0.4rem 0.8rem;
-    min-width: 76px;  // 添加最小寬度，避免 loading 時按鈕寬度改變
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
     
-    i {
-      margin-right: 0.3rem;
-    }
-    
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.7;
+    .btn {
+      font-size: 15px;
+      padding: 0.4rem 0.8rem;
+      min-width: 76px;  // 添加最小寬度，避免 loading 時按鈕寬度改變
+      
+      i {
+        margin-right: 0.3rem;
+      }
+      
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
     }
   }
-}
-</style> 
+  </style>

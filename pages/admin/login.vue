@@ -80,7 +80,7 @@ async function handleLogin() {
     console.log('Login response:', response);
 
     if (response.success) {
-      await navigateTo('/admin');
+      await navigateTo('/admin/dashboard');
     } else {
       throw new Error('未收到有效的登入令牌');
     }

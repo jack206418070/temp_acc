@@ -4,7 +4,7 @@
       <nav class="admin-nav">
         <div class="nav-content">
           <div class="nav-wrapper">
-            <NuxtLink to="/admin" class="btn btn-secondary">返回首頁</NuxtLink>
+            <NuxtLink to="/admin/dashboard" class="btn btn-secondary">返回首頁</NuxtLink>
             <h1 class="page-title">問答管理</h1>
             <div class="placeholder"></div><!-- 用來平衡布局 -->
           </div>
@@ -180,11 +180,12 @@
 </template>
 
 <script setup>
-import Swal from 'sweetalert2';
 
 definePageMeta({
   layout: 'admin'
 });
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+const Swal = ref(null);
 
 const qaList = ref([]);
 const showModal = ref(false);
@@ -281,7 +282,7 @@ async function handleSubmit() {
     closeModal();
     
     // 使用 SweetAlert2 顯示成功提示
-    await Swal.fire({
+    await Swal.value.fire({
       icon: 'success',
       title: isEditing.value ? '更新成功！' : '新增成功！',
       timer: 1500,
@@ -291,7 +292,7 @@ async function handleSubmit() {
     });
   } catch (error) {
     console.error('保存失敗:', error);
-    await Swal.fire({
+    await Swal.value.fire({
       icon: 'error',
       title: '操作失敗',
       text: error?.data?.statusMessage || '發生未知錯誤',
@@ -305,7 +306,7 @@ async function handleSubmit() {
 // 處理刪除
 async function handleDelete(id) {
   // 使用 SweetAlert2 確認刪除
-  const result = await Swal.fire({
+  const result = await Swal.value.fire({
     icon: 'warning',
     title: '確定要刪除嗎？',
     text: '刪除後將無法復原！',
@@ -327,7 +328,7 @@ async function handleDelete(id) {
     await fetchQAList();
     
     // 顯示刪除成功提示
-    await Swal.fire({
+    await Swal.value.fire({
       icon: 'success',
       title: '刪除成功！',
       timer: 1500,
@@ -337,7 +338,7 @@ async function handleDelete(id) {
     });
   } catch (error) {
     console.error('刪除失敗:', error);
-    await Swal.fire({
+    await Swal.value.fire({
       icon: 'error',
       title: '刪除失敗',
       text: error?.data?.statusMessage || '發生未知錯誤',
@@ -401,7 +402,8 @@ function truncateText(text, maxLength) {
 }
 
 // 頁面載入時獲取數據
-onMounted(() => {
+onMounted(async () => {
+  Swal.value = (await import('sweetalert2')).default;
   fetchQAList();
 });
 </script>
