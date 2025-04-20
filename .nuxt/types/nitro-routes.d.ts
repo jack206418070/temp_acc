@@ -43,6 +43,25 @@ declare module "nitropack/types" {
     '/api/knowledge/order': {
       'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/order.put').default>>>>
     }
+    '/api/languages': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/languages/index.get').default>>>>
+    }
+    '/api/qa-categories/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-categories/[id].delete').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-categories/[id].put').default>>>>
+    }
+    '/api/qa-categories': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-categories/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-categories/index.post').default>>>>
+    }
+    '/api/qa-contents/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-contents/[id].delete').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-contents/[id].put').default>>>>
+    }
+    '/api/qa-contents': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-contents/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-contents/index.post').default>>>>
+    }
     '/api/qa': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa').default>>>>
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa/index.get').default>>>>

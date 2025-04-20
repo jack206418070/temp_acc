@@ -2,7 +2,7 @@
   <div>
 
       <!-- faq area start -->
-      <faq-area-five/>
+      <faq-area-six/>
       <!-- faq area end -->
   </div>
 </template>

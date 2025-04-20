@@ -12,7 +12,7 @@
     
     <div class="admin-container">
       <div class="dashboard-grid">
-        <NuxtLink to="/admin/qa_setting" class="dashboard-card">
+        <NuxtLink to="/admin/qa" class="dashboard-card">
           <div class="card-icon">📝</div>
           <h3>問答管理</h3>
           <p>管理網站常見問題</p>
