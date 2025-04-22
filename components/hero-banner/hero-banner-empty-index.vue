@@ -1,19 +1,48 @@
 <template>
   <div class="home-banner">
-    <div class="main-container home-bg"></div>
+    <div v-if="activeBanner" class="main-container home-bg" :style="bannerStyle"></div>
+    <div v-else class="main-container home-bg"></div>
   </div>
 	
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted } from 'vue';
 
+const activeBanner = ref(null);
+const bannerStyle = computed(() => {
+  if (activeBanner.value) {
+    return {
+      backgroundImage: `url(data:${activeBanner.value.imageType};base64,${activeBanner.value.imageData})`,
+      backgroundPosition: 'center center',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat'
+    };
+  }
+  return {};
+});
+
+// 載入啟用中的 banner
+async function loadActiveBanner() {
+  try {
+    const response = await $fetch('/api/banners');
+    const banners = response.data;
+    activeBanner.value = banners.find(banner => banner.is_active);
+  } catch (error) {
+    console.error('載入 Banner 失敗:', error);
+  }
+}
+
+// 頁面載入時獲取 banner
+onMounted(() => {
+  loadActiveBanner();
+});
 </script>
 <style scoped>
 .home-banner {
   background-color: #41BBBE;
 }
 .home-bg {
-  background-image: url(/images/assets/banner0109.avif);
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;

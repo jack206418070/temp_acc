@@ -28,6 +28,17 @@ declare module "nitropack/types" {
     '/api/auth/verify': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/verify.get').default>>>>
     }
+    '/api/banners/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/banners/[id].delete').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/banners/[id].put').default>>>>
+    }
+    '/api/banners': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/banners/index.get').default>>>>
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/banners/index.post').default>>>>
+    }
+    '/api/banners/order': {
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/banners/order.put').default>>>>
+    }
     '/api/knowledge/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].delete').default>>>>
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/knowledge/[id].get').default>>>>
@@ -89,6 +100,9 @@ declare module "nitropack/types" {
     '/api/user-reminder': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-reminder/index.get').default>>>>
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-reminder/index.post').default>>>>
+    }
+    '/banner': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/routes/banner').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>

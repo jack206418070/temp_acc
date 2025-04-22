@@ -32,6 +32,11 @@
           <h3>公告管理</h3>
           <p>管理網站公告內容</p>
         </NuxtLink>
+        <NuxtLink to="/admin/banners" class="dashboard-card">
+          <div class="card-icon">🖼️</div>
+          <h3>Banner 管理</h3>
+          <p>管理首頁輪播圖片</p>
+        </NuxtLink>
       </div>
     </div>
   </div>
