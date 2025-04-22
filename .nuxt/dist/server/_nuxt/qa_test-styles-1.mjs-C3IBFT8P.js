@@ -1,0 +1,5 @@
+const qa_test_vue_vue_type_style_index_0_scoped_9b7d9aa9_lang = ".service-banner[data-v-9b7d9aa9]{margin:0 auto;max-width:1280px;padding-bottom:80px;padding-top:100px}.category-tabs[data-v-9b7d9aa9]{margin-bottom:16px;overflow-x:auto;white-space:nowrap}.tabs-scroll[data-v-9b7d9aa9]{display:flex}.category-tabs button[data-v-9b7d9aa9]{background:#f0f0f0;background:#fff;border:2px solid #d3d3da;border-radius:99px;cursor:pointer;font-size:20px;margin-bottom:10px;margin-right:20px;padding:6px 20px;transition:.3s;white-space:nowrap}.category-tabs button.active[data-v-9b7d9aa9],.category-tabs button[data-v-9b7d9aa9]:hover{background:#41bbbe;color:#fff}.qa-item[data-v-9b7d9aa9]{border-bottom:1px solid #065306;padding:20px 0}.qa-title[data-v-9b7d9aa9]{color:#2b2716;cursor:pointer;font-weight:400}.qa-content[data-v-9b7d9aa9]{font-size:18px;margin-top:20px;padding-left:12px}.qa-content p[data-v-9b7d9aa9]{margin-bottom:0!important}@media (max-width:996px){.service-banner[data-v-9b7d9aa9]{padding:40px 15px}}";
+export {
+  qa_test_vue_vue_type_style_index_0_scoped_9b7d9aa9_lang as default
+};
+//# sourceMappingURL=qa_test-styles-1.mjs-C3IBFT8P.js.map

@@ -1,0 +1,41 @@
+import { defineComponent, mergeProps, useSSRContext } from "vue";
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { u as useSeoMeta, _ as _export_sfc } from "../server.mjs";
+import "ofetch";
+import "#internal/nuxt/paths";
+import "hookable";
+import "unctx";
+import "h3";
+import "unhead";
+import "@unhead/shared";
+import "vue-router";
+import "radix3";
+import "defu";
+import "ufo";
+import "cookie-es";
+import "destr";
+import "ohash";
+import "klona";
+import "@yeger/vue-masonry-wall";
+import "vue3-toastify";
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "application-form",
+  __ssrInlineRender: true,
+  setup(__props) {
+    useSeoMeta({ title: "申請表｜ 多元陪伴照顧服務計畫" });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "main-container" }, _attrs))} data-v-dbbb9603><h2 class="default-title" data-v-dbbb9603> 填寫申請表 </h2><p data-v-dbbb9603>線上申請系統於未來計畫擴充時建置</p></div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/application-form.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const applicationForm = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-dbbb9603"]]);
+export {
+  applicationForm as default
+};
+//# sourceMappingURL=application-form-Bkbl6GqM.js.map
