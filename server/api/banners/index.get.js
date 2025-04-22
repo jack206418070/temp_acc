@@ -6,12 +6,22 @@ export default defineEventHandler(async (event) => {
   try {
     // 驗證
     // await authenticate(event);
+    // 接收前端param參數
+    const active = getQuery(event).active;
 
-    const data = await getAllBanners();
-    data.forEach(banner => {
-      banner.imageData = banner.imageData.toString('base64');
-    });
-    return { success: true, data };
+    if (active == 1) {
+      const data = await getAllBanners(active);
+      data.forEach(banner => {
+        banner.imageData = banner.imageData.toString('base64');
+      });
+      return { success: true, data };
+    } else {
+      const data = await getAllBanners();
+      data.forEach(banner => {
+        banner.imageData = banner.imageData.toString('base64');
+      });
+      return { success: true, data };
+    }
   } catch (error) {
     console.error('❌ Get All Banners Error:', error);
     throw createError({

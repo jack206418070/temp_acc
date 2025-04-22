@@ -785,7 +785,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-C73G0M4A.js")
+    component: () => import("./_nuxt/index-CdZXShsN.js")
   },
   {
     name: "join-us-unit",

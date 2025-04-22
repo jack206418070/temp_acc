@@ -796,7 +796,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-C73G0M4A.mjs')
+    component: () => import('./index-CdZXShsN.mjs')
   },
   {
     name: "join-us-unit",

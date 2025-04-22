@@ -1,4 +1,4 @@
-import { d as defineEventHandler, c as createError } from '../../nitro/nitro.mjs';
+import { d as defineEventHandler, f as getQuery, c as createError } from '../../nitro/nitro.mjs';
 import { g as getAllBanners } from '../../_/bannerModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';
@@ -17,11 +17,20 @@ import '../../_/db.mjs';
 
 const index_get = defineEventHandler(async (event) => {
   try {
-    const data = await getAllBanners();
-    data.forEach((banner) => {
-      banner.imageData = banner.imageData.toString("base64");
-    });
-    return { success: true, data };
+    const active = getQuery(event).active;
+    if (active == 1) {
+      const data = await getAllBanners(active);
+      data.forEach((banner) => {
+        banner.imageData = banner.imageData.toString("base64");
+      });
+      return { success: true, data };
+    } else {
+      const data = await getAllBanners();
+      data.forEach((banner) => {
+        banner.imageData = banner.imageData.toString("base64");
+      });
+      return { success: true, data };
+    }
   } catch (error) {
     console.error("\u274C Get All Banners Error:", error);
     throw createError({

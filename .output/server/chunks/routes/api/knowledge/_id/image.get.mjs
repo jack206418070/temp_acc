@@ -1,4 +1,4 @@
-import { d as defineEventHandler, c as createError, i as setHeader } from '../../../../nitro/nitro.mjs';
+import { d as defineEventHandler, c as createError, j as setHeader } from '../../../../nitro/nitro.mjs';
 import { g as getKnowledgeById } from '../../../../_/knowledgeModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';

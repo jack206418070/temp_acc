@@ -25,9 +25,14 @@ const bannerStyle = computed(() => {
 // 載入啟用中的 banner
 async function loadActiveBanner() {
   try {
-    const response = await $fetch('/api/banners');
-    const banners = response.data;
-    activeBanner.value = banners.find(banner => banner.is_active);
+    const response = await $fetch('/api/banners', {
+      params: {
+        active: 1
+      }
+    });
+    if (response.success && response.data?.length > 0) {
+      activeBanner.value = response.data[0];
+    }
   } catch (error) {
     console.error('載入 Banner 失敗:', error);
   }

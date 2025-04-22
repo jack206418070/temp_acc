@@ -1,0 +1,1 @@
+import{_ as t}from"./CgLGfbPX.js";import{d as o,u as n,c as a,e as _,o as s}from"./DMRpcmPS.js";const l=o({__name:"[id]",setup(c){return n({title:"公告詳細資訊 ｜ 多元陪伴照顧服務計畫"}),(r,m)=>{const e=t;return s(),a("div",null,[_(e)])}}});export{l as default};

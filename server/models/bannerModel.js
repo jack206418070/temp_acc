@@ -2,10 +2,12 @@ import sql from 'mssql';
 import { getConnection } from '../config/db.js';
 
 // 獲取所有 Banner
-export async function getAllBanners() {
+export async function getAllBanners(active = 0) {
   try {
     const pool = await getConnection();
-    const result = await pool.request()
+    let result;
+    if (active == 0) {
+      result = await pool.request()
       .query(`
         SELECT 
           id,
@@ -21,6 +23,24 @@ export async function getAllBanners() {
         WHERE is_deleted = 0
         ORDER BY sort_order ASC, id DESC;
       `);
+    } else if (active == 1) {
+      result = await pool.request()
+      .query(`
+        SELECT 
+          id,
+          title,
+          description,
+          CAST(image_data as varbinary(max)) as imageData,
+          image_type as imageType,
+          sort_order as sortOrder,
+          is_active as is_active,
+          created_at as createdAt,
+          updated_at as updatedAt
+        FROM Banners
+        WHERE is_deleted = 0 AND is_active = 1
+        ORDER BY sort_order ASC, id DESC;
+      `);
+    }
     return result.recordset;
   } catch (error) {
     console.error('❌ Get All Banners Error:', error);

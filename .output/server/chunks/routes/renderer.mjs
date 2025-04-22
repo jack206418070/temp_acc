@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'vue-bundle-renderer/runtime';
-import { l as defineRenderHandler, m as buildAssetsURL, p as publicAssetsURL, j as getQuery, c as createError, n as getRouteRules, u as useRuntimeConfig, o as useNitroApp, q as getResponseStatusText, t as getResponseStatus } from '../nitro/nitro.mjs';
+import { l as defineRenderHandler, m as buildAssetsURL, p as publicAssetsURL, f as getQuery, c as createError, n as getRouteRules, u as useRuntimeConfig, o as useNitroApp, q as getResponseStatusText, t as getResponseStatus } from '../nitro/nitro.mjs';
 import { stringify, uneval } from 'devalue';
 import { renderToString } from 'vue/server-renderer';
 import { propsToString, renderSSRHead } from '@unhead/ssr';

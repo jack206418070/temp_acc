@@ -1,5 +1,5 @@
 import { defineComponent, ref, h, resolveComponent, hasInjectionContext, inject, computed, withCtx, createVNode, getCurrentInstance, watchEffect, watch, mergeProps, unref, toDisplayString, createTextVNode, version, defineAsyncComponent, provide, shallowReactive, Suspense, Fragment, useSSRContext, createApp, toRef, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, reactive, effectScope, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, nextTick, getCurrentScope, markRaw } from 'vue';
-import { w as parseQuery, x as hasProtocol, y as joinURL, p as publicAssetsURL, z as withQuery, A as isScriptProtocol, B as withTrailingSlash, C as withoutTrailingSlash, D as sanitizeStatusCode, E as getContext, $ as $fetch$1, F as baseURL, G as createHooks, c as createError$1, H as toRouteMatcher, I as createRouter$1, J as defu, K as destr, L as klona, M as parse, f as getRequestHeader, N as isEqual, s as setCookie, O as getCookie, e as deleteCookie } from '../nitro/nitro.mjs';
+import { w as parseQuery, x as hasProtocol, y as joinURL, p as publicAssetsURL, z as withQuery, A as isScriptProtocol, B as withTrailingSlash, C as withoutTrailingSlash, D as sanitizeStatusCode, E as getContext, $ as $fetch$1, F as baseURL, G as createHooks, c as createError$1, H as toRouteMatcher, I as createRouter$1, J as defu, K as destr, L as klona, M as parse, h as getRequestHeader, N as isEqual, s as setCookie, O as getCookie, e as deleteCookie } from '../nitro/nitro.mjs';
 import { getActiveHead, CapoPlugin } from 'unhead';
 import { defineHeadPlugin, composableNames, unpackMeta } from '@unhead/shared';
 import { useRouter as useRouter$1, useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
@@ -784,7 +784,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-C73G0M4A.mjs')
+    component: () => import('./index-CdZXShsN.mjs')
   },
   {
     name: "join-us-unit",

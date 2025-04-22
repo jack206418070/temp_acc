@@ -1,15 +1,24 @@
-import { defineEventHandler, createError } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, getQuery, createError } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
 import { g as getAllBanners } from '../../_/bannerModel.mjs';
 import 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
 import '../../_/db.mjs';
 
 const index_get = defineEventHandler(async (event) => {
   try {
-    const data = await getAllBanners();
-    data.forEach((banner) => {
-      banner.imageData = banner.imageData.toString("base64");
-    });
-    return { success: true, data };
+    const active = getQuery(event).active;
+    if (active == 1) {
+      const data = await getAllBanners(active);
+      data.forEach((banner) => {
+        banner.imageData = banner.imageData.toString("base64");
+      });
+      return { success: true, data };
+    } else {
+      const data = await getAllBanners();
+      data.forEach((banner) => {
+        banner.imageData = banner.imageData.toString("base64");
+      });
+      return { success: true, data };
+    }
   } catch (error) {
     console.error("\u274C Get All Banners Error:", error);
     throw createError({
