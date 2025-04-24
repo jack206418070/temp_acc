@@ -28,7 +28,12 @@
       <div v-else class="banner-grid">
         <div v-for="banner in banners" 
              :key="banner.id" 
-             class="banner-card">
+             class="banner-card"
+             draggable="true"
+             @dragstart="handleDragStart($event, banner)"
+             @dragover.prevent
+             @dragenter.prevent
+             @drop="handleDrop($event, banner)">
           <div class="banner-image">
             <img :src="`data:${banner.imageType};base64,${banner.imageData}`" :alt="banner.title">
           </div>
@@ -39,6 +44,7 @@
               <span :class="['status-badge', banner.is_active ? 'active' : 'inactive']">
                 {{ banner.is_active ? '啟用中' : '已停用' }}
               </span>
+              <span class="sort-order">排序: {{ banner.sortOrder }}</span>
             </div>
           </div>
           <div class="banner-actions">
@@ -137,6 +143,7 @@ const deletingId = ref(null);
 const isSubmitting = ref(false);
 const imagePreview = ref(null);
 const Swal = ref(null);
+const draggedBanner = ref(null);
 
 const formData = ref({
   title: '',
@@ -223,29 +230,6 @@ async function handleSubmit() {
     formDataToSend.append('title', formData.value.title);
     formDataToSend.append('description', formData.value.description || '');
     formDataToSend.append('is_active', formData.value.is_active ? '1' : '0');
-
-    // 如果要啟用當前 banner，先將其他所有 banner 設為未啟用
-    if (formData.value.is_active) {
-      const cookie = useCookie('auth_token');
-      const deactivatePromises = banners.value
-        .filter(banner => banner.is_active && banner.id !== editingId.value)
-        .map(banner => {
-          const deactivateData = new FormData();
-          deactivateData.append('title', banner.title);
-          deactivateData.append('description', banner.description || '');
-          deactivateData.append('is_active', '0');
-          
-          return $fetch(`/api/banners/${banner.id}`, {
-            method: 'PUT',
-            body: deactivateData,
-            headers: {
-              Authorization: `Bearer ${cookie.value}`
-            }
-          });
-        });
-      
-      await Promise.all(deactivatePromises);
-    }
 
     const imageFile = document.querySelector('input[type="file"]').files[0];
     if (imageFile) {
@@ -350,6 +334,68 @@ async function handleDelete(id) {
   }
 }
 
+// 處理拖曳開始
+function handleDragStart(event, banner) {
+  draggedBanner.value = banner;
+  event.dataTransfer.effectAllowed = 'move';
+  event.target.classList.add('dragging');
+}
+
+// 處理拖曳結束時的放置
+async function handleDrop(event, targetBanner) {
+  event.preventDefault();
+  event.target.closest('.banner-card').classList.remove('dragging');
+  
+  if (!draggedBanner.value || draggedBanner.value.id === targetBanner.id) {
+    return;
+  }
+
+  try {
+    isButtonLoading.value = true;
+    const cookie = useCookie('auth_token');
+    
+    // 更新排序
+    await $fetch(`/api/banners/order`, {
+      method: 'PUT',
+      body: {
+        bannerId: draggedBanner.value.id,
+        targetOrder: targetBanner.sortOrder
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${cookie.value}`
+      }
+    });
+
+    // 重新載入列表
+    await loadBanners();
+
+    // 顯示成功提示
+    const Toast = Swal.value.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true
+    });
+
+    Toast.fire({
+      icon: 'success',
+      title: '排序更新成功'
+    });
+  } catch (error) {
+    console.error('更新排序失敗:', error);
+    Swal.value.fire({
+      icon: 'error',
+      title: '錯誤',
+      text: error?.data?.message || '更新排序失敗'
+    });
+  } finally {
+    isButtonLoading.value = false;
+    draggedBanner.value = null;
+  }
+}
+
 // 初始載入
 onMounted(async () => {
   try {
@@ -428,6 +474,12 @@ onMounted(async () => {
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  cursor: move;
+  
+  &.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
   
   &:hover {
     transform: translateY(-5px);
@@ -696,5 +748,13 @@ onMounted(async () => {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.sort-order {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  color: #666;
 }
 </style> 

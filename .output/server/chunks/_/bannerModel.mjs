@@ -72,31 +72,59 @@ async function createBanner({
   description,
   imageData,
   imageType,
-  sortOrder,
   isActive
 }) {
   try {
     const pool = await getConnection();
-    const result = await pool.request().input("title", sql.NVarChar(100), title).input("description", sql.NVarChar(500), description).input("imageData", sql.VarBinary(sql.MAX), imageData).input("imageType", sql.NVarChar(50), imageType).input("sortOrder", sql.Int, sortOrder).input("isActive", sql.Bit, isActive).query(`
-        INSERT INTO Banners (
-          title,
-          description,
-          image_data,
-          image_type,
-          sort_order,
-          is_active
-        )
-        OUTPUT INSERTED.*
-        VALUES (
-          @title,
-          @description,
-          @imageData,
-          @imageType,
-          @sortOrder,
-          @isActive
-        );
-      `);
-    return result.recordset[0];
+    const transaction = new sql.Transaction(pool);
+    try {
+      await transaction.begin();
+      const maxOrderResult = await transaction.request().query(`
+          SELECT ISNULL(MAX(sort_order), 0) + 1 as nextOrder
+          FROM Banners
+          WHERE is_deleted = 0
+        `);
+      const nextOrder = maxOrderResult.recordset[0].nextOrder;
+      const result = await transaction.request().input("title", sql.NVarChar(100), title).input("description", sql.NVarChar(500), description).input("imageData", sql.VarBinary(sql.MAX), imageData).input("imageType", sql.NVarChar(50), imageType).input("sortOrder", sql.Int, nextOrder).input("isActive", sql.Bit, isActive).query(`
+          INSERT INTO Banners (
+            title,
+            description,
+            image_data,
+            image_type,
+            sort_order,
+            is_active,
+            created_at,
+            updated_at
+          )
+          OUTPUT 
+            INSERTED.id,
+            INSERTED.title,
+            INSERTED.description,
+            CAST(INSERTED.image_data as varbinary(max)) as imageData,
+            INSERTED.image_type as imageType,
+            INSERTED.sort_order as sortOrder,
+            INSERTED.is_active as isActive,
+            INSERTED.created_at as createdAt,
+            INSERTED.updated_at as updatedAt
+          VALUES (
+            @title,
+            @description,
+            @imageData,
+            @imageType,
+            @sortOrder,
+            @isActive,
+            GETDATE(),
+            GETDATE()
+          );
+        `);
+      await transaction.commit();
+      return result.recordset[0];
+    } catch (error) {
+      if (transaction) {
+        await transaction.rollback();
+      }
+      throw error;
+    }
   } catch (error) {
     console.error("\u274C Create Banner Error:", error);
     throw error;
@@ -107,7 +135,6 @@ async function updateBanner(id, {
   description,
   imageData,
   imageType,
-  sortOrder,
   isActive
 }) {
   try {
@@ -129,10 +156,6 @@ async function updateBanner(id, {
     if (imageType !== void 0) {
       request.input("imageType", sql.NVarChar(50), imageType);
       updateFields.push("image_type = @imageType");
-    }
-    if (sortOrder !== void 0) {
-      request.input("sortOrder", sql.Int, sortOrder);
-      updateFields.push("sort_order = @sortOrder");
     }
     if (isActive !== void 0) {
       request.input("isActive", sql.Bit, isActive);
@@ -168,20 +191,59 @@ async function deleteBanner(id) {
     throw error;
   }
 }
-async function updateBannerOrder(id, sortOrder) {
+async function updateBannerOrder(id, targetOrder) {
+  const pool = await getConnection();
+  const transaction = new sql.Transaction(pool);
   try {
-    const pool = await getConnection();
-    const result = await pool.request().input("id", sql.Int, id).input("sortOrder", sql.Int, sortOrder).query(`
-        UPDATE Banners
-        SET 
-          sort_order = @sortOrder,
-          updated_at = GETDATE()
-        OUTPUT INSERTED.*
-        WHERE id = @id AND is_deleted = 0;
+    await transaction.begin();
+    const currentBanner = await transaction.request().input("id", sql.Int, id).query(`
+        SELECT id, sort_order
+        FROM Banners
+        WHERE id = @id AND is_deleted = 0
       `);
-    return result.recordset[0];
+    if (currentBanner.recordset.length === 0) {
+      throw new Error("\u627E\u4E0D\u5230\u6307\u5B9A\u7684 Banner");
+    }
+    const currentOrder = currentBanner.recordset[0].sort_order;
+    const targetBanner = await transaction.request().input("targetOrder", sql.Int, targetOrder).query(`
+        SELECT id, sort_order
+        FROM Banners
+        WHERE sort_order = @targetOrder AND is_deleted = 0
+      `);
+    if (targetBanner.recordset.length === 0) {
+      throw new Error("\u627E\u4E0D\u5230\u76EE\u6A19\u6392\u5E8F\u7684 Banner");
+    }
+    const targetBannerId = targetBanner.recordset[0].id;
+    await transaction.request().input("id1", sql.Int, id).input("order1", sql.Int, targetOrder).input("id2", sql.Int, targetBannerId).input("order2", sql.Int, currentOrder).query(`
+        UPDATE b
+        SET sort_order = CASE
+          WHEN id = @id1 THEN @order1
+          WHEN id = @id2 THEN @order2
+        END,
+        updated_at = GETDATE()
+        FROM Banners b
+        WHERE id IN (@id1, @id2) AND is_deleted = 0;
+      `);
+    await transaction.commit();
+    const result = await pool.request().input("id1", sql.Int, id).input("id2", sql.Int, targetBannerId).query(`
+        SELECT 
+          id,
+          title,
+          description,
+          CAST(image_data as varbinary(max)) as imageData,
+          image_type as imageType,
+          sort_order as sortOrder,
+          is_active as isActive,
+          created_at as createdAt,
+          updated_at as updatedAt
+        FROM Banners
+        WHERE id IN (@id1, @id2) AND is_deleted = 0
+        ORDER BY sort_order;
+      `);
+    return result.recordset;
   } catch (error) {
-    console.error("\u274C Update Banner Order Error:", error);
+    await transaction.rollback();
+    console.error("\u66F4\u65B0\u6392\u5E8F\u5931\u6557:", error);
     throw error;
   }
 }

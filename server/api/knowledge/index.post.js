@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
     const know_category = formData.find(f => f.name === 'know_category')?.data.toString();
     const imageFile = formData.find(f => f.name === 'image');
     const title = formData.find(f => f.name === 'title')?.data.toString();
+    const image_url = formData.find(f => f.name === 'image_url')?.data.toString();
     
     if (!know_category || !imageFile) {
       throw createError({
@@ -72,7 +73,8 @@ export default defineEventHandler(async (event) => {
       know_category: parseInt(know_category),
       imageBuffer: compressedImageBuffer,
       imageType: 'image/jpeg',
-      title: title
+      title: title,
+      image_url: image_url || null
     });
 
     return { 

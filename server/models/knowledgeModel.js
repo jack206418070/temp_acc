@@ -14,7 +14,8 @@ export async function getAllKnowledge(category = null, includeImage = false) {
         title,
         display_order,
         created_at,
-        updated_at
+        updated_at,
+        image_url
     `;
     
     // 如果需要圖片資訊，則添加相關欄位
@@ -67,7 +68,8 @@ export async function getKnowledgeById(id) {
           image_type,
           CAST('' as xml).value('xs:base64Binary(sql:column("image_data"))', 'varchar(max)') as image_data,
           created_at,
-          updated_at
+          updated_at,
+          image_url
         FROM knowledge
         WHERE kid = @kid
       `);
@@ -80,7 +82,7 @@ export async function getKnowledgeById(id) {
 }
 
 // ✅ 新增知識
-export async function createKnowledge({ know_category, imageBuffer, imageType, title }) {
+export async function createKnowledge({ know_category, imageBuffer, imageType, title, image_url }) {
   try {
     const pool = await getConnection();
     const now = new Date();
@@ -105,6 +107,7 @@ export async function createKnowledge({ know_category, imageBuffer, imageType, t
       .input('updated_at', sql.DateTime, now)
       .input('title', sql.NVarChar(50), title)
       .input('display_order', sql.Int, nextOrder)
+      .input('image_url', sql.NVarChar(255), image_url)
       .query(`
         INSERT INTO knowledge (
           know_category, 
@@ -113,13 +116,15 @@ export async function createKnowledge({ know_category, imageBuffer, imageType, t
           created_at, 
           updated_at,
           title,
-          display_order
+          display_order,
+          image_url
         )
         OUTPUT 
           INSERTED.kid,
           INSERTED.know_category,
           'data:' + INSERTED.image_type + ';base64,' + 
-          CAST('' as xml).value('xs:base64Binary(sql:column("INSERTED.image_data"))', 'varchar(max)') as image_url,
+          CAST('' as xml).value('xs:base64Binary(sql:column("INSERTED.image_data"))', 'varchar(max)') as image_data,
+          INSERTED.image_url,
           INSERTED.created_at,
           INSERTED.updated_at,
           INSERTED.title,
@@ -131,7 +136,8 @@ export async function createKnowledge({ know_category, imageBuffer, imageType, t
           @created_at, 
           @updated_at,
           @title,
-          @display_order
+          @display_order,
+          @image_url
         )
       `);
 
@@ -143,13 +149,13 @@ export async function createKnowledge({ know_category, imageBuffer, imageType, t
 }
 
 // ✅ 更新知識
-export async function updateKnowledge(id, title, category, imageData = null) {
+export async function updateKnowledge(id, title, category, imageData = null, image_url = null) {
   try {
     const pool = await getConnection();
     const transaction = new sql.Transaction(pool);
     
     await transaction.begin();
-    
+    console.log('image_url', image_url);
     try {
       // 1. 先獲取當前項目的資訊
       const currentItemResult = await transaction.request()
@@ -198,7 +204,8 @@ export async function updateKnowledge(id, title, category, imageData = null) {
           SET know_category = @category,
               title = @title,
               display_order = @newOrder,
-              updated_at = @updated_at
+              updated_at = @updated_at,
+              image_url = @image_url
         `;
         
         if (imageData) {
@@ -213,6 +220,7 @@ export async function updateKnowledge(id, title, category, imageData = null) {
         request.input('title', sql.NVarChar, title);
         request.input('newOrder', sql.Int, newOrder);
         request.input('updated_at', sql.DateTime, new Date());
+        request.input('image_url', sql.NVarChar(255), image_url);
         
         if (imageData) {
           request.input('image_data', sql.VarBinary(sql.MAX), imageData);
@@ -225,7 +233,8 @@ export async function updateKnowledge(id, title, category, imageData = null) {
           UPDATE knowledge
           SET know_category = @category,
               title = @title,
-              updated_at = @updated_at
+              updated_at = @updated_at,
+              image_url = @image_url
         `;
         
         if (imageData) {
@@ -239,6 +248,7 @@ export async function updateKnowledge(id, title, category, imageData = null) {
         request.input('category', sql.Int, category);
         request.input('title', sql.NVarChar, title);
         request.input('updated_at', sql.DateTime, new Date());
+        request.input('image_url', sql.NVarChar(255), image_url);
         
         if (imageData) {
           request.input('image_data', sql.VarBinary(sql.MAX), imageData);

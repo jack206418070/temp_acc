@@ -16,7 +16,7 @@ import '../../../_/db.mjs';
 import 'mssql';
 
 async function _id__put(event) {
-  var _a, _b;
+  var _a, _b, _c;
   try {
     const id = event.context.params.id;
     const formData = await readMultipartFormData(event);
@@ -29,6 +29,7 @@ async function _id__put(event) {
     const title = (_a = formData.find((f) => f.name === "title")) == null ? void 0 : _a.data.toString();
     const know_category = (_b = formData.find((f) => f.name === "know_category")) == null ? void 0 : _b.data.toString();
     const imageFile = formData.find((f) => f.name === "image");
+    const image_url = (_c = formData.find((f) => f.name === "image_url")) == null ? void 0 : _c.data.toString();
     if (!title || !know_category) {
       throw createError({
         statusCode: 400,
@@ -43,7 +44,8 @@ async function _id__put(event) {
       parseInt(id),
       title,
       parseInt(know_category),
-      imagePath
+      imagePath,
+      image_url
     );
     return result;
   } catch (error) {

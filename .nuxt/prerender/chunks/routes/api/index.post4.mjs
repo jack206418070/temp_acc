@@ -28,7 +28,7 @@ import '../../_/db.mjs';
 import 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
 
 const index_post = defineEventHandler(async (event) => {
-  var _a, _b;
+  var _a, _b, _c;
   try {
     await authenticate(event);
     const formData = await readMultipartFormData(event);
@@ -36,6 +36,7 @@ const index_post = defineEventHandler(async (event) => {
     const know_category = (_a = formData.find((f) => f.name === "know_category")) == null ? void 0 : _a.data.toString();
     const imageFile = formData.find((f) => f.name === "image");
     const title = (_b = formData.find((f) => f.name === "title")) == null ? void 0 : _b.data.toString();
+    const image_url = (_c = formData.find((f) => f.name === "image_url")) == null ? void 0 : _c.data.toString();
     if (!know_category || !imageFile) {
       throw createError({
         statusCode: 400,
@@ -73,7 +74,8 @@ const index_post = defineEventHandler(async (event) => {
       know_category: parseInt(know_category),
       imageBuffer: compressedImageBuffer,
       imageType: "image/jpeg",
-      title
+      title,
+      image_url: image_url || null
     });
     return {
       success: true,

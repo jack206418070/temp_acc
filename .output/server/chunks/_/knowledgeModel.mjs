@@ -11,7 +11,8 @@ async function getAllKnowledge(category = null, includeImage = false) {
         title,
         display_order,
         created_at,
-        updated_at
+        updated_at,
+        image_url
     `;
     if (includeImage) {
       query += `,
@@ -51,7 +52,8 @@ async function getKnowledgeById(id) {
           image_type,
           CAST('' as xml).value('xs:base64Binary(sql:column("image_data"))', 'varchar(max)') as image_data,
           created_at,
-          updated_at
+          updated_at,
+          image_url
         FROM knowledge
         WHERE kid = @kid
       `);
@@ -61,7 +63,7 @@ async function getKnowledgeById(id) {
     throw error;
   }
 }
-async function createKnowledge({ know_category, imageBuffer, imageType, title }) {
+async function createKnowledge({ know_category, imageBuffer, imageType, title, image_url }) {
   try {
     const pool = await getConnection();
     const now = /* @__PURE__ */ new Date();
@@ -72,7 +74,7 @@ async function createKnowledge({ know_category, imageBuffer, imageType, title })
       `);
     const nextOrder = maxOrderResult.recordset[0].next_order;
     console.log(title);
-    const result = await pool.request().input("know_category", sql.Int, know_category).input("image_data", sql.VarBinary(sql.MAX), imageBuffer).input("image_type", sql.NVarChar(50), imageType).input("created_at", sql.DateTime, now).input("updated_at", sql.DateTime, now).input("title", sql.NVarChar(50), title).input("display_order", sql.Int, nextOrder).query(`
+    const result = await pool.request().input("know_category", sql.Int, know_category).input("image_data", sql.VarBinary(sql.MAX), imageBuffer).input("image_type", sql.NVarChar(50), imageType).input("created_at", sql.DateTime, now).input("updated_at", sql.DateTime, now).input("title", sql.NVarChar(50), title).input("display_order", sql.Int, nextOrder).input("image_url", sql.NVarChar(255), image_url).query(`
         INSERT INTO knowledge (
           know_category, 
           image_data, 
@@ -80,13 +82,15 @@ async function createKnowledge({ know_category, imageBuffer, imageType, title })
           created_at, 
           updated_at,
           title,
-          display_order
+          display_order,
+          image_url
         )
         OUTPUT 
           INSERTED.kid,
           INSERTED.know_category,
           'data:' + INSERTED.image_type + ';base64,' + 
-          CAST('' as xml).value('xs:base64Binary(sql:column("INSERTED.image_data"))', 'varchar(max)') as image_url,
+          CAST('' as xml).value('xs:base64Binary(sql:column("INSERTED.image_data"))', 'varchar(max)') as image_data,
+          INSERTED.image_url,
           INSERTED.created_at,
           INSERTED.updated_at,
           INSERTED.title,
@@ -98,7 +102,8 @@ async function createKnowledge({ know_category, imageBuffer, imageType, title })
           @created_at, 
           @updated_at,
           @title,
-          @display_order
+          @display_order,
+          @image_url
         )
       `);
     return result.recordset[0];
@@ -107,11 +112,12 @@ async function createKnowledge({ know_category, imageBuffer, imageType, title })
     throw error;
   }
 }
-async function updateKnowledge(id, title, category, imageData = null) {
+async function updateKnowledge(id, title, category, imageData = null, image_url = null) {
   try {
     const pool = await getConnection();
     const transaction = new sql.Transaction(pool);
     await transaction.begin();
+    console.log("image_url", image_url);
     try {
       const currentItemResult = await transaction.request().input("kid", sql.Int, id).query(`
           SELECT know_category, display_order
@@ -142,7 +148,8 @@ async function updateKnowledge(id, title, category, imageData = null) {
           SET know_category = @category,
               title = @title,
               display_order = @newOrder,
-              updated_at = @updated_at
+              updated_at = @updated_at,
+              image_url = @image_url
         `;
         if (imageData) {
           query += ", image_data = @image_data";
@@ -154,6 +161,7 @@ async function updateKnowledge(id, title, category, imageData = null) {
         request.input("title", sql.NVarChar, title);
         request.input("newOrder", sql.Int, newOrder);
         request.input("updated_at", sql.DateTime, /* @__PURE__ */ new Date());
+        request.input("image_url", sql.NVarChar(255), image_url);
         if (imageData) {
           request.input("image_data", sql.VarBinary(sql.MAX), imageData);
         }
@@ -163,7 +171,8 @@ async function updateKnowledge(id, title, category, imageData = null) {
           UPDATE knowledge
           SET know_category = @category,
               title = @title,
-              updated_at = @updated_at
+              updated_at = @updated_at,
+              image_url = @image_url
         `;
         if (imageData) {
           query += ", image_data = @image_data";
@@ -174,6 +183,7 @@ async function updateKnowledge(id, title, category, imageData = null) {
         request.input("category", sql.Int, category);
         request.input("title", sql.NVarChar, title);
         request.input("updated_at", sql.DateTime, /* @__PURE__ */ new Date());
+        request.input("image_url", sql.NVarChar(255), image_url);
         if (imageData) {
           request.input("image_data", sql.VarBinary(sql.MAX), imageData);
         }

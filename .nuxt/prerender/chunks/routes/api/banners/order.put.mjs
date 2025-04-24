@@ -29,24 +29,24 @@ import '../../../_/db.mjs';
 const order_put = defineEventHandler(async (event) => {
   try {
     await authenticate(event);
-    const body = await readBody(event);
-    const { id, sortOrder } = body;
-    if (!id || sortOrder === void 0) {
-      throw createError({
+    const { bannerId, targetOrder } = await readBody(event);
+    if (!bannerId || targetOrder === void 0) {
+      return createError({
         statusCode: 400,
-        statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u53C3\u6578"
+        message: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D"
       });
     }
-    const data = await updateBannerOrder(id, sortOrder);
+    const result = await updateBannerOrder(bannerId, targetOrder);
     return {
       success: true,
-      data
+      message: "\u6392\u5E8F\u66F4\u65B0\u6210\u529F",
+      data: result
     };
   } catch (error) {
-    console.error("\u274C Update Banner Order Error:", error);
-    throw createError({
+    console.error("\u66F4\u65B0\u6392\u5E8F\u5931\u6557:", error);
+    return createError({
       statusCode: error.statusCode || 500,
-      statusMessage: error.statusMessage || "\u66F4\u65B0 Banner \u6392\u5E8F\u5931\u6557"
+      message: error.message || "\u66F4\u65B0\u6392\u5E8F\u5931\u6557"
     });
   }
 });

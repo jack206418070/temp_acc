@@ -17,6 +17,7 @@ export default async function(event) {
     const title = formData.find(f => f.name === 'title')?.data.toString();
     const know_category = formData.find(f => f.name === 'know_category')?.data.toString();
     const imageFile = formData.find(f => f.name === 'image');
+    const image_url = formData.find(f => f.name === 'image_url')?.data.toString();
     
     // 驗證必要參數
     if (!title || !know_category) {
@@ -38,7 +39,8 @@ export default async function(event) {
       parseInt(id),
       title,
       parseInt(know_category),
-      imagePath
+      imagePath,
+      image_url
     );
     
     return result;

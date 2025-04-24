@@ -24,14 +24,12 @@ export default defineEventHandler(async (event) => {
     const title = formData.find(f => f.name === 'title')?.data.toString();
     const description = formData.find(f => f.name === 'description')?.data.toString();
     const imageFile = formData.find(f => f.name === 'image');
-    const sortOrder = formData.find(f => f.name === 'sortOrder')?.data.toString();
     const isActive = formData.find(f => f.name === 'is_active')?.data.toString() == 1;
 
     // 準備更新數據
     const updateData = {
       title,
       description,
-      sortOrder: parseInt(sortOrder),
       isActive
     };
 

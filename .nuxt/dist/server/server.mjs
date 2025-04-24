@@ -663,7 +663,7 @@ const _routes = [
     name: "admin-banners",
     path: "/admin/banners",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import("./_nuxt/banners-CwloUFZ4.js")
+    component: () => import("./_nuxt/banners-BmQQLc5C.js")
   },
   {
     name: "admin-dashboard",
@@ -675,7 +675,7 @@ const _routes = [
     name: "admin-knowledge",
     path: "/admin/knowledge",
     meta: __nuxt_page_meta$5 || {},
-    component: () => import("./_nuxt/knowledge-DnNI907_.js")
+    component: () => import("./_nuxt/knowledge-tORAL_5S.js")
   },
   {
     name: "admin-knowledge2",
@@ -785,7 +785,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-CdZXShsN.js")
+    component: () => import("./_nuxt/index-YY_z735S.js")
   },
   {
     name: "join-us-unit",
@@ -820,7 +820,7 @@ const _routes = [
   {
     name: "propaganda",
     path: "/propaganda",
-    component: () => import("./_nuxt/propaganda-Byrj19fJ.js")
+    component: () => import("./_nuxt/propaganda-B1P6pY9M.js")
   },
   {
     name: "qa_test",

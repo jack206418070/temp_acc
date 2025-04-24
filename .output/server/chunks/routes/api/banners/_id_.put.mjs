@@ -17,7 +17,7 @@ import 'mssql';
 import '../../../_/db.mjs';
 
 const _id__put = defineEventHandler(async (event) => {
-  var _a, _b, _c, _d;
+  var _a, _b, _c;
   try {
     await authenticate(event);
     const id = parseInt(event.context.params.id);
@@ -32,12 +32,10 @@ const _id__put = defineEventHandler(async (event) => {
     const title = (_a = formData.find((f) => f.name === "title")) == null ? void 0 : _a.data.toString();
     const description = (_b = formData.find((f) => f.name === "description")) == null ? void 0 : _b.data.toString();
     const imageFile = formData.find((f) => f.name === "image");
-    const sortOrder = (_c = formData.find((f) => f.name === "sortOrder")) == null ? void 0 : _c.data.toString();
-    const isActive = ((_d = formData.find((f) => f.name === "is_active")) == null ? void 0 : _d.data.toString()) == 1;
+    const isActive = ((_c = formData.find((f) => f.name === "is_active")) == null ? void 0 : _c.data.toString()) == 1;
     const updateData = {
       title,
       description,
-      sortOrder: parseInt(sortOrder),
       isActive
     };
     if (imageFile) {

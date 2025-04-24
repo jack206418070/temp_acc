@@ -7,27 +7,30 @@ export default defineEventHandler(async (event) => {
     // 驗證
     await authenticate(event);
 
-    const body = await readBody(event);
-    const { id, sortOrder } = body;
+    // 獲取請求資料
+    const { bannerId, targetOrder } = await readBody(event);
 
-    if (!id || sortOrder === undefined) {
-      throw createError({
+    // 驗證必要欄位
+    if (!bannerId || targetOrder === undefined) {
+      return createError({
         statusCode: 400,
-        statusMessage: '缺少必要參數'
+        message: '缺少必要欄位'
       });
     }
 
-    const data = await updateBannerOrder(id, sortOrder);
+    // 更新排序
+    const result = await updateBannerOrder(bannerId, targetOrder);
 
-    return { 
+    return {
       success: true,
-      data
+      message: '排序更新成功',
+      data: result
     };
   } catch (error) {
-    console.error('❌ Update Banner Order Error:', error);
-    throw createError({
+    console.error('更新排序失敗:', error);
+    return createError({
       statusCode: error.statusCode || 500,
-      statusMessage: error.statusMessage || '更新 Banner 排序失敗'
+      message: error.message || '更新排序失敗'
     });
   }
 }); 

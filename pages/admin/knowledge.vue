@@ -114,6 +114,14 @@
               >
             </div>
             <div class="form-group">
+              <label>圖片連結 (選填)</label>
+              <input 
+                v-model="formData.image_url"
+                type="url"
+                placeholder="請輸入圖片連結"
+              >
+            </div>
+            <div class="form-group">
               <label>圖片 (限制 5MB 以內)</label>
               <input 
                 type="file" 
@@ -162,6 +170,7 @@ const formData = ref({
   kid: null,
   know_category: '',
   title: '',
+  image_url: ''
 });
 const imagePreview = ref('');
 const selectedFile = ref(null);
@@ -407,6 +416,7 @@ function openAddModal() {
     kid: null,
     know_category: '1',
     title: '',
+    image_url: ''
   };
   imagePreview.value = '';
   selectedFile.value = null;
@@ -416,12 +426,14 @@ function openAddModal() {
 
 // 開啟編輯模態框
 async function openEditModal(item) {
-  // 設置當前項目的 loading 狀態
   item.isLoading = true;
   
   try {
     isEditing.value = true;
-    formData.value = { ...item };
+    formData.value = { 
+      ...item,
+      image_url: item.image_url || ''
+    };
     
     const token = useCookie('auth_token').value;
     if (!token) {
@@ -435,7 +447,7 @@ async function openEditModal(item) {
     });
 
     if (response.success) {
-      imagePreview.value = response.data.image_url;
+      imagePreview.value = response.data.image_url || response.data.image_url;
       showModal.value = true;
     } else {
       throw new Error(response.message || '獲取圖片失敗');
@@ -448,7 +460,6 @@ async function openEditModal(item) {
       text: error?.data?.message || '獲取圖片失敗'
     });
   } finally {
-    // 清除當前項目的 loading 狀態
     item.isLoading = false;
   }
 }
@@ -472,8 +483,8 @@ async function handleSubmit() {
       return;
     }
 
-    if (!isEditing.value && !selectedFile.value) {
-      alert('請選擇圖片');
+    if (!isEditing.value && !selectedFile.value && !formData.value.image_url) {
+      alert('請選擇圖片或輸入圖片連結');
       return;
     }
 
@@ -485,7 +496,8 @@ async function handleSubmit() {
     const formDataToSend = new FormData();
     formDataToSend.append('know_category', formData.value.know_category);
     formDataToSend.append('title', formData.value.title);
-    console.log(formData.value.title);
+    formDataToSend.append('image_url', formData.value.image_url || '');
+    
     if (selectedFile.value) {
       formDataToSend.append('image', selectedFile.value);
     }

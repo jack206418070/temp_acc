@@ -32,7 +32,16 @@
     <div v-if="showPopup" class="popup-overlay" @click.self="closePopup">
       <div class="popup-content">
         <button class="arrow left" v-if="currentIndex > 0" @click="prevImage">‹</button>
-        <img :src="tab_data[tab_type].data[currentIndex]?.image" :alt="tab_data[tab_type].data[currentIndex]?.title" />
+        <a v-if="tab_data[tab_type].data[currentIndex]?.image_url" 
+           :href="tab_data[tab_type].data[currentIndex]?.image_url" 
+           target="_blank"
+           class="image-link">
+          <img :src="tab_data[tab_type].data[currentIndex]?.image" :alt="tab_data[tab_type].data[currentIndex]?.title" />
+          <span class="link-hint">點擊圖片開啟原始連結</span>
+        </a>
+        <img v-else 
+             :src="tab_data[tab_type].data[currentIndex]?.image" 
+             :alt="tab_data[tab_type].data[currentIndex]?.title" />
         <button class="arrow right" v-if="currentIndex < tab_data[tab_type].data.length - 1" @click="nextImage">›</button>
         <button class="close-btn" @click="closePopup">×</button>
       </div>
@@ -103,6 +112,7 @@ const fetchKnowledgeList = async (category) => {
         kid: item.kid,
         title: item.title,
         image: imageUrl,
+        image_url: item.image_url,
         display_order: item.display_order
       };
     });
@@ -360,5 +370,37 @@ h1, h2 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.image-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.link-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-link:hover .link-hint {
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .link-hint {
+    font-size: 12px;
+    padding: 3px 8px;
+    bottom: 5px;
+  }
 }
 </style>
