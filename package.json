@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nuxt/icon": "^1.8.1",
     "@nuxtjs/vercel-builder": "^0.25.0",
-    "nuxt": "^3.10.0",
+    "nuxt": "^3.17.3",
     "nuxt-security": "^2.1.5",
     "sass": "^1.86.3",
     "sass-loader": "^16.0.5",
@@ -49,6 +49,7 @@
     "vue-easy-lightbox": "^1.18.0",
     "vue3-toastify": "^0.2.1",
     "wow.js": "^1.2.2",
+    "yarn": "^1.22.22",
     "yup": "^1.3.3"
   }
 }

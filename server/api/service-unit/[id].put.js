@@ -1,11 +1,9 @@
 import { authenticate } from '~/server/utils/auth';
 import { updateServiceUnit } from '~/server/models/serviceUnitModel';
-import { createError } from 'h3';
-import { createCanvas, loadImage } from 'canvas';
+import { createError, readMultipartFormData } from 'h3';
 
 export default defineEventHandler(async (event) => {
   try {
-    // 驗證
     await authenticate(event);
 
     const id = parseInt(event.context.params.id);
@@ -16,11 +14,9 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    // 解析 multipart form data
     const formData = await readMultipartFormData(event);
-    if (!formData) throw new Error('No form data');
+    if (!formData) throw createError({ statusCode: 400, statusMessage: 'No form data' });
 
-    // 獲取表單數據
     const name = formData.find(f => f.name === 'name')?.data.toString();
     const unitImageFile = formData.find(f => f.name === 'unitImage');
     const category = formData.find(f => f.name === 'category')?.data.toString();
@@ -33,7 +29,6 @@ export default defineEventHandler(async (event) => {
     const website = formData.find(f => f.name === 'website')?.data.toString();
     const priceImageFile = formData.find(f => f.name === 'priceImage');
 
-    // 驗證必填欄位
     if (!name || !category || !region || !serviceArea || !address || !phone || !email || !description) {
       throw createError({
         statusCode: 400,
@@ -41,79 +36,22 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    // 處理單位圖片
-    let unitImageBuffer;
-    if (unitImageFile) {
-      const originalUnitSize = (unitImageFile.data.length / 1024).toFixed(2);
-      console.log(`原始單位圖片大小: ${originalUnitSize} KB`);
-
-      try {
-        const base64UnitImage = `data:${unitImageFile.type};base64,${unitImageFile.data.toString('base64')}`;
-        const img = await loadImage(base64UnitImage);
-        
-        const maxWidth = 1200;
-        const scale = maxWidth / img.width;
-        const targetWidth = img.width > maxWidth ? maxWidth : img.width;
-        const targetHeight = img.width > maxWidth ? Math.round(img.height * scale) : img.height;
-        
-        const canvas = createCanvas(targetWidth, targetHeight);
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-        
-        unitImageBuffer = canvas.toBuffer('image/jpeg', {
-          quality: 0.8,
-          progressive: true
-        });
-
-        const compressedUnitSize = (unitImageBuffer.length / 1024).toFixed(2);
-        console.log(`壓縮後單位圖片大小: ${compressedUnitSize} KB`);
-        console.log(`單位圖片壓縮率: ${((1 - unitImageBuffer.length / unitImageFile.data.length) * 100).toFixed(2)}%`);
-      } catch (error) {
-        console.error('單位圖片壓縮失敗:', error);
-        throw createError({
-          statusCode: 400,
-          statusMessage: '單位圖片處理失敗'
-        });
-      }
+    // 單位圖片
+    let unitImageBuffer = null;
+    if (unitImageFile?.data) {
+      const size = (unitImageFile.data.length / 1024).toFixed(2);
+      console.log(`📷 單位圖片: ${size} KB, 類型: ${unitImageFile.type}`);
+      unitImageBuffer = unitImageFile.data;
     }
 
-    // 處理價格圖片
-    let priceImageBuffer;
-    if (priceImageFile) {
-      const originalPriceSize = (priceImageFile.data.length / 1024).toFixed(2);
-      console.log(`原始價格圖片大小: ${originalPriceSize} KB`);
-
-      try {
-        const base64PriceImage = `data:${priceImageFile.type};base64,${priceImageFile.data.toString('base64')}`;
-        const img = await loadImage(base64PriceImage);
-        
-        const maxWidth = 1200;
-        const scale = maxWidth / img.width;
-        const targetWidth = img.width > maxWidth ? maxWidth : img.width;
-        const targetHeight = img.width > maxWidth ? Math.round(img.height * scale) : img.height;
-        
-        const canvas = createCanvas(targetWidth, targetHeight);
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-        
-        priceImageBuffer = canvas.toBuffer('image/jpeg', {
-          quality: 0.8,
-          progressive: true
-        });
-
-        const compressedPriceSize = (priceImageBuffer.length / 1024).toFixed(2);
-        console.log(`壓縮後價格圖片大小: ${compressedPriceSize} KB`);
-        console.log(`價格圖片壓縮率: ${((1 - priceImageBuffer.length / priceImageFile.data.length) * 100).toFixed(2)}%`);
-      } catch (error) {
-        console.error('價格圖片壓縮失敗:', error);
-        throw createError({
-          statusCode: 400,
-          statusMessage: '價格圖片處理失敗'
-        });
-      }
+    // 價格圖片
+    let priceImageBuffer = null;
+    if (priceImageFile?.data) {
+      const size = (priceImageFile.data.length / 1024).toFixed(2);
+      console.log(`📷 價格圖片: ${size} KB, 類型: ${priceImageFile.type}`);
+      priceImageBuffer = priceImageFile.data;
     }
 
-    // 更新數據庫
     const data = await updateServiceUnit(id, {
       name,
       unitImage: unitImageBuffer,
@@ -128,8 +66,8 @@ export default defineEventHandler(async (event) => {
       priceImage: priceImageBuffer
     });
 
-    return { 
-      success: true, 
+    return {
+      success: true,
       data
     };
   } catch (error) {
@@ -139,4 +77,4 @@ export default defineEventHandler(async (event) => {
       statusMessage: error.statusMessage || '更新服務單位失敗'
     });
   }
-}); 
+});

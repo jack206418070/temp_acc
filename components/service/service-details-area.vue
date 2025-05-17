@@ -22,9 +22,11 @@ async function fetchReminderData() {
   console.log(typeof reminder_data === 'string');
 }
 const decode = (str) => {
-  const txt = document.createElement('textarea')
-  txt.innerHTML = str
-  return txt.value
+  if (process.client) {
+    const txt = document.createElement('textarea')
+    txt.innerHTML = str
+    return txt.value
+  }
 }
 onMounted(async () => {
   await fetchReminderData();

@@ -2312,35 +2312,37 @@ const toggleExpand = (index: number) => {
 
 // 將 HTML 轉成 QA 清單：標題＋內容
 const parseHtmlToList = (html: string) => {
-  const container = document.createElement('div');
-  container.innerHTML = html;
-  const children = Array.from(container.children);
+  if (process.client) {
+    const container = document.createElement('div');
+    container.innerHTML = html;
+    const children = Array.from(container.children);
 
-  const qaList: { question: string; answer: string }[] = [];
+    const qaList: { question: string; answer: string }[] = [];
 
-  let currentQuestion = '';
-  let currentAnswer = '';
+    let currentQuestion = '';
+    let currentAnswer = '';
 
-  for (const el of children) {
-    const text = el.textContent?.trim() || '';
-    const isNewQuestion = /^\d+[.．、]?\s*/.test(text); // ✅ 只用編號開頭判斷
+    for (const el of children) {
+      const text = el.textContent?.trim() || '';
+      const isNewQuestion = /^\d+[.．、]?\s*/.test(text); // ✅ 只用編號開頭判斷
 
-    if (isNewQuestion) {
-      if (currentQuestion) {
-        qaList.push({ question: currentQuestion, answer: currentAnswer });
+      if (isNewQuestion) {
+        if (currentQuestion) {
+          qaList.push({ question: currentQuestion, answer: currentAnswer });
+        }
+        currentQuestion = text;
+        currentAnswer = '';
+      } else {
+        currentAnswer += el.outerHTML;
       }
-      currentQuestion = text;
-      currentAnswer = '';
-    } else {
-      currentAnswer += el.outerHTML;
     }
-  }
 
-  if (currentQuestion) {
-    qaList.push({ question: currentQuestion, answer: currentAnswer });
-  }
+    if (currentQuestion) {
+      qaList.push({ question: currentQuestion, answer: currentAnswer });
+    }
 
-  parsedQaList.value = qaList;
+    parsedQaList.value = qaList;
+  }
 };
 
 onMounted(() => {
