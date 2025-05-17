@@ -2,16 +2,28 @@ import sql from 'mssql';
 
 // SQL Server 連線設定
 const config = {
-  user: 'sa',
-  password: 'MyS3cretPassw0rd',
-  server: '43.207.146.80',  // Docker 內部使用 'localhost'
+  user: 'accompanyservice',
+  password: '!QAZ8520@wsx',
+  server: '172.21.50.165',  // Docker 內部使用 'localhost'
   port: 1433,
-  database: 'accompany',
+  database: 'accompanyservice',
   options: {
     encrypt: false,  // 若有 SSL 問題請設為 false
     trustServerCertificate: true,
   },
 };
+
+// const config = {
+//   user: 'sa',
+//   password: 'MyS3cretPassw0rd',
+//   server: '43.207.146.80',  // Docker 內部使用 'localhost'
+//   port: 1433,
+//   database: 'test_two',
+//   options: {
+//     encrypt: false,  // 若有 SSL 問題請設為 false
+//     trustServerCertificate: true,
+//   },
+// };
 
 // 取得資料庫連線
 let pool;

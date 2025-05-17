@@ -1,12 +1,12 @@
 import sql from 'mssql';
 
 const config = {
-  user: "sa",
-  password: "MyS3cretPassw0rd",
-  server: "43.207.146.80",
+  user: "accompanyservice",
+  password: "!QAZ8520@wsx",
+  server: "172.21.50.165",
   // Docker 內部使用 'localhost'
   port: 1433,
-  database: "accompany",
+  database: "accompanyservice",
   options: {
     encrypt: false,
     // 若有 SSL 問題請設為 false

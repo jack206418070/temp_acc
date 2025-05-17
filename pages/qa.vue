@@ -2323,22 +2323,22 @@ const parseHtmlToList = (html: string) => {
     let currentAnswer = '';
 
     for (const el of children) {
-        const text = el.textContent?.trim() || '';
-        const isNewQuestion = /^\d+[.．、]?\s*/.test(text); // ✅ 只用編號開頭判斷
+      const text = el.textContent?.trim() || '';
+      const isNewQuestion = /^\d+[.．、]?\s*/.test(text); // ✅ 只用編號開頭判斷
 
-        if (isNewQuestion) {
+      if (isNewQuestion) {
         if (currentQuestion) {
-            qaList.push({ question: currentQuestion, answer: currentAnswer });
+          qaList.push({ question: currentQuestion, answer: currentAnswer });
         }
         currentQuestion = text;
         currentAnswer = '';
-        } else {
+      } else {
         currentAnswer += el.outerHTML;
-        }
+      }
     }
 
     if (currentQuestion) {
-        qaList.push({ question: currentQuestion, answer: currentAnswer });
+      qaList.push({ question: currentQuestion, answer: currentAnswer });
     }
 
     parsedQaList.value = qaList;

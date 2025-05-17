@@ -1,5 +1,5 @@
 import { c as defineEventHandler, e as authenticate, g as readBody, f as createError } from '../../../_/nitro.mjs';
-import { a as updateBannerOrder } from '../../../_/bannerModel.mjs';
+import { u as updateBannerOrder } from '../../../_/bannerModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';

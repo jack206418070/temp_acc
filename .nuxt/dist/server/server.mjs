@@ -410,7 +410,7 @@ const _routes = [
   {
     name: "qa",
     path: "/qa",
-    component: () => import("./_nuxt/qa-DsCEFoJa.js")
+    component: () => import("./_nuxt/qa-C8FNE-QP.js")
   },
   {
     name: "faq",
@@ -445,7 +445,7 @@ const _routes = [
   {
     name: "qa_test",
     path: "/qa_test",
-    component: () => import("./_nuxt/qa_test-Gl2at0uo.js")
+    component: () => import("./_nuxt/qa_test-Dz1c7Fyz.js")
   },
   {
     name: "support",

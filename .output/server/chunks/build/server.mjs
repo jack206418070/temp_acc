@@ -419,7 +419,7 @@ const _routes = [
   {
     name: "qa",
     path: "/qa",
-    component: () => import('./qa-DsCEFoJa.mjs')
+    component: () => import('./qa-C8FNE-QP.mjs')
   },
   {
     name: "faq",
@@ -454,7 +454,7 @@ const _routes = [
   {
     name: "qa_test",
     path: "/qa_test",
-    component: () => import('./qa_test-Gl2at0uo.mjs')
+    component: () => import('./qa_test-Dz1c7Fyz.mjs')
   },
   {
     name: "support",

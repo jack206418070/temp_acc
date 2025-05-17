@@ -1,6 +1,6 @@
 import { defineEventHandler, readBody, createError } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
 import { a as authenticate } from '../../../_/nitro.mjs';
-import { a as updateBannerOrder } from '../../../_/bannerModel.mjs';
+import { u as updateBannerOrder } from '../../../_/bannerModel.mjs';
 import 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/ufo/dist/index.mjs';
 import 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/jsonwebtoken/index.js';
 import 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/destr/dist/index.mjs';

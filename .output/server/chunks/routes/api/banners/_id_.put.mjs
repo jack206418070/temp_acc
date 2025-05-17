@@ -1,5 +1,5 @@
-import { c as defineEventHandler, e as authenticate, f as createError, r as readMultipartFormData } from '../../../_/nitro.mjs';
-import { u as updateBanner } from '../../../_/bannerModel.mjs';
+import { c as defineEventHandler, e as authenticate, r as readMultipartFormData, f as createError } from '../../../_/nitro.mjs';
+import { c as createBanner } from '../../../_/bannerModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';
@@ -18,41 +18,40 @@ import 'mssql';
 import '../../../_/db.mjs';
 
 const _id__put = defineEventHandler(async (event) => {
-  var _a, _b, _c;
+  var _a, _b, _c, _d;
   try {
     await authenticate(event);
-    const id = parseInt(event.context.params.id);
-    if (isNaN(id)) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "\u7121\u6548\u7684 Banner ID"
-      });
-    }
     const formData = await readMultipartFormData(event);
-    if (!formData) throw createError({ statusCode: 400, statusMessage: "\u672A\u6536\u5230\u8868\u55AE\u8CC7\u6599" });
+    if (!formData) throw createError({ statusCode: 400, statusMessage: "No form data" });
     const title = (_a = formData.find((f) => f.name === "title")) == null ? void 0 : _a.data.toString();
     const description = (_b = formData.find((f) => f.name === "description")) == null ? void 0 : _b.data.toString();
     const imageFile = formData.find((f) => f.name === "image");
-    const isActive = ((_c = formData.find((f) => f.name === "is_active")) == null ? void 0 : _c.data.toString()) == "1";
-    const updateData = {
+    const sortOrder = parseInt(((_c = formData.find((f) => f.name === "sortOrder")) == null ? void 0 : _c.data.toString()) || "0");
+    const isActive = ((_d = formData.find((f) => f.name === "is_active")) == null ? void 0 : _d.data.toString()) === "1";
+    if (!title || !(imageFile == null ? void 0 : imageFile.data)) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D\uFF08title \u6216 image\uFF09"
+      });
+    }
+    console.log(`\u2705 \u6536\u5230\u5716\u7247 ${imageFile.filename || ""} (${imageFile.type}), \u5927\u5C0F ${(imageFile.data.length / 1024).toFixed(2)} KB`);
+    const data = await createBanner({
       title,
       description,
+      imageData: imageFile.data,
+      imageType: imageFile.type,
+      sortOrder,
       isActive
-    };
-    if (imageFile) {
-      updateData.imageData = imageFile.data;
-      updateData.imageType = imageFile.type;
-    }
-    const data = await updateBanner(id, updateData);
+    });
     return {
       success: true,
       data
     };
   } catch (error) {
-    console.error("\u274C Update Banner Error:", error);
+    console.error("\u274C Create Banner Error:", error);
     throw createError({
       statusCode: error.statusCode || 500,
-      statusMessage: error.statusMessage || "\u66F4\u65B0 Banner \u5931\u6557"
+      statusMessage: error.statusMessage || "\u5275\u5EFA Banner \u5931\u6557"
     });
   }
 });

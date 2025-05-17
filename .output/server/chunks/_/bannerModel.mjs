@@ -107,50 +107,6 @@ async function createBanner({
     throw error;
   }
 }
-async function updateBanner(id, {
-  title,
-  description,
-  imageData,
-  imageType,
-  isActive
-}) {
-  try {
-    const pool = await getConnection();
-    const updateFields = [];
-    const request = pool.request().input("id", sql.Int, id);
-    if (title !== void 0) {
-      request.input("title", sql.NVarChar(100), title);
-      updateFields.push("title = @title");
-    }
-    if (description !== void 0) {
-      request.input("description", sql.NVarChar(500), description);
-      updateFields.push("description = @description");
-    }
-    if (imageData !== void 0) {
-      request.input("imageData", sql.VarBinary(sql.MAX), imageData);
-      updateFields.push("image_data = @imageData");
-    }
-    if (imageType !== void 0) {
-      request.input("imageType", sql.NVarChar(50), imageType);
-      updateFields.push("image_type = @imageType");
-    }
-    if (isActive !== void 0) {
-      request.input("isActive", sql.Bit, isActive);
-      updateFields.push("is_active = @isActive");
-    }
-    updateFields.push("updated_at = GETDATE()");
-    const result = await request.query(`
-      UPDATE Banners
-      SET ${updateFields.join(", ")}
-      OUTPUT INSERTED.*
-      WHERE id = @id AND is_deleted = 0;
-    `);
-    return result.recordset[0];
-  } catch (error) {
-    console.error("\u274C Update Banner Error:", error);
-    throw error;
-  }
-}
 async function deleteBanner(id) {
   try {
     const pool = await getConnection();
@@ -225,5 +181,5 @@ async function updateBannerOrder(id, targetOrder) {
   }
 }
 
-export { updateBannerOrder as a, createBanner as c, deleteBanner as d, getAllBanners as g, updateBanner as u };
+export { createBanner as c, deleteBanner as d, getAllBanners as g, updateBannerOrder as u };
 //# sourceMappingURL=bannerModel.mjs.map
