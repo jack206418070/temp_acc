@@ -1,0 +1,32 @@
+export interface IMenu {
+  id: number;
+  link: string;
+  title: string;
+  dropdown?: boolean;
+  dropdown_menus?: {
+    link: string;
+    title: string;
+    sub_menus?: {
+      link: string;
+      title: string;
+    }[];
+    sub_id: number;
+    sub_dropdown?: boolean;
+    is_highlight: boolean;
+  }[];
+  mega_menu?: boolean;
+  mega_menus?: {
+      id:number;
+      menus:{
+        link: string;
+        title: string;
+      }[]
+  }[];
+  sub_menus?:{
+    id:number;
+    menus:{
+      link: string;
+      title: string;
+    }[]
+}[];
+}

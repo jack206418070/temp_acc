@@ -1,0 +1,7 @@
+node_modules
+
+# .nuxt
+# .nuxt/
+# .output
+.vercel
+.DS_Store
