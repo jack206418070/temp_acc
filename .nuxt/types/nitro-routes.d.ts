@@ -101,14 +101,14 @@ declare module "nitropack/types" {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-reminder/index.get').default>>>>
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-reminder/index.post').default>>>>
     }
-    '/banner': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/routes/banner').default>>>>
-    }
     '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
     }
     '/api': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/index').default>>>>
+    }
+    '/__nuxt_island/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
     }
   }
 }

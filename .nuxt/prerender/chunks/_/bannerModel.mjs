@@ -1,4 +1,4 @@
-import sql from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
+import sql from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/mssql/index.js';
 import { g as getConnection } from './db.mjs';
 
 async function getAllBanners(active = 0) {
@@ -41,29 +41,6 @@ async function getAllBanners(active = 0) {
     return result.recordset;
   } catch (error) {
     console.error("\u274C Get All Banners Error:", error);
-    throw error;
-  }
-}
-async function getBannerById(id) {
-  try {
-    const pool = await getConnection();
-    const result = await pool.request().input("id", sql.Int, id).query(`
-        SELECT 
-          id,
-          title,
-          description,
-          CAST(image_data as varbinary(max)) as imageData,
-          image_type as imageType,
-          sort_order as sortOrder,
-          is_active as is_active,
-          created_at as createdAt,
-          updated_at as updatedAt
-        FROM Banners
-        WHERE id = @id AND is_deleted = 0;
-      `);
-    return result.recordset[0];
-  } catch (error) {
-    console.error("\u274C Get Banner By Id Error:", error);
     throw error;
   }
 }
@@ -248,5 +225,5 @@ async function updateBannerOrder(id, targetOrder) {
   }
 }
 
-export { updateBannerOrder as a, getBannerById as b, createBanner as c, deleteBanner as d, getAllBanners as g, updateBanner as u };
+export { updateBannerOrder as a, createBanner as c, deleteBanner as d, getAllBanners as g, updateBanner as u };
 //# sourceMappingURL=bannerModel.mjs.map

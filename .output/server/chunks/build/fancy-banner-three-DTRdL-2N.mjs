@@ -1,7 +1,7 @@
 import { _ as _export_sfc, a as __nuxt_component_0$2 } from './server.mjs';
 import { mergeProps, withCtx, createVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr } from 'vue/server-renderer';
-import { p as publicAssetsURL } from '../nitro/nitro.mjs';
+import { w as publicAssetsURL } from '../_/nitro.mjs';
 
 const _imports_0 = publicAssetsURL("/images/icon/icon_30.svg");
 const _sfc_main = {};

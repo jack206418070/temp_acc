@@ -1,5 +1,5 @@
 import { g as getConnection } from './db.mjs';
-import sql from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
+import sql from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/mssql/index.js';
 
 async function getAllQA() {
   try {

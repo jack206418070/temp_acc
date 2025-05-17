@@ -1,7 +1,7 @@
-import { readBody, defineEventHandler } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { readBody, defineEventHandler } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
 import { i as deleteQA, j as updateQA, k as createQA, l as getQAById, m as getAllQA } from '../../_/qaModel.mjs';
 import '../../_/db.mjs';
-import 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
+import 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/mssql/index.js';
 
 const qaController = {
   async getAllQA(event) {

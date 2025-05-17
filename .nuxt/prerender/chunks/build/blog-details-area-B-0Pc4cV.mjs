@@ -1,8 +1,8 @@
 import { a as __nuxt_component_0$2 } from './server.mjs';
-import { defineComponent, resolveComponent, mergeProps, unref, withCtx, createVNode, toDisplayString, useSSRContext } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/vue/index.mjs';
-import { ssrRenderAttrs, ssrRenderStyle, ssrInterpolate, ssrRenderAttr, ssrRenderComponent, ssrRenderList } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
+import { defineComponent, resolveComponent, mergeProps, unref, withCtx, createVNode, toDisplayString, useSSRContext } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/vue/index.mjs';
+import { ssrRenderAttrs, ssrRenderStyle, ssrInterpolate, ssrRenderAttr, ssrRenderComponent, ssrRenderList } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
 import { n as news_data } from './news-data-CYWZWJ0W.mjs';
-import { p as publicAssetsURL } from '../nitro/nitro.mjs';
+import { p as publicAssetsURL } from '../_/nitro.mjs';
 
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "blog-sidebar",

@@ -1,14 +1,16 @@
-import { d as defineEventHandler, a as authenticate, c as createError, b as readBody } from '../../../nitro/nitro.mjs';
+import { c as defineEventHandler, e as authenticate, f as createError, g as readBody } from '../../../_/nitro.mjs';
 import { u as updateAnnouncement } from '../../../_/announcementModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:crypto';
 import 'node:fs';
 import 'node:path';
 import 'chokidar';
 import 'anymatch';
 import 'lru-cache';
-import 'node:crypto';
 import 'node:url';
 import 'express';
 import 'xss';

@@ -1,14 +1,16 @@
-import { d as defineEventHandler, h as getRequestHeader, c as createError, v as verifyToken, i as getRouterParam } from '../../../nitro/nitro.mjs';
+import { c as defineEventHandler, l as getRequestHeader, f as createError, v as verifyToken, m as getRouterParam } from '../../../_/nitro.mjs';
 import { g as getKnowledgeById } from '../../../_/knowledgeModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:crypto';
 import 'node:fs';
 import 'node:path';
 import 'chokidar';
 import 'anymatch';
 import 'lru-cache';
-import 'node:crypto';
 import 'node:url';
 import 'express';
 import 'xss';

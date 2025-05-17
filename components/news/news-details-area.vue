@@ -132,9 +132,11 @@ const nextImage = () => {
 };
 
 const decode = (str) => {
-  const txt = document.createElement('textarea')
-  txt.innerHTML = str
-  return txt.value
+  if (process.client) {
+    const txt = document.createElement('textarea')
+    txt.innerHTML = str
+    return txt.value
+  }
 }
 
 // 清理資源

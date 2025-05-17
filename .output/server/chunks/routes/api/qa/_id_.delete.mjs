@@ -1,14 +1,16 @@
-import { d as defineEventHandler, a as authenticate, c as createError } from '../../../nitro/nitro.mjs';
+import { c as defineEventHandler, e as authenticate, f as createError } from '../../../_/nitro.mjs';
 import { i as deleteQA } from '../../../_/qaModel.mjs';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:crypto';
 import 'node:fs';
 import 'node:path';
 import 'chokidar';
 import 'anymatch';
 import 'lru-cache';
-import 'node:crypto';
 import 'node:url';
 import 'express';
 import 'xss';

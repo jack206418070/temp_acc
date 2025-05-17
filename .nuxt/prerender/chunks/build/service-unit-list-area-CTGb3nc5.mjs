@@ -1,5 +1,5 @@
-import { defineComponent, ref, computed, mergeProps, unref, useSSRContext } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/vue/index.mjs';
-import { ssrRenderAttrs, ssrRenderList, ssrRenderClass, ssrInterpolate, ssrRenderAttr, ssrRenderStyle } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
+import { defineComponent, ref, computed, mergeProps, unref, useSSRContext } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/vue/index.mjs';
+import { ssrRenderAttrs, ssrRenderList, ssrRenderClass, ssrInterpolate, ssrRenderAttr, ssrRenderStyle } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
 import { _ as _export_sfc } from './server.mjs';
 
 const _sfc_main = /* @__PURE__ */ defineComponent({

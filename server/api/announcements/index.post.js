@@ -1,7 +1,6 @@
 import { authenticate } from '~/server/utils/auth';
 import { createAnnouncement, saveAnnouncementImage } from '~/server/models/announcementModel';
 import { createError } from 'h3';
-import { createCanvas, loadImage } from 'canvas';
 
 export default defineEventHandler(async (event) => {
   try {

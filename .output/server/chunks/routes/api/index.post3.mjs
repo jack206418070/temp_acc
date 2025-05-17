@@ -1,15 +1,16 @@
-import { d as defineEventHandler, a as authenticate, r as readMultipartFormData, c as createError } from '../../nitro/nitro.mjs';
+import { c as defineEventHandler, e as authenticate, r as readMultipartFormData, f as createError } from '../../_/nitro.mjs';
 import { c as createBanner } from '../../_/bannerModel.mjs';
-import { loadImage, createCanvas } from 'canvas';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:crypto';
 import 'node:fs';
 import 'node:path';
 import 'chokidar';
 import 'anymatch';
 import 'lru-cache';
-import 'node:crypto';
 import 'node:url';
 import 'express';
 import 'xss';
@@ -21,53 +22,25 @@ const index_post = defineEventHandler(async (event) => {
   try {
     await authenticate(event);
     const formData = await readMultipartFormData(event);
-    if (!formData) throw new Error("No form data");
+    if (!formData) throw createError({ statusCode: 400, statusMessage: "No form data" });
     const title = (_a = formData.find((f) => f.name === "title")) == null ? void 0 : _a.data.toString();
     const description = (_b = formData.find((f) => f.name === "description")) == null ? void 0 : _b.data.toString();
     const imageFile = formData.find((f) => f.name === "image");
-    const sortOrder = (_c = formData.find((f) => f.name === "sortOrder")) == null ? void 0 : _c.data.toString();
-    const isActive = ((_d = formData.find((f) => f.name === "is_active")) == null ? void 0 : _d.data.toString()) == 1;
-    if (!title || !imageFile) {
+    const sortOrder = parseInt(((_c = formData.find((f) => f.name === "sortOrder")) == null ? void 0 : _c.data.toString()) || "0");
+    const isActive = ((_d = formData.find((f) => f.name === "is_active")) == null ? void 0 : _d.data.toString()) === "1";
+    if (!title || !(imageFile == null ? void 0 : imageFile.data)) {
       throw createError({
         statusCode: 400,
-        statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D"
+        statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D\uFF08title \u6216 image\uFF09"
       });
     }
-    let imageBuffer;
-    if (imageFile) {
-      const originalSize = (imageFile.data.length / 1024).toFixed(2);
-      console.log(`\u539F\u59CB\u5716\u7247\u5927\u5C0F: ${originalSize} KB`);
-      try {
-        const base64Image = `data:${imageFile.type};base64,${imageFile.data.toString("base64")}`;
-        const img = await loadImage(base64Image);
-        const maxWidth = 1920;
-        const scale = maxWidth / img.width;
-        const targetWidth = img.width > maxWidth ? maxWidth : img.width;
-        const targetHeight = img.width > maxWidth ? Math.round(img.height * scale) : img.height;
-        const canvas = createCanvas(targetWidth, targetHeight);
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-        imageBuffer = canvas.toBuffer("image/jpeg", {
-          quality: 0.8,
-          progressive: true
-        });
-        const compressedSize = (imageBuffer.length / 1024).toFixed(2);
-        console.log(`\u58D3\u7E2E\u5F8C\u5716\u7247\u5927\u5C0F: ${compressedSize} KB`);
-        console.log(`\u5716\u7247\u58D3\u7E2E\u7387: ${((1 - imageBuffer.length / imageFile.data.length) * 100).toFixed(2)}%`);
-      } catch (error) {
-        console.error("\u5716\u7247\u58D3\u7E2E\u5931\u6557:", error);
-        throw createError({
-          statusCode: 400,
-          statusMessage: "\u5716\u7247\u8655\u7406\u5931\u6557"
-        });
-      }
-    }
+    console.log(`\u2705 \u6536\u5230\u5716\u7247 ${imageFile.filename || ""} (${imageFile.type}), \u5927\u5C0F ${(imageFile.data.length / 1024).toFixed(2)} KB`);
     const data = await createBanner({
       title,
       description,
-      imageData: imageBuffer,
-      imageType: "image/jpeg",
-      sortOrder: parseInt(sortOrder) || 0,
+      imageData: imageFile.data,
+      imageType: imageFile.type,
+      sortOrder,
       isActive
     });
     return {

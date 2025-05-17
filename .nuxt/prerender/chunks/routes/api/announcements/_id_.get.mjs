@@ -1,6 +1,6 @@
-import { defineEventHandler, createError } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, createError } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
 import { b as getAnnouncementById } from '../../../_/announcementModel.mjs';
-import 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
+import 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/mssql/index.js';
 import '../../../_/db.mjs';
 
 const _id__get = defineEventHandler(async (event) => {

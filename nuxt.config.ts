@@ -151,7 +151,7 @@ export default defineNuxtConfig({
       }
     },
     externals: {
-      inline: ['sharp']
+      external: ['canvas']
     }
   },
   serverHandlers: [

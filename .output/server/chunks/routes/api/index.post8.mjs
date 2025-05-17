@@ -1,15 +1,16 @@
-import { d as defineEventHandler, a as authenticate, r as readMultipartFormData, c as createError } from '../../nitro/nitro.mjs';
+import { c as defineEventHandler, e as authenticate, r as readMultipartFormData, f as createError } from '../../_/nitro.mjs';
 import { c as createServiceUnit } from '../../_/serviceUnitModel.mjs';
-import { loadImage, createCanvas } from 'canvas';
 import 'jsonwebtoken';
 import 'node:http';
 import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:crypto';
 import 'node:fs';
 import 'node:path';
 import 'chokidar';
 import 'anymatch';
 import 'lru-cache';
-import 'node:crypto';
 import 'node:url';
 import 'express';
 import 'xss';
@@ -21,7 +22,7 @@ const index_post = defineEventHandler(async (event) => {
   try {
     await authenticate(event);
     const formData = await readMultipartFormData(event);
-    if (!formData) throw new Error("No form data");
+    if (!formData) throw createError({ statusCode: 400, statusMessage: "No form data" });
     const name = (_a = formData.find((f) => f.name === "name")) == null ? void 0 : _a.data.toString();
     const unitImageFile = formData.find((f) => f.name === "unitImage");
     const category = (_b = formData.find((f) => f.name === "category")) == null ? void 0 : _b.data.toString();
@@ -34,68 +35,19 @@ const index_post = defineEventHandler(async (event) => {
     const website = (_i = formData.find((f) => f.name === "website")) == null ? void 0 : _i.data.toString();
     const priceImageFile = formData.find((f) => f.name === "priceImage");
     if (!name || !category || !region || !serviceArea || !address || !phone || !email || !description) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D"
-      });
+      throw createError({ statusCode: 400, statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D" });
     }
-    let unitImageBuffer;
-    if (unitImageFile) {
-      const originalUnitSize = (unitImageFile.data.length / 1024).toFixed(2);
-      console.log(`\u539F\u59CB\u55AE\u4F4D\u5716\u7247\u5927\u5C0F: ${originalUnitSize} KB`);
-      try {
-        const base64UnitImage = `data:${unitImageFile.type};base64,${unitImageFile.data.toString("base64")}`;
-        const img = await loadImage(base64UnitImage);
-        const maxWidth = 1200;
-        const scale = maxWidth / img.width;
-        const targetWidth = img.width > maxWidth ? maxWidth : img.width;
-        const targetHeight = img.width > maxWidth ? Math.round(img.height * scale) : img.height;
-        const canvas = createCanvas(targetWidth, targetHeight);
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-        unitImageBuffer = canvas.toBuffer("image/jpeg", {
-          quality: 0.8,
-          progressive: true
-        });
-        const compressedUnitSize = (unitImageBuffer.length / 1024).toFixed(2);
-        console.log(`\u58D3\u7E2E\u5F8C\u55AE\u4F4D\u5716\u7247\u5927\u5C0F: ${compressedUnitSize} KB`);
-        console.log(`\u55AE\u4F4D\u5716\u7247\u58D3\u7E2E\u7387: ${((1 - unitImageBuffer.length / unitImageFile.data.length) * 100).toFixed(2)}%`);
-      } catch (error) {
-        console.error("\u55AE\u4F4D\u5716\u7247\u58D3\u7E2E\u5931\u6557:", error);
-        throw createError({
-          statusCode: 400,
-          statusMessage: "\u55AE\u4F4D\u5716\u7247\u8655\u7406\u5931\u6557"
-        });
-      }
+    let unitImageBuffer = null;
+    if (unitImageFile == null ? void 0 : unitImageFile.data) {
+      const size = (unitImageFile.data.length / 1024).toFixed(2);
+      console.log(`\u{1F4E6} \u55AE\u4F4D\u5716\u7247\u5927\u5C0F: ${size} KB, \u985E\u578B: ${unitImageFile.type}`);
+      unitImageBuffer = unitImageFile.data;
     }
-    let priceImageBuffer;
-    if (priceImageFile) {
-      const originalPriceSize = (priceImageFile.data.length / 1024).toFixed(2);
-      console.log(`\u539F\u59CB\u50F9\u683C\u5716\u7247\u5927\u5C0F: ${originalPriceSize} KB`);
-      try {
-        const base64PriceImage = `data:${priceImageFile.type};base64,${priceImageFile.data.toString("base64")}`;
-        const img = await loadImage(base64PriceImage);
-        const maxWidth = 1200;
-        const scale = maxWidth / img.width;
-        const targetWidth = img.width > maxWidth ? maxWidth : img.width;
-        const targetHeight = img.width > maxWidth ? Math.round(img.height * scale) : img.height;
-        const canvas = createCanvas(targetWidth, targetHeight);
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-        priceImageBuffer = canvas.toBuffer("image/jpeg", {
-          quality: 0.8,
-          progressive: true
-        });
-        const compressedPriceSize = (priceImageBuffer.length / 1024).toFixed(2);
-        console.log(`\u58D3\u7E2E\u5F8C\u50F9\u683C\u5716\u7247\u5927\u5C0F: ${compressedPriceSize} KB`);
-        console.log(`\u50F9\u683C\u5716\u7247\u58D3\u7E2E\u7387: ${((1 - priceImageBuffer.length / priceImageFile.data.length) * 100).toFixed(2)}%`);
-      } catch (error) {
-        console.error("\u50F9\u683C\u5716\u7247\u58D3\u7E2E\u5931\u6557:", error);
-        throw createError({
-          statusCode: 400,
-          statusMessage: "\u50F9\u683C\u5716\u7247\u8655\u7406\u5931\u6557"
-        });
-      }
+    let priceImageBuffer = null;
+    if (priceImageFile == null ? void 0 : priceImageFile.data) {
+      const size = (priceImageFile.data.length / 1024).toFixed(2);
+      console.log(`\u{1F4E6} \u50F9\u683C\u5716\u7247\u5927\u5C0F: ${size} KB, \u985E\u578B: ${priceImageFile.type}`);
+      priceImageBuffer = priceImageFile.data;
     }
     const data = await createServiceUnit({
       name,

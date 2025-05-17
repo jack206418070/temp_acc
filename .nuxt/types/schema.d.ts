@@ -195,6 +195,8 @@ declare module 'nuxt/schema' {
             name: string,
          },
 
+         whiteList: any,
+
          throwError: boolean,
       },
 

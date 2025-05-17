@@ -1,7 +1,7 @@
-import { defineEventHandler, readBody, createError } from 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, readBody, createError } from 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/h3/dist/index.mjs';
 import { b as updateKnowledgeOrder } from '../../../_/knowledgeModel.mjs';
 import '../../../_/db.mjs';
-import 'file:///Users/ginjack/Desktop/accompany-web-site/node_modules/mssql/index.js';
+import 'file://C:/Users/mcsadmin/Desktop/accompany-web-site/node_modules/mssql/index.js';
 
 const order_put = defineEventHandler(async (event) => {
   try {
