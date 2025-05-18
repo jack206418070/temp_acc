@@ -6557,7 +6557,7 @@ nuxt-security@^2.1.5:
     unplugin-remove "^1.0.3"
     xss "^1.0.14"
 
-nuxt@^3.10.0:
+nuxt@^3.17.3:
   version "3.17.3"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.17.3.tgz#e6f89c755d8205eecc954083917e29b28cd59cd0"
   integrity sha512-iaRGGcnOiahdz+rhEiDY+Ep/vgsvcCCSs2tIVwKmteHEZk6O2zcpk/U1rHxPWortTyMlluHHaohC2WngYceh+g==
@@ -9146,6 +9146,11 @@ yargs@^17.0.0, yargs@^17.2.1, yargs@^17.5.1:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
+
+yarn@^1.22.22:
+  version "1.22.22"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.22.tgz#ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  integrity sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==
 
 yauzl@^2.10.0:
   version "2.10.0"
