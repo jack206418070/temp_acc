@@ -175,87 +175,61 @@ useSeoMeta({
 
 <style lang="scss" scoped>
 .service-banner {
-  max-width: 1200px;
+  padding-top: 100px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding-bottom: 80px;
 }
-
 .category-tabs {
-  margin-bottom: 30px;
   overflow-x: auto;
-  
-  .tabs-scroll {
-    display: flex;
-    gap: 10px;
-    padding-bottom: 10px;
-  }
-  
-  button {
-    padding: 8px 20px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    background: white;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background: #f5f5f5;
-    }
-    
-    &.active {
-      background: #f26e21;
-      color: white;
-      border-color: #f26e21;
-    }
-  }
+  white-space: nowrap;
+  margin-bottom: 16px;
+}
+.tabs-scroll {
+  display: flex;
+}
+.category-tabs button {
+  margin-right: 20px;
+  padding: 6px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  background: #f0f0f0;
+  border: none;
+  margin-bottom: 10px;
+  border:2px solid #D3D3DA;
+  border-radius: 99px;
+  background: #fff;
+  font-size: 20px;
+  transition: .3s;
+}
+.category-tabs button.active, .category-tabs button:hover {
+  background: #41BBBE;
+  color: #fff;
 }
 
-.qa-list {
-  .qa-item {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .qa-title {
-    padding: 15px 20px;
-    background: #f5f5f5;
-    cursor: pointer;
-    font-weight: 500;
-    
-    &:hover {
-      background: #eee;
-    }
-  }
-  
-  .qa-content {
-    padding: 20px;
-    line-height: 1.6;
-    
-    :deep(p) {
-      margin-bottom: 1em;
-      
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    
-    :deep(table) {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-      
-      th, td {
-        padding: 8px;
-        border: 1px solid #ddd;
-      }
-      
-      th {
-        background: #f5f5f5;
-      }
-    }
+.qa-item {
+  border-bottom: 1px solid #065306;
+  padding: 20px 0;
+}
+.qa-title {
+  font-weight: 400;
+  cursor: pointer;
+  color: rgb(43, 39, 22);
+}
+.qa-content {
+  margin-top: 20px;
+  padding-left: 12px;
+  font-size: 18px;
+}
+.qa-content  p {
+  margin-bottom: 0px !important;
+}
+@media (max-width: 996px) {
+  .service-banner {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 40px;
+    padding-top: 40px;
   }
 }
 </style> 

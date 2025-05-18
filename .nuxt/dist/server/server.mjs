@@ -471,7 +471,7 @@ const _routes = [
   {
     name: "qa_test2",
     path: "/qa_test2",
-    component: () => import("./_nuxt/qa_test2-DVNhGHbA.js")
+    component: () => import("./_nuxt/qa_test2-s9gJNj4o.js")
   },
   {
     name: "services",

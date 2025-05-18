@@ -491,7 +491,7 @@ const _routes = [
   {
     name: "qa_test2",
     path: "/qa_test2",
-    component: () => import('./qa_test2-DVNhGHbA.mjs')
+    component: () => import('./qa_test2-s9gJNj4o.mjs')
   },
   {
     name: "services",
