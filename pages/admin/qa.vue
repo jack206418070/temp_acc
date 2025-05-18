@@ -295,7 +295,7 @@
                       <button @click="editCategory(category)" class="btn btn-sm btn-primary">
                         <span>編輯</span>
                       </button>
-                      <button @click="handleCategoryDelete(category)" class="btn btn-sm btn-danger">
+                      <button @click="handleCategoryDelete(category.id)" class="btn btn-sm btn-danger">
                         <span>刪除</span>
                       </button>
                     </div>
@@ -313,7 +313,7 @@
                         <button @click="editCategory(subCategory)" class="btn btn-sm btn-primary">
                           <span>編輯</span>
                         </button>
-                        <button @click="handleCategoryDelete(subCategory)" class="btn btn-sm btn-danger">
+                        <button @click="handleCategoryDelete(subCategory.id)" class="btn btn-sm btn-danger">
                           <span>刪除</span>
                         </button>
                       </div>

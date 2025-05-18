@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     console.log('Received POST body:', body);
 
-    const { parent_id, name } = body;
+    const { parent_id, name, name_en, name_vi, name_id, name_th } = body;
     
     if (!name) {
       throw createError({
@@ -19,7 +19,11 @@ export default defineEventHandler(async (event) => {
 
     const data = await createQACategory({
       parent_id: parent_id || null,
-      name
+      name,
+      name_en,
+      name_vi,
+      name_id,
+      name_th
     });
     
     return { success: true, data };
