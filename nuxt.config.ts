@@ -148,6 +148,11 @@ export default defineNuxtConfig({
           'X-Content-Type-Options': 'nosniff',
           'Content-Type': 'application/javascript; charset=utf-8'
         }
+      },
+      '/api/**': {
+        security: {
+          xssValidator: false
+        }
       }
     },
     externals: {

@@ -3,7 +3,7 @@
     <div class="main-container">
       <div class="service-grid">
         <!-- 申請服務卡片 -->
-        <div class="service-card" v-for="category in parentCategories" :key="category.id">
+        <div class="service-card" :class="{'mobile': index == 3}" v-for="(category, index) in parentCategories" :key="category.id">
           <h3 class="card-title">{{ category.name }}</h3>
           <a :href="`/qa_test2?id=${category.id}`" class="service-button">
             相關問題
@@ -150,7 +150,6 @@ useSeoMeta({ title: "常見問題｜多元陪伴照顧" })
   min-height: 200px;
   position: relative;
   justify-content: center;
-  margin-bottom: 60px;
 }
 
 .card-title {
@@ -171,12 +170,6 @@ useSeoMeta({ title: "常見問題｜多元陪伴照顧" })
   align-items: center;
   margin-top: auto;
   letter-spacing: 2px;
-  transition: all 0.3s ease;
-}
-
-.service-button:hover {
-  background-color: #e05d10;
-  transform: translateY(-2px);
 }
 
 .arrow {
@@ -187,36 +180,23 @@ useSeoMeta({ title: "常見問題｜多元陪伴照顧" })
 .flag-container {
   position: absolute;
   bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0px;
   display: flex;
-  /* gap: 12px; */
-  justify-content: space-between;
+  gap: 10px;
   z-index: 10;
-  background: white;
-  padding: 8px 16px;
-  width: 100%;
-  /* border-radius: 30px; */
-  /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
-}
-
-.flag-link {
-  flex: 0 0 23%;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.flag-link:hover {
-  transform: translateY(-2px);
 }
 
 .flag {
-  /* width: 32px;
-  height: 24px; */
-  width: 100%;
+  width: 60px;
+  height: 40px;
   object-fit: cover;
-  /* border-radius: 4px; */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.flag-container a img {
+  transition: .3s;
+}
+
+.flag-container a:hover img{
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -227,5 +207,9 @@ useSeoMeta({ title: "常見問題｜多元陪伴照顧" })
   .service-card {
     min-height: 180px;
   }
+  .service-card.mobile {
+    margin-top: 60px;
+  }
+
 }
 </style>
