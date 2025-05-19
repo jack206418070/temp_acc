@@ -6,6 +6,7 @@
         預約/申請
       </nuxt-link>
     </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OxRL7eKReVQ?si=hhulgueBNpIueGKd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="main-container home-content">
       <div class="home-top">
         <h2>最新消息</h2>
@@ -247,6 +248,15 @@ useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
     text-decoration: underline;
   }
 
+  iframe {
+    display: block;
+    width: 80%;
+    height: 450px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
   @media (max-width: 991px) {
     h2 {
       margin-top: 0px;
@@ -260,6 +270,10 @@ useSeoMeta({ title: "首頁｜多元陪伴照顧服務" });
     }
     .new-title .title-text {
       flex: 0 0 100%;
+    }
+    iframe {
+      width: 90%;
+      height: 250px;
     }
   }
 

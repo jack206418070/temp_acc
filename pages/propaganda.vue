@@ -22,6 +22,8 @@
         </div>
       </template>
       <template v-else>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Kh_wPjROEoo?si=IEKnDSj70L4tDPPR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OxRL7eKReVQ?si=N22GWiJ22VtLE1cx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div class="tab-data-item-block2" v-for="(data, index) in tab_data[tab_type].data" :key="data.kid" @click="openPopup(index)">
           <img :src="data.image" :alt="data.title">
         </div>
@@ -305,6 +307,12 @@ h1, h2 {
   justify-content: center;
   align-items: center;
 }
+
+iframe {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 50px;
+}
 @media (max-width: 991px) {
   .tab-data-list {
     gap: 0;
@@ -401,6 +409,10 @@ h1, h2 {
     font-size: 12px;
     padding: 3px 8px;
     bottom: 5px;
+  }
+  iframe {
+    width: 100%;
+    height: 250px;
   }
 }
 </style>
