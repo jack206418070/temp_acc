@@ -1,0 +1,103 @@
+[h3] Implicit event handler conversion is deprecated. Use `eventHandler()` or `fromNodeMiddleware()` to define event handlers.  
+     Handler: function jsonParser (req, res, next) {
+    if (req._body) {
+      debug('body already parsed')
+      next()
+      return
+    }
+
+    req.body = req.body || {}
+
+    // skip requests without bodies
+    if (!typeis.hasBody(req)) {
+      debug('skip empty body')
+      next()
+      return
+    }
+
+    debug('content-type %j', req.headers['content-type'])
+
+    // determine if request should be parsed
+    if (!shouldParse(req)) {
+      debug('skip parsing')
+      next()
+      return
+    }
+
+    // assert charset per RFC 7159 sec 8.1
+    var charset = getCharset(req) || 'utf-8'
+    if (charset.slice(0, 4) !== 'utf-') {
+      debug('invalid charset')
+      next(createError(415, 'unsupported charset "' + charset.toUpperCase() + '"', {
+        charset: charset,
+        type: 'charset.unsupported'
+      }))
+      return
+    }
+
+    // read
+    read(req, res, next, parse, debug, {
+      encoding: charset,
+      inflate: inflate,
+      limit: limit,
+      verify: verify
+    })
+  }
+[h3] Implicit event handler conversion is deprecated. Use `eventHandler()` or `fromNodeMiddleware()` to define event handlers.  
+     Handler: function urlencodedParser (req, res, next) {
+    if (req._body) {
+      debug('body already parsed')
+      next()
+      return
+    }
+
+    req.body = req.body || {}
+
+    // skip requests without bodies
+    if (!typeis.hasBody(req)) {
+      debug('skip empty body')
+      next()
+      return
+    }
+
+    debug('content-type %j', req.headers['content-type'])
+
+    // determine if request should be parsed
+    if (!shouldParse(req)) {
+      debug('skip parsing')
+      next()
+      return
+    }
+
+    // assert charset
+    var charset = getCharset(req) || 'utf-8'
+    if (charset !== 'utf-8') {
+      debug('invalid charset')
+      next(createError(415, 'unsupported charset "' + charset.toUpperCase() + '"', {
+        charset: charset,
+        type: 'charset.unsupported'
+      }))
+      return
+    }
+
+    // read
+    read(req, res, next, parse, debug, {
+      debug: debug,
+      encoding: charset,
+      inflate: inflate,
+      limit: limit,
+      verify: verify,
+      depth: depth
+    })
+  }
+[h3] Implicit event handler conversion is deprecated. Use `eventHandler()` or `fromNodeMiddleware()` to define event handlers. 
+     Route: /api 
+     Handler: [object Object]
+(node:2280) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Application has thrown an uncaught exception and is terminated:
+RangeError [ERR_SOCKET_BAD_PORT]: options.port should be >= 0 and < 65536. Received type string ('\\.\pipe\8b9df0e8-02ee-41...').
+    at Server.listen (node:net:2059:5)
+    at file:///C:/inetpub/accompany-web-site/.output/server/index.mjs:24:25
+    at ModuleJob.run (node:internal/modules/esm/module_job:263:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:540:24)

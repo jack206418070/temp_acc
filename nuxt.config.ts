@@ -51,7 +51,7 @@ export default defineNuxtConfig({
       hashStyles: false,
       exportToPresets: true
     },
-    sri: true,
+    sri: false,
     headers: {
       contentSecurityPolicy: {
         // 'default-src': ["'self'"],
@@ -59,23 +59,25 @@ export default defineNuxtConfig({
           "'self'",
           "'unsafe-inline'",  // 僅在你確實需要 inline script 時使用
           // "'strict-dynamic'",
-          'https:' // 如果你有外部 script 如 bootstrap
+          // 如果你有外部 script 如 bootstrap
         ],
-        'style-src': ["'self'", "'unsafe-inline'", 'https:'],
+        'style-src': ["'self'", "'unsafe-inline'"],
         'img-src': ["'self'", "data:", "blob:"],
-        'font-src': ["'self'", "https:", "data:"],
-        'connect-src': ["'self'", "https:"],
+        'font-src': ["'self'", "data:"],
+        'connect-src': ["'self'"],
         'object-src': ["'none'"],
         'base-uri': ["'self'"],
         'form-action': ["'self'"]
       },
       // xFrameOptions: 'DENY',
       // xContentTypeOptions: 'nosniff',
-      strictTransportSecurity: {
-        maxAge: 15552000,
-        includeSubdomains: true,
-        preload: true
-      }
+      // strictTransportSecurity: {
+      //   maxAge: 15552000,
+      //   includeSubdomains: true,
+      //   preload: true
+      // }
+      strictTransportSecurity: false
+      
     }
   },
 

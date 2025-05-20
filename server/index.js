@@ -1,4 +1,3 @@
-import express from 'express';
 import { createApp } from 'h3';
 import { initializeDatabase } from './config/initDb.js';
 // import { createQA } from './models/qaModel.js';
@@ -9,8 +8,8 @@ import { initializeDatabase } from './config/initDb.js';
 const app = createApp();
 
 // ✅ 確保 Express 正確解析 JSON
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 // ✅ 掛載 `/api/qa` 路由
 // app.use('/api/qa', qaRoutes);
@@ -21,7 +20,5 @@ app.use(express.urlencoded({ extended: true }));
 //   console.error('❌ 資料庫初始化失敗:', error);
 //   process.exit(1);
 // });
-
-console.log('✅ Express server is running...');
 
 export default app;
