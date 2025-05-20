@@ -43,7 +43,7 @@ const truncateOrder = [
   'Banners',
   'knowledge',
   'service_units',
-  'Users',
+  'OfficerUsers',
   'Languages'
 ];
 

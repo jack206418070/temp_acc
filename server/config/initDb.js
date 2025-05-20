@@ -1,13 +1,26 @@
 import sql from 'mssql';
 
+// const config = {
+//   user: 'sa',
+//   password: 'MyS3cretPassw0rd',
+//   server: '43.207.146.80',
+//   port: 1433,
+//   database: 'test_two',
+//   options: {
+//     encrypt: false,
+//     trustServerCertificate: true,
+//   },
+// };
+
+
 const config = {
-  user: 'sa',
-  password: 'MyS3cretPassw0rd',
-  server: '43.207.146.80',
+  user: 'accompanyservice',
+  password: '!QAZ8520@wsx',
+  server: '172.21.50.165',  // Docker 內部使用 'localhost'
   port: 1433,
-  database: 'test_two',
+  database: 'accompanyservice',
   options: {
-    encrypt: false,
+    encrypt: false,  // 若有 SSL 問題請設為 false
     trustServerCertificate: true,
   },
 };
@@ -47,7 +60,7 @@ export async function initializeDatabase() {
       await transaction.request().query(`
         IF OBJECT_ID('user_reminders', 'U') IS NOT NULL DROP TABLE user_reminders;
         IF OBJECT_ID('announcements', 'U') IS NOT NULL DROP TABLE announcements;
-        IF OBJECT_ID('users', 'U') IS NOT NULL DROP TABLE users;
+        IF OBJECT_ID('officerusers', 'U') IS NOT NULL DROP TABLE officerusers;
         IF OBJECT_ID('languages', 'U') IS NOT NULL DROP TABLE languages;
         IF OBJECT_ID('banners', 'U') IS NOT NULL DROP TABLE banners;
         IF OBJECT_ID('qa', 'U') IS NOT NULL DROP TABLE qa;
@@ -69,7 +82,7 @@ export async function initializeDatabase() {
     // Users
     try {
       await transaction.request().query(`
-        CREATE TABLE Users (
+        CREATE TABLE OfficerUsers (
           password varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
           [role] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
           username varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
@@ -321,12 +334,12 @@ export async function initializeDatabase() {
 
     // 4. 檢查 Users 表，若無資料則新增預設帳號
     console.log('檢查是否需要創建預設帳號...');
-    const checkUser = await pool.request().query('SELECT COUNT(*) as cnt FROM users');
+    const checkUser = await pool.request().query('SELECT COUNT(*) as cnt FROM officerusers');
     
     if (checkUser.recordset[0].cnt === 0) {
       console.log('開始創建預設帳號...');
       await pool.request().query(`
-        INSERT INTO users (username, password, role)
+        INSERT INTO officerusers (username, password, role)
         VALUES ('adminUser', 'strong(Password)', 'admin')
       `);
       console.log('✅ 預設管理員帳號創建完成');

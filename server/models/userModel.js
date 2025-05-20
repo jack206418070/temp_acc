@@ -9,7 +9,7 @@ export async function validateUser(username, password) {
       .input('password', password)
       .query(`
         SELECT uid, username, role 
-        FROM Users 
+        FROM OfficerUsers
         WHERE username = @username AND password = @password
       `);
     
@@ -25,7 +25,7 @@ export async function getAllUsers() {
   try {
     const pool = await getConnection();
     const result = await pool.request()
-      .query('SELECT id, username, role FROM Users');
+      .query('SELECT id, username, role FROM OfficerUsers');
     return result.recordset;
   } catch (error) {
     console.error('❌ Query Error:', error);
@@ -39,7 +39,7 @@ export async function getUserById(id) {
     const pool = await getConnection();
     const result = await pool.request()
       .input('id', id)
-      .query('SELECT id, username, role FROM Users WHERE id = @id');
+      .query('SELECT id, username, role FROM OfficerUsers WHERE id = @id');
 
     return result.recordset.length ? result.recordset[0] : null;
   } catch (error) {
@@ -57,7 +57,7 @@ export async function createUser(username, password, role = 'user') {
       .input('password', password)
       .input('role', role)
       .query(`
-        INSERT INTO Users (username, password, role)
+        INSERT INTO OfficerUsers (username, password, role)
         OUTPUT INSERTED.id, INSERTED.username, INSERTED.role
         VALUES (@username, @password, @role)
       `);
@@ -79,7 +79,7 @@ export async function updateUser(id, username, password, role) {
       .input('password', password)
       .input('role', role)
       .query(`
-        UPDATE Users
+        UPDATE OfficerUsers
         SET username = @username, 
             password = CASE WHEN @password = '' THEN password ELSE @password END,
             role = @role
@@ -100,7 +100,7 @@ export async function deleteUser(id) {
     const pool = await getConnection();
     await pool.request()
       .input('id', id)
-      .query('DELETE FROM Users WHERE id = @id');
+      .query('DELETE FROM OfficerUsers WHERE id = @id');
     return { message: '刪除成功' };
   } catch (error) {
     console.error('❌ Delete Error:', error);

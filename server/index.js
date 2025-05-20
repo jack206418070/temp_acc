@@ -16,9 +16,9 @@ const app = createApp();
 // app.use('/api/qa', qaRoutes);
 
 // 初始化資料庫
-// initializeDatabase().catch(error => {
-//   console.error('❌ 資料庫初始化失敗:', error);
-//   process.exit(1);
-// });
+initializeDatabase().catch(error => {
+  console.error('❌ 資料庫初始化失敗:', error);
+  process.exit(1);
+});
 
 export default app;
