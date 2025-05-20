@@ -1,4 +1,4 @@
-import { initializeDatabase } from './config/initDb.js';
+import { initializeDatabase } from '../../config/initDb.js';
 import { createError } from 'h3';
 
 
