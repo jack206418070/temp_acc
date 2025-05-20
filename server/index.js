@@ -1,5 +1,4 @@
 import { createApp } from 'h3';
-import { initializeDatabase } from './config/initDb.js';
 // import { createQA } from './models/qaModel.js';
 // import qaRoutes from './routes/qaRoutes.js';
 // import knowledgeRoutes from './routes/knowledgeRoutes.js';
@@ -16,9 +15,9 @@ const app = createApp();
 // app.use('/api/qa', qaRoutes);
 
 // 初始化資料庫
-initializeDatabase().catch(error => {
-  console.error('❌ 資料庫初始化失敗:', error);
-  process.exit(1);
-});
+// initializeDatabase().catch(error => {
+//   console.error('❌ 資料庫初始化失敗:', error);
+//   process.exit(1);
+// });
 
 export default app;
