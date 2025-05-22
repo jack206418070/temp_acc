@@ -18,12 +18,16 @@
           <div class="item-date">{{ formatDate(announcement.publish_date) }}</div>
           <div class="item-category">{{ announcement.category }}</div>
           <div class="item-title">
-            <a v-if="announcement.link" :href="'/news/' + announcement.id" target="_blank">
-              {{ announcement.title }}
-            </a>
-            <NuxtLink v-else :to="'/news/' + announcement.id">
-              {{ announcement.title }}
-            </NuxtLink>
+            <template v-if="announcement.content.length > 10">
+              <NuxtLink :to="'/news/' + announcement.id">
+                {{ announcement.title }}
+              </NuxtLink>
+            </template>
+            <template v-else>
+              <a :href="announcement.link" target="_blank">
+                {{ announcement.title }}
+              </a>
+            </template>
           </div>
         </div>
       </template>

@@ -25,9 +25,16 @@
             <div class="title-date">{{ formatDate(announcement.publish_date) }}</div>
           </div>
           <div class="new-link">
-            <a :href="'/news/' + announcement.id">
-              {{ announcement.title }}
-            </a>
+            <template v-if="announcement.content.length > 10">
+              <a :href="'/news/' + announcement.id">
+                {{ announcement.title }}
+              </a>
+            </template>
+            <template v-else>
+              <a :href="announcement.link" target="_blank">
+                {{ announcement.title }}
+              </a>
+            </template>
           </div>
           <div class="item-line"></div>
         </div>
