@@ -12,7 +12,6 @@ export default defineNuxtConfig({
         ['defineStore', 'definePiniaStore'],
       ],
     },
-    'nuxt-security'
   ],
 
   app: {
@@ -116,6 +115,23 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    headers: {
+      'x-powered-by': '',
+      'etag': '',
+      'strict-transport-security': '',
+      'x-dns-prefetch-control': '',
+      'x-download-options': '',
+      'x-permitted-cross-domain-policies': '',
+      'permissions-policy': '',
+      'cross-origin-embedder-policy': '',
+      'cross-origin-opener-policy': '',
+      'cross-origin-resource-policy': '',
+      'origin-agent-cluster': '',
+      'referrer-policy': '',
+      'cache-control': ''
+    },
+    etag: false,
+    compressPublicAssets: false, // 可選，避免產生 vary/accept-encoding
     prerender: {
       failOnError: false,
       crawlLinks: true,
