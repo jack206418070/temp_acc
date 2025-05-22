@@ -72,7 +72,7 @@ const fetchAnnouncements = async () => {
     }
 
     // 只顯示最新的4筆公告
-    announcements.value = result.data.slice(0, 4);
+    announcements.value = result.data
   } catch (err) {
     console.error('獲取公告列表失敗:', err);
     error.value = err.message || '獲取公告列表失敗';
