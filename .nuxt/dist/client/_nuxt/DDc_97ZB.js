@@ -1,0 +1,1 @@
+import{d as a,a as o,c as s,b as t,g as n,_ as c}from"./D2xRyBrm.js";const p={class:"main-container"},r=a({__name:"application-form",setup(i){return o({title:"申請表｜ 多元陪伴照顧服務計畫"}),(l,e)=>(n(),s("div",p,e[0]||(e[0]=[t("h2",{class:"default-title"}," 填寫申請表 ",-1),t("p",null,"線上申請系統於未來計畫擴充時建置",-1)])))}}),d=c(r,[["__scopeId","data-v-dbbb9603"]]);export{d as default};
