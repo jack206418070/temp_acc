@@ -1,0 +1,30 @@
+import { c as defineEventHandler, e as createError } from '../../_/nitro.mjs';
+import { a as getAllQACategories } from '../../_/qaModel.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'chokidar';
+import 'anymatch';
+import 'node:crypto';
+import 'node:url';
+import '../../_/db.mjs';
+import 'mssql';
+
+const index_get = defineEventHandler(async (event) => {
+  try {
+    const data = await getAllQACategories();
+    return { success: true, data };
+  } catch (error) {
+    console.error("Get QA Categories List Error:", error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: "\u7372\u53D6\u554F\u7B54\u985E\u5225\u5217\u8868\u5931\u6557"
+    });
+  }
+});
+
+export { index_get as default };
+//# sourceMappingURL=index.get6.mjs.map

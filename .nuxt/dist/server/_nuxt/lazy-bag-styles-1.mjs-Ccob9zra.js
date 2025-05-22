@@ -1,0 +1,5 @@
+const lazyBag_vue_vue_type_style_index_0_scoped_0a6b5e89_lang = "h1[data-v-0a6b5e89],h2[data-v-0a6b5e89]{text-align:center}.grid-container[data-v-0a6b5e89]{align-items:center;box-sizing:border-box;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));justify-content:center;margin:0 auto;max-width:1200px;padding:20px;width:100%}.grid-item[data-v-0a6b5e89]{background-color:#fff;border:1px solid #e0e0e0;border-radius:10px;box-shadow:0 4px 6px #0000001a;color:#333;font-size:50px;line-height:1.5;min-height:150px;padding:20px;text-align:center}";
+export {
+  lazyBag_vue_vue_type_style_index_0_scoped_0a6b5e89_lang as default
+};
+//# sourceMappingURL=lazy-bag-styles-1.mjs-Ccob9zra.js.map

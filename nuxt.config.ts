@@ -63,11 +63,11 @@ export default defineNuxtConfig({
         ],
         'style-src': ["'self'", "'unsafe-inline'"],
         'img-src': ["'self'", "data:", "blob:"],
-        'font-src': ["'self'", "data:"],
+        // 'font-src': ["'self'", "data:"],
         'connect-src': ["'self'"],
         'object-src': ["'none'"],
         'base-uri': ["'self'"],
-        'form-action': ["'self'"]
+        // 'form-action': ["'self'"]
       },
       // xFrameOptions: 'DENY',
       // xContentTypeOptions: 'nosniff',
@@ -131,7 +131,7 @@ export default defineNuxtConfig({
       'cache-control': ''
     },
     etag: false,
-    compressPublicAssets: false, // 可選，避免產生 vary/accept-encoding
+    compressPublicAssets: false, // 可選，避免產生 vary
     prerender: {
       failOnError: false,
       crawlLinks: true,
