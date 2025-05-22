@@ -33,11 +33,33 @@
               :disabled="isLoading"
             >
           </div>
+          <div class="form-group">
+            <label>驗證碼</label>
+            <div class="captcha-container">
+              <div class="captcha-image-wrapper">
+                <img 
+                  :src="captchaUrl" 
+                  alt="驗證碼" 
+                  class="captcha-image"
+                  @click="refreshCaptcha"
+                >
+                <div class="refresh-hint">點擊刷新</div>
+              </div>
+              <input 
+                v-model="captcha" 
+                type="text" 
+                required
+                placeholder="請輸入驗證碼"
+                :disabled="isLoading"
+                class="captcha-input"
+              >
+            </div>
+          </div>
           <div class="button-group">
             <button 
               type="submit" 
               class="btn btn-primary"
-              :disabled="isLoading"
+              :disabled="isLoading || !captcha"
             >
               <span v-if="isLoading" class="button-loading"></span>
               登入
@@ -54,7 +76,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 definePageMeta({
@@ -64,16 +86,28 @@ definePageMeta({
 const router = useRouter();
 const username = ref('');
 const password = ref('');
+const captcha = ref('');
 const isLoading = ref(false);
+const captchaUrl = ref('/api/captcha');
+
+function refreshCaptcha() {
+  captchaUrl.value = `/api/captcha?t=${Date.now()}`;
+}
 
 async function handleLogin() {
+  if (!captcha.value) {
+    alert('請輸入驗證碼');
+    return;
+  }
+
   isLoading.value = true;
   try {
     const response = await $fetch('/api/auth/login', {
       method: 'POST',
       body: {
         username: username.value,
-        password: password.value
+        password: password.value,
+        captcha: captcha.value
       }
     });
 
@@ -93,10 +127,17 @@ async function handleLogin() {
                         '登入失敗，請檢查帳號密碼是否正確';
     
     alert(errorMessage);
+    // 重置驗證碼
+    refreshCaptcha();
+    captcha.value = '';
   } finally {
     isLoading.value = false;
   }
 }
+
+onMounted(() => {
+  refreshCaptcha();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -226,6 +267,53 @@ async function handleLogin() {
       color: #41BBBE;
       text-decoration: underline;
     }
+  }
+}
+
+.captcha-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.captcha-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.captcha-image {
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+}
+
+.refresh-hint {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.captcha-input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  
+  &:focus {
+    outline: none;
+    border-color: #41BBBE;
+  }
+  
+  &:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
   }
 }
 </style> 

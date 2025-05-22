@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['sweetalert2']  // 添加這行
   },
-  modules: [[
+  modules: [
     '@pinia/nuxt',
     {
       autoImports: [
@@ -12,7 +12,8 @@ export default defineNuxtConfig({
         ['defineStore', 'definePiniaStore'],
       ],
     },
-  ], 'nuxt-security'],
+    'nuxt-security'
+  ],
 
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',

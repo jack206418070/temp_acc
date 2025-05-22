@@ -1,13 +1,22 @@
-import { createError } from 'h3';
+import { createError, getCookie } from 'h3';
 import { validateUser } from '~/server/models/userModel';
 import jwt from 'jsonwebtoken';
 
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
-    const { username, password } = body;
+    const { username, password, captcha } = body;
 
-    console.log('接收到登入請求:', { username });
+    // 取得驗證碼
+    const storedCaptcha = getCookie(event, 'captcha');
+    if (!storedCaptcha || storedCaptcha.toLowerCase() !== captcha?.toLowerCase()) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: '驗證碼錯誤'
+      });
+    }
+    // 驗證成功後清除（設為過期）
+    setCookie(event, 'captcha', '', { maxAge: 0, path: '/' });
 
     if (!username || !password) {
       throw createError({
