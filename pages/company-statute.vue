@@ -8,15 +8,15 @@
       </div>
       <div class="comapny-statute-list-item">
         <div class="item-number">02</div>
-        <div class="item-desc"><Nuxt-link href="/employment-services">就業服務法</Nuxt-link></div>
+        <div class="item-desc"><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090001" target="_blank">就業服務法</a></div>
       </div>
       <div class="comapny-statute-list-item">
         <div class="item-number">03</div>
-        <div class="item-desc"><Nuxt-link href="/censor-standard">外國人從事就業服務法第四十六條第一項第八款至第十一款工作資格及審查標準(藍領審查標準)</Nuxt-link></div>
+        <div class="item-desc"><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090029" target="_blank">外國人從事就業服務法第四十六條第一項第八款至第十一款工作資格及審查標準(藍領審查標準)</a></div>
       </div>
       <div class="comapny-statute-list-item">
         <div class="item-number">04</div>
-        <div class="item-desc"><Nuxt-link href="/convert-principle">外國人受聘僱從事就業服務法第四十六條第一項第八款至第十一款規定工作之轉換雇主或工作程序準則(外國人轉換準則)</Nuxt-link></div>
+        <div class="item-desc"><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090023" target="_blank">外國人受聘僱從事就業服務法第四十六條第一項第八款至第十一款規定工作之轉換雇主或工作程序準則(外國人轉換準則)</a></div>
       </div>
     </div>
   </div>

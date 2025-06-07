@@ -15,7 +15,22 @@
     <div class="conduct-content">
       <ul>
         <li>
-          <a href="https://www.accompanytest.com/_files/ugd/73d1df_bed4090d122c498cba9bbaba31c3ad7a.pdf" target="_blank">多元陪伴照顧服務試辦計畫檔案連結</a>
+          <a href="https://nws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwMjk0LzE3MjEzL2ZiMjhjMjQyLTM5OTYtNDUyNS1iMzJmLTA5YWQxYzU4NDZmNC5wZGY%3d&n=5aSa5YWD6Zmq5Ly054Wn6aGn5pyN5YuZ6Kmm6L6m6KiI55WrKDExMy4xMS4xNCkucGRm" target="_blank">多元陪伴照顧服務試辦計畫檔案連結</a>
+        </li>
+        <li>
+          <a href="/uploads/附件一-多元陪伴照顧服務試辦單位申請表.docx" target="_blank">附件一-多元陪伴照顧服務試辦單位申請表</a>
+        </li>
+        <li>
+          <a href="/uploads/附件二-多元陪伴照顧服務試辦計畫書.docx" target="_blank">附件二-多元陪伴照顧服務試辦計畫書</a>
+        </li>
+        <li>
+          <a href="https://nws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwMjk0LzE3MjEzLzEzMzMzYjFmLTIxZGItNDk0OS1iZWU1LTNhODkxNjRlZjU3Ny5wZGY%3d&n=6ZmE5Lu25LiJLeWkmuWFg%2bmZquS8tOeFp%2bmhp%2bacjeWLmeippui%2bpuWWruS9jeipleWIhuihqC5wZGY%3d" target="_blank">附件三-多元陪伴照顧服務試辦單位評分表</a>
+        </li>
+        <li>
+          <a href="https://nws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwMjk0LzE3MjEzL2U3ZDFkOTcwLTMwMWQtNDE2OC04NmY2LWExY2VlOGNmYjcyNC5wZGY%3d&n=6ZmE5Lu25ZubLeacrOioiOeVq%2bippui%2bpuWWruS9jeS5i%2bedo%2bWwjuWToeaHieWCmeizh%2bagvOiIh%2bW3peS9nOWFp%2bWuuS5wZGY%3d" target="_blank">附件四-本計畫試辦單位之督導員應備資格與工作內容</a>
+        </li>
+        <li>
+          <a href="https://nws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwMjk0LzE3MjEzLzUzOWFkMGY2LWU5MjItNDE1ZS1hOTdjLTJmODdlMjJiMzVjMi5wZGY%3d&n=6ZmE5Lu25LqULeacrOioiOeVq%2bippui%2bpuWWruS9jeS5i%2bijnOWKqemgheebruWPiuaomea6li5wZGY%3d" target="_blank">附件五-本計畫試辦單位之補助項目及標準</a>
         </li>
       </ul>
     </div>
@@ -58,6 +73,9 @@ useSeoMeta({ title: "多元陪伴照顧服務試辦計畫｜ 多元陪伴照顧�
   width: 31px;
   height: 19px;
   fill: #41BBBE;
+}
+li {
+  margin-bottom: 16px;
 }
 @media (max-width: 991px) {
   .pre-link {
