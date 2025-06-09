@@ -15,7 +15,7 @@
     <div class="conduct-content">
       <ul>
         <li>
-          <a href="https://www.accompanytest.com/_files/ugd/73d1df_b63f4ce2fc9d43d2bf4577e6462ce490.pdf" target="_blank">就業服務法檔案連結</a>
+          <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090001" target="_blank">就業服務法連結</a>
         </li>
       </ul>
     </div>

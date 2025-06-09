@@ -15,7 +15,7 @@
     <div class="conduct-content">
       <ul>
         <li>
-          <a href="https://www.accompanytest.com/_files/ugd/73d1df_ec28f395ab544df99126831c5ef9bf18.pdf" target="_blank">藍領審查標準檔連結</a>
+          <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090029" target="_blank">藍領審查標準連結</a>
         </li>
       </ul>
     </div>

@@ -16,7 +16,7 @@
     <div class="conduct-content">
       <ul>
         <li>
-          <a href="https://www.accompanytest.com/_files/ugd/73d1df_259a4f8ec0924d838b82366c36177726.pdf" target="_blank">外國人轉換準則檔案連結</a>
+          <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090023" target="_blank">外國人轉換準則連結</a>
         </li>
       </ul>
     </div>
