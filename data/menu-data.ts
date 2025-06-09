@@ -24,9 +24,9 @@ const menu_data:IMenu[] = [
         title:'多元陪伴照顧服務法規',
         sub_menus:[
           {link:'/conduct-plan',title:'多元陪伴照顧服務試辦計劃'},
-          {link:'/employment-services',title:'就業服務法'},
-          {link:'/censor-standard',title:'藍領審查標準'},
-          {link:'/convert-principle',title:'外國人轉換原則'},
+          {link:'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090001',title:'就業服務法'},
+          {link:'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090029',title:'藍領審查標準'},
+          {link:'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090023',title:'外國人轉換原則'},
         ],
         sub_id: 1,
         sub_dropdown: true,

@@ -49,9 +49,16 @@
                 </div>
                 <ul style="padding-left: 20px;" class="dropdown-menu" :class="{show: isSubActive(dm) || !isTouchDevice}">
                   <li v-for="(sub, j) in dm.sub_menus" :key="j">
-                    <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }" @click="closeMenu">
-                      <span>{{ sub.title }}</span>
-                    </nuxt-link>
+                    <template v-if="sub.title != '就業服務法' && sub.title != '藍領審查標準' && sub.title != '外國人轉換原則'">
+                      <nuxt-link :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }" @click="closeMenu">
+                        <span>{{ sub.title }}</span>
+                      </nuxt-link>
+                    </template>
+                    <template v-else>
+                      <a :href="sub.link" class="dropdown-item" :class="{ active: route.path === sub.link }" @click="closeMenu" target="_blank">
+                        <span>{{ sub.title }}</span>
+                      </a>
+                    </template>
                   </li>
                 </ul>
               </template>
