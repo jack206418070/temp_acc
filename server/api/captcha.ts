@@ -14,8 +14,14 @@ export default defineEventHandler(async (event) => {
       </svg>
     `
 
-    // 儲存驗證碼到 cookie
-    setCookie(event, 'captcha', code, { httpOnly: true, path: '/' })
+    // 儲存驗證碼到 cookie (加入安全屬性)
+    setCookie(event, 'captcha', code, { 
+      httpOnly: true, 
+      path: '/',
+      secure: true,  // 強制使用 HTTPS
+      sameSite: 'strict',  // 防護 CSRF 攻擊
+      maxAge: 60 * 5  // 5分鐘後過期
+    })
 
     // 設定 response headers
     event.node.res.setHeader('Content-Type', 'image/svg+xml')
@@ -54,7 +60,7 @@ function generateNoise() {
 }
 
 // 生成文字
-function generateText(code) {
+function generateText(code: string) {
   let text = ''
   for (let i = 0; i < code.length; i++) {
     const x = 20 + i * 25

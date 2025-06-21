@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV !== 'production' },
   build: {
     transpile: ['sweetalert2']  // 添加這行
   },
@@ -13,6 +13,60 @@ export default defineNuxtConfig({
       ],
     },
   ],
+
+  // 安全配置
+  security: {
+    ssg: {
+      meta: false, // 隱藏構建元數據
+      hashScripts: false,
+      hashStyles: false,
+      exportToPresets: true
+    },
+    sri: false,
+    headers: {
+      contentSecurityPolicy: {
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          "https://www.googletagmanager.com",
+          "https://www.google-analytics.com"
+        ],
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'img-src': ["'self'", "data:", "blob:"],
+        'connect-src': ["'self'", "https://www.google-analytics.com"],
+        'object-src': ["'none'"],
+        'base-uri': ["'self'"],
+        'frame-ancestors': ["'none'"]
+      },
+      xFrameOptions: 'DENY',
+      xContentTypeOptions: 'nosniff',
+      strictTransportSecurity: {
+        maxAge: 31536000,
+        includeSubdomains: true
+      },
+      referrerPolicy: 'strict-origin-when-cross-origin'
+    }
+  },
+
+  // Nitro 配置 - 隱藏服務器資訊
+  nitro: {
+    // 自定義錯誤頁面
+    errorHandler: '~/error.vue',
+    
+    // 壓縮設定
+    compressPublicAssets: true,
+  },
+
+  // 路由規則
+  routeRules: {
+    // 阻止存取敏感目錄
+    '/_nuxt/builds/**': { 
+      headers: { 
+        'X-Robots-Tag': 'noindex, nofollow',
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
+      }
+    }
+  },
 
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
@@ -54,106 +108,78 @@ export default defineNuxtConfig({
     }
   },
 
-  security: {
-    ssg: {
-      meta: true,
-      hashScripts: false,
-      hashStyles: false,
-      exportToPresets: true
-    },
-    sri: false,
-    headers: {
-      contentSecurityPolicy: {
-        // 'default-src': ["'self'"],
-        'script-src': [
-          "'self'",
-          "'unsafe-inline'",  // 僅在你確實需要 inline script 時使用
-          // "'strict-dynamic'",
-          // 如果你有外部 script 如 bootstrap
-        ],
-        'style-src': ["'self'", "'unsafe-inline'"],
-        'img-src': ["'self'", "data:", "blob:"],
-        // 'font-src': ["'self'", "data:"],
-        'connect-src': ["'self'"],
-        'object-src': ["'none'"],
-        'base-uri': ["'self'"],
-        // 'form-action': ["'self'"]
-      },
-      // xFrameOptions: 'DENY',
-      // xContentTypeOptions: 'nosniff',
-      // strictTransportSecurity: {
-      //   maxAge: 15552000,
-      //   includeSubdomains: true,
-      //   preload: true
-      // }
-      strictTransportSecurity: false
-      
-    }
-  },
-
-  // Per route
-  // routeRules: {
-  //   '/custom-route': {
-  //     security: {
-  //       headers: {
-  //         contentSecurityPolicy: {
-  //           'script-src': "'self' 'strict-dynamic' 'nonce-${nonce}'",
-  //           'frame-ancestors': ["'none'"],
-  //           'object-src': ["'none'"],
-  //           'base-uri': ["'self'"]
-  //         },
-  //       },
-  //     },
-  //   },
-  //   '/assets/**': {
-  //     headers: {
-  //       'X-Content-Type-Options': 'nosniff',
-  //       'Content-Type': 'application/javascript; charset=utf-8'
-  //     }
-  //   },
-  //   '/': {
-  //     headers: {
-  //       'X-Content-Type-Options': 'nosniff',
-  //       'Content-Type': 'application/javascript; charset=utf-8'
-  //     }
-  //   }
-  // },
-
   image: {
     provider: 'static',
     dir: 'public/images'
   },
 
   nitro: {
-    headers: {
-      'x-powered-by': '',
-      'etag': '',
-      'strict-transport-security': '',
-      'x-dns-prefetch-control': '',
-      'x-download-options': '',
-      'x-permitted-cross-domain-policies': '',
-      'permissions-policy': '',
-      'cross-origin-embedder-policy': '',
-      'cross-origin-opener-policy': '',
-      'cross-origin-resource-policy': '',
-      'origin-agent-cluster': '',
-      'referrer-policy': '',
-      'cache-control': ''
+    // 生產環境隱藏錯誤詳情
+    experimental: {
+      wasm: false
     },
-    etag: false,
-    compressPublicAssets: false, // 可選，避免產生 vary
+    // 移除可能洩露資訊的標頭並加強安全防護
+    headers: {
+      'x-powered-by': '', // 隱藏技術棧資訊
+      'server': '', // 隱藏伺服器資訊
+      'x-nuxt-version': '', // 隱藏Nuxt版本
+      // HTTP Request Smuggling 防護標頭
+      'Connection': 'close', // 強制關閉連線，防止連線重用攻擊
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    },
+    // HTTP 請求限制
+    maxChunkSize: 1048576, // 1MB chunk size limit
+    // 關閉不必要的功能
+    compressPublicAssets: true,
+    minify: process.env.NODE_ENV === 'production',
+    
+    // 路由規則 - 加強安全性
+    routeRules: {
+      // API路由安全設定
+      '/api/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'X-XSS-Protection': '1; mode=block',
+          'Referrer-Policy': 'strict-origin-when-cross-origin'
+        },
+        security: {
+          xssValidator: false // 避免XSS檢查誤判
+        }
+      },
+      // 靜態資源安全設定
+      '/assets/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'Cache-Control': 'public, max-age=31536000, immutable'
+        }
+      },
+      // 上傳文件安全設定
+      '/uploads/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'Content-Disposition': 'attachment' // 強制下載，防止執行
+        }
+      },
+      // 404 頁面處理
+      '/notfound': { 
+        headers: { 'X-Robots-Tag': 'noindex' }
+      }
+    },
+    
     prerender: {
       failOnError: false,
       crawlLinks: true,
       routes: ['/'],
     },
     preset: 'node-server',
-    // preset: 'vercel',
-    // preset: 'static',
-    // output: {
-    //   dir: './dist',
-    //   publicDir: './dist'
-    // },
     output: {
       dir: './.output',
       publicDir: './.output/public'
@@ -171,22 +197,12 @@ export default defineNuxtConfig({
         maxAge: 60 * 60 * 24 * 7 // 7 days
       }
     ],
-    routeRules: {
-      '/assets/**': {
-        headers: {
-          'X-Content-Type-Options': 'nosniff',
-          'Content-Type': 'application/javascript; charset=utf-8'
-        }
-      },
-      '/api/**': {
-        security: {
-          xssValidator: false
-        }
-      }
-    },
     externals: {
       external: ['canvas']
-    }
+    },
+    
+    // 錯誤處理配置
+    errorHandler: '~/server/api/error-handler.ts'
   },
   serverHandlers: [
     {
@@ -217,16 +233,15 @@ export default defineNuxtConfig({
     jwtSecret: process.env.JWT_SECRET || 'your-secret-key',
   },
 
-  // 添加 cookie 配置
-  cookieControl: {
-    cookies: {
-      necessary: [
-        {
-          name: 'auth_token',
-          description: '用於用戶身份驗證的令牌',
-          tokens: ['auth_token']
-        }
-      ]
+  // 添加 cookie 配置 - 安全設定
+  ssr: true,
+  
+  // 全域 Cookie 安全設定
+  runtimeConfig: {
+    // 將會從環境變數中獲取
+    jwtSecret: process.env.JWT_SECRET || 'your-secret-key',
+    public: {
+      // 公開的運行時配置
     }
   },
 
@@ -240,5 +255,14 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  },
+
+  // 實驗性功能配置
+  ...(process.env.NODE_ENV === 'production' && {
+    // 生產環境關閉source map避免洩露原始碼
+    sourcemap: {
+      server: false,
+      client: false
+    }
+  })
 })

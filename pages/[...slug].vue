@@ -100,6 +100,11 @@ useSeoMeta({
   robots: 'noindex, nofollow'
 });
 
+// 設定伺服器端的 404 狀態碼（不拋出錯誤）
+if (process.server) {
+  setResponseStatus(404);
+}
+
 // 返回上一頁功能
 const goBack = () => {
   if (typeof window !== 'undefined') {
@@ -111,4 +116,4 @@ const goBack = () => {
     }
   }
 };
-</script>
+</script> 

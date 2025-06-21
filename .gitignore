@@ -5,3 +5,24 @@ node_modules
 # .output
 .vercel
 .DS_Store
+
+# 安全日誌文件
+logs/
+*.log
+
+# 環境變數文件
+.env
+.env.local
+.env.production
+.env.development
+
+# 臨時文件
+tmp/
+temp/
+
+# 備份文件
+*.backup
+*.bak
+
+# 上傳文件（視情況而定）
+uploads/*.tmp

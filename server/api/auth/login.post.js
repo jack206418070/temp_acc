@@ -16,7 +16,12 @@ export default defineEventHandler(async (event) => {
       });
     }
     // 驗證成功後清除（設為過期）
-    setCookie(event, 'captcha', '', { maxAge: 0, path: '/' });
+    setCookie(event, 'captcha', '', { 
+      maxAge: 0, 
+      path: '/',
+      secure: true,
+      sameSite: 'strict' 
+    });
 
     if (!username || !password) {
       throw createError({
@@ -47,13 +52,13 @@ export default defineEventHandler(async (event) => {
       { expiresIn: '24h' }
     );
 
-    // 設置 cookie
+    // 設置 cookie (強化安全性)
     setCookie(event, 'auth_token', token, {
-      httpOnly: false,
+      httpOnly: true,  // 防止 XSS 攻擊
       maxAge: 60 * 60 * 24, // 24小時
       path: '/',
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax'
+      secure: true,  // 強制使用 HTTPS
+      sameSite: 'strict'  // 最嚴格的 CSRF 防護
     });
 
     console.log('登入成功，返回響應');
