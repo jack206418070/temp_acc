@@ -1,0 +1,15 @@
+{
+  "date": "2025-06-22T04:11:11.835Z",
+  "preset": "iis-node",
+  "framework": {
+    "name": "nuxt",
+    "version": "3.17.3"
+  },
+  "versions": {
+    "nitro": "2.11.12"
+  },
+  "commands": {
+    "preview": "node ./server/index.mjs"
+  },
+  "config": {}
+}
