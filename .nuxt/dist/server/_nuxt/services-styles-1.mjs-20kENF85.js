@@ -1,0 +1,4 @@
+const services_vue_vue_type_style_index_0_scoped_d6dd2e35_lang = ".service-banner[data-v-d6dd2e35]{padding:30px 0 60px}.default-title[data-v-d6dd2e35]{font-size:52px;text-align:center}.service-banner p[data-v-d6dd2e35]{line-height:2;margin:0 auto 40px;text-align:center;text-align:left;width:80%}.service-banner a[data-v-d6dd2e35]{align-items:center;background-color:#ec6717;border-radius:10px;color:#fbfbf3;display:flex;gap:5px;justify-content:center;margin:0 auto;padding:15px 10px;transition:.3s;width:300px}.service-banner a[data-v-d6dd2e35]:hover{background-color:#3f7652}.service-banner a span[data-v-d6dd2e35]{letter-spacing:2px}.service-banner a span svg[data-v-d6dd2e35]{height:37px;width:37px;fill:#fbfbf3}@media (max-width:991px){.default-title[data-v-d6dd2e35]{font-size:36px;margin-bottom:30px;margin-top:30px}.service-banner p[data-v-d6dd2e35]{width:90%}}";
+export {
+  services_vue_vue_type_style_index_0_scoped_d6dd2e35_lang as default
+};

@@ -1,0 +1,1 @@
+import{defineEventHandler as e,deleteCookie as s}from"file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs";const t=e((e=>(s(e,"auth_token",{httpOnly:!0,path:"/"}),{success:!0,message:"登出成功"})));export{t as default};

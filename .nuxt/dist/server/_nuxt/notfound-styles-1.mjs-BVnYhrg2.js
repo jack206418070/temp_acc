@@ -1,0 +1,4 @@
+const notfound_vue_vue_type_style_index_0_scoped_78ffa6e3_lang = ".error-page[data-v-78ffa6e3]{background:linear-gradient(135deg,#f5f7fa,#c3cfe2);min-height:100vh}.error-content[data-v-78ffa6e3]{max-width:600px;position:relative;z-index:10}.shapes[data-v-78ffa6e3]{pointer-events:none;position:absolute}.shape_01[data-v-78ffa6e3]{animation:float-78ffa6e3 6s ease-in-out infinite;left:10%;top:10%}.shape_02[data-v-78ffa6e3]{animation:float-78ffa6e3 8s ease-in-out infinite reverse;bottom:10%;right:10%}@keyframes float-78ffa6e3{0%,to{transform:translateY(0)}50%{transform:translateY(-20px)}}.btn[data-v-78ffa6e3]{transition:all .3s ease}.btn[data-v-78ffa6e3]:hover{box-shadow:0 5px 15px #0003;transform:translateY(-2px)}@media (max-width:768px){.display-1[data-v-78ffa6e3]{font-size:5rem!important}.btn-lg[data-v-78ffa6e3]{font-size:1rem;padding:.75rem 1.5rem}}";
+export {
+  notfound_vue_vue_type_style_index_0_scoped_78ffa6e3_lang as default
+};
