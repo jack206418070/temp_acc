@@ -25,68 +25,67 @@
         <img src="/images/assets/ils_06.svg" alt="" class="lazy-img shapes shape_02" style="opacity: 0.1;">
       </div>
     </main>
-
-    <style scoped>
-    .error-page {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    }
-
-    .error-content {
-      max-width: 600px;
-      z-index: 10;
-      position: relative;
-    }
-
-    .shapes {
-      position: absolute;
-      pointer-events: none;
-    }
-
-    .shape_01 {
-      top: 10%;
-      left: 10%;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .shape_02 {
-      bottom: 10%;
-      right: 10%;
-      animation: float 8s ease-in-out infinite reverse;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    .btn {
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 768px) {
-      .display-1 {
-        font-size: 5rem !important;
-      }
-      
-      .btn-lg {
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-      }
-    }
-    </style>
   </div>
 </template>
 
+<style scoped>
+  .error-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+
+  .error-content {
+    max-width: 600px;
+    z-index: 10;
+    position: relative;
+  }
+
+  .shapes {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .shape_01 {
+    top: 10%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .shape_02 {
+    bottom: 10%;
+    right: 10%;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .btn {
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .display-1 {
+      font-size: 5rem !important;
+    }
+    
+    .btn-lg {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+  </style>
 <script setup lang="ts">
 // 設定頁面配置
 definePageMeta({ 

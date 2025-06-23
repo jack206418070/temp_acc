@@ -26,6 +26,6 @@ const route = useRoute();
 const router = useRouter();
 const blog = blog_data.find((b) => b.id === Number(route.params.id));
 if (!blog) {
-  router.push("/error");
+  await navigateTo("/notfound", { replace: true });
 }
 </script>

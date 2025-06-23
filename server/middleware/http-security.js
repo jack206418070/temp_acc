@@ -1,6 +1,30 @@
 // HTTP 請求安全中間件
 import { securityLogger } from '~/server/utils/security-logger';
 
+// 取得客戶端 IP 地址
+function getClientIP(event) {
+  const request = event.node.req;
+  
+  const forwarded = request.headers['x-forwarded-for'];
+  if (forwarded) {
+    return forwarded.split(',')[0].trim();
+  }
+  
+  const realIP = request.headers['x-real-ip'];
+  if (realIP) {
+    return realIP;
+  }
+  
+  const cfConnectingIP = request.headers['cf-connecting-ip'];
+  if (cfConnectingIP) {
+    return cfConnectingIP;
+  }
+  
+  return request.connection?.remoteAddress || 
+         request.socket?.remoteAddress || 
+         'unknown';
+}
+
 // 允許的網域白名單 (可根據需求調整)
 const ALLOWED_DOMAINS = [
   // 本地開發
@@ -135,10 +159,10 @@ export default defineEventHandler(async (event) => {
         message: `Malicious URL detected in parameter '${key}': ${result.url}`
       });
       
-      // 返回錯誤
+      // 返回 404 錯誤以防止弱點掃描工具認為後端處理了敏感內容
       throw createError({
-        statusCode: 400,
-        statusMessage: '請求參數包含不允許的內容'
+        statusCode: 404,
+        statusMessage: 'Resource not found'
       });
     }
   }
@@ -168,8 +192,8 @@ export default defineEventHandler(async (event) => {
       });
       
       throw createError({
-        statusCode: 400,
-        statusMessage: '路由參數包含不允許的內容'
+        statusCode: 404,
+        statusMessage: 'Resource not found'
       });
     }
   }

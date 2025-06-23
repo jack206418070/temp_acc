@@ -3,6 +3,36 @@
 
 import { securityLogger } from '~/server/utils/security-logger';
 
+// 取得客戶端 IP 地址
+function getClientIP(event) {
+  // 從 H3 event 對象中取得客戶端 IP
+  const request = event.node.req;
+  
+  // 檢查代理標頭
+  const forwarded = request.headers['x-forwarded-for'];
+  if (forwarded) {
+    // x-forwarded-for 可能包含多個 IP，取第一個
+    return forwarded.split(',')[0].trim();
+  }
+  
+  // 檢查其他常見的代理標頭
+  const realIP = request.headers['x-real-ip'];
+  if (realIP) {
+    return realIP;
+  }
+  
+  // 檢查 Cloudflare
+  const cfConnectingIP = request.headers['cf-connecting-ip'];
+  if (cfConnectingIP) {
+    return cfConnectingIP;
+  }
+  
+  // 最後使用連接的遠程地址
+  return request.connection?.remoteAddress || 
+         request.socket?.remoteAddress || 
+         'unknown';
+}
+
 // 安全的 Cookie 屬性
 const SECURE_COOKIE_ATTRIBUTES = {
   secure: true,        // 只能通過 HTTPS 傳輸

@@ -215,7 +215,7 @@ export default defineNuxtConfig({
   },
 
   generate: {
-    fallback: '404.html'
+    fallback: true
   },
 
   css: [

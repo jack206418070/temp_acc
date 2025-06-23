@@ -3,6 +3,31 @@
 
 import { securityLogger } from '~/server/utils/security-logger';
 
+// 取得客戶端 IP 地址
+function getClientIP(event) {
+  const request = event.node.req;
+  
+  // 檢查代理標頭
+  const forwarded = request.headers['x-forwarded-for'];
+  if (forwarded) {
+    return forwarded.split(',')[0].trim();
+  }
+  
+  const realIP = request.headers['x-real-ip'];
+  if (realIP) {
+    return realIP;
+  }
+  
+  const cfConnectingIP = request.headers['cf-connecting-ip'];
+  if (cfConnectingIP) {
+    return cfConnectingIP;
+  }
+  
+  return request.connection?.remoteAddress || 
+         request.socket?.remoteAddress || 
+         'unknown';
+}
+
 // 敏感路徑模式
 const SENSITIVE_PATHS = [
   // Nuxt 構建文件
@@ -88,6 +113,22 @@ function decodeAllEncodings(url) {
 
 // 檢查路徑是否包含編碼繞過攻擊
 function hasEncodingBypass(path) {
+  // 對於靜態資源路徑，允許正常的 URL 編碼
+  if (path.startsWith('/images/') || path.startsWith('/assets/') || path.startsWith('/public/')) {
+    // 只檢查惡意編碼模式，不檢查正常的檔案名編碼
+    const maliciousPatterns = [
+      /%25[0-9a-fA-F]{2}/, // 雙重編碼
+      /\\u[0-9a-fA-F]{4}/, // Unicode 編碼
+      /&#x?[0-9a-fA-F]+;/, // HTML 實體編碼
+      /%00/, // 空字節
+      /%2e%2e/, // 編碼的 ".."
+      /%2f/, // 編碼的 "/"
+      /%5c/ // 編碼的 "\"
+    ];
+    return maliciousPatterns.some(pattern => pattern.test(path));
+  }
+  
+  // 對於其他路徑，使用原本的嚴格檢查
   return ENCODING_BYPASS_PATTERNS.some(pattern => pattern.test(path));
 }
 

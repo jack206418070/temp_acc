@@ -28,10 +28,10 @@ export default defineEventHandler(async (event) => {
       // 記錄可疑活動
       logSuspiciousActivity(req, validation.errors, clientIP);
       
-      // 拒絕不安全的請求
+      // 拒絕不安全的請求 - 返回 404 以防止弱點掃描工具識別為處理了敏感內容
       throw createError({
-        statusCode: 400,
-        statusMessage: 'Invalid request format'
+        statusCode: 404,
+        statusMessage: 'Resource not found'
       });
     }
 

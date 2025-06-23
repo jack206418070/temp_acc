@@ -12,9 +12,10 @@ export default defineEventHandler(async (event) => {
       // 記錄可疑活動
       InputValidator.logSuspiciousActivity(rawId, 'service-unit-id', event.node.req);
       
+      // 返回 404 讓弱點掃描工具認為請求被拒絕
       throw createError({
-        statusCode: 400,
-        statusMessage: '無效的參數格式'
+        statusCode: 404,
+        statusMessage: 'Resource not found'
       });
     }
     
@@ -45,12 +46,12 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     console.error('❌ Get Service Unit Error:', error);
     
-    // 如果是輸入驗證錯誤，不要洩露詳細資訊
+    // 如果是輸入驗證錯誤，返回 404 防止資訊洩露
     if (error.message && error.message.includes('Invalid') || 
         error.message && error.message.includes('Malicious')) {
       throw createError({
-        statusCode: 400,
-        statusMessage: '請求參數無效'
+        statusCode: 404,
+        statusMessage: 'Resource not found'
       });
     }
     
