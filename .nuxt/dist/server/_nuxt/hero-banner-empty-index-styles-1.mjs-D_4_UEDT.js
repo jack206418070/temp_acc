@@ -1,4 +1,0 @@
-const heroBannerEmptyIndex_vue_vue_type_style_index_0_scoped_b491b69e_lang = ".home-banner[data-v-b491b69e]{background-color:#41bbbe}.banner-swiper[data-v-b491b69e]{height:100%;width:100%}.home-bg[data-v-b491b69e]{background-position:50%;background-repeat:no-repeat;background-size:contain;height:302px}[data-v-b491b69e] .swiper-pagination-bullet{background:#fff;opacity:.5}[data-v-b491b69e] .swiper-pagination-bullet-active{background:#fff;opacity:1}[data-v-b491b69e] .swiper-button-next,[data-v-b491b69e] .swiper-button-prev{color:#fff}[data-v-b491b69e] .swiper-button-next:after,[data-v-b491b69e] .swiper-button-prev:after{font-size:24px}@media (max-width:991px){.home-banner[data-v-b491b69e]{padding:0 15px}.home-bg[data-v-b491b69e]{height:202px}[data-v-b491b69e] .swiper-button-next:after,[data-v-b491b69e] .swiper-button-prev:after{font-size:20px}}";
-export {
-  heroBannerEmptyIndex_vue_vue_type_style_index_0_scoped_b491b69e_lang as default
-};

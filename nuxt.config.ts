@@ -78,10 +78,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       script: [
         {
-          src: "/js/bootstrap.bundle.min.js",
-          integrity: "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw="
-        },
-        {
           src: 'https://www.googletagmanager.com/gtag/js?id=G-5EVH3D8JX4',
           async: true,
         },

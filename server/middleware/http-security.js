@@ -159,10 +159,10 @@ export default defineEventHandler(async (event) => {
         message: `Malicious URL detected in parameter '${key}': ${result.url}`
       });
       
-      // 返回 404 錯誤以防止弱點掃描工具認為後端處理了敏感內容
+      // 返回錯誤
       throw createError({
-        statusCode: 404,
-        statusMessage: 'Resource not found'
+        statusCode: 400,
+        statusMessage: '請求參數包含不允許的內容'
       });
     }
   }
@@ -192,8 +192,8 @@ export default defineEventHandler(async (event) => {
       });
       
       throw createError({
-        statusCode: 404,
-        statusMessage: 'Resource not found'
+        statusCode: 400,
+        statusMessage: '路由參數包含不允許的內容'
       });
     }
   }

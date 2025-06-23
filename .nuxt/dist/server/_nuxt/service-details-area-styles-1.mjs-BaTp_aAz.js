@@ -1,4 +1,0 @@
-const serviceDetailsArea_vue_vue_type_style_index_0_scoped_fa472079_lang = ".default-title[data-v-fa472079]{margin-bottom:30px}.reminder-intro[data-v-fa472079]{font-size:23px;letter-spacing:1.3px}.reminder-list[data-v-fa472079]{font-size:23px}.reminder-list li[data-v-fa472079]{letter-spacing:2px;line-height:2}@media (max-width:991px){.reminder-list li[data-v-fa472079]{letter-spacing:1.5px;line-height:1.8}.default-title[data-v-fa472079]{font-size:30px}.reminder-intro[data-v-fa472079],.reminder-list[data-v-fa472079]{font-size:20px}}";
-export {
-  serviceDetailsArea_vue_vue_type_style_index_0_scoped_fa472079_lang as default
-};
