@@ -48,15 +48,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // Nitro 配置 - 隱藏服務器資訊
-  nitro: {
-    // 自定義錯誤頁面
-    errorHandler: '~/error.vue',
-    
-    // 壓縮設定
-    compressPublicAssets: true,
-  },
-
   // 路由規則
   routeRules: {
     // 阻止存取敏感目錄
@@ -238,6 +229,18 @@ export default defineNuxtConfig({
     jwtSecret: process.env.JWT_SECRET || 'your-secret-key',
     public: {
       // 公開的運行時配置
+    }
+  },
+  
+  cookieControl: {
+    cookies: {
+      necessary: [
+        {
+          name: 'auth_token',
+          description: '用於用戶身份驗證的令牌',
+          tokens: ['auth_token']
+        }
+      ]
     }
   },
 

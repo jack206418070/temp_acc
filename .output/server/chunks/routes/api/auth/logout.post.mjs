@@ -1,1 +1,0 @@
-import{c as t,i as o}from"../../../_/nitro.mjs";import"node:http";import"node:https";import"node:events";import"node:buffer";import"node:fs";import"node:path";import"chokidar";import"anymatch";import"node:crypto";import"node:url";import"fs";import"path";const p=t((t=>(o(t,"auth_token",{httpOnly:!0,path:"/"}),{success:!0,message:"登出成功"})));export{p as default};
