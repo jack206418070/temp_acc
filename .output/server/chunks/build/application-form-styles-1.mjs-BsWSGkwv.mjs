@@ -1,0 +1,1 @@
+const t="h1[data-v-dbbb9603],h2[data-v-dbbb9603]{text-align:center}.default-title[data-v-dbbb9603]{margin-top:60px}.default-title[data-v-dbbb9603],p[data-v-dbbb9603]{margin-bottom:40px}p[data-v-dbbb9603]{font-size:24px;text-align:center}@media (max-width:991px){p[data-v-dbbb9603]{font-size:22px}}";export{t as a};
