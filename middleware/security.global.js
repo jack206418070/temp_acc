@@ -3,7 +3,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
   // 檢查可疑的URL模式
   const suspiciousPatterns = [
     // URL編碼攻擊 (但排除靜態資源的正常編碼)
-    /%[0-9a-fA-F]{2}%[0-9a-fA-F]{2}%[0-9a-fA-F]{2}/, // 連續的URL編碼
+    /%[0-9a-fA-F]{2}/, // URL編碼檢測
     // 路徑遍歷攻擊
     /\.\.\//, // 相對路徑
     /\.\.\\/, // Windows路徑
@@ -58,6 +58,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
                            path.startsWith('/assets/') || 
                            path.startsWith('/public/') ||
                            path.startsWith('/uploads/') ||
+                           path.startsWith('/_nuxt/') ||
                            /\.(png|jpg|jpeg|gif|svg|ico|css|js|woff|woff2|ttf|eot|avif|webp)$/i.test(path);
 
   // 檢查路徑和查詢參數是否包含可疑模式
@@ -81,7 +82,9 @@ export default defineNuxtRouteMiddleware((to, from) => {
       /\/etc\/passwd/i,
       /\/proc\//i,
       // 過長的路徑（可能是緩衝區溢出攻擊）
-      /.{1000,}/
+      /.{1000,}/,
+      // 正常的空格編碼(%20)除外，但檢測異常URL編碼
+      /%(?!20)[0-9a-fA-F]{2}/
     ];
     
     isSuspicious = staticSuspiciousPatterns.some(pattern => 
