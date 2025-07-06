@@ -300,6 +300,7 @@ onBeforeUnmount(() => {
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
+  width: 50% !important;
 }
 
 .arrow {
@@ -353,6 +354,7 @@ onBeforeUnmount(() => {
   }
   .popup-content img {
     max-width: 80%;
+    width: 50% !important;
   }
   .tab-data-item {
     flex: 0 0 90%;

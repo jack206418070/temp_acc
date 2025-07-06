@@ -267,6 +267,7 @@ h1, h2 {
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
+  width: 50% !important;
 }
 
 .arrow {
@@ -320,6 +321,7 @@ iframe {
   }
   .popup-content img {
     max-width: 80%;
+    width: 80% !important;
   }
   .tab-data-item {
     flex: 0 0 90%;
