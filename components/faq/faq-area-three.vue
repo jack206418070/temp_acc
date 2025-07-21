@@ -44,7 +44,7 @@
           <select v-model="activeTab" @change="handleTabChange">
             <!-- <option value="nav-all">全部</option> -->
             <option value="nav-services">想申請服務</option>
-            <option value="nav-unit">想成為試辦單位</option>
+            <option value="nav-unit">試辦單位申請及審查系統</option>
             <option value="nav-worker">我是多元陪伴照顧服務工作者</option>
             <option value="nav-service-unit">我是私立就業服務機構</option>
           </select>
@@ -64,7 +64,7 @@
           </button>
           <button class="nav-link" :class="{ active: activeTab === 'nav-unit' }" @click="setActiveTab('nav-unit')"
             type="button">
-            想成為試辦單位
+            試辦單位申請及審查系統
           </button>
           <button class="nav-link" :class="{ active: activeTab === 'nav-worker' }" @click="setActiveTab('nav-worker')"
             type="button">

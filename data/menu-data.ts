@@ -118,7 +118,7 @@ const menu_data:IMenu[] = [
       },
       {
         link:'/application-form',
-        title:'想成為試辦單位',
+        title:'試辦單位申請及審查系統',
         sub_id: 2,
         sub_dropdown: true,
         sub_menus:[
