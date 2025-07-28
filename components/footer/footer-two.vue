@@ -21,9 +21,14 @@
     </div>
     <div class="main-container">
       <div class="bottom-footer">
-        <p class="copyright" style="padding-bottom: 0px; margin-bottom: 0px;">為提供更為穩定的瀏覽品質與使用體驗，建議更新瀏覽器至以下版本：最新版本Edge、最新版本Chrome、最新版本Firefox<br>最佳解析度1024*768以上
-        </p>
-        <div class="copyright" style="padding-top: 10px;">Copyright @{{new Date().getFullYear()}} 勞動力發展署版權所有，保留所有權利。</div>
+        <div>
+          <p class="copyright" style="padding-bottom: 0px; margin-bottom: 0px;">為提供更為穩定的瀏覽品質與使用體驗，建議更新瀏覽器至以下版本：最新版本Edge、最新版本Chrome、最新版本Firefox<br>最佳解析度1024*768以上
+          </p>
+          <div class="copyright" style="padding-top: 10px;">Copyright @{{new Date().getFullYear()}} 勞動力發展署版權所有，保留所有權利。</div>
+        </div>
+        <div class="security-policy-block">
+          <p class="security-policy"><span @click="downloadImage(2)">隱私權及安全政策</span> <span>｜</span> <span @click="downloadImage(1)">授權方式以及範圍</span> <span>｜</span> <span @click="downloadImage(3)">檢舉貪瀆</span></p>
+        </div>
       </div>
       <!-- /.bottom-footer -->
     </div>
@@ -31,5 +36,30 @@
 </template>
 
 <script setup lang="ts">
-
-</script>
+  const downloadImage = (number) => {
+    if (number == 1) {
+      const link = document.createElement('a');
+      link.href = '/uploads/授權方式及範圍.docx';
+      link.download = '授權方式及範圍.docx'; // 設定下載後的檔名
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    if (number == 2) {
+      const link = document.createElement('a');
+      link.href = '/uploads/隱私權及資訊安全政策.docx';
+      link.download = '隱私權及資訊安全政策.docx'; // 設定下載後的檔名
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    if (number == 3) {
+      const link = document.createElement('a');
+      link.href = '/uploads/檢舉貪瀆.docx';
+      link.download = '檢舉貪瀆.docx'; // 設定下載後的檔名
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+  </script>

@@ -15,6 +15,35 @@
     .bottom-footer {
         border-top: 1px solid rgba(251, 251, 243);
         margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        @media (max-width: 991px) {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .security-policy-block {
+          flex: 0 0 40%;
+          @media (max-width: 991px) {
+            flex: 0 0 100%;
+          }
+        }
+        .security-policy {
+          padding-top: 14px;
+          display: flex;
+          justify-content: flex-end;
+          @media (max-width: 991px) {
+            justify-content: flex-start;
+            padding-top: 0;
+          }
+          span {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400 !important;
+            cursor: pointer;
+          }
+        }
     }
     .footer-info {
       flex: 0 0 55%;
