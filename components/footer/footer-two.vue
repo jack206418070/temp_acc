@@ -39,24 +39,24 @@
   const downloadImage = (number) => {
     if (number == 1) {
       const link = document.createElement('a');
-      link.href = '/uploads/授權方式及範圍.docx';
-      link.download = '授權方式及範圍.docx'; // 設定下載後的檔名
+      link.href = '/uploads/授權方式及範圍.pdf';
+      link.download = '授權方式及範圍.pdf'; // 設定下載後的檔名
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
     if (number == 2) {
       const link = document.createElement('a');
-      link.href = '/uploads/隱私權及資訊安全政策.docx';
-      link.download = '隱私權及資訊安全政策.docx'; // 設定下載後的檔名
+      link.href = '/uploads/隱私權及資訊安全政策.pdf';
+      link.download = '隱私權及資訊安全政策.pdf'; // 設定下載後的檔名
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
     if (number == 3) {
       const link = document.createElement('a');
-      link.href = '/uploads/檢舉貪瀆.docx';
-      link.download = '檢舉貪瀆.docx'; // 設定下載後的檔名
+      link.href = '/uploads/檢舉貪瀆.pdf';
+      link.download = '檢舉貪瀆.pdf'; // 設定下載後的檔名
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
