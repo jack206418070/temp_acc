@@ -9,9 +9,11 @@
           點選以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
         <h2 class="default-title flex">
           現有試辦單位簡介
-          <a class="service-login-btn-temp" href="https://unit-mcs.wda.gov.tw">試辦單位登入</a>
+          <a class="service-login-btn-temp" href="https://unit-mcs.wda.gov.tw">申請派案系統登入</a>
+          <a class="service-login-btn-temp" style="top: 80px" href="https://care-mcs.wda.gov.tw/login">個案服務系統暨外部督導系統登入</a>
         </h2>
-        <a class="service-login-btn-temp mobile" href="https://unit-mcs.wda.gov.tw">試辦單位登入</a>
+        <a class="service-login-btn-temp mobile" href="https://unit-mcs.wda.gov.tw">申請派案系統登入</a>
+        <a class="service-login-btn-temp mobile" href="https://care-mcs.wda.gov.tw/login">個案服務系統暨外部督導系統登入</a>
         <p>以下各區的試辦單位簡介，有服務項目、服務時數、收費等相關說明介紹。</p>
         <!-- <Nuxt-link href="https://accompany-service-user.vercel.app/login" id="jelly-box" class="jelly-box">
           <span>​前往申請及派案平台</span>
@@ -143,12 +145,14 @@
     top: 0;
     right: 0;
     width: 200px !important;
-    padding: 5px 10px !important;
+    padding: 10px 15px !important;
     background-color: #3D768A !important;
     color: #fff;
-    font-size: 24px !important;
+    font-size: 18px !important;
     border-radius: 10px;
     transition: .3s;
+    text-align: left;
+    line-height: 1.5;
   }
   .service-login-btn-temp:hover {
     background-color: #41BBBE !important;
@@ -177,6 +181,7 @@
     }
     .service-login-btn-temp.mobile {
       display: block !important;
+      font-size: 20px !important;
     }
   }
 </style>
