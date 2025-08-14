@@ -120,23 +120,37 @@
               </div>
             </div>
             <div class="form-group">
-              <label>圖片 (限制每張 5MB 以內)</label>
+              <label>檔案上傳 (圖片或PDF，限制每個 5MB 以內)</label>
               <input 
                 type="file" 
-                @change="handleImageUpload" 
-                accept="image/jpeg,image/png,image/gif"
+                @change="handleFileUpload" 
+                accept="image/jpeg,image/png,image/gif,application/pdf"
                 multiple
               >
               <div v-if="imageError" class="error-message">
                 {{ imageError }}
               </div>
-              <div v-if="previewImages.length > 0" class="preview-images">
-                <div v-for="(image, index) in previewImages" :key="index" class="preview-image-item">
-                  <img :src="`data:image/jpeg;base64,${image.content}`" alt="預覽圖片" />
+              <div v-if="previewImages.length > 0" class="preview-files">
+                <div v-for="(file, index) in previewImages" :key="index" class="preview-file-item">
+                  <!-- 圖片預覽 -->
+                  <div v-if="file.type === 'image'" class="image-preview">
+                    <img :src="`data:image/jpeg;base64,${file.content}`" alt="預覽圖片" />
+                    <span class="file-info">圖片</span>
+                  </div>
+                  
+                  <!-- PDF 預覽 -->
+                  <div v-else-if="file.type === 'pdf'" class="pdf-preview">
+                    <i class="fas fa-file-pdf pdf-icon"></i>
+                    <div class="file-details">
+                      <span class="filename">{{ file.filename }}</span>
+                      <span class="file-type">PDF 檔案</span>
+                    </div>
+                  </div>
+                  
                   <button 
                     type="button" 
-                    class="delete-image-btn"
-                    @click="deleteImage(image.id)"
+                    class="delete-file-btn"
+                    @click="deleteFile(file.id)"
                   >
                     <i class="fas fa-times"></i>
                   </button>
@@ -323,10 +337,12 @@ async function editAnnouncement(announcement) {
       });
 
       if (response.success && response.data) {
-        // 將圖片資料轉換為預覽格式，確保使用正確的 id
+        // 將檔案資料轉換為預覽格式，確保使用正確的 id
         previewImages.value = response.data.map(image => ({
           id: image.id,  // 使用資料庫的 id
           content: image.image_content,
+          type: image.file_type || 'image',
+          filename: image.original_filename,
           isExisting: true
         }));
 
@@ -378,21 +394,21 @@ function closeModal() {
   }
 }
 
-async function handleImageUpload(event) {
+async function handleFileUpload(event) {
   const files = Array.from(event.target.files);
   
   // 檢查每個檔案
   for (const file of files) {
     // 檢查檔案大小
     if (file.size > 5 * 1024 * 1024) {
-      imageError.value = '每張圖片大小不能超過 5MB';
+      imageError.value = '每個檔案大小不能超過 5MB';
       event.target.value = '';
       return;
     }
 
     // 檢查檔案類型
-    if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-      imageError.value = '只能上傳 JPG、PNG 或 GIF 格式的圖片';
+    if (!['image/jpeg', 'image/png', 'image/gif', 'application/pdf'].includes(file.type)) {
+      imageError.value = '只能上傳 JPG、PNG、GIF 格式的圖片或 PDF 檔案';
       event.target.value = '';
       return;
     }
@@ -402,6 +418,9 @@ async function handleImageUpload(event) {
 
   // 處理每個檔案
   for (const file of files) {
+    // 判斷檔案類型
+    const fileType = file.type.startsWith('image/') ? 'image' : 'pdf';
+    
     // 建立預覽
     const reader = new FileReader();
     reader.onload = e => {
@@ -409,6 +428,8 @@ async function handleImageUpload(event) {
       previewImages.value.push({
         id: `temp-${Date.now()}-${file.name}`,
         content: e.target.result.split(',')[1],
+        type: fileType,
+        filename: file.name,
         isExisting: false,
         file: file
       });
@@ -484,6 +505,8 @@ async function saveAnnouncement() {
           formData.append('announcement_id', announcementId.toString());
           formData.append('image_id', `${Date.now()}-${image.file.name}`);
           formData.append('image', image.file);
+          formData.append('file_type', image.type);
+          formData.append('filename', image.file.name);
 
           console.log('準備上傳新圖片:', {
             announcement_id: announcementId.toString(),
@@ -582,11 +605,11 @@ async function deleteAnnouncement(id) {
   }
 }
 
-const deleteImage = async (imageId) => {
+const deleteFile = async (fileId) => {
   try {
     const result = await Swal.value.fire({
       title: '確認刪除',
-      text: '確定要刪除這張圖片嗎？',
+      text: '確定要刪除這個檔案嗎？',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
@@ -596,26 +619,26 @@ const deleteImage = async (imageId) => {
     });
 
     if (result.isConfirmed) {
-      // 找到要刪除的圖片
-      const imageToDelete = previewImages.value.find(img => img.id === imageId);
+      // 找到要刪除的檔案
+      const fileToDelete = previewImages.value.find(file => file.id === fileId);
       
-      if (!imageToDelete) {
-        throw new Error('找不到要刪除的圖片');
+      if (!fileToDelete) {
+        throw new Error('找不到要刪除的檔案');
       }
 
-      // 如果是已存在的圖片，需要呼叫 API 刪除
-      if (imageToDelete.isExisting) {
+      // 如果是已存在的檔案，需要呼叫 API 刪除
+      if (fileToDelete.isExisting) {
         const token = useCookie('auth_token').value;
         if (!token) {
           throw new Error('未登入');
         }
 
-        console.log('準備刪除圖片:', {
-          id: imageId,
+        console.log('準備刪除檔案:', {
+          id: fileId,
           isExisting: true
         });
 
-        const response = await $fetch(`/api/announcement-images/${imageId}`, {
+        const response = await $fetch(`/api/announcement-images/${fileId}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${token}`
@@ -623,20 +646,20 @@ const deleteImage = async (imageId) => {
         });
 
         if (!response.success) {
-          throw new Error(response.message || '刪除圖片失敗');
+          throw new Error(response.message || '刪除檔案失敗');
         }
       }
 
-      // 從預覽圖片列表中移除
-      const index = previewImages.value.findIndex(img => img.id === imageId);
+      // 從預覽檔案列表中移除
+      const index = previewImages.value.findIndex(file => file.id === fileId);
       if (index !== -1) {
         previewImages.value.splice(index, 1);
       }
 
-      // 如果是新上傳的圖片，也要從 selectedFiles 中移除
-      if (!imageToDelete.isExisting) {
+      // 如果是新上傳的檔案，也要從 selectedFiles 中移除
+      if (!fileToDelete.isExisting) {
         const fileIndex = selectedFiles.value.findIndex(
-          file => `temp-${Date.now()}-${file.name}` === imageId
+          file => `temp-${Date.now()}-${file.name}` === fileId
         );
         if (fileIndex !== -1) {
           selectedFiles.value.splice(fileIndex, 1);
@@ -646,15 +669,15 @@ const deleteImage = async (imageId) => {
       Swal.value.fire({
         icon: 'success',
         title: '成功',
-        text: '圖片已刪除'
+        text: '檔案已刪除'
       });
     }
   } catch (error) {
-    console.error('刪除圖片失敗:', error);
+    console.error('刪除檔案失敗:', error);
     Swal.value.fire({
       icon: 'error',
       title: '錯誤',
-      text: error.message || '刪除圖片失敗'
+      text: error.message || '刪除檔案失敗'
     });
   }
 };
@@ -1017,6 +1040,98 @@ const filteredAnnouncements = computed(() => {
 }
 
 .delete-image-btn i {
+  font-size: 12px;
+}
+
+.preview-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.preview-file-item {
+  position: relative;
+  width: 150px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.image-preview .file-info {
+  display: block;
+  text-align: center;
+  padding: 0.25rem;
+  background: #f8f9fa;
+  font-size: 0.75rem;
+  color: #666;
+  border-radius: 0 0 4px 4px;
+}
+
+.pdf-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f9fa;
+  min-height: 120px;
+  justify-content: center;
+}
+
+.pdf-preview .pdf-icon {
+  font-size: 2rem;
+  color: #dc3545;
+  margin-bottom: 0.5rem;
+}
+
+.pdf-preview .file-details {
+  text-align: center;
+}
+
+.pdf-preview .filename {
+  display: block;
+  font-size: 0.75rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+  word-break: break-all;
+}
+
+.pdf-preview .file-type {
+  display: block;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.delete-file-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.delete-file-btn:hover {
+  background-color: #c82333;
+}
+
+.delete-file-btn i {
   font-size: 12px;
 }
 </style> 

@@ -101,7 +101,7 @@ export async function getAnnouncementById(id) {
       return null;
     }
 
-    // 獲取公告相關的圖片
+    // 獲取公告相關的附件（圖片和PDF）
     const imagesResult = await pool.request()
       .input('announcement_id', sql.Int, id)
       .query(`
@@ -109,6 +109,8 @@ export async function getAnnouncementById(id) {
           id,
           image_id,
           image_content,
+          file_type,
+          original_filename,
           CONVERT(varchar, created_at, 120) as created_at
         FROM AnnouncementImages
         WHERE announcement_id = @announcement_id 
@@ -116,7 +118,7 @@ export async function getAnnouncementById(id) {
         ORDER BY created_at ASC;
       `);
 
-    // 合併公告和圖片資訊
+    // 合併公告和附件資訊
     announcement.images = imagesResult.recordset;
 
     return announcement;
@@ -190,26 +192,28 @@ export async function deleteAnnouncement(id) {
   }
 }
 
-// 儲存公告圖片
-export async function saveAnnouncementImage(announcement_id, image_id, image_content) {
+// 儲存公告附件（圖片或PDF）
+export async function saveAnnouncementImage(announcement_id, image_id, image_content, file_type = 'image', original_filename = null) {
   try {
     const pool = await getConnection();
     await pool.request()
       .input('announcement_id', sql.Int, announcement_id)
       .input('image_id', sql.VarChar(50), image_id)
       .input('image_content', sql.VarBinary(sql.MAX), image_content)
+      .input('file_type', sql.VarChar(10), file_type)
+      .input('original_filename', sql.NVarChar(255), original_filename)
       .query(`
         INSERT INTO AnnouncementImages (
-          announcement_id, image_id, image_content
+          announcement_id, image_id, image_content, file_type, original_filename
         )
         VALUES (
-          @announcement_id, @image_id, @image_content
+          @announcement_id, @image_id, @image_content, @file_type, @original_filename
         );
       `);
 
     return { success: true };
   } catch (err) {
-    console.error('❌ DB Save Announcement Image Error:', err);
+    console.error('❌ DB Save Announcement File Error:', err);
     throw err;
   }
 }
@@ -234,7 +238,7 @@ export async function getAnnouncementImage(image_id) {
   }
 }
 
-// 獲取公告的所有圖片
+// 獲取公告的所有附件（圖片和PDF）
 export async function getAnnouncementImages(announcement_id) {
   try {
     const pool = await getConnection();
@@ -245,6 +249,8 @@ export async function getAnnouncementImages(announcement_id) {
           image_id,
           id,
           image_content,
+          file_type,
+          original_filename,
           created_at
         FROM AnnouncementImages
         WHERE announcement_id = @announcement_id 
@@ -254,7 +260,7 @@ export async function getAnnouncementImages(announcement_id) {
 
     return result.recordset;
   } catch (err) {
-    console.error('❌ Get Announcement Images Error:', err);
+    console.error('❌ Get Announcement Files Error:', err);
     throw err;
   }
 }

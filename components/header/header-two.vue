@@ -37,11 +37,6 @@
     
   
   </header>
-  
-  <!-- login modal -->
-	<popup-login/>
-	<!-- login modal -->
-
 </template>
 
 <script setup lang="ts">

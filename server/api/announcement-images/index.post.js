@@ -21,6 +21,8 @@ export default defineEventHandler(async (event) => {
     const announcementIdField = formData.find(f => f.name === 'announcement_id');
     const imageIdField = formData.find(f => f.name === 'image_id');
     const imageField = formData.find(f => f.name === 'image');
+    const fileTypeField = formData.find(f => f.name === 'file_type');
+    const filenameField = formData.find(f => f.name === 'filename');
 
     const missingFields = [];
     if (!announcementIdField?.data) missingFields.push('announcement_id');
@@ -38,28 +40,52 @@ export default defineEventHandler(async (event) => {
     const announcement_id = parseInt(announcementIdField.data.toString());
     const image_id = imageIdField.data.toString();
     const imageBuffer = imageField.data;
+    const file_type = fileTypeField?.data?.toString() || 'image';
+    const original_filename = filenameField?.data?.toString() || null;
 
-    console.log(`收到圖片 image_id: ${image_id}, 類型: ${imageField.type}, 大小: ${(imageBuffer.length / 1024).toFixed(2)} KB`);
+    // 驗證檔案類型
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
+    if (!allowedTypes.includes(imageField.type)) {
+      throw createError({
+        statusCode: 400,
+        message: '不支援的檔案類型，只允許上傳圖片檔案（JPG、PNG、GIF）或 PDF 檔案'
+      });
+    }
 
-    // 儲存圖片資料
+    // 檢查檔案大小限制（5MB）
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (imageBuffer.length > maxSize) {
+      throw createError({
+        statusCode: 400,
+        message: '檔案大小不能超過 5MB'
+      });
+    }
+
+    console.log(`收到檔案 image_id: ${image_id}, 類型: ${imageField.type}, 檔案類型: ${file_type}, 檔名: ${original_filename}, 大小: ${(imageBuffer.length / 1024).toFixed(2)} KB`);
+
+    // 儲存檔案資料
     await saveAnnouncementImage(
       announcement_id,
       image_id,
-      imageBuffer
+      imageBuffer,
+      file_type,
+      original_filename
     );
 
     return {
       success: true,
       data: {
         announcement_id,
-        image_id
+        image_id,
+        file_type,
+        original_filename
       }
     };
   } catch (error) {
-    console.error('❌ Save Announcement Image Error:', error);
+    console.error('❌ Save Announcement File Error:', error);
     throw createError({
       statusCode: error.statusCode || 500,
-      message: error.message || '保存公告圖片失敗'
+      message: error.message || '保存公告檔案失敗'
     });
   }
 });

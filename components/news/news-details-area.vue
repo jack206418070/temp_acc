@@ -28,12 +28,32 @@
                   <a :href="blog.link" target="_blank">{{ blog.linkTitle || blog.link }}</a>
                 </div>
               </div>
-              <div class="post-images" v-if="blog.images && blog.images.length > 0">
+              <!-- 圖片區塊 -->
+              <div class="post-images" v-if="imageFiles.length > 0">
                 圖片：<br>
                 <div class="post-images-item">
-                  <template v-for="(image, index) in blog.images" :key="image.id">
+                  <template v-for="(image, index) in imageFiles" :key="image.id">
                     <div class="tab-data-item" @click="openPopup(index)">
                       <img :src="getImageUrl(image)" alt="">
+                    </div>
+                  </template>
+                </div>
+              </div>
+              
+              <!-- PDF 附件區塊 -->
+              <div class="post-attachments" v-if="pdfFiles.length > 0">
+                附件：<br>
+                <div class="post-attachments-list">
+                  <template v-for="pdf in pdfFiles" :key="pdf.id">
+                    <div class="attachment-item">
+                      <i class="fas fa-file-pdf pdf-icon"></i>
+                      <div class="attachment-info">
+                        <span class="attachment-name">{{ pdf.original_filename || `附件-${pdf.id}.pdf` }}</span>
+                        <span class="attachment-type">PDF 檔案</span>
+                      </div>
+                      <button class="download-btn" @click="downloadAttachment(pdf)">
+                        <i class="fas fa-download"></i> 下載
+                      </button>
                     </div>
                   </template>
                 </div>
@@ -44,18 +64,18 @@
       </div>
     </div>
   </div>
-  <div v-if="showPopup && blog.images" class="popup-overlay" @click.self="closePopup">
+  <div v-if="showPopup && imageFiles.length > 0" class="popup-overlay" @click.self="closePopup">
     <div class="popup-content">
       <button class="arrow left" v-if="currentIndex > 0" @click="prevImage">‹</button>
-      <img :src="getImageUrl(blog.images[currentIndex])" alt="Popup Image" />
-      <button class="arrow right" v-if="currentIndex < blog.images.length - 1" @click="nextImage">›</button>
+      <img :src="getImageUrl(imageFiles[currentIndex])" alt="Popup Image" />
+      <button class="arrow right" v-if="currentIndex < imageFiles.length - 1" @click="nextImage">›</button>
       <button class="close-btn" @click="closePopup">×</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -64,6 +84,15 @@ const loading = ref(true);
 const error = ref(null);
 const showPopup = ref(false);
 const currentIndex = ref(0);
+
+// 分離圖片和 PDF 檔案
+const imageFiles = computed(() => {
+  return blog.value.images?.filter(file => file.file_type === 'image' || !file.file_type) || [];
+});
+
+const pdfFiles = computed(() => {
+  return blog.value.images?.filter(file => file.file_type === 'pdf') || [];
+});
 
 // 格式化日期
 const formatDate = (dateString) => {
@@ -92,7 +121,7 @@ const fetchAnnouncementDetails = async () => {
       throw new Error('找不到公告ID');
     }
 
-    const response = await fetch(`/api/announcements/${id}`);
+    const response = await fetch(`/api/public/announcements/${id}`);
     const result = await response.json();
 
     if (!result.success) {
@@ -126,8 +155,24 @@ const openPopup = (index) => {
 };
 
 const nextImage = () => {
-  if (blog.value.images && currentIndex.value < blog.value.images.length - 1) {
+  if (imageFiles.value && currentIndex.value < imageFiles.value.length - 1) {
     currentIndex.value++;
+  }
+};
+
+// 下載附件
+const downloadAttachment = async (attachment) => {
+  try {
+    const link = document.createElement('a');
+    link.href = `/api/public/attachments/${attachment.id}`;
+    link.download = attachment.original_filename || `attachment-${attachment.id}.pdf`;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } catch (error) {
+    console.error('下載失敗:', error);
+    alert('下載失敗，請稍後再試');
   }
 };
 
@@ -141,8 +186,8 @@ const decode = (str) => {
 
 // 清理資源
 const cleanup = () => {
-  if (blog.value.images) {
-    blog.value.images.forEach(image => {
+  if (imageFiles.value) {
+    imageFiles.value.forEach(image => {
       const url = getImageUrl(image);
       if (url) URL.revokeObjectURL(url);
     });
@@ -426,5 +471,99 @@ onBeforeUnmount(() => {
   height: 20px;
   border: 2px solid #f3f3f3;
   border-top: 2px solid #3498db;
+}
+
+/* PDF 附件樣式 */
+.post-attachments {
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #BEBEBE;
+}
+
+.post-attachments-list {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.attachment-item:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.pdf-icon {
+  font-size: 24px;
+  color: #dc3545;
+  min-width: 24px;
+}
+
+.attachment-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.attachment-name {
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+}
+
+.attachment-type {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.download-btn {
+  background: #41BBBE;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  background: #369a9d;
+  transform: translateY(-1px);
+}
+
+.download-btn i {
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .attachment-item {
+    padding: 12px;
+  }
+  
+  .attachment-name {
+    font-size: 14px;
+  }
+  
+  .download-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 }
 </style>

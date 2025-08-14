@@ -6,41 +6,22 @@ export async function getAllBanners(active = 0) {
   try {
     const pool = await getConnection();
     let result;
-    if (active == 0) {
-      result = await pool.request()
-      .query(`
-        SELECT 
-          id,
-          title,
-          description,
-          CAST(image_data as varbinary(max)) as imageData,
-          image_type as imageType,
-          sort_order as sortOrder,
-          is_active as is_active,
-          created_at as createdAt,
-          updated_at as updatedAt
-        FROM Banners
-        WHERE is_deleted = 0
-        ORDER BY sort_order ASC, id DESC;
-      `);
-    } else if (active == 1) {
-      result = await pool.request()
-      .query(`
-        SELECT 
-          id,
-          title,
-          description,
-          CAST(image_data as varbinary(max)) as imageData,
-          image_type as imageType,
-          sort_order as sortOrder,
-          is_active as is_active,
-          created_at as createdAt,
-          updated_at as updatedAt
-        FROM Banners
-        WHERE is_deleted = 0 AND is_active = 1
-        ORDER BY sort_order ASC, id DESC;
-      `);
-    }
+    // 注意：資料庫中沒有 is_active 欄位，只用 is_deleted 判斷
+    result = await pool.request()
+    .query(`
+      SELECT 
+        id,
+        title,
+        CAST(image_content as varbinary(max)) as imageData,
+        link,
+        order_num as sortOrder,
+        created_at as createdAt,
+        updated_at as updatedAt
+      FROM Banners
+      WHERE is_deleted = 0
+      ORDER BY order_num ASC, id DESC;
+    `);
+    
     return result.recordset;
   } catch (error) {
     console.error('❌ Get All Banners Error:', error);
@@ -58,11 +39,9 @@ export async function getBannerById(id) {
         SELECT 
           id,
           title,
-          description,
-          CAST(image_data as varbinary(max)) as imageData,
-          image_type as imageType,
-          sort_order as sortOrder,
-          is_active as is_active,
+          CAST(image_content as varbinary(max)) as imageData,
+          link,
+          order_num as sortOrder,
           created_at as createdAt,
           updated_at as updatedAt
         FROM Banners
@@ -78,10 +57,8 @@ export async function getBannerById(id) {
 // 創建 Banner
 export async function createBanner({
   title,
-  description,
-  imageData,
-  imageType,
-  isActive
+  link,
+  imageData
 }) {
   try {
     const pool = await getConnection();
@@ -93,7 +70,7 @@ export async function createBanner({
       // 獲取最大排序值
       const maxOrderResult = await transaction.request()
         .query(`
-          SELECT ISNULL(MAX(sort_order), 0) + 1 as nextOrder
+          SELECT ISNULL(MAX(order_num), 0) + 1 as nextOrder
           FROM Banners
           WHERE is_deleted = 0
         `);
@@ -102,42 +79,36 @@ export async function createBanner({
 
       // 插入新的 Banner
       const result = await transaction.request()
-        .input('title', sql.NVarChar(100), title)
-        .input('description', sql.NVarChar(500), description)
+        .input('title', sql.NVarChar(200), title)
+        .input('link', sql.NVarChar(500), link)
         .input('imageData', sql.VarBinary(sql.MAX), imageData)
-        .input('imageType', sql.NVarChar(50), imageType)
         .input('sortOrder', sql.Int, nextOrder)
-        .input('isActive', sql.Bit, isActive)
         .query(`
           INSERT INTO Banners (
             title,
-            description,
-            image_data,
-            image_type,
-            sort_order,
-            is_active,
+            link,
+            image_content,
+            order_num,
             created_at,
-            updated_at
+            updated_at,
+            is_deleted
           )
           OUTPUT 
             INSERTED.id,
             INSERTED.title,
-            INSERTED.description,
-            CAST(INSERTED.image_data as varbinary(max)) as imageData,
-            INSERTED.image_type as imageType,
-            INSERTED.sort_order as sortOrder,
-            INSERTED.is_active as isActive,
+            INSERTED.link,
+            CAST(INSERTED.image_content as varbinary(max)) as imageData,
+            INSERTED.order_num as sortOrder,
             INSERTED.created_at as createdAt,
             INSERTED.updated_at as updatedAt
           VALUES (
             @title,
-            @description,
+            @link,
             @imageData,
-            @imageType,
             @sortOrder,
-            @isActive,
             GETDATE(),
-            GETDATE()
+            GETDATE(),
+            0
           );
         `);
 
@@ -158,10 +129,8 @@ export async function createBanner({
 // 更新 Banner
 export async function updateBanner(id, {
   title,
-  description,
-  imageData,
-  imageType,
-  isActive
+  link,
+  imageData
 }) {
   try {
     const pool = await getConnection();
@@ -169,24 +138,16 @@ export async function updateBanner(id, {
     const request = pool.request().input('id', sql.Int, id);
 
     if (title !== undefined) {
-      request.input('title', sql.NVarChar(100), title);
+      request.input('title', sql.NVarChar(200), title);
       updateFields.push('title = @title');
     }
-    if (description !== undefined) {
-      request.input('description', sql.NVarChar(500), description);
-      updateFields.push('description = @description');
+    if (link !== undefined) {
+      request.input('link', sql.NVarChar(500), link);
+      updateFields.push('link = @link');
     }
     if (imageData !== undefined) {
       request.input('imageData', sql.VarBinary(sql.MAX), imageData);
-      updateFields.push('image_data = @imageData');
-    }
-    if (imageType !== undefined) {
-      request.input('imageType', sql.NVarChar(50), imageType);
-      updateFields.push('image_type = @imageType');
-    }
-    if (isActive !== undefined) {
-      request.input('isActive', sql.Bit, isActive);
-      updateFields.push('is_active = @isActive');
+      updateFields.push('image_content = @imageData');
     }
 
     updateFields.push('updated_at = GETDATE()');
@@ -237,7 +198,7 @@ export async function updateBannerOrder(id, targetOrder) {
     const currentBanner = await transaction.request()
       .input('id', sql.Int, id)
       .query(`
-        SELECT id, sort_order
+        SELECT id, order_num
         FROM Banners
         WHERE id = @id AND is_deleted = 0
       `);
@@ -246,15 +207,15 @@ export async function updateBannerOrder(id, targetOrder) {
       throw new Error('找不到指定的 Banner');
     }
 
-    const currentOrder = currentBanner.recordset[0].sort_order;
+    const currentOrder = currentBanner.recordset[0].order_num;
 
     // 2. 找到目標排序值的 Banner
     const targetBanner = await transaction.request()
       .input('targetOrder', sql.Int, targetOrder)
       .query(`
-        SELECT id, sort_order
+        SELECT id, order_num
         FROM Banners
-        WHERE sort_order = @targetOrder AND is_deleted = 0
+        WHERE order_num = @targetOrder AND is_deleted = 0
       `);
 
     if (targetBanner.recordset.length === 0) {
@@ -271,7 +232,7 @@ export async function updateBannerOrder(id, targetOrder) {
       .input('order2', sql.Int, currentOrder)
       .query(`
         UPDATE b
-        SET sort_order = CASE
+        SET order_num = CASE
           WHEN id = @id1 THEN @order1
           WHEN id = @id2 THEN @order2
         END,
@@ -290,16 +251,14 @@ export async function updateBannerOrder(id, targetOrder) {
         SELECT 
           id,
           title,
-          description,
-          CAST(image_data as varbinary(max)) as imageData,
-          image_type as imageType,
-          sort_order as sortOrder,
-          is_active as isActive,
+          CAST(image_content as varbinary(max)) as imageData,
+          link,
+          order_num as sortOrder,
           created_at as createdAt,
           updated_at as updatedAt
         FROM Banners
         WHERE id IN (@id1, @id2) AND is_deleted = 0
-        ORDER BY sort_order;
+        ORDER BY order_num;
       `);
 
     return result.recordset;

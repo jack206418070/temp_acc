@@ -52,7 +52,7 @@ const formatDate = (dateString) => {
 const fetchAnnouncements = async () => {
   try {
     loading.value = true;
-    const { data } = await useFetch('/api/announcements');
+    const { data } = await useFetch('/api/public/announcements');
     if (data.value?.success) {
       announcements.value = data.value.data;
     }

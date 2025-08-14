@@ -63,6 +63,15 @@ declare module "nitropack/types" {
     '/api/languages': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/languages/index.get').default>>>>
     }
+    '/api/public/announcements/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/public/announcements/[id].get').default>>>>
+    }
+    '/api/public/announcements': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/public/announcements/index.get').default>>>>
+    }
+    '/api/public/attachments/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/public/attachments/[id].get').default>>>>
+    }
     '/api/qa-categories/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-categories/[id].delete').default>>>>
       'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/qa-categories/[id].put').default>>>>
