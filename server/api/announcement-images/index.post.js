@@ -21,7 +21,9 @@ export default defineEventHandler(async (event) => {
     const announcementIdField = formData.find(f => f.name === 'announcement_id');
     const imageIdField = formData.find(f => f.name === 'image_id');
     const imageField = formData.find(f => f.name === 'image');
-
+    const fileTypeField = formData.find(f => f.name === 'file_type');
+    const filenameField = formData.find(f => f.name === 'filename');
+    console.log('filename:', filenameField)
     const missingFields = [];
     if (!announcementIdField?.data) missingFields.push('announcement_id');
     if (!imageIdField?.data) missingFields.push('image_id');
@@ -38,21 +40,45 @@ export default defineEventHandler(async (event) => {
     const announcement_id = parseInt(announcementIdField.data.toString());
     const image_id = imageIdField.data.toString();
     const imageBuffer = imageField.data;
+    const file_type = fileTypeField?.data?.toString() || 'image';
+    const original_filename = filenameField?.data?.toString() || null;
+    console.log('original_filename:', original_filename)
 
+    // 驗證檔案類型
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
+    if (!allowedTypes.includes(imageField.type)) {
+      throw createError({
+        statusCode: 400,
+        message: '不支援的檔案類型，只允許上傳圖片檔案（JPG、PNG、GIF）或 PDF 檔案'
+      });
+    }
+
+    // 檢查檔案大小限制（5MB）
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (imageBuffer.length > maxSize) {
+      throw createError({
+        statusCode: 400,
+        message: '檔案大小不能超過 5MB'
+      });
+    }
     console.log(`收到圖片 image_id: ${image_id}, 類型: ${imageField.type}, 大小: ${(imageBuffer.length / 1024).toFixed(2)} KB`);
 
     // 儲存圖片資料
     await saveAnnouncementImage(
       announcement_id,
       image_id,
-      imageBuffer
+      imageBuffer,
+      file_type,
+      original_filename
     );
 
     return {
       success: true,
       data: {
         announcement_id,
-        image_id
+        image_id,
+        file_type,
+        original_filename
       }
     };
   } catch (error) {

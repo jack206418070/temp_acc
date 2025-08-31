@@ -109,6 +109,8 @@ export async function getAnnouncementById(id) {
           id,
           image_id,
           image_content,
+          file_type,
+          original_filename,
           CONVERT(varchar, created_at, 120) as created_at
         FROM AnnouncementImages
         WHERE announcement_id = @announcement_id 
@@ -191,19 +193,22 @@ export async function deleteAnnouncement(id) {
 }
 
 // 儲存公告圖片
-export async function saveAnnouncementImage(announcement_id, image_id, image_content) {
+export async function saveAnnouncementImage(announcement_id, image_id, image_content, file_type = 'image', original_filename = null) {
   try {
+    console.log('original_filename:', original_filename)
     const pool = await getConnection();
     await pool.request()
       .input('announcement_id', sql.Int, announcement_id)
       .input('image_id', sql.VarChar(50), image_id)
       .input('image_content', sql.VarBinary(sql.MAX), image_content)
+      .input('file_type', sql.VarChar(10), file_type)
+      .input('original_filename', sql.NVarChar(255), original_filename)
       .query(`
         INSERT INTO AnnouncementImages (
-          announcement_id, image_id, image_content
+          announcement_id, image_id, image_content, file_type, original_filename
         )
         VALUES (
-          @announcement_id, @image_id, @image_content
+          @announcement_id, @image_id, @image_content, @file_type, @original_filename
         );
       `);
 
@@ -245,6 +250,8 @@ export async function getAnnouncementImages(announcement_id) {
           image_id,
           id,
           image_content,
+          file_type,
+          original_filename,
           created_at
         FROM AnnouncementImages
         WHERE announcement_id = @announcement_id 

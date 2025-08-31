@@ -1,29 +1,29 @@
 import sql from 'mssql';
 
-// const config = {
-//   user: 'sa',
-//   password: 'MyS3cretPassw0rd',
-//   server: '43.207.146.80',
-//   port: 1433,
-//   database: 'test_two',
-//   options: {
-//     encrypt: false,
-//     trustServerCertificate: true,
-//   },
-// };
-
-
 const config = {
-  user: 'accompanyservice',
-  password: '!QAZ8520@wsx',
-  server: '172.21.50.165',  // Docker 內部使用 'localhost'
+  user: 'SA',
+  password: 'yourStrong(!)Password',
+  server: 'localhost',
   port: 1433,
-  database: 'accompanyservice',
+  database: 'test_three',
   options: {
-    encrypt: false,  // 若有 SSL 問題請設為 false
+    encrypt: false,
     trustServerCertificate: true,
   },
 };
+
+
+// const config = {
+//   user: 'accompanyservice',
+//   password: '!QAZ8520@wsx',
+//   server: '172.21.50.165',  // Docker 內部使用 'localhost'
+//   port: 1433,
+//   database: 'accompanyservice',
+//   options: {
+//     encrypt: false,  // 若有 SSL 問題請設為 false
+//     trustServerCertificate: true,
+//   },
+// };
 
 export async function initializeDatabase() {
   let pool;
