@@ -32,6 +32,9 @@
         <li>
           <a href="https://nws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwMjk0LzE3MjEzLzUzOWFkMGY2LWU5MjItNDE1ZS1hOTdjLTJmODdlMjJiMzVjMi5wZGY%3d&n=6ZmE5Lu25LqULeacrOioiOeVq%2bippui%2bpuWWruS9jeS5i%2bijnOWKqemgheebruWPiuaomea6li5wZGY%3d" target="_blank">附件五-本計畫試辦單位之補助項目及標準</a>
         </li>
+        <li>
+          <a href="/uploads/試辦單位評選程序.pdf" target="_blank">附件六-試辦單位評選程序</a>
+        </li>
       </ul>
     </div>
   </div>
