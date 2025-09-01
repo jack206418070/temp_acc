@@ -1,0 +1,1544 @@
+{
+  "_4O5x-YEq.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "4O5x-YEq.js",
+    "name": "swiper-vue",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_BgxMiRUX.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BgxMiRUX.js",
+    "name": "wow",
+    "isDynamicEntry": true
+  },
+  "_BqWtyvea.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BqWtyvea.js",
+    "name": "news-details-area",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "news-details-area.DBO6IELd.css"
+    ]
+  },
+  "news-details-area.DBO6IELd.css": {
+    "file": "news-details-area.DBO6IELd.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "_Brfk6Bdo.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Brfk6Bdo.js",
+    "name": "index"
+  },
+  "_BxjHyrpS.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BxjHyrpS.js",
+    "name": "index",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_C4pLzR--.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "C4pLzR--.js",
+    "name": "virtual_public",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_CDdkD_yK.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CDdkD_yK.js",
+    "name": "back-to-top.vue",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_DP15jWgM.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DP15jWgM.js",
+    "name": "blog-details-area.vue",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_hXiZFfwy.js"
+    ]
+  },
+  "_Db5PjnYZ.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Db5PjnYZ.js",
+    "name": "fetch",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_obI3tblc.js"
+    ]
+  },
+  "_DxpmyTwd.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DxpmyTwd.js",
+    "name": "breadcrumb-one",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "breadcrumb-one.FjJfrjWq.css"
+    ]
+  },
+  "breadcrumb-one.FjJfrjWq.css": {
+    "file": "breadcrumb-one.FjJfrjWq.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "_DyrPfQg4.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DyrPfQg4.js",
+    "name": "fancy-banner-three",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_GS5YyYvc.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "GS5YyYvc.js",
+    "name": "service-unit-list-area",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "service-unit-list-area.BxRW7GR2.css"
+    ]
+  },
+  "service-unit-list-area.BxRW7GR2.css": {
+    "file": "service-unit-list-area.BxRW7GR2.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "_JdARr-6d.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "JdARr-6d.js",
+    "name": "newsletter-one",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_breadcrumb-one.FjJfrjWq.css": {
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true,
+    "file": "breadcrumb-one.FjJfrjWq.css",
+    "src": "_breadcrumb-one.FjJfrjWq.css"
+  },
+  "_hXiZFfwy.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "hXiZFfwy.js",
+    "name": "news-data"
+  },
+  "_news-details-area.DBO6IELd.css": {
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true,
+    "file": "news-details-area.DBO6IELd.css",
+    "src": "_news-details-area.DBO6IELd.css"
+  },
+  "_obI3tblc.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "obI3tblc.js",
+    "name": "client-only",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_service-unit-list-area.BxRW7GR2.css": {
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true,
+    "file": "service-unit-list-area.BxRW7GR2.css",
+    "src": "_service-unit-list-area.BxRW7GR2.css"
+  },
+  "_x2s-XgrM.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "x2s-XgrM.js",
+    "name": "useQA",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_x_rD_Ya3.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "x_rD_Ya3.js",
+    "name": "interval"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Bold.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "ClashDisplay-Bold.5hYeFSJJ.ttf",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Bold.ttf"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "ClashDisplay-Bold.79YOzMqN.woff",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "ClashDisplay-Bold.YaCnK2PY.woff2",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff2"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Extralight.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "ClashDisplay-Extralight.-kv4w5k0.ttf",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Extralight.ttf"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Extralight.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "ClashDisplay-Extralight.BJExDEVH.woff",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Extralight.woff"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Extralight.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "ClashDisplay-Extralight.D3i1MCwm.woff2",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Extralight.woff2"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Light.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "ClashDisplay-Light.CutxPsj4.ttf",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Light.ttf"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Light.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "ClashDisplay-Light.Co9CQZ40.woff",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Light.woff"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Light.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "ClashDisplay-Light.DIjv0-nY.woff2",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Light.woff2"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Medium.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "ClashDisplay-Medium.RwyLHzhI.ttf",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Medium.ttf"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Medium.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "ClashDisplay-Medium.D8oxfInt.woff",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Medium.woff"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Medium.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "ClashDisplay-Medium.BPdWq--j.woff2",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Medium.woff2"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Regular.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "ClashDisplay-Regular.zoOY6xZw.ttf",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Regular.ttf"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Regular.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "ClashDisplay-Regular.BKrzTZUV.woff",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Regular.woff"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Regular.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "ClashDisplay-Regular.DhusH4GR.woff2",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Regular.woff2"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Semibold.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "ClashDisplay-Semibold.C8tXlykZ.ttf",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Semibold.ttf"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Semibold.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "ClashDisplay-Semibold.Cc_zfQ1K.woff",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Semibold.woff"
+  },
+  "assets/fonts/ClashDisplay/fonts/ClashDisplay-Semibold.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "ClashDisplay-Semibold.DcA1xgJG.woff2",
+    "src": "assets/fonts/ClashDisplay/fonts/ClashDisplay-Semibold.woff2"
+  },
+  "assets/fonts/Magnita/fonts/Magnita.eot": {
+    "resourceType": "font",
+    "mimeType": "font/eot",
+    "file": "Magnita.CSUkLIR8.eot",
+    "src": "assets/fonts/Magnita/fonts/Magnita.eot"
+  },
+  "assets/fonts/Magnita/fonts/Magnita.svg": {
+    "resourceType": "image",
+    "prefetch": true,
+    "mimeType": "image/svg+xml",
+    "file": "Magnita.aKmWMWBq.svg",
+    "src": "assets/fonts/Magnita/fonts/Magnita.svg"
+  },
+  "assets/fonts/Magnita/fonts/Magnita.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Magnita.aiIyRRpl.woff",
+    "src": "assets/fonts/Magnita/fonts/Magnita.woff"
+  },
+  "assets/fonts/Magnita/fonts/Magnita.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Magnita.CYTrzT3l.woff2",
+    "src": "assets/fonts/Magnita/fonts/Magnita.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Black.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-Black.CizHyRqb.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Black.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Black.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-Black.D3hzT7Um.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Black.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Black.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-Black.DjnQuuRz.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Black.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-BlackItalic.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-BlackItalic.CvIpOoSh.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-BlackItalic.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-BlackItalic.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-BlackItalic.D8Ai_S3C.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-BlackItalic.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-BlackItalic.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-BlackItalic.ChCbTD27.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-BlackItalic.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Bold.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-Bold.CPly9kH5.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Bold.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Bold.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-Bold.C2PhLWFc.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Bold.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Bold.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-Bold.Bd5kKQ_U.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Bold.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-BoldItalic.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-BoldItalic.tClQcAb-.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-BoldItalic.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-BoldItalic.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-BoldItalic.DQ7B0PfL.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-BoldItalic.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-BoldItalic.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-BoldItalic.CAjvAcxR.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-BoldItalic.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Italic.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-Italic.FMxkCD8o.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Italic.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Italic.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-Italic.BPCXRxzy.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Italic.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Italic.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-Italic.wVmEEc6M.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Italic.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Light.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-Light.B82kzbU-.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Light.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Light.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-Light.C_dmkKXz.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Light.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Light.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-Light.IqwJ_ZjS.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Light.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-LightItalic.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-LightItalic.BAhuxY-A.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-LightItalic.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-LightItalic.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-LightItalic.B9L6s97T.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-LightItalic.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-LightItalic.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-LightItalic.C9iuU4v7.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-LightItalic.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Medium.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-Medium.DOt9kM-a.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Medium.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Medium.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-Medium.DDwDPeBg.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Medium.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Medium.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-Medium.ByP-Zb-9.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Medium.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-MediumItalic.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-MediumItalic.BUFVYoD2.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-MediumItalic.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-MediumItalic.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-MediumItalic.BPTJUpxz.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-MediumItalic.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-MediumItalic.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-MediumItalic.BxR-IcRj.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-MediumItalic.woff2"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Regular.ttf": {
+    "resourceType": "font",
+    "mimeType": "font/ttf",
+    "file": "Satoshi-Regular.DToFXog2.ttf",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Regular.ttf"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Regular.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "Satoshi-Regular.CWSyEjGv.woff",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Regular.woff"
+  },
+  "assets/fonts/Satoshi/fonts/Satoshi-Regular.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "Satoshi-Regular.CPM9dct4.woff2",
+    "src": "assets/fonts/Satoshi/fonts/Satoshi-Regular.woff2"
+  },
+  "assets/fonts/bootstrap-icons-1.10.2/bootstrap-icons.woff": {
+    "resourceType": "font",
+    "mimeType": "font/woff",
+    "file": "bootstrap-icons.DTeOS7dS.woff",
+    "src": "assets/fonts/bootstrap-icons-1.10.2/bootstrap-icons.woff"
+  },
+  "assets/fonts/bootstrap-icons-1.10.2/bootstrap-icons.woff2": {
+    "resourceType": "font",
+    "mimeType": "font/woff2",
+    "file": "bootstrap-icons.DSXWTQaD.woff2",
+    "src": "assets/fonts/bootstrap-icons-1.10.2/bootstrap-icons.woff2"
+  },
+  "layouts/admin.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "By3vt-j3.js",
+    "name": "admin",
+    "src": "layouts/admin.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "admin.BG4oIB8c.css": {
+    "file": "admin.BG4oIB8c.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "layouts/default.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "uL8QQa0R.js",
+    "name": "default",
+    "src": "layouts/default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_CDdkD_yK.js"
+    ],
+    "css": []
+  },
+  "default.-h_edMOl.css": {
+    "file": "default.-h_edMOl.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "layouts/layout-one.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CLlA0Dyy.js",
+    "name": "layout-one",
+    "src": "layouts/layout-one.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_CDdkD_yK.js"
+    ]
+  },
+  "node_modules/nuxt/dist/app/entry.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BkPg41o2.js",
+    "name": "entry",
+    "src": "node_modules/nuxt/dist/app/entry.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "layouts/admin.vue",
+      "layouts/default.vue",
+      "layouts/layout-one.vue",
+      "_BgxMiRUX.js"
+    ],
+    "css": [
+      "entry.DZIuoYPs.css"
+    ],
+    "_globalCSS": true
+  },
+  "entry.DZIuoYPs.css": {
+    "file": "entry.DZIuoYPs.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "node_modules/sweetalert2/dist/sweetalert2.esm.all.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Br4lrAh6.js",
+    "name": "sweetalert2.esm.all",
+    "src": "node_modules/sweetalert2/dist/sweetalert2.esm.all.js",
+    "isDynamicEntry": true
+  },
+  "pages/about-us.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BQqFO5QB.js",
+    "name": "about-us",
+    "src": "pages/about-us.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "about-us.CcB1ZWYX.css"
+    ]
+  },
+  "about-us.CcB1ZWYX.css": {
+    "file": "about-us.CcB1ZWYX.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/announcements.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "fucjO-Ab.js",
+    "name": "announcements",
+    "src": "pages/admin/announcements.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_obI3tblc.js",
+      "_BxjHyrpS.js"
+    ],
+    "dynamicImports": [
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "announcements.CVJ9SOB9.css": {
+    "file": "announcements.CVJ9SOB9.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/banners.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BnySTnMO.js",
+    "name": "banners",
+    "src": "pages/admin/banners.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "dynamicImports": [
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "banners.CXzX0Pme.css": {
+    "file": "banners.CXzX0Pme.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/dashboard.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Bs3z6RPz.js",
+    "name": "dashboard",
+    "src": "pages/admin/dashboard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "dashboard.DRC8eif5.css": {
+    "file": "dashboard.DRC8eif5.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/knowledge.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CPQuB2y4.js",
+    "name": "knowledge",
+    "src": "pages/admin/knowledge.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "dynamicImports": [
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "knowledge.DFimDFcm.css": {
+    "file": "knowledge.DFimDFcm.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/knowledge2.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DkclobNm.js",
+    "name": "knowledge2",
+    "src": "pages/admin/knowledge2.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "knowledge2.D4IRES2e.css": {
+    "file": "knowledge2.D4IRES2e.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/login.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BiUDzm1B.js",
+    "name": "login",
+    "src": "pages/admin/login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "login.CGuNNCvk.css": {
+    "file": "login.CGuNNCvk.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/qa.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Dk7mhTtK.js",
+    "name": "qa",
+    "src": "pages/admin/qa.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "dynamicImports": [
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "qa.DTi5lDwH.css": {
+    "file": "qa.DTi5lDwH.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/qa_setting.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CQGSkUNu.js",
+    "name": "qa_setting",
+    "src": "pages/admin/qa_setting.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "dynamicImports": [
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "qa_setting.DeSbzGUj.css": {
+    "file": "qa_setting.DeSbzGUj.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/admin/service-unit.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BApc3cI2.js",
+    "name": "service-unit",
+    "src": "pages/admin/service-unit.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_obI3tblc.js",
+      "_BxjHyrpS.js",
+      "_Db5PjnYZ.js"
+    ],
+    "dynamicImports": [
+      "node_modules/sweetalert2/dist/sweetalert2.esm.all.js"
+    ],
+    "css": []
+  },
+  "service-unit.CIEUqxPw.css": {
+    "file": "service-unit.CIEUqxPw.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/all-contact-info.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BhXSnwa2.js",
+    "name": "all-contact-info",
+    "src": "pages/all-contact-info.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "all-contact-info.LmTmS_Ew.css": {
+    "file": "all-contact-info.LmTmS_Ew.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/announcement.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "D2-67PlR.js",
+    "name": "announcement",
+    "src": "pages/announcement.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_Db5PjnYZ.js",
+      "_obI3tblc.js"
+    ],
+    "css": []
+  },
+  "announcement.CdktB5ep.css": {
+    "file": "announcement.CdktB5ep.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/application-form.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BhQrrLNZ.js",
+    "name": "application-form",
+    "src": "pages/application-form.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "application-form.DXUBT5sI.css": {
+    "file": "application-form.DXUBT5sI.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/blog-details/[id].vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BWaAJT_s.js",
+    "name": "_id_",
+    "src": "pages/blog-details/[id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "_DP15jWgM.js",
+      "_DyrPfQg4.js",
+      "_JdARr-6d.js",
+      "_hXiZFfwy.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "pages/blog-details/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CPZhhrXQ.js",
+    "name": "index",
+    "src": "pages/blog-details/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "_DP15jWgM.js",
+      "_DyrPfQg4.js",
+      "_JdARr-6d.js",
+      "node_modules/nuxt/dist/app/entry.js",
+      "_hXiZFfwy.js"
+    ]
+  },
+  "pages/censor-standard.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DZKFzb9G.js",
+    "name": "censor-standard",
+    "src": "pages/censor-standard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "censor-standard.DYzwdk36.css": {
+    "file": "censor-standard.DYzwdk36.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/company-statute.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CWMsMoo0.js",
+    "name": "company-statute",
+    "src": "pages/company-statute.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "company-statute.Chy6yFf3.css": {
+    "file": "company-statute.Chy6yFf3.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/conduct-plan.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CjVFbf6b.js",
+    "name": "conduct-plan",
+    "src": "pages/conduct-plan.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "conduct-plan.Ctj7PMC6.css": {
+    "file": "conduct-plan.Ctj7PMC6.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/contact.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Cx_-_ZDm.js",
+    "name": "contact",
+    "src": "pages/contact.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Brfk6Bdo.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "contact.I8R1SwDS.css": {
+    "file": "contact.I8R1SwDS.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/convert-principle.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "C0Vm7v1n.js",
+    "name": "convert-principle",
+    "src": "pages/convert-principle.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "convert-principle.DJT9pcMz.css": {
+    "file": "convert-principle.DJT9pcMz.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/employment-services.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CotS_WOa.js",
+    "name": "employment-services",
+    "src": "pages/employment-services.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "employment-services.BHNwRfOo.css": {
+    "file": "employment-services.BHNwRfOo.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/experience-share/[id].vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CCCeNDg5.js",
+    "name": "_id_",
+    "src": "pages/experience-share/[id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "_BqWtyvea.js",
+      "_hXiZFfwy.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "pages/experience-share/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DmbMPqaJ.js",
+    "name": "index",
+    "src": "pages/experience-share/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "index.4uOfb_qe.css": {
+    "file": "index.4uOfb_qe.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/faq.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CTugIsi1.js",
+    "name": "faq",
+    "src": "pages/faq.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_x2s-XgrM.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "faq.BbrQWZWl.css"
+    ]
+  },
+  "faq.BbrQWZWl.css": {
+    "file": "faq.BbrQWZWl.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/foreign-famliy-link.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "D7wKAggv.js",
+    "name": "foreign-famliy-link",
+    "src": "pages/foreign-famliy-link.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "foreign-famliy-link.D-VvIn-n.css": {
+    "file": "foreign-famliy-link.D-VvIn-n.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DYEO6C-6.js",
+    "name": "index",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_4O5x-YEq.js",
+      "node_modules/nuxt/dist/app/entry.js",
+      "_Brfk6Bdo.js",
+      "_x_rD_Ya3.js"
+    ],
+    "css": []
+  },
+  "index.C1Gml3sV.css": {
+    "file": "index.C1Gml3sV.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/join-us-unit.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "6tDCxVxw.js",
+    "name": "join-us-unit",
+    "src": "pages/join-us-unit.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Brfk6Bdo.js",
+      "_x_rD_Ya3.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "join-us-unit.DYDpIsJs.css"
+    ]
+  },
+  "join-us-unit.DYDpIsJs.css": {
+    "file": "join-us-unit.DYDpIsJs.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/join-us.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "BvCi04yr.js",
+    "name": "join-us",
+    "src": "pages/join-us.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "node_modules/nuxt/dist/app/entry.js",
+      "_C4pLzR--.js"
+    ],
+    "css": [
+      "join-us.tW0T7HDv.css"
+    ]
+  },
+  "join-us.tW0T7HDv.css": {
+    "file": "join-us.tW0T7HDv.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/lazy-bag.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CZyO2KH9.js",
+    "name": "lazy-bag",
+    "src": "pages/lazy-bag.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "lazy-bag.DLTuVNgY.css": {
+    "file": "lazy-bag.DLTuVNgY.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/links.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CSHL_WBO.js",
+    "name": "links",
+    "src": "pages/links.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "links.BECa8f2-.css": {
+    "file": "links.BECa8f2-.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/news/[id].vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CILUjlsb.js",
+    "name": "_id_",
+    "src": "pages/news/[id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BqWtyvea.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "pages/news/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DRzwIkqu.js",
+    "name": "index",
+    "src": "pages/news/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "index.D5_Gfe-Q.css": {
+    "file": "index.D5_Gfe-Q.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/propaganda.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "rlfuqwKn.js",
+    "name": "propaganda",
+    "src": "pages/propaganda.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "propaganda.CCAosxga.css": {
+    "file": "propaganda.CCAosxga.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/qa.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DJin5nuT.js",
+    "name": "qa",
+    "src": "pages/qa.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "qa.BRQ42sO9.css": {
+    "file": "qa.BRQ42sO9.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/qa_test.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "SwIa04yb.js",
+    "name": "qa_test",
+    "src": "pages/qa_test.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "qa_test.BkDwbgTh.css": {
+    "file": "qa_test.BkDwbgTh.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/qa_test2.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "lPhzSGCS.js",
+    "name": "qa_test2",
+    "src": "pages/qa_test2.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_x2s-XgrM.js"
+    ],
+    "css": []
+  },
+  "qa_test2.QCUqpaIB.css": {
+    "file": "qa_test2.QCUqpaIB.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/reserve-guide.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Bc2nzIpk.js",
+    "name": "reserve-guide",
+    "src": "pages/reserve-guide.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "reserve-guide.DIF1SbjF.css": {
+    "file": "reserve-guide.DIF1SbjF.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/service-apply-form.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CEBAgrsu.js",
+    "name": "service-apply-form",
+    "src": "pages/service-apply-form.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "service-apply-form.CvqsROMd.css": {
+    "file": "service-apply-form.CvqsROMd.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/service-now.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Dbp4x5SH.js",
+    "name": "service-now",
+    "src": "pages/service-now.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_GS5YyYvc.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "service-now.BFeMxGqW.css": {
+    "file": "service-now.BFeMxGqW.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/service-price.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CXRiJGqM.js",
+    "name": "service-price",
+    "src": "pages/service-price.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "service-price.C_ZPqZB_.css": {
+    "file": "service-price.C_ZPqZB_.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/service-v1.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "3z5n9jI7.js",
+    "name": "service-v1",
+    "src": "pages/service-v1.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "node_modules/nuxt/dist/app/entry.js",
+      "_4O5x-YEq.js",
+      "_DyrPfQg4.js",
+      "_JdARr-6d.js"
+    ]
+  },
+  "pages/services.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "rGIcZ2xn.js",
+    "name": "services",
+    "src": "pages/services.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_GS5YyYvc.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "services.CUBT9X5K.css": {
+    "file": "services.CUBT9X5K.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/story.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DajX9XWG.js",
+    "name": "story",
+    "src": "pages/story.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "_JdARr-6d.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "pages/support.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CyVYDAcN.js",
+    "name": "support",
+    "src": "pages/support.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxpmyTwd.js",
+      "_JdARr-6d.js",
+      "_C4pLzR--.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  }
+}
