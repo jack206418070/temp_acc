@@ -1,29 +1,29 @@
 import sql from 'mssql';
 
 // SQL Server 連線設定
-// const config = {
-//   user: 'accompanyservice',
-//   password: '!QAZ8520@wsx',
-//   server: '172.21.50.165',  // Docker 內部使用 'localhost'
-//   port: 1433,
-//   database: 'accompanyservice',
-//   options: {
-//     encrypt: false,  // 若有 SSL 問題請設為 false
-//     trustServerCertificate: true,
-//   },
-// };
-
 const config = {
-  user: 'SA',
-  password: 'yourStrong(!)Password',
-  server: 'localhost',
+  user: 'accompanyservice',
+  password: '!QAZ8520@wsx',
+  server: '172.21.50.165',  // Docker 內部使用 'localhost'
   port: 1433,
-  database: 'test_three',
+  database: 'accompanyservice',
   options: {
-    encrypt: false,
+    encrypt: false,  // 若有 SSL 問題請設為 false
     trustServerCertificate: true,
   },
 };
+
+// const config = {
+//   user: 'SA',
+//   password: 'yourStrong(!)Password',
+//   server: 'localhost',
+//   port: 1433,
+//   database: 'test_three',
+//   options: {
+//     encrypt: false,
+//     trustServerCertificate: true,
+//   },
+// };
 
 // const config = {
 //   user: 'sa',
