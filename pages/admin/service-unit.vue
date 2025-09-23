@@ -221,12 +221,6 @@
             </div>
             <div class="form-group">
               <label>單位圖片 (限制 5MB 以內)</label>
-              <input 
-                type="file" 
-                @change="handleUnitImageChange" 
-                accept="image/jpeg,image/png,image/gif"
-                :required="!isEditing"
-              >
               <div v-if="unitImageError" class="error-message">
                 {{ unitImageError }}
               </div>
@@ -239,11 +233,6 @@
             </div>
             <div class="form-group">
               <label>價格圖片 (限制 5MB 以內)</label>
-              <input 
-                type="file" 
-                @change="handlePriceImageChange" 
-                accept="image/jpeg,image/png,image/gif"
-              >
               <div v-if="priceImageError" class="error-message">
                 {{ priceImageError }}
               </div>

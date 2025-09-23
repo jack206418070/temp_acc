@@ -93,13 +93,6 @@
             <div class="form-group">
               <label>Banner 圖片</label>
               <div class="image-upload">
-                <input 
-                  type="file" 
-                  ref="imageInput"
-                  @change="handleImageChange"
-                  accept="image/*"
-                  :required="!isEditing"
-                >
                 <div v-if="imagePreview" class="image-preview">
                   <img :src="imagePreview" alt="預覽圖">
                 </div>
@@ -230,11 +223,6 @@ async function handleSubmit() {
     formDataToSend.append('title', formData.value.title);
     formDataToSend.append('description', formData.value.description || '');
     formDataToSend.append('is_active', formData.value.is_active ? '1' : '0');
-
-    const imageFile = document.querySelector('input[type="file"]').files[0];
-    if (imageFile) {
-      formDataToSend.append('image', imageFile);
-    }
 
     const cookie = useCookie('auth_token');
     if (isEditing.value) {
@@ -684,22 +672,6 @@ onMounted(async () => {
   }
   
   .image-upload {
-    input[type="file"] {
-      width: 100%;
-      padding: 0.75rem;
-      border: 2px dashed #ddd;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      background-color: #f8f9fa;
-
-      &:hover {
-        border-color: var(--primary-color);
-        background-color: rgba(65, 187, 190, 0.05);
-      }
-    }
-
     .image-preview {
       margin-top: 1rem;
       max-width: 100%;

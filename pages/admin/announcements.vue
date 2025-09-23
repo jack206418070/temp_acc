@@ -121,12 +121,6 @@
             </div>
             <div class="form-group">
               <label>圖片 (限制每張 5MB 以內)</label>
-              <input 
-                type="file" 
-                @change="handleImageUpload" 
-                accept="image/jpeg,image/png,image/gif"
-                multiple
-              >
               <div v-if="imageError" class="error-message">
                 {{ imageError }}
               </div>

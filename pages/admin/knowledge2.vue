@@ -82,22 +82,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>標題</label>
-              <input 
-                v-model="formData.title"
-                type="text"
-                required
-                placeholder="請輸入標題"
-              >
-            </div>
-            <div class="form-group">
               <label>圖片 (限制 5MB 以內)</label>
-              <input 
-                type="file" 
-                @change="handleFileChange" 
-                accept="image/jpeg,image/png,image/gif"
-                :required="!isEditing"
-              >
               <div v-if="imageError" class="error-message">
                 {{ imageError }}
               </div>
@@ -528,23 +513,6 @@ onBeforeUnmount(() => {
   margin-right: auto;
 }
 
-// 文件上傳按鈕樣式
-input[type="file"] {
-  display: block;
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px dashed var(--border-color);
-  border-radius: 4px;
-  cursor: pointer;
-  
-  &:hover {
-    border-color: var(--primary-color);
-  }
-
-  &:invalid {
-    border-color: var(--danger-color, #dc3545);
-  }
-}
 
 select {
   width: 100%;

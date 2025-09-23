@@ -1,0 +1,27 @@
+<location path="api">
+    <system.webServer>
+      <!-- 確保不要用 httpErrors 蓋掉我們改過的狀態碼 -->
+      <httpErrors existingResponse="PassThrough" />
+
+      <rewrite>
+        <outboundRules>
+          <!-- 將 500 改為 404（無自訂頁，純狀態碼） -->
+          <rule name="Map 500 to 404 under /api" preCondition="Is500" stopProcessing="true">
+            <!-- 這個 match 是必要佔位；真正條件在 preCondition -->
+            <match serverVariable="RESPONSE_STATUS" pattern=".*" />
+            <action type="CustomResponse"
+                    statusCode="404"
+                    subStatusCode="0"
+                    reason="Not Found"
+                    description="Not Found" />
+          </rule>
+
+          <preConditions>
+            <preCondition name="Is500">
+              <add input="{RESPONSE_STATUS}" pattern="500" />
+            </preCondition>
+          </preConditions>
+        </outboundRules>
+      </rewrite>
+    </system.webServer>
+  </location>
