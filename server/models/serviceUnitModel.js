@@ -68,7 +68,7 @@ export async function getAllServiceUnits(includePriceImage = true) {
           CAST(unit_image as varbinary(max)) as unitImage
           ${includePriceImage ? ', CAST(price_image as varbinary(max)) as priceImage' : ''}
         FROM service_units
-        ORDER BY created_at DESC;
+        ORDER BY created_at ASC;
       `);
 
     return result.recordset;

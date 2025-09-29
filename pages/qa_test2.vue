@@ -143,6 +143,7 @@ watch(
   { immediate: true }
 )
 
+
 // 初始化
 onMounted(async () => {
   try {
@@ -159,7 +160,19 @@ onMounted(async () => {
     
     // 如果有分類，自動選擇第一個
     if (categories.value.length > 0) {
-      await setActiveCategory(categories.value[0])
+      // 預設選擇分類
+      let initialCategory = categories.value[0]
+
+      // 如果 id = 1，嘗試用網址中的 category 參數比對
+      if (parentId === 1 && route.query.category) {
+        const categoryId = Number(route.query.category)
+        const matched = categories.value.find(c => c.id === categoryId)
+        if (matched) {
+          initialCategory = matched
+        }
+      }
+
+      await setActiveCategory(initialCategory)
     }
   } catch (error) {
     console.error('初始化失敗:', error)
