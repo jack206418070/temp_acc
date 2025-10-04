@@ -27,11 +27,11 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         'script-src': [
           "'self'",
-          "'unsafe-inline'",
+          // "'unsafe-inline'",
           "https://www.googletagmanager.com",
           "https://www.google-analytics.com"
         ],
-        'style-src': ["'self'", "'unsafe-inline'"],
+        'style-src': ["'self'"],
         'img-src': ["'self'", "data:", "blob:"],
         'connect-src': ["'self'", "https://www.google-analytics.com"],
         'object-src': ["'none'"],
@@ -198,6 +198,7 @@ export default defineNuxtConfig({
     },
   ],
   experimental: {
+    inlineSSRStyles: false,
     payloadExtraction: false
   },
 
@@ -245,6 +246,7 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    build: { cssCodeSplit: true },
     css: {
       preprocessorOptions: {
         scss: {
