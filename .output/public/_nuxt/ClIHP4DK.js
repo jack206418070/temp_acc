@@ -1,0 +1,1 @@
+import{_ as t}from"./Biv7LzSS.js";import{d as o,a,c as n,i as _,g as s}from"./xqnS4cc3.js";const l=o({__name:"[id]",setup(c){return a({title:"公告詳細資訊 ｜ 多元陪伴照顧服務計畫"}),(r,m)=>{const e=t;return s(),n("div",null,[_(e)])}}});export{l as default};

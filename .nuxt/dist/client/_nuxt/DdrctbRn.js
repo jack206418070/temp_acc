@@ -1,0 +1,1 @@
+import{d as o,K as n,L as a,c as s,g as r,H as c}from"./xqnS4cc3.js";const f=o({__name:"[...slug]",async setup(u){let e,t;return n().path==="/notfound"||([e,t]=a(()=>c("/notfound",{replace:!0})),await e,t()),(l,p)=>(r(),s("div",null,"重定向中..."))}});export{f as default};
