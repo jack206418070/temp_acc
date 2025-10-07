@@ -25,8 +25,10 @@ export default defineNuxtConfig({
     sri: false,
     headers: {
       contentSecurityPolicy: {
+        'default-src': ["'none'"],
         'script-src': [
           "'self'",
+          "'nonce-%nonce%'",
           // "'unsafe-inline'",
           "https://www.googletagmanager.com",
           "https://www.google-analytics.com"
