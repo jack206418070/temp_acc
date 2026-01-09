@@ -21,6 +21,7 @@
             <!-- 下方備註區塊 -->
             <div class="notes-box">
               <p style="white-space: pre-line;" >{{ item.note }}</p>
+              <p v-if="item?.extra_note" style="white-space: pre-line;" >{{ item.extra_note }}</p>
             </div>
           </div>
         </div>  
@@ -59,7 +60,8 @@ const serviceSteps: ServiceStep[] = [
   {
     title: '',
     description: '經長期照顧管理中心評估屬長期照顧需要等級第二級至第八級，有使用本計畫服務之需求。',
-    note: '長期照顧需求評估結果通知書或長照特約單位開立載有照顧組合名稱之收據。'
+    note: '長期照顧需求評估結果通知書或長照特約單位開立載有照顧組合名稱之收據。',
+    extra_note: '備註: 長期照顧需求評估結果通知書可由醫院出備小組開立'
   },
   
 ];

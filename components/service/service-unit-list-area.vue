@@ -155,7 +155,8 @@ onMounted(async () => {
 
   .vendor-image {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    height: 200px;
   }
 
   .vendor-info {
@@ -215,6 +216,8 @@ onMounted(async () => {
     font-size: 1.5rem;
     display: block;
     margin-bottom: 10px;
+    white-space: normal;
+    word-break: break-all;
   }
   .star .filled {
     color: #ffd700;
