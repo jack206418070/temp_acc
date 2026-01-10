@@ -455,7 +455,7 @@ const _routes = [
   {
     name: "about-us",
     path: "/about-us",
-    component: () => import("./_nuxt/about-us-DOlP_p0E.js")
+    component: () => import("./_nuxt/about-us-BcgP7idh.js")
   },
   {
     name: "admin-qa",
@@ -476,7 +476,7 @@ const _routes = [
   {
     name: "services",
     path: "/services",
-    component: () => import("./_nuxt/services-UR_Zv1T9.js")
+    component: () => import("./_nuxt/services-CsLRwvfJ.js")
   },
   {
     name: "news-id",
@@ -507,7 +507,7 @@ const _routes = [
   {
     name: "service-now",
     path: "/service-now",
-    component: () => import("./_nuxt/service-now-Bw5r-6nw.js")
+    component: () => import("./_nuxt/service-now-CGHRzhi_.js")
   },
   {
     name: "announcement",

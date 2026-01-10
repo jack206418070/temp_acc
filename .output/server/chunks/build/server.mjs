@@ -472,7 +472,7 @@ const _routes = [
   {
     name: "about-us",
     path: "/about-us",
-    component: () => import('./about-us-DOlP_p0E.mjs')
+    component: () => import('./about-us-BcgP7idh.mjs')
   },
   {
     name: "admin-qa",
@@ -493,7 +493,7 @@ const _routes = [
   {
     name: "services",
     path: "/services",
-    component: () => import('./services-UR_Zv1T9.mjs')
+    component: () => import('./services-CsLRwvfJ.mjs')
   },
   {
     name: "news-id",
@@ -524,7 +524,7 @@ const _routes = [
   {
     name: "service-now",
     path: "/service-now",
-    component: () => import('./service-now-Bw5r-6nw.mjs')
+    component: () => import('./service-now-CGHRzhi_.mjs')
   },
   {
     name: "announcement",
