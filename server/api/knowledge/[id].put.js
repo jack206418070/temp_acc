@@ -1,5 +1,6 @@
 import { createError } from 'h3';
 import { updateKnowledge } from '~/server/models/knowledgeModel';
+import { validateFileUpload } from '~/server/utils/fileValidation';
 
 export default async function(event) {
   try {
@@ -29,8 +30,14 @@ export default async function(event) {
     
     // 處理圖片
     let imagePath = null;
-    if (imageFile) {
-      // 這裡可以添加圖片處理邏輯
+    if (imageFile?.data) {
+      const validation = validateFileUpload(imageFile.data, imageFile.type, {
+        allowedTypes: ['image/jpeg', 'image/png', 'image/gif'],
+        maxSizeMB: 5
+      });
+      if (!validation.valid) {
+        throw createError({ statusCode: 400, message: validation.error });
+      }
       imagePath = imageFile.data;
     }
     

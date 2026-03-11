@@ -1,6 +1,7 @@
 import { authenticate } from '~/server/utils/auth';
 import { updateServiceUnit } from '~/server/models/serviceUnitModel';
 import { createError, readMultipartFormData } from 'h3';
+import { validateFileUpload } from '~/server/utils/fileValidation';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -36,9 +37,15 @@ export default defineEventHandler(async (event) => {
       });
     }
 
+    const IMAGE_OPTS = { allowedTypes: ['image/jpeg', 'image/png', 'image/gif'], maxSizeMB: 5 };
+
     // 單位圖片
     let unitImageBuffer = null;
     if (unitImageFile?.data) {
+      const validation = validateFileUpload(unitImageFile.data, unitImageFile.type, IMAGE_OPTS);
+      if (!validation.valid) {
+        throw createError({ statusCode: 400, statusMessage: `單位圖片：${validation.error}` });
+      }
       const size = (unitImageFile.data.length / 1024).toFixed(2);
       console.log(`📷 單位圖片: ${size} KB, 類型: ${unitImageFile.type}`);
       unitImageBuffer = unitImageFile.data;
@@ -47,6 +54,10 @@ export default defineEventHandler(async (event) => {
     // 價格圖片
     let priceImageBuffer = null;
     if (priceImageFile?.data) {
+      const validation = validateFileUpload(priceImageFile.data, priceImageFile.type, IMAGE_OPTS);
+      if (!validation.valid) {
+        throw createError({ statusCode: 400, statusMessage: `價格圖片：${validation.error}` });
+      }
       const size = (priceImageFile.data.length / 1024).toFixed(2);
       console.log(`📷 價格圖片: ${size} KB, 類型: ${priceImageFile.type}`);
       priceImageBuffer = priceImageFile.data;

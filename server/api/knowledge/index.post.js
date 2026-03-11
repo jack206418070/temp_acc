@@ -1,6 +1,7 @@
 import { authenticate } from '~/server/utils/auth';
 import { createKnowledge } from '~/server/models/knowledgeModel';
 import { createError, readMultipartFormData } from 'h3';
+import { validateFileUpload } from '~/server/utils/fileValidation';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -21,6 +22,14 @@ export default defineEventHandler(async (event) => {
         statusCode: 400,
         statusMessage: '缺少必要欄位'
       });
+    }
+
+    const validation = validateFileUpload(imageFile.data, imageFile.type, {
+      allowedTypes: ['image/jpeg', 'image/png', 'image/gif'],
+      maxSizeMB: 5
+    });
+    if (!validation.valid) {
+      throw createError({ statusCode: 400, statusMessage: validation.error });
     }
 
     const originalSizeKB = (imageFile.data.length / 1024).toFixed(2);

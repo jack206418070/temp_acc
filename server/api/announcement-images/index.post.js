@@ -1,6 +1,7 @@
 import { authenticate } from '~/server/utils/auth';
 import { saveAnnouncementImage } from '~/server/models/announcementModel';
 import { createError, readMultipartFormData } from 'h3';
+import { validateFileUpload } from '~/server/utils/fileValidation';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -44,22 +45,13 @@ export default defineEventHandler(async (event) => {
     const original_filename = filenameField?.data?.toString() || null;
     console.log('original_filename:', original_filename)
 
-    // 驗證檔案類型
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
-    if (!allowedTypes.includes(imageField.type)) {
-      throw createError({
-        statusCode: 400,
-        message: '不支援的檔案類型，只允許上傳圖片檔案（JPG、PNG、GIF）或 PDF 檔案'
-      });
-    }
-
-    // 檢查檔案大小限制（5MB）
-    const maxSize = 5 * 1024 * 1024; // 5MB
-    if (imageBuffer.length > maxSize) {
-      throw createError({
-        statusCode: 400,
-        message: '檔案大小不能超過 5MB'
-      });
+    // 驗證檔案類型與 magic bytes
+    const validation = validateFileUpload(imageBuffer, imageField.type, {
+      allowedTypes: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'],
+      maxSizeMB: 5
+    });
+    if (!validation.valid) {
+      throw createError({ statusCode: 400, message: validation.error });
     }
     console.log(`收到圖片 image_id: ${image_id}, 類型: ${imageField.type}, 大小: ${(imageBuffer.length / 1024).toFixed(2)} KB`);
 
