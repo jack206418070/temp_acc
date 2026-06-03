@@ -3,14 +3,10 @@ import { createError } from 'h3';
 
 export default defineEventHandler(async (event) => {
   try {
-    // 從 URL 參數中獲取 ID
-    const id = parseInt(event.context.params.id);
-    
-    if (!id) {
-      throw createError({
-        statusCode: 400,
-        message: '無效的 ID'
-      });
+    // 從 URL 參數中獲取 ID(含 INT 溢位防護)
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({ statusCode: 400, message: '無效的 ID' });
     }
 
     // 獲取服務單位資料

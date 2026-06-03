@@ -3,12 +3,9 @@ import { createError } from 'h3';
 
 export default defineEventHandler(async (event) => {
   try {
-    const id = parseInt(event.context.params.id);
-    if (isNaN(id)) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: '無效的 ID'
-      });
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({ statusCode: 400, statusMessage: '無效的 ID' });
     }
 
     const serviceUnit = await getServiceUnitById(id);

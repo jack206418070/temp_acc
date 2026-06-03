@@ -7,12 +7,9 @@ export default defineEventHandler(async (event) => {
     // 驗證
     await authenticate(event);
 
-    const id = parseInt(event.context.params.id);
-    if (isNaN(id)) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: '無效的 Banner ID'
-      });
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({ statusCode: 400, statusMessage: '無效的 Banner ID' });
     }
 
     await deleteBanner(id);
