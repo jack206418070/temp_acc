@@ -63,22 +63,7 @@ export default defineNuxtConfig({
     },
     sri: false,
     headers: {
-      contentSecurityPolicy: {
-        // 'default-src': ["'self'"],
-        'script-src': [
-          "'self'",
-          "'unsafe-inline'",  // 僅在你確實需要 inline script 時使用
-          // "'strict-dynamic'",
-          // 如果你有外部 script 如 bootstrap
-        ],
-        'style-src': ["'self'", "'unsafe-inline'"],
-        'img-src': ["'self'", "data:", "blob:"],
-        // 'font-src': ["'self'", "data:"],
-        'connect-src': ["'self'"],
-        'object-src': ["'none'"],
-        'base-uri': ["'self'"],
-        // 'form-action': ["'self'"]
-      },
+      contentSecurityPolicy: false, // CSP 由 IIS web.config 單一來源管理(見 spec §1.3/§4.4)
       // xFrameOptions: 'DENY',
       // xContentTypeOptions: 'nosniff',
       // strictTransportSecurity: {
@@ -181,6 +166,9 @@ export default defineNuxtConfig({
       '/api/**': {
         security: {
           xssValidator: false
+        },
+        headers: {
+          'cache-control': 'no-store'
         }
       }
     },
