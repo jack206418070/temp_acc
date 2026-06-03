@@ -76,17 +76,19 @@
 
 ```
 default-src 'self';
-script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com;
 style-src 'self' 'unsafe-inline';
-img-src 'self' data: blob: https://www.googletagmanager.com https://*.google-analytics.com https://i.ytimg.com;
+img-src 'self' data: blob: https://www.googletagmanager.com https://*.google-analytics.com https://i.ytimg.com https://*.g.doubleclick.net https://www.google.com https://www.google.com.tw;
 font-src 'self' data:;
-connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com https://stats.g.doubleclick.net;
-frame-src https://www.youtube.com https://www.youtube-nocookie.com;
+connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com https://www.google.com.tw;
+frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.googletagmanager.com;
 object-src 'none';
 base-uri 'self';
 frame-ancestors 'self';
 form-action 'self';
 ```
+
+> 註：`googleads.g.doubleclick.net` / `www.googleadservices.com` / `*.g.doubleclick.net` / `www.google.com` / `www.google.com.tw` 與 `frame-src` 的 GTM 為**瀏覽器實測後補上**——GTM 內含 Google Ads 轉換/再行銷標籤會載入這些網域。若有其他國別使用者(如越南)的轉換 beacon 被擋(`www.google.com.vn` 等)，再依 Console 訊息追加對應 ccTLD。
 
 說明：
 - `script-src` 含 `'unsafe-inline'`：inline GTM/GA bootstrap 與 Nuxt hydration 皆為 inline script，靜態預產生 HTML 無法套 nonce。此設定即可消除「缺必要指令」「frame-ancestors」兩項，且不破壞影片/分析/編輯器。
