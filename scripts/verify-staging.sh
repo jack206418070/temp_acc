@@ -20,7 +20,7 @@ CSPCOUNT=$(hdrcount "$BASE/" "content-security-policy")
 hdrval "$BASE/" "content-security-policy" | grep -q "frame-ancestors 'self'" && ok "CSP 含 frame-ancestors 'self'" || ng "CSP 缺 frame-ancestors"
 hdrval "$BASE/" "content-security-policy" | grep -q "default-src 'self'" && ok "CSP 含 default-src" || ng "CSP 缺 default-src"
 hdrval "$BASE/" "content-security-policy" | grep -q "www.youtube.com" && ok "CSP 放行 YouTube" || ng "CSP 未放行 YouTube(影片會被擋!)"
-[ "$(hdrval "$BASE/" "cross-origin-embedder-policy")" = "credentialless" ] && ok "COEP credentialless" || ng "COEP 非 credentialless"
+[ -z "$(hdrval "$BASE/" "cross-origin-embedder-policy")" ] && ok "COEP 未設(刻意；COEP 會擋 YouTube iframe，風險接受)" || ng "不應有 COEP(會擋影片): $(hdrval "$BASE/" "cross-origin-embedder-policy")"
 [ "$(hdrval "$BASE/" "cross-origin-opener-policy")" = "same-origin" ] && ok "COOP same-origin" || ng "COOP 缺"
 [ "$(hdrval "$BASE/" "cross-origin-resource-policy")" = "same-origin" ] && ok "CORP same-origin" || ng "CORP 缺"
 hdrval "$BASE/" "strict-transport-security" | grep -q "max-age=31536000" && ok "HSTS 長 max-age" || ng "HSTS 缺/不足"

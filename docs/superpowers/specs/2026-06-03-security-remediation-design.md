@@ -50,7 +50,7 @@
 
 ### 中（22）
 3. **直接存取管理頁面 ×19**（`/admin.shtml`、`/admin.php`、`/admin.asp`…等任意 `/admin.*` 回 200）→ web.config：在 `StaticContent` 規則**之前**加一條 rule，命中 `^admin\.[a-z0-9]+$`（排除真實存在的 admin SPA 路由）即回 **404**。
-4. **COEP 缺失**（`/`）→ web.config：`Cross-Origin-Embedder-Policy: credentialless`（保 YouTube 影片 / GA；非報告建議的 require-corp，見 §5 風險說明）。
+4. **COEP 缺失**（`/`）→ **刻意不設**（風險接受，見 §5）。瀏覽器實測證實：COEP 不論 `require-corp` 或 `credentialless` **都會擋掉 YouTube 等跨來源 iframe**（credentialless 只放寬子資源、不放寬 iframe），為保影片不啟用。web.config 仍保留 `<remove>` 以清除站台層級可能繼承的 COEP。
 5. **COOP 缺失**（`/`）→ web.config：`Cross-Origin-Opener-Policy: same-origin`。
 6. **CORP 缺失**（`/`）→ web.config：`Cross-Origin-Resource-Policy: same-origin`。
 
@@ -129,7 +129,7 @@ form-action 'self';
 
 | 項目 | 報告建議 | 本案做法 | 理由 |
 |------|----------|----------|------|
-| COEP | require-corp | **credentialless** | require-corp 會封鎖 YouTube 內嵌影片與 GA；本站「不能少任何影片」。COEP 實際風險低（CVSS 4.0 = 2.3）。 |
+| COEP | require-corp | **完全不設** | 瀏覽器實測：COEP 不論 require-corp 或 credentialless **都會擋 YouTube 跨來源 iframe**（credentialless 只放寬子資源、不放寬 iframe）。本站「不能少任何影片」且須全瀏覽器相容，故不啟用。COEP 風險極低（CVSS 4.0 = 2.3）。COOP/CORP 仍有設。 |
 | Trusted Types | 強制 require-trusted-types-for 'script' | **Report-Only 觀察** | 全面強制會破壞 TinyMCE/CKEditor/Tiptap 與前台 v-html 富文本。低嚴重度（CVSS 3.7）。 |
 | 內文 Email ×2 | 從網站移除 | **保留並說明** | 為計畫公開聯絡信箱（民眾諮詢/申訴用），屬設計需求。 |
 
