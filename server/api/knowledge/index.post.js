@@ -24,6 +24,14 @@ export default defineEventHandler(async (event) => {
       });
     }
 
+    // know_category 為分類 FK(>=1)，加 INT 溢位防護
+    if (parsePositiveInt(know_category) === null) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: '無效的分類'
+      });
+    }
+
     const validation = validateFileUpload(imageFile.data, imageFile.type, {
       allowedTypes: ['image/jpeg', 'image/png', 'image/gif'],
       maxSizeMB: 5

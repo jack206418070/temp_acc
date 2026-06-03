@@ -39,6 +39,12 @@ export default defineEventHandler(async (event) => {
     }
 
     const announcement_id = parseInt(announcementIdField.data.toString());
+    if (parsePositiveInt(announcementIdField.data.toString()) === null) {
+      throw createError({
+        statusCode: 400,
+        message: '無效的 announcement_id'
+      });
+    }
     const image_id = imageIdField.data.toString();
     const imageBuffer = imageField.data;
     const file_type = fileTypeField?.data?.toString() || 'image';

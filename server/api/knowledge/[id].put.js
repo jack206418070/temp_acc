@@ -4,7 +4,13 @@ import { validateFileUpload } from '~/server/utils/fileValidation';
 
 export default async function(event) {
   try {
-    const id = event.context.params.id;
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({
+        statusCode: 400,
+        message: '無效的 ID'
+      });
+    }
     const formData = await readMultipartFormData(event);
     
     if (!formData) {
@@ -25,6 +31,14 @@ export default async function(event) {
       throw createError({
         statusCode: 400,
         message: '缺少必要參數'
+      });
+    }
+
+    // know_category 為分類 FK(>=1)，加 INT 溢位防護
+    if (parsePositiveInt(know_category) === null) {
+      throw createError({
+        statusCode: 400,
+        message: '無效的分類'
       });
     }
     
