@@ -132,7 +132,8 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'node-server',
+    preset: 'iis-node', // IIS + iisnode(對應正式部署)；web.config 由 deploy/ 經 copy-webconfig 覆蓋進 .output
+    // preset: 'node-server',
     // preset: 'vercel',
     // preset: 'static',
     // output: {

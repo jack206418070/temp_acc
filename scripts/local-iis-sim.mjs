@@ -19,7 +19,7 @@ function decode(s) {
           .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 }
 
-const xml = readFileSync(new URL('../web.config', import.meta.url), 'utf8');
+const xml = readFileSync(new URL('../deploy/web.config', import.meta.url), 'utf8');
 const skip = (process.env.SKIP_HEADERS || '').toLowerCase().split(',').map(s => s.trim()).filter(Boolean);
 const addHeaders = [...xml.matchAll(/<add\s+name="([^"]+)"\s+value="([^"]*)"\s*\/>/g)]
   .map(m => [m[1], decode(m[2])])
