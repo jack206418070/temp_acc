@@ -19,6 +19,7 @@ export function useVideoPopup() {
   
       // Create a new iframeElement
       iframeElement = document.createElement("iframe");
+      iframeElement.setAttribute("credentialless", "");
       iframeElement.setAttribute("src", newVideoUrl);
       iframeElement.style.width = "60%";
       iframeElement.style.height = "80%";

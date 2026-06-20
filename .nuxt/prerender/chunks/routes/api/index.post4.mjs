@@ -1,27 +1,30 @@
-import { defineEventHandler, readMultipartFormData, createError } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, readMultipartFormData, createError } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
+import { p as parsePositiveInt } from '../../_/validate.mjs';
 import { a as authenticate } from '../../_/auth.mjs';
 import { c as createKnowledge } from '../../_/knowledgeModel.mjs';
-import '../../_/nitro.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/destr/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/hookable/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/ofetch/dist/node.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/node-mock-http/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/ufo/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/unstorage/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/unstorage/drivers/fs.mjs';
-import 'file:///C:/Users/c3d19/accompany-web-site/node_modules/nuxt/dist/core/runtime/nitro/utils/cache-driver.js';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/unstorage/drivers/fs-lite.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/klona/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/defu/dist/defu.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/scule/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/radix3/dist/index.mjs';
+import { v as validateFileUpload } from '../../_/fileValidation.mjs';
+import '../../nitro/nitro.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/destr/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/hookable/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/ofetch/dist/node.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/node-mock-http/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/ufo/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unstorage/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unstorage/drivers/fs.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unstorage/drivers/fs-lite.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unstorage/drivers/lru-cache.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/klona/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/defu/dist/defu.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/scule/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unctx/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/radix3/dist/index.mjs';
 import 'node:fs';
 import 'node:url';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/pathe/dist/index.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/jsonwebtoken/index.js';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/pathe/dist/index.mjs';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/jsonwebtoken/index.js';
 import '../../_/db.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/mssql/index.js';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/mssql/index.js';
 
 const index_post = defineEventHandler(async (event) => {
   var _a, _b, _c;
@@ -38,6 +41,19 @@ const index_post = defineEventHandler(async (event) => {
         statusCode: 400,
         statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D"
       });
+    }
+    if (parsePositiveInt(know_category) === null) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "\u7121\u6548\u7684\u5206\u985E"
+      });
+    }
+    const validation = validateFileUpload(imageFile.data, imageFile.type, {
+      allowedTypes: ["image/jpeg", "image/png", "image/gif"],
+      maxSizeMB: 5
+    });
+    if (!validation.valid) {
+      throw createError({ statusCode: 400, statusMessage: validation.error });
     }
     const originalSizeKB = (imageFile.data.length / 1024).toFixed(2);
     console.log(`\u{1F4F7} \u6536\u5230\u5716\u7247\uFF1A${imageFile.filename || ""}`);

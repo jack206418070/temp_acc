@@ -20,8 +20,11 @@ function decode(s) {
 }
 
 const xml = readFileSync(new URL('../web.config', import.meta.url), 'utf8');
+const skip = (process.env.SKIP_HEADERS || '').toLowerCase().split(',').map(s => s.trim()).filter(Boolean);
 const addHeaders = [...xml.matchAll(/<add\s+name="([^"]+)"\s+value="([^"]*)"\s*\/>/g)]
-  .map(m => [m[1], decode(m[2])]);
+  .map(m => [m[1], decode(m[2])])
+  .filter(([name]) => !skip.includes(name.toLowerCase()));
+if (skip.length) console.log('SKIP_HEADERS(實驗用，略過):', skip.join(', '));
 const removeHeaders = [...xml.matchAll(/<remove\s+name="([^"]+)"\s*\/>/g)]
   .map(m => m[1].toLowerCase());
 

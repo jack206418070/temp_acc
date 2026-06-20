@@ -1,16 +1,14 @@
-import { defineEventHandler, createError, setResponseHeaders } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, createError, setResponseHeaders } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
+import { p as parsePositiveInt } from '../../../../_/validate.mjs';
 import { g as getServiceUnitById } from '../../../../_/serviceUnitModel.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/mssql/index.js';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/mssql/index.js';
 import '../../../../_/db.mjs';
 
 const priceImage_get = defineEventHandler(async (event) => {
   try {
-    const id = parseInt(event.context.params.id);
-    if (isNaN(id)) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "\u7121\u6548\u7684 ID"
-      });
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({ statusCode: 400, statusMessage: "\u7121\u6548\u7684 ID" });
     }
     const serviceUnit = await getServiceUnitById(id);
     if (!serviceUnit) {

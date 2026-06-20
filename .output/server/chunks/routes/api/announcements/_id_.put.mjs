@@ -1,4 +1,4 @@
-import { c as defineEventHandler, e as createError, f as readBody } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError, a as readBody } from '../../../nitro/nitro.mjs';
 import { a as authenticate } from '../../../_/auth.mjs';
 import { u as updateAnnouncement } from '../../../_/announcementModel.mjs';
 import 'node:http';

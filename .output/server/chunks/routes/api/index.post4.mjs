@@ -1,6 +1,8 @@
-import { c as defineEventHandler, r as readMultipartFormData, e as createError } from '../../_/nitro.mjs';
+import { d as defineEventHandler, r as readMultipartFormData, c as createError } from '../../nitro/nitro.mjs';
+import { p as parsePositiveInt } from '../../_/validate.mjs';
 import { a as authenticate } from '../../_/auth.mjs';
 import { c as createKnowledge } from '../../_/knowledgeModel.mjs';
+import { v as validateFileUpload } from '../../_/fileValidation.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -30,6 +32,19 @@ const index_post = defineEventHandler(async (event) => {
         statusCode: 400,
         statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D"
       });
+    }
+    if (parsePositiveInt(know_category) === null) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "\u7121\u6548\u7684\u5206\u985E"
+      });
+    }
+    const validation = validateFileUpload(imageFile.data, imageFile.type, {
+      allowedTypes: ["image/jpeg", "image/png", "image/gif"],
+      maxSizeMB: 5
+    });
+    if (!validation.valid) {
+      throw createError({ statusCode: 400, statusMessage: validation.error });
     }
     const originalSizeKB = (imageFile.data.length / 1024).toFixed(2);
     console.log(`\u{1F4F7} \u6536\u5230\u5716\u7247\uFF1A${imageFile.filename || ""}`);

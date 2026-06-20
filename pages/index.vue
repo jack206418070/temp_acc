@@ -6,7 +6,7 @@
         預約/申請
       </nuxt-link>
     </div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OxRL7eKReVQ?si=hhulgueBNpIueGKd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe credentialless width="560" height="315" src="https://www.youtube.com/embed/OxRL7eKReVQ?si=hhulgueBNpIueGKd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="main-container home-content">
       <div class="home-top">
         <h2>最新消息</h2>

@@ -1,4 +1,4 @@
-import { f as readBody, c as defineEventHandler } from '../../_/nitro.mjs';
+import { a as readBody, d as defineEventHandler } from '../../nitro/nitro.mjs';
 import { i as deleteQA, j as updateQA, k as createQA, l as getQAById, m as getAllQA } from '../../_/qaModel.mjs';
 import 'node:http';
 import 'node:https';

@@ -1,4 +1,4 @@
-import { c as defineEventHandler, l as getRequestHeader, e as createError, m as getRouterParam } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, h as getRequestHeader, c as createError, i as getRouterParam } from '../../../nitro/nitro.mjs';
 import { g as getKnowledgeById } from '../../../_/knowledgeModel.mjs';
 import { v as verifyToken } from '../../../_/auth.mjs';
 import 'node:http';

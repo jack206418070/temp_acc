@@ -1,4 +1,4 @@
-import { j as getHeader, e as createError, u as useRuntimeConfig } from './nitro.mjs';
+import { e as getHeader, c as createError, u as useRuntimeConfig } from '../nitro/nitro.mjs';
 import jwt from 'jsonwebtoken';
 
 async function authenticate(event) {

@@ -1,0 +1,5 @@
+const index_vue_vue_type_style_index_0_scoped_162bc33a_lang = "h1[data-v-162bc33a],h2[data-v-162bc33a]{text-align:center}.announcement-list[data-v-162bc33a]{margin-bottom:80px}.announcement-list-item[data-v-162bc33a]{align-items:start;border-bottom:1px solid #333;color:#09371f;display:flex;flex-wrap:wrap;font-size:20px;padding:20px 0}.announcement-list-item .item-date[data-v-162bc33a]{flex:0 0 20%;text-align:center}.announcement-list-item .item-category[data-v-162bc33a]{flex:0 0 40%;text-align:center}.announcement-list-item .item-title[data-v-162bc33a]{flex:0 0 40%}@media (max-width:991px){.default-title[data-v-162bc33a]{margin-bottom:40px}.first-list[data-v-162bc33a]{display:none}.announcement-list-item[data-v-162bc33a]{border-top:1px solid #333;font-size:20px}.announcement-list-item .item-category[data-v-162bc33a],.announcement-list-item .item-date[data-v-162bc33a]{flex:0 0 100%;margin-bottom:10px}.announcement-list-item .item-title[data-v-162bc33a]{flex:0 0 100%}}";
+export {
+  index_vue_vue_type_style_index_0_scoped_162bc33a_lang as default
+};
+//# sourceMappingURL=index-styles-1.mjs-Cwxz8cSu.js.map

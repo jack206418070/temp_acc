@@ -1,6 +1,8 @@
-import { c as defineEventHandler, r as readMultipartFormData, e as createError } from '../../_/nitro.mjs';
+import { d as defineEventHandler, r as readMultipartFormData, c as createError } from '../../nitro/nitro.mjs';
+import { p as parsePositiveInt } from '../../_/validate.mjs';
 import { a as authenticate } from '../../_/auth.mjs';
 import { s as saveAnnouncementImage } from '../../_/announcementModel.mjs';
+import { v as validateFileUpload } from '../../_/fileValidation.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -45,24 +47,23 @@ const index_post = defineEventHandler(async (event) => {
       });
     }
     const announcement_id = parseInt(announcementIdField.data.toString());
+    if (parsePositiveInt(announcementIdField.data.toString()) === null) {
+      throw createError({
+        statusCode: 400,
+        message: "\u7121\u6548\u7684 announcement_id"
+      });
+    }
     const image_id = imageIdField.data.toString();
     const imageBuffer = imageField.data;
     const file_type = ((_a = fileTypeField == null ? void 0 : fileTypeField.data) == null ? void 0 : _a.toString()) || "image";
     const original_filename = ((_b = filenameField == null ? void 0 : filenameField.data) == null ? void 0 : _b.toString()) || null;
     console.log("original_filename:", original_filename);
-    const allowedTypes = ["image/jpeg", "image/png", "image/gif", "application/pdf"];
-    if (!allowedTypes.includes(imageField.type)) {
-      throw createError({
-        statusCode: 400,
-        message: "\u4E0D\u652F\u63F4\u7684\u6A94\u6848\u985E\u578B\uFF0C\u53EA\u5141\u8A31\u4E0A\u50B3\u5716\u7247\u6A94\u6848\uFF08JPG\u3001PNG\u3001GIF\uFF09\u6216 PDF \u6A94\u6848"
-      });
-    }
-    const maxSize = 5 * 1024 * 1024;
-    if (imageBuffer.length > maxSize) {
-      throw createError({
-        statusCode: 400,
-        message: "\u6A94\u6848\u5927\u5C0F\u4E0D\u80FD\u8D85\u904E 5MB"
-      });
+    const validation = validateFileUpload(imageBuffer, imageField.type, {
+      allowedTypes: ["image/jpeg", "image/png", "image/gif", "application/pdf"],
+      maxSizeMB: 5
+    });
+    if (!validation.valid) {
+      throw createError({ statusCode: 400, message: validation.error });
     }
     console.log(`\u6536\u5230\u5716\u7247 image_id: ${image_id}, \u985E\u578B: ${imageField.type}, \u5927\u5C0F: ${(imageBuffer.length / 1024).toFixed(2)} KB`);
     await saveAnnouncementImage(

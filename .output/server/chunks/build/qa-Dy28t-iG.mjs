@@ -1,0 +1,75 @@
+import { defineComponent, ref, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderList, ssrRenderClass, ssrInterpolate } from 'vue/server-renderer';
+import { useRoute } from 'vue-router';
+import { _ as _export_sfc } from './server.mjs';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'chokidar';
+import 'anymatch';
+import 'node:crypto';
+import 'node:url';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+import '@yeger/vue-masonry-wall';
+import 'vue3-toastify';
+
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "qa",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const qa_data = ref(null);
+    const activeCategory = ref("");
+    const parsedQaList = ref([]);
+    const expandedIndexes = ref([]);
+    useRoute();
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(_attrs)} data-v-8750e9a5>`);
+      if (qa_data.value) {
+        _push(`<div class="service-banner" data-v-8750e9a5><div class="category-tabs" data-v-8750e9a5><div class="tabs-scroll" data-v-8750e9a5><!--[-->`);
+        ssrRenderList(qa_data.value.qa_content, (html, key) => {
+          _push(`<button class="${ssrRenderClass({ active: key === activeCategory.value })}" data-v-8750e9a5>${ssrInterpolate(key)}</button>`);
+        });
+        _push(`<!--]--></div></div>`);
+        if (activeCategory.value) {
+          _push(`<div class="qa-list" data-v-8750e9a5><!--[-->`);
+          ssrRenderList(parsedQaList.value, (item, index) => {
+            var _a;
+            _push(`<div class="qa-item" data-v-8750e9a5><div class="qa-title" data-v-8750e9a5>${ssrInterpolate(item.question)}</div>`);
+            if (expandedIndexes.value.includes(index)) {
+              _push(`<div class="qa-content" data-v-8750e9a5>${(_a = item.answer) != null ? _a : ""}</div>`);
+            } else {
+              _push(`<!---->`);
+            }
+            _push(`</div>`);
+          });
+          _push(`<!--]--></div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
+      } else {
+        _push(`<div class="service-banner" data-v-8750e9a5><p data-v-8750e9a5>\u8CC7\u6599\u8F09\u5165\u4E2D...</p></div>`);
+      }
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/qa.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const qa = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-8750e9a5"]]);
+
+export { qa as default };
+//# sourceMappingURL=qa-Dy28t-iG.mjs.map

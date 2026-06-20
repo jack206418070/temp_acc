@@ -1,4 +1,4 @@
-import { defineEventHandler, setCookie, createError } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, setCookie, createError } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
 
 const captcha = defineEventHandler(async (event) => {
   try {

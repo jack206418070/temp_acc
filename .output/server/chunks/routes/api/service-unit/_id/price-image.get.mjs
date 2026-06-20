@@ -1,4 +1,5 @@
-import { c as defineEventHandler, e as createError, o as setResponseHeaders } from '../../../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError, k as setResponseHeaders } from '../../../../nitro/nitro.mjs';
+import { p as parsePositiveInt } from '../../../../_/validate.mjs';
 import { g as getServiceUnitById } from '../../../../_/serviceUnitModel.mjs';
 import 'node:http';
 import 'node:https';
@@ -15,12 +16,9 @@ import '../../../../_/db.mjs';
 
 const priceImage_get = defineEventHandler(async (event) => {
   try {
-    const id = parseInt(event.context.params.id);
-    if (isNaN(id)) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "\u7121\u6548\u7684 ID"
-      });
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({ statusCode: 400, statusMessage: "\u7121\u6548\u7684 ID" });
     }
     const serviceUnit = await getServiceUnitById(id);
     if (!serviceUnit) {

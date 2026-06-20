@@ -1,6 +1,6 @@
 {
-  "date": "2026-01-10T06:22:23.715Z",
-  "preset": "iis-node",
+  "date": "2026-06-03T17:07:13.740Z",
+  "preset": "node-server",
   "framework": {
     "name": "nuxt",
     "version": "3.17.3"

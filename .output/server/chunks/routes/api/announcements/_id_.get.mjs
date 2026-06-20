@@ -1,4 +1,5 @@
-import { c as defineEventHandler, e as createError } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError } from '../../../nitro/nitro.mjs';
+import { p as parsePositiveInt } from '../../../_/validate.mjs';
 import { b as getAnnouncementById } from '../../../_/announcementModel.mjs';
 import 'node:http';
 import 'node:https';
@@ -15,8 +16,8 @@ import '../../../_/db.mjs';
 
 const _id__get = defineEventHandler(async (event) => {
   try {
-    const id = parseInt(event.context.params.id);
-    if (!id || isNaN(id)) {
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
       throw createError({
         statusCode: 400,
         statusMessage: "\u7121\u6548\u7684\u516C\u544A ID"

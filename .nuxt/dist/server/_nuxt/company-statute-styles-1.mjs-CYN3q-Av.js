@@ -1,0 +1,5 @@
+const companyStatute_vue_vue_type_style_index_0_scoped_d7f8a580_lang = ".company-title[data-v-d7f8a580]{margin-bottom:80px;margin-top:80px}.comapny-statute-list[data-v-d7f8a580]{margin-bottom:100px;padding-left:40px}.comapny-statute-list-item[data-v-d7f8a580]{align-items:center;display:flex;gap:50px;margin-bottom:30px}.comapny-statute-list-item .item-number[data-v-d7f8a580]{color:#ec6717;flex:0 0 80px;font-size:67px;font-weight:700}.comapny-statute-list-item .item-desc[data-v-d7f8a580]{color:#41bbbe;cursor:pointer;font-size:22px;letter-spacing:1.3px}@media (max-width:991px){.comapny-statute-list-item .item-number[data-v-d7f8a580]{align-self:flex-start;flex:0 0 60px;font-size:48px}.company-title[data-v-d7f8a580]{margin-bottom:30px;margin-top:50px;text-align:center}.comapny-statute-list-item .item-desc[data-v-d7f8a580]{align-self:flex-start;font-size:20px;padding-top:12px}}";
+export {
+  companyStatute_vue_vue_type_style_index_0_scoped_d7f8a580_lang as default
+};
+//# sourceMappingURL=company-statute-styles-1.mjs-CYN3q-Av.js.map

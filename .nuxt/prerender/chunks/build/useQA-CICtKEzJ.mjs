@@ -1,4 +1,4 @@
-import { ref } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/index.mjs';
+import { ref } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/index.mjs';
 
 const useQA = () => {
   const loading = ref(false);

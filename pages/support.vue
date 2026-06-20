@@ -82,6 +82,7 @@
       <div class="map-banner mt-120 lg-mt-80">
         <div class="gmap_canvas h-100 w-100">
           <iframe
+            credentialless
             class="gmap_iframe h-100 w-100"
             src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=dhaka collage&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>

@@ -1,4 +1,4 @@
-import { c as defineEventHandler, j as getHeader, e as createError, u as useRuntimeConfig } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, e as getHeader, c as createError, u as useRuntimeConfig } from '../../../nitro/nitro.mjs';
 import jwt from 'jsonwebtoken';
 import 'node:http';
 import 'node:https';

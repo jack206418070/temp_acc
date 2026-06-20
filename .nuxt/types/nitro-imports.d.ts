@@ -38,6 +38,7 @@ declare global {
   const defineWebSocket: typeof import('../../node_modules/h3')['defineWebSocket']
   const defineWebSocketHandler: typeof import('../../node_modules/h3')['defineWebSocketHandler']
   const deleteCookie: typeof import('../../node_modules/h3')['deleteCookie']
+  const detectMimeFromBuffer: typeof import('../../server/utils/fileValidation')['detectMimeFromBuffer']
   const dynamicEventHandler: typeof import('../../node_modules/h3')['dynamicEventHandler']
   const eventHandler: typeof import('../../node_modules/h3')['eventHandler']
   const fetchWithEvent: typeof import('../../node_modules/h3')['fetchWithEvent']
@@ -83,6 +84,7 @@ declare global {
   const lazyEventHandler: typeof import('../../node_modules/h3')['lazyEventHandler']
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin')['nitroPlugin']
   const parseCookies: typeof import('../../node_modules/h3')['parseCookies']
+  const parsePositiveInt: typeof import('../../server/utils/validate')['parsePositiveInt']
   const promisifyNodeListener: typeof import('../../node_modules/h3')['promisifyNodeListener']
   const proxyRequest: typeof import('../../node_modules/h3')['proxyRequest']
   const readBody: typeof import('../../node_modules/h3')['readBody']
@@ -125,6 +127,7 @@ declare global {
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config')['useRuntimeConfig']
   const useSession: typeof import('../../node_modules/h3')['useSession']
   const useStorage: typeof import('../../node_modules/nitropack/dist/runtime/internal/storage')['useStorage']
+  const validateFileUpload: typeof import('../../server/utils/fileValidation')['validateFileUpload']
   const verifyToken: typeof import('../../server/utils/auth')['verifyToken']
   const writeEarlyHints: typeof import('../../node_modules/h3')['writeEarlyHints']
 }
@@ -140,6 +143,8 @@ export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from 'C:/Users/c3d19/accompany-web-site/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
-export { defineAppConfig } from 'C:/Users/c3d19/accompany-web-site/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
-export { authenticate, verifyToken, generateToken } from 'C:/Users/c3d19/accompany-web-site/server/utils/auth';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/ginjack/Desktop/temp_acc/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
+export { defineAppConfig } from '/Users/ginjack/Desktop/temp_acc/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
+export { authenticate, verifyToken, generateToken } from '/Users/ginjack/Desktop/temp_acc/server/utils/auth';
+export { detectMimeFromBuffer, validateFileUpload } from '/Users/ginjack/Desktop/temp_acc/server/utils/fileValidation';
+export { parsePositiveInt } from '/Users/ginjack/Desktop/temp_acc/server/utils/validate';

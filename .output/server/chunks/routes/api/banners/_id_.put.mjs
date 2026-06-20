@@ -1,6 +1,7 @@
-import { c as defineEventHandler, r as readMultipartFormData, e as createError } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, r as readMultipartFormData, c as createError } from '../../../nitro/nitro.mjs';
 import { a as authenticate } from '../../../_/auth.mjs';
 import { c as createBanner } from '../../../_/bannerModel.mjs';
+import { v as validateFileUpload } from '../../../_/fileValidation.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -31,6 +32,13 @@ const _id__put = defineEventHandler(async (event) => {
         statusCode: 400,
         statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D\uFF08title \u6216 image\uFF09"
       });
+    }
+    const validation = validateFileUpload(imageFile.data, imageFile.type, {
+      allowedTypes: ["image/jpeg", "image/png", "image/gif"],
+      maxSizeMB: 5
+    });
+    if (!validation.valid) {
+      throw createError({ statusCode: 400, statusMessage: validation.error });
     }
     console.log(`\u2705 \u6536\u5230\u5716\u7247 ${imageFile.filename || ""} (${imageFile.type}), \u5927\u5C0F ${(imageFile.data.length / 1024).toFixed(2)} KB`);
     const data = await createBanner({

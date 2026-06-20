@@ -1,7 +1,7 @@
-import { defineEventHandler, createError } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, createError } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
 import { m as getAllQA } from '../../_/qaModel.mjs';
 import '../../_/db.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/mssql/index.js';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/mssql/index.js';
 
 const index_get = defineEventHandler(async (event) => {
   try {

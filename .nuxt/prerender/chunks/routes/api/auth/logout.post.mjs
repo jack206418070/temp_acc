@@ -1,4 +1,4 @@
-import { defineEventHandler, deleteCookie } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, deleteCookie } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
 
 const logout_post = defineEventHandler((event) => {
   deleteCookie(event, "auth_token", {

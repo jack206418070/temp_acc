@@ -1,12 +1,20 @@
-import { readMultipartFormData, createError } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { p as parsePositiveInt } from '../../../_/validate.mjs';
+import { createError, readMultipartFormData } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
 import { u as updateKnowledge } from '../../../_/knowledgeModel.mjs';
+import { v as validateFileUpload } from '../../../_/fileValidation.mjs';
 import '../../../_/db.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/mssql/index.js';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/mssql/index.js';
 
 async function _id__put(event) {
   var _a, _b, _c;
   try {
-    const id = event.context.params.id;
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({
+        statusCode: 400,
+        message: "\u7121\u6548\u7684 ID"
+      });
+    }
     const formData = await readMultipartFormData(event);
     if (!formData) {
       throw createError({
@@ -24,8 +32,21 @@ async function _id__put(event) {
         message: "\u7F3A\u5C11\u5FC5\u8981\u53C3\u6578"
       });
     }
+    if (parsePositiveInt(know_category) === null) {
+      throw createError({
+        statusCode: 400,
+        message: "\u7121\u6548\u7684\u5206\u985E"
+      });
+    }
     let imagePath = null;
-    if (imageFile) {
+    if (imageFile == null ? void 0 : imageFile.data) {
+      const validation = validateFileUpload(imageFile.data, imageFile.type, {
+        allowedTypes: ["image/jpeg", "image/png", "image/gif"],
+        maxSizeMB: 5
+      });
+      if (!validation.valid) {
+        throw createError({ statusCode: 400, message: validation.error });
+      }
       imagePath = imageFile.data;
     }
     const result = await updateKnowledge(

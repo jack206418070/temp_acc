@@ -1,6 +1,8 @@
-import { c as defineEventHandler, e as createError, r as readMultipartFormData } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError, r as readMultipartFormData } from '../../../nitro/nitro.mjs';
+import { p as parsePositiveInt } from '../../../_/validate.mjs';
 import { a as authenticate } from '../../../_/auth.mjs';
 import { u as updateServiceUnit } from '../../../_/serviceUnitModel.mjs';
+import { v as validateFileUpload } from '../../../_/fileValidation.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -19,8 +21,8 @@ const _id__put = defineEventHandler(async (event) => {
   var _a, _b, _c, _d, _e, _f, _g, _h, _i;
   try {
     await authenticate(event);
-    const id = parseInt(event.context.params.id);
-    if (!id) {
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
       throw createError({
         statusCode: 400,
         statusMessage: "\u7F3A\u5C11 ID"
@@ -45,14 +47,23 @@ const _id__put = defineEventHandler(async (event) => {
         statusMessage: "\u7F3A\u5C11\u5FC5\u8981\u6B04\u4F4D"
       });
     }
+    const IMAGE_OPTS = { allowedTypes: ["image/jpeg", "image/png", "image/gif"], maxSizeMB: 5 };
     let unitImageBuffer = null;
     if (unitImageFile == null ? void 0 : unitImageFile.data) {
+      const validation = validateFileUpload(unitImageFile.data, unitImageFile.type, IMAGE_OPTS);
+      if (!validation.valid) {
+        throw createError({ statusCode: 400, statusMessage: `\u55AE\u4F4D\u5716\u7247\uFF1A${validation.error}` });
+      }
       const size = (unitImageFile.data.length / 1024).toFixed(2);
       console.log(`\u{1F4F7} \u55AE\u4F4D\u5716\u7247: ${size} KB, \u985E\u578B: ${unitImageFile.type}`);
       unitImageBuffer = unitImageFile.data;
     }
     let priceImageBuffer = null;
     if (priceImageFile == null ? void 0 : priceImageFile.data) {
+      const validation = validateFileUpload(priceImageFile.data, priceImageFile.type, IMAGE_OPTS);
+      if (!validation.valid) {
+        throw createError({ statusCode: 400, statusMessage: `\u50F9\u683C\u5716\u7247\uFF1A${validation.error}` });
+      }
       const size = (priceImageFile.data.length / 1024).toFixed(2);
       console.log(`\u{1F4F7} \u50F9\u683C\u5716\u7247: ${size} KB, \u985E\u578B: ${priceImageFile.type}`);
       priceImageBuffer = priceImageFile.data;

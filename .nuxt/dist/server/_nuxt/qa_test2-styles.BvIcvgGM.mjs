@@ -1,0 +1,3 @@
+import style_0 from './qa_test2-styles-1.mjs-BVRRSskD.js';
+import style_1 from './qa_test2-styles-1.mjs-BVRRSskD.js';
+export default [style_0, style_1]

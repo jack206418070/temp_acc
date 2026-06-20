@@ -1,5 +1,5 @@
-import { mergeProps, useSSRContext } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/index.mjs';
-import { ssrRenderAttrs } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
+import { mergeProps, useSSRContext } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/index.mjs';
+import { ssrRenderAttrs } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/server-renderer/index.mjs';
 import { _ as _export_sfc } from './server.mjs';
 
 const _sfc_main = {};

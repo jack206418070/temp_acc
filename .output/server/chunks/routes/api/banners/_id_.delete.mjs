@@ -1,4 +1,5 @@
-import { c as defineEventHandler, e as createError } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError } from '../../../nitro/nitro.mjs';
+import { p as parsePositiveInt } from '../../../_/validate.mjs';
 import { a as authenticate } from '../../../_/auth.mjs';
 import { d as deleteBanner } from '../../../_/bannerModel.mjs';
 import 'node:http';
@@ -18,12 +19,9 @@ import '../../../_/db.mjs';
 const _id__delete = defineEventHandler(async (event) => {
   try {
     await authenticate(event);
-    const id = parseInt(event.context.params.id);
-    if (isNaN(id)) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "\u7121\u6548\u7684 Banner ID"
-      });
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
+      throw createError({ statusCode: 400, statusMessage: "\u7121\u6548\u7684 Banner ID" });
     }
     await deleteBanner(id);
     return {

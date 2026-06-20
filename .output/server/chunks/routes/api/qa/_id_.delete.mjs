@@ -1,4 +1,4 @@
-import { c as defineEventHandler, e as createError } from '../../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError } from '../../../nitro/nitro.mjs';
 import { a as authenticate } from '../../../_/auth.mjs';
 import { i as deleteQA } from '../../../_/qaModel.mjs';
 import 'node:http';

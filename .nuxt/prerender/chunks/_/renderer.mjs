@@ -1,13 +1,13 @@
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { getQuery, createError, getResponseStatusText, getResponseStatus } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
-import { renderToString } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
-import { joinRelativeURL } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/ufo/dist/index.mjs';
-import { a as useRuntimeConfig, d as defineRenderHandler, g as getRouteRules, u as useNitroApp } from './nitro.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/unhead/dist/server.mjs';
-import { stringify, uneval } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/devalue/index.js';
-import { FlatMetaPlugin, DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/unhead/dist/plugins.mjs';
-import { walkResolver } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/unhead/dist/utils.mjs';
-import { toValue, isRef, hasInjectionContext, inject, ref, watchEffect, getCurrentInstance, onBeforeUnmount, onDeactivated, onActivated } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/index.mjs';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { getQuery, createError, getResponseStatusText, getResponseStatus } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
+import { renderToString } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/server-renderer/index.mjs';
+import { u as useRuntimeConfig, d as defineRenderHandler, g as getRouteRules, a as useNitroApp } from '../nitro/nitro.mjs';
+import { joinRelativeURL } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/ufo/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unhead/dist/server.mjs';
+import { stringify, uneval } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/devalue/index.js';
+import { FlatMetaPlugin, DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unhead/dist/plugins.mjs';
+import { walkResolver } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/unhead/dist/utils.mjs';
+import { toValue, isRef, hasInjectionContext, inject, ref, watchEffect, getCurrentInstance, onBeforeUnmount, onDeactivated, onActivated } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/index.mjs';
 
 const VueResolver = (_, value) => {
   return isRef(value) ? toValue(value) : value;

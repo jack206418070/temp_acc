@@ -1,12 +1,13 @@
-import { defineEventHandler, createError } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, createError } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/h3/dist/index.mjs';
+import { p as parsePositiveInt } from '../../../_/validate.mjs';
 import { b as getAnnouncementById } from '../../../_/announcementModel.mjs';
-import 'file://C:/Users/c3d19/accompany-web-site/node_modules/mssql/index.js';
+import 'file:///Users/ginjack/Desktop/temp_acc/node_modules/mssql/index.js';
 import '../../../_/db.mjs';
 
 const _id__get = defineEventHandler(async (event) => {
   try {
-    const id = parseInt(event.context.params.id);
-    if (!id || isNaN(id)) {
+    const id = parsePositiveInt(event.context.params.id);
+    if (id === null) {
       throw createError({
         statusCode: 400,
         statusMessage: "\u7121\u6548\u7684\u516C\u544A ID"

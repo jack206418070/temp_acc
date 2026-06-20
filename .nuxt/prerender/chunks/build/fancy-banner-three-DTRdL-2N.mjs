@@ -1,6 +1,6 @@
 import { _ as _export_sfc, a as __nuxt_component_0$2 } from './server.mjs';
-import { mergeProps, withCtx, createVNode, useSSRContext } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/index.mjs';
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr } from 'file://C:/Users/c3d19/accompany-web-site/node_modules/vue/server-renderer/index.mjs';
+import { mergeProps, withCtx, createVNode, useSSRContext } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/index.mjs';
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr } from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/vue/server-renderer/index.mjs';
 import { p as publicAssetsURL } from '../_/renderer.mjs';
 
 const _imports_0 = publicAssetsURL("/images/icon/icon_30.svg");

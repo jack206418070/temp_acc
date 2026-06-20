@@ -1,4 +1,4 @@
-import sql from 'file://C:/Users/c3d19/accompany-web-site/node_modules/mssql/index.js';
+import sql from 'file:///Users/ginjack/Desktop/temp_acc/node_modules/mssql/index.js';
 import { g as getConnection } from './db.mjs';
 
 async function getAllBanners(active = 0) {

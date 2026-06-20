@@ -1,4 +1,4 @@
-import { c as defineEventHandler, e as createError } from '../../_/nitro.mjs';
+import { d as defineEventHandler, c as createError } from '../../nitro/nitro.mjs';
 import { g as getUserReminder } from '../../_/userReminderModel.mjs';
 import 'node:http';
 import 'node:https';
