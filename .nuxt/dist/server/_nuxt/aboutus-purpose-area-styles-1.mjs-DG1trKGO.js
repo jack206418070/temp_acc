@@ -1,5 +1,0 @@
-const aboutusPurposeArea_vue_vue_type_style_index_0_scoped_cbd281a9_lang = "h2[data-v-cbd281a9]{color:#41bbbe;font-size:42px;font-weight:400;margin-bottom:30px;margin-top:30px}.plan-about[data-v-cbd281a9]{margin-bottom:60px}.plan-about p[data-v-cbd281a9]{font-size:20px;letter-spacing:normal;margin-bottom:40px;text-align:justify}.modal-overlay[data-v-cbd281a9]{align-items:center;background-color:#00000080;display:flex;height:100%;justify-content:center;left:0;position:fixed;top:0;width:100%;z-index:1000}.modal-content[data-v-cbd281a9]{background-color:#fff;border-radius:8px;max-height:80vh;max-width:60%;overflow-y:auto;padding:2rem}@media (max-width:996px){h2[data-v-cbd281a9]{font-size:34px}}";
-export {
-  aboutusPurposeArea_vue_vue_type_style_index_0_scoped_cbd281a9_lang as default
-};
-//# sourceMappingURL=aboutus-purpose-area-styles-1.mjs-DG1trKGO.js.map

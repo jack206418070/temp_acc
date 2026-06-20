@@ -1,5 +1,0 @@
-const admin_vue_vue_type_style_index_0_scoped_1ee05aa4_lang = ".admin-layout[data-v-1ee05aa4],.loading-container[data-v-1ee05aa4]{background-color:#f8f9fa;min-height:100vh}.loading-container[data-v-1ee05aa4]{align-items:center;display:flex;flex-direction:column;justify-content:center}.loading-spinner[data-v-1ee05aa4]{animation:spin-1ee05aa4 1s linear infinite;border:3px solid #f3f3f3;border-radius:50%;border-top-color:#41bbbe;height:40px;width:40px}.loading-container p[data-v-1ee05aa4]{color:#41bbbe;font-size:14px;margin-top:1rem}@keyframes spin-1ee05aa4{0%{transform:rotate(0)}to{transform:rotate(1turn)}}";
-export {
-  admin_vue_vue_type_style_index_0_scoped_1ee05aa4_lang as default
-};
-//# sourceMappingURL=admin-styles-1.mjs-BfTJrr7A.js.map
