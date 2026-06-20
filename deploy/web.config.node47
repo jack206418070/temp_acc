@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     節點 117.56.83.47 專用：以你 .47 現有 web.config 為基礎 + 資安掃描修復。
+     保留你所有原有規則與 .47 特有設定(nodeProcessCommandLine、無 handlers 區塊)。
+-->
+<configuration>
+  <system.webServer>
+
+    <!-- ===== 安全標頭(取代舊的弱 CSP；先 remove 再 add) ===== -->
+    <httpProtocol>
+      <customHeaders>
+        <remove name="X-Powered-By" />
+        <remove name="Content-Security-Policy" />
+        <remove name="Content-Security-Policy-Report-Only" />
+        <remove name="Cross-Origin-Embedder-Policy" />
+        <remove name="Cross-Origin-Opener-Policy" />
+        <remove name="Cross-Origin-Resource-Policy" />
+        <remove name="Referrer-Policy" />
+        <remove name="Strict-Transport-Security" />
+        <remove name="X-Content-Type-Options" />
+        <remove name="X-Frame-Options" />
+
+        <add name="Content-Security-Policy" value="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.googletagmanager.com https://*.google-analytics.com https://i.ytimg.com https://*.g.doubleclick.net https://www.google.com https://www.google.com.tw; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com https://www.google.com.tw; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.googletagmanager.com https://maps.google.com https://www.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self';" />
+        <add name="Content-Security-Policy-Report-Only" value="require-trusted-types-for 'script';" />
+        <add name="Cross-Origin-Embedder-Policy" value="credentialless" />
+        <add name="Cross-Origin-Opener-Policy" value="same-origin" />
+        <add name="Cross-Origin-Resource-Policy" value="same-origin" />
+        <add name="Referrer-Policy" value="strict-origin-when-cross-origin" />
+        <add name="Strict-Transport-Security" value="max-age=31536000; includeSubDomains" />
+        <add name="X-Content-Type-Options" value="nosniff" />
+        <add name="X-Frame-Options" value="SAMEORIGIN" />
+      </customHeaders>
+    </httpProtocol>
+
+    <webSocket enabled="false" />
+
+    <rewrite>
+      <rules>
+        <!-- [原有] 封鎖可疑 z?.x.?z -->
+        <rule name="Block suspicious z?.x.?z pattern anywhere" stopProcessing="true">
+          <match url=".*z.\.x\..*z.*" ignoreCase="true" />
+          <action type="CustomResponse" statusCode="403" statusReason="Forbidden" statusDescription="Forbidden" />
+        </rule>
+
+        <!-- [原有] node-inspector -->
+        <rule name="NodeInspector" patternSyntax="ECMAScript" stopProcessing="true">
+          <match url="^index.js/debug[/]?" />
+        </rule>
+
+        <!-- [原有] 封鎖 admin-like 路徑 -->
+        <rule name="Block Dangerous Admin-like Paths" stopProcessing="true">
+          <match url="^(admin-serv|administration|administrator|adminuser)(/.*)?$" />
+          <action type="CustomResponse" statusCode="404" statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+
+        <!-- [新增·資安] 封鎖 admin.<副檔名> 探測 → 404；不影響 /admin/login -->
+        <rule name="Block Admin File Probes" stopProcessing="true">
+          <match url="^admin\.[a-zA-Z0-9]+$" />
+          <action type="CustomResponse" statusCode="404" statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+
+        <!-- [原有+補現代格式] 靜態內容(加入 avif/webp/字型/影音) -->
+        <rule name="Static Content" stopProcessing="true">
+          <match url="^(_nuxt/.*|.*\.(css|js|mjs|png|jpg|jpeg|gif|svg|ico|avif|webp|woff|woff2|ttf|otf|eot|mp4|webm|mp3))$" />
+          <action type="Rewrite" url="public/{R:1}" />
+        </rule>
+
+        <!-- [原有] news 只允許 1~3 碼數字 ID -->
+        <rule name="Allow Only 2 Digit News ID" stopProcessing="true">
+          <match url="^news/[0-9]{1,3}$" />
+          <action type="Rewrite" url="index.js" />
+        </rule>
+        <rule name="Block Invalid News Path" stopProcessing="true">
+          <match url="^news$|^news/.*" />
+          <action type="CustomResponse" statusCode="404" statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+
+        <!-- [原有] 封鎖無效 blog-details / experience-share -->
+        <rule name="Block Invalid Blog Path" stopProcessing="true">
+          <match url="^blog-details$|^blog-details/.*" />
+          <action type="CustomResponse" statusCode="404" statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+        <rule name="Block Invalid Experience Path" stopProcessing="true">
+          <match url="^experience-share$|^experience-share/.*" />
+          <action type="CustomResponse" statusCode="404" statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+
+        <!-- [原有] 其餘導向 Node 進入點 -->
+        <rule name="DynamicContent">
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True" />
+          </conditions>
+          <action type="Rewrite" url="index.js" />
+        </rule>
+      </rules>
+
+      <!-- [新增·資安] HTML 文件不快取(涵蓋 Node 輸出的 HTML，如 /qa_test2) -->
+      <outboundRules>
+        <preConditions>
+          <preCondition name="IsHtml">
+            <add input="{RESPONSE_CONTENT_TYPE}" pattern="^text/html" />
+          </preCondition>
+        </preConditions>
+        <rule name="NoStoreHtml" preCondition="IsHtml">
+          <match serverVariable="RESPONSE_Cache-Control" pattern=".*" />
+          <action type="Rewrite" value="no-store, no-cache, must-revalidate" />
+        </rule>
+        <rule name="PragmaHtml" preCondition="IsHtml">
+          <match serverVariable="RESPONSE_Pragma" pattern=".*" />
+          <action type="Rewrite" value="no-cache" />
+        </rule>
+      </outboundRules>
+    </rewrite>
+
+    <security>
+      <!-- [新增·資安] removeServerHeader；其餘為你原有設定 -->
+      <requestFiltering removeServerHeader="true">
+        <hiddenSegments>
+          <remove segment="bin" />
+          <add segment="manager" />
+        </hiddenSegments>
+        <requestLimits maxAllowedContentLength="4294967295" />
+        <fileExtensions>
+          <add fileExtension=".bak" allowed="false" />
+          <add fileExtension=".old" allowed="false" />
+          <add fileExtension=".tmp" allowed="false" />
+          <add fileExtension=".swp" allowed="false" />
+          <add fileExtension=".zip" allowed="false" />
+          <add fileExtension=".gz" allowed="false" />
+        </fileExtensions>
+      </requestFiltering>
+    </security>
+
+    <httpErrors existingResponse="PassThrough" />
+
+    <!-- [安全調整] debuggingEnabled / devErrorsEnabled → false；其餘(含 nodeProcessCommandLine)為你 .47 原有設定 -->
+    <iisnode node_env="%node_env%" nodeProcessCommandLine="C:\Program Files (x86)\nodejs\node.exe" nodeProcessCountPerApplication="1" maxConcurrentRequestsPerProcess="1024" maxNamedPipeConnectionRetry="100" namedPipeConnectionRetryDelay="250" maxNamedPipeConnectionPoolSize="512" maxNamedPipePooledConnectionAge="30000" asyncCompletionThreadCount="0" initialRequestBufferSize="4096" maxRequestBufferSize="65536" watchedFiles="*.js;iisnode.yml" uncFileChangesPollingInterval="5000" gracefulShutdownTimeout="60000" loggingEnabled="true" logDirectory="iisnode" debuggingEnabled="false" debugHeaderEnabled="false" debuggerPortRange="5058-6058" debuggerPathSegment="debug" maxLogFileSizeInKB="128" maxTotalLogFileSizeInKB="1024" maxLogFiles="20" devErrorsEnabled="false" flushResponse="false" enableXFF="false" promoteServerVars="" configOverrides="iisnode.yml" />
+
+    <staticContent>
+      <!-- 先 remove 再 add，避免重複註冊報錯；IIS 預設沒有 avif/webp -->
+      <remove fileExtension=".mjs" /><mimeMap fileExtension=".mjs" mimeType="application/javascript" />
+      <remove fileExtension=".avif" /><mimeMap fileExtension=".avif" mimeType="image/avif" />
+      <remove fileExtension=".webp" /><mimeMap fileExtension=".webp" mimeType="image/webp" />
+      <remove fileExtension=".woff" /><mimeMap fileExtension=".woff" mimeType="font/woff" />
+      <remove fileExtension=".woff2" /><mimeMap fileExtension=".woff2" mimeType="font/woff2" />
+      <clientCache cacheControlMode="DisableCache" />
+    </staticContent>
+
+  </system.webServer>
+</configuration>
