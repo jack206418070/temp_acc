@@ -14,8 +14,13 @@ export default defineEventHandler(async (event) => {
       </svg>
     `
 
-    // 儲存驗證碼到 cookie
-    setCookie(event, 'captcha', code, { httpOnly: true, path: '/' })
+    // 儲存驗證碼到 cookie(補 Secure + SameSite，修 WebInspect Cookie 安全性)
+    setCookie(event, 'captcha', code, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // 正式環境僅走 HTTPS
+      sameSite: 'strict',
+      path: '/'
+    })
 
     // 設定 response headers
     event.node.res.setHeader('Content-Type', 'image/svg+xml')
